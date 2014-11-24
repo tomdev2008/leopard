@@ -102,9 +102,9 @@ public class UserinfoServiceImpl implements UserinfoService {
 		if (user == null) {
 			if (passportValidateDao != null) {
 				user = this.validateAndCache(request, response);
-				if (user == null) {
-					return null;
-				}
+			}
+			if (user == null) {
+				return null;
 			}
 		}
 		return user.getUid();
