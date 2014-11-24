@@ -528,6 +528,7 @@
 		<module>leopard-biz</module>
 		<module>leopard-netty</module>
 		<module>leopard-parent</module>
+		<module>leopard-spring</module>
 	</modules>
 
 </project>
