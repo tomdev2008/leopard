@@ -66,7 +66,7 @@ public class ArrayUtil {
 	}
 
 	/**
-	 * 生成数组</br> 格式为：perfix+i</br> 例如：prefix传入duowan,数量传入3;</br> 返回的数组为：["duowan0","duowan1","duowan2"]</br>
+	 * 生成数组</br> 格式为：perfix+i</br> 例如：prefix传入leopard,数量传入3;</br> 返回的数组为：["leopard0","leopard1","leopard2"]</br>
 	 * 
 	 * @param prefix
 	 *            数组内容前缀

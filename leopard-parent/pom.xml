@@ -12,19 +12,19 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.duowan.leopard</groupId>
+				<groupId>io.leopard</groupId>
 				<artifactId>leopard-core</artifactId>
 				<version>${leopard.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.duowan.leopard</groupId>
+				<groupId>io.leopard</groupId>
 				<artifactId>leopard-data</artifactId>
 				<version>${leopard.version}</version>
 			</dependency>
 			
 			
 			<dependency>
-				<groupId>com.duowan.leopard</groupId>
+				<groupId>io.leopard</groupId>
 				<artifactId>leopard-test</artifactId>
 				<version>${leopard.version}</version>
 				<scope>test</scope>

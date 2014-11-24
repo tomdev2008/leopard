@@ -36,7 +36,7 @@
 			<xsd:documentation><![CDATA[
 	component-scan<br/>
 	例子:<br/>
-	<leopard:component-scan base-package="com.duowan.news.dao" /><br/>
+	<leopard:component-scan base-package="io.leopard.news.dao" /><br/>
 	]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
@@ -55,7 +55,7 @@
 			<xsd:documentation><![CDATA[
 	timer-scan<br/>
 	例子:<br/>
-	<leopard:timer-scan base-package="com.duowan.news.timer" /><br/>
+	<leopard:timer-scan base-package="io.leopard.news.timer" /><br/>
 	]]></xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>

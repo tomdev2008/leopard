@@ -1,8 +1,3 @@
-/**
- * 多玩游戏 ©2005-2010. 多玩通行证系统 udb.duowan.com
- * 
- * @(#)AESUtil3.java V0.0.1 2010-11-18
- */
 package io.leopard.commons.utility;
 
 import io.leopard.burrow.lang.AssertUtil;

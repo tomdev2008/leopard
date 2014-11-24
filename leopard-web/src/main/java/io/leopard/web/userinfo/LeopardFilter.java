@@ -1,8 +1,3 @@
-/**
- * 多玩游戏 ©2005-2010. 多玩通行证系统 udb.duowan.com
- * 
- * @(#)GameClientFilter.java date:2011-4-19
- */
 package io.leopard.web.userinfo;
 
 import io.leopard.topnb.LeopardWebTimeLog;

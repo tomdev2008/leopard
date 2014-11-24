@@ -1,8 +1,3 @@
-/**
- * 多玩游戏 ©2005-2010. 多玩通行证系统 udb.duowan.com
- * 
- * @(#)RequestUtil.java V0.0.1 2010-3-30
- */
 package io.leopard.web.userinfo.util;
 
 import io.leopard.commons.utility.StringUtil;

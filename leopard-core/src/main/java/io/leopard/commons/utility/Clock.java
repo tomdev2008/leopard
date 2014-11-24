@@ -1,8 +1,3 @@
-/**
- * 多玩游戏 ©2005-2010. 多玩通行证系统 udb.duowan.com
- * 
- * @(#)Clock.java V0.0.1 2010-5-8
- */
 package io.leopard.commons.utility;
 
 import org.apache.commons.lang.StringUtils;

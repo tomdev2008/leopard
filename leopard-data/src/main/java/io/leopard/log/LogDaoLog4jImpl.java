@@ -92,9 +92,7 @@ public class LogDaoLog4jImpl implements LogDao {
 	 * 禁止类初始化log.
 	 */
 	public void disabledBeanLog() {
-		Logger.getLogger("com.duowan.spring").setLevel(org.apache.log4j.Level.WARN);
 		Logger.getLogger("BEANLOG").setLevel(org.apache.log4j.Level.WARN);
-		Logger.getLogger("com.mchange.v2").setLevel(org.apache.log4j.Level.WARN);
 		Logger.getLogger("org.springframework").setLevel(org.apache.log4j.Level.WARN);
 	}
 
@@ -102,8 +100,7 @@ public class LogDaoLog4jImpl implements LogDao {
 	 * 禁止公用包log.
 	 */
 	public void disabledCommonsLog() {
-		Logger.getLogger("com.duowan.commons").setLevel(org.apache.log4j.Level.WARN);
-		Logger.getLogger("com.duowan.common.rpc").setLevel(org.apache.log4j.Level.WARN);
+
 	}
 
 }

@@ -3,7 +3,7 @@ package io.leopard.core.exception;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class DuowanExceptionTest {
+public class LeopardExceptionTest {
 
 	@Test
 	public void DuowanException() {

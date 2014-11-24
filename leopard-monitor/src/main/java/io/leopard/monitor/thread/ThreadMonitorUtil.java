@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ThreadMonitorUtil {
-//	private static Map<String, String> CATEGORY_EQUALS_MAP = new ConcurrentHashMap<String, String>();
+	// private static Map<String, String> CATEGORY_EQUALS_MAP = new ConcurrentHashMap<String, String>();
 	private static Map<String, String> CATEGORY_PREFIXE_MAP = new ConcurrentHashMap<String, String>();
 	private static Map<String, String> CATEGORY_INDEXOF_MAP = new ConcurrentHashMap<String, String>();
 
@@ -45,14 +45,7 @@ public class ThreadMonitorUtil {
 		IGNORE_THREAD_NAME_SET.add("org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$ReferenceQueueThread.run(MultiThreadedHttpConnectionManager.java:1122)");
 		IGNORE_THREAD_NAME_SET.add("com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534)");
 
-		// udb
-		IGNORE_THREAD_NAME_SET.add("com.duowan.universal.login.client.YYSecCenterOpenWSInvoker.changeAccesstoken(YYSecCenterOpenWSInvoker.java:143)	");
-		IGNORE_THREAD_NAME_SET.add("com.duowan.udb.auth.UserinfoForOauth.validateOAuthCookie(UserinfoForOauth.java:319)");
-		IGNORE_THREAD_NAME_SET.add("com.duowan.udb.auth.UserinfoForOauth.validateOAuthCookie4Accesstoken(UserinfoForOauth.java:350)");
-		IGNORE_THREAD_NAME_SET.add("com.duowan.universal.login.client.ClientHelper.request(ClientHelper.java:184)");
-		IGNORE_THREAD_NAME_SET.add("com.duowan.udb.auth.UserinfoForOauth.dovalidateOAuthCookie(UserinfoForOauth.java:333)");
-		IGNORE_THREAD_NAME_SET.add("com.duowan.universal.login.client.ClientHelper.request(ClientHelper.java:149)");
-		IGNORE_THREAD_NAME_SET.add("com.duowan.universal.login.client.ClientHelper.post(ClientHelper.java:123)");
+		// FIXME ahai 这里需要提供接口
 
 		// //////////
 		IGNORE_PREFIX_LIST.add("java.lang.");
