@@ -6,7 +6,7 @@ import org.junit.Test;
 public class LeopardRuntimeExceptionTest {
 
 	@Test
-	public void DuowanRuntimeException() {
+	public void LeopardRuntimeException() {
 		Assert.assertEquals("msg", new LeopardRuntimeException("msg").getMessage());
 		Assert.assertEquals("msg1", new LeopardRuntimeException(new Exception("msg1")).getMessage());
 	}

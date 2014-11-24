@@ -57,7 +57,7 @@ public class AESUtil {
 		if (publickey.length() != 32) {
 			throw new IllegalArgumentException("publickey必须为32位.");
 		}
-//		logger.info("publickey:" + publickey);
+		// logger.info("publickey:" + publickey);
 		byte[] bytes = hex2byte(publickey);
 		return new SecretKeySpec(bytes, "AES");
 	}
@@ -168,10 +168,5 @@ public class AESUtil {
 	//
 	// }
 	//
-	// public static void main(String[] args) {
-	// // run com.duowan.udb.util.AESUtil
-	// // AESUtil.makeKey();
-	// AESUtil.test();
-	// }
 
 }
