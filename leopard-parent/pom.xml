@@ -26,7 +26,26 @@
 				<artifactId>leopard-util</artifactId>
 				<version>${leopard.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>io.leopard</groupId>
+				<artifactId>leopard-biz</artifactId>
+				<version>${leopard.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard</groupId>
+				<artifactId>leopard-netty</artifactId>
+				<version>${leopard.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard</groupId>
+				<artifactId>leopard-monitor</artifactId>
+				<version>${leopard.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard</groupId>
+				<artifactId>leopard-web</artifactId>
+				<version>${leopard.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>io.leopard</groupId>
 				<artifactId>leopard-test</artifactId>
