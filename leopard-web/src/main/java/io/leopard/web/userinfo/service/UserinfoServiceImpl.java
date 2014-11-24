@@ -6,6 +6,7 @@ import io.leopard.web.userinfo.util.RequestUtil;
 import io.leopard.web4j.passport.LoginBox;
 import io.leopard.web4j.passport.PassportUser;
 import io.leopard.web4j.passport.PassportValidateDao;
+import io.leopard.web4j.passport.SessionUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -42,7 +44,7 @@ public class UserinfoServiceImpl implements UserinfoService {
 		EXCLUDE_URI_LIST.add("/security/getCsrfToken.do");
 	};
 
-	@Resource(name = "passportValidateDaoCacheImpl")
+	@Autowired(required = false)
 	private PassportValidateDao passportValidateDao;
 
 	@Resource
@@ -77,15 +79,6 @@ public class UserinfoServiceImpl implements UserinfoService {
 		return isExcludeUri;
 	}
 
-	@Override
-	public Long login(HttpServletRequest request, HttpServletResponse response) {
-		PassportUser user = passportValidateDao.validate(request, response);
-		if (user == null) {
-			return null;
-		}
-		return user.getUid();
-	}
-
 	/**
 	 * 转到登录页面.
 	 * 
@@ -103,4 +96,26 @@ public class UserinfoServiceImpl implements UserinfoService {
 		loginBox.showLoginBox(request, response);
 	}
 
+	@Override
+	public Long login(HttpServletRequest request, HttpServletResponse response) {
+		PassportUser user = SessionUtil.getUserinfo(request.getSession());
+		if (user == null) {
+			if (passportValidateDao != null) {
+				user = this.validateAndCache(request, response);
+				if (user == null) {
+					return null;
+				}
+			}
+		}
+		return user.getUid();
+	}
+
+	protected PassportUser validateAndCache(HttpServletRequest request, HttpServletResponse response) {
+		PassportUser user = passportValidateDao.validate(request, response);
+		if (user == null) {
+			return null;
+		}
+		SessionUtil.setUserinfo(request, user);
+		return user;
+	}
 }
