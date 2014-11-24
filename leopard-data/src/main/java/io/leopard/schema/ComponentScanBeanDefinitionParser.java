@@ -1,6 +1,6 @@
 package io.leopard.schema;
 
-import io.leopard.core.beans.LeopardAnnotationBeanNameGenerator;
+import io.leopard.data4j.schema.LeopardAnnotationBeanNameGenerator;
 
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.xml.ParserContext;
