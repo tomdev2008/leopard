@@ -89,7 +89,7 @@ public class AlarmDaoSmsImpl extends ContextImpl implements AlarmDao {
 		// System.err.println("sms code:" + code + " mobile:" + mobile +
 		// " message:" + message);
 
-		String url = "http://robot.leopard.yy.com/webservice/alarm.do?code=" + code + "&ip=" + ip + "&mobile=" + mobile + "&version=" + LEOPARD_VERSION;
+		String url = "http://robot.leopard.io/webservice/alarm.do?code=" + code + "&ip=" + ip + "&mobile=" + mobile + "&version=" + LEOPARD_VERSION;
 
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("message", message);
