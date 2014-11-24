@@ -31,7 +31,7 @@ public class XssSecurityTestController {
 	}
 
 	protected String getUrl(String title) {
-		String url = "http://message.game.yy.com/security/xss/jsp.do?title=" + StringUtil.urlEncode(title);
+		String url = "http://leopard.io/security/xss/jsp.do?title=" + StringUtil.urlEncode(title);
 		return url;
 	}
 

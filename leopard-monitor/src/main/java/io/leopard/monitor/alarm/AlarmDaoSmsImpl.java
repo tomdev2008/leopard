@@ -26,8 +26,7 @@ public class AlarmDaoSmsImpl extends ContextImpl implements AlarmDao {
 
 	private final int intervalSeconds = 60 * 10;// 10分钟发一次
 	static {
-		System.setProperty("robot.dev.game.yy.com", "robot.dev.game.yy.com");
-		System.setProperty("robot.leopard.yy.com", "robot.leopard.yy.com");
+		System.setProperty("robot.leopard.io", "robot.leopard.io");
 	}
 	private static boolean smsEnable = false;
 

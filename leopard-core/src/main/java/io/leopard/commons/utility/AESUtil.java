@@ -152,21 +152,4 @@ public class AESUtil {
 		return sb.toString().toUpperCase();
 	}
 
-	// private static void test() {
-	// String password = "1556272FD0F3D48E1923240296A6F869";//
-	// 5A8412AC0A89BCB80E58D1A0913E3076
-	// System.out.println("密钥:" + password);
-	//
-	// String content = "13718898602 13718898602yy 322849";
-	// content = AESUtil.encrypt(content, password);
-	// content =
-	// "9B596E6A1073CF3DF784743D051523F45B9988C5539D423218B9015661A454E22F4D8747873F91071FD0213E001C2113";
-	// System.out.println("密文:" + content);
-	//
-	// content = AESUtil.decrypt(content, password);
-	// System.out.println("明文:" + content);
-	//
-	// }
-	//
-
 }
