@@ -5,7 +5,7 @@
 		<artifactId>leopard</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
+
 	<artifactId>leopard-data</artifactId>
 	<name>数据操作包(mysql、memcache、redis、内存数据库等)</name>
 
@@ -141,6 +141,10 @@
 		<dependency>
 			<groupId>io.leopard</groupId>
 			<artifactId>data4j-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.leopard</groupId>
+			<artifactId>data4j-schema</artifactId>
 		</dependency>
 	</dependencies>
 </project>

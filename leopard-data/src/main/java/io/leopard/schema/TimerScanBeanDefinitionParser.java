@@ -1,6 +1,6 @@
 package io.leopard.schema;
 
-import io.leopard.core.beans.LeopardAnnotationBeanNameGenerator;
+import io.leopard.data4j.schema.LeopardAnnotationBeanNameGenerator;
 import io.leopard.timer.TimerServiceImpl;
 
 import java.util.ArrayList;
@@ -47,7 +47,6 @@ public class TimerScanBeanDefinitionParser extends org.springframework.context.a
 	protected BeanDefinition createTimerService(ParserContext parserContext) {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(TimerServiceImpl.class);
 
-		
 		ManagedList<RuntimeBeanReference> timerBeanList = new ManagedList<RuntimeBeanReference>();
 		for (String beanName : timerList) {
 			timerBeanList.add(new RuntimeBeanReference(beanName));

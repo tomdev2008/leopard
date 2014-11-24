@@ -212,7 +212,7 @@
 				<version>4.0.5.RELEASE</version>
 			</dependency>
 
-	
+
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
@@ -511,6 +511,11 @@
 			<dependency>
 				<groupId>io.leopard</groupId>
 				<artifactId>data4j-cache</artifactId>
+				<version>${data4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard</groupId>
+				<artifactId>data4j-schema</artifactId>
 				<version>${data4j.version}</version>
 			</dependency>
 			<!-- leopard end -->
