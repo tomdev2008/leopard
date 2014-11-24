@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationBeanNameGenerator;
 
 public class LeopardAnnotationBeanNameGenerator extends AnnotationBeanNameGenerator implements BeanNameGenerator {
 
+	
 	@Override
 	protected String buildDefaultBeanName(BeanDefinition definition) {
 		// CommandParser.parser(definition);
