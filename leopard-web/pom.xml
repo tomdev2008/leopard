@@ -34,44 +34,9 @@
 
 		<dependency>
 			<groupId>io.leopard</groupId>
-			<artifactId>web4j-view</artifactId>
+			<artifactId>web4j-all</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>web4j-trynb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>web4j-session</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>web4j-passport</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>web4j-parameter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>web4j-proxy</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>web4j-admin</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>web4j-permission</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>web4j-taglib</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>web4j-validator</artifactId>
-		</dependency>
+		
 		<dependency>
 			<groupId>io.leopard</groupId>
 			<artifactId>leopard-test</artifactId>
