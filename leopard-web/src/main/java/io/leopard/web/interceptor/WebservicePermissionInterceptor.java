@@ -17,8 +17,9 @@ import org.springframework.web.method.HandlerMethod;
 @Component
 public class WebservicePermissionInterceptor implements IInterceptor {
 
-	@Autowired
+	@Autowired(required = false)
 	private PermissionService permissionService;
+
 	protected static Set<String> MONITOR_IGNORE_SET = new HashSet<String>();
 	static {
 		MONITOR_IGNORE_SET.add("/monitor/performance.do");
@@ -41,9 +42,12 @@ public class WebservicePermissionInterceptor implements IInterceptor {
 			// 不检查权限.
 			return;
 		}
-		String proxyIp = RequestUtil.getProxyIp(request);
+
 		// proxyIp = "192.168.1.1";
-		permissionService.checkPermission(requestUri, proxyIp);
+		if (permissionService != null) {
+			String proxyIp = RequestUtil.getProxyIp(request);
+			permissionService.checkPermission(requestUri, proxyIp);
+		}
 	}
 
 	protected boolean hasPermission(HandlerMethod handlerMethod) {

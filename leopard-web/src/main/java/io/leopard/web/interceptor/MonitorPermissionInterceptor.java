@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MonitorPermissionInterceptor implements IInterceptor {
 
-	@Autowired
+	@Autowired(required = false)
 	private PermissionService permissionService;
 
 	protected static Set<String> MONITOR_IGNORE_SET = new HashSet<String>();
@@ -35,9 +35,11 @@ public class MonitorPermissionInterceptor implements IInterceptor {
 		if (MONITOR_IGNORE_SET.contains(requestUri)) {
 			return;
 		}
-		String proxyIp = RequestUtil.getProxyIp(request);
 		// proxyIp = "127.0.0.2";
-		permissionService.checkMonitorServer(proxyIp);
+		if (permissionService != null) {
+			String proxyIp = RequestUtil.getProxyIp(request);
+			permissionService.checkMonitorServer(proxyIp);
+		}
 	}
 
 }

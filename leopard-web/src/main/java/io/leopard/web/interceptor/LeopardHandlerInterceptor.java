@@ -11,33 +11,38 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class LeopardHandlerInterceptor implements HandlerInterceptor {
 
-	@Autowired
+	@Autowired(required = false)
 	private PageDelayInterceptor pageDelayInterceptor;
 
-	@Autowired
+	@Autowired(required = false)
 	private IInterceptor csrfInterceptor;
-	@Autowired
+	@Autowired(required = false)
 	private IInterceptor monitorPermissionInterceptor;
 
-	@Autowired
+	@Autowired(required = false)
 	private IInterceptor webservicePermissionInterceptor;
-	@Autowired
+	@Autowired(required = false)
 	private IInterceptor connectionLimitInterceptor;
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		// System.err.println("csrfInterceptor:" + csrfInterceptor);
-		// System.err.println("monitorPermissionInterceptor:" + monitorPermissionInterceptor);
-		// System.err.println("webservicePermissionInterceptor:" + webservicePermissionInterceptor);
 		String requestUri = RequestUtil.getRequestContextUri(request);
 
-		pageDelayInterceptor.preHandle(requestUri, request, response, handler);
-
-		connectionLimitInterceptor.preHandle(requestUri, request, response, handler);
-
-		csrfInterceptor.preHandle(requestUri, request, response, handler);
-		monitorPermissionInterceptor.preHandle(requestUri, request, response, handler);
-		webservicePermissionInterceptor.preHandle(requestUri, request, response, handler);
+		if (pageDelayInterceptor != null) {
+			pageDelayInterceptor.preHandle(requestUri, request, response, handler);
+		}
+		if (connectionLimitInterceptor != null) {
+			connectionLimitInterceptor.preHandle(requestUri, request, response, handler);
+		}
+		if (csrfInterceptor != null) {
+			csrfInterceptor.preHandle(requestUri, request, response, handler);
+		}
+		if (monitorPermissionInterceptor != null) {
+			monitorPermissionInterceptor.preHandle(requestUri, request, response, handler);
+		}
+		if (webservicePermissionInterceptor != null) {
+			webservicePermissionInterceptor.preHandle(requestUri, request, response, handler);
+		}
 		return true;
 	}
 
