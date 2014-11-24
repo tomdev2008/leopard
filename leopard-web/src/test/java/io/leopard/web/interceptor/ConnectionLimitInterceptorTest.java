@@ -1,9 +1,9 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.mock4j.MockRequest;
 import io.leopard.test.mock.Mock;
 import io.leopard.test.mock.MockTests;
 import io.leopard.test4j.mock.LeopardMockito;
+import io.leopard.test4j.mock.MockRequest;
 import io.leopard.web.userinfo.UriListChecker;
 
 import org.junit.Test;

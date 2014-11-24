@@ -1,7 +1,7 @@
 package io.leopard.web.mvc;
 
-import io.leopard.mock4j.MockRequest;
-import io.leopard.mock4j.MockResponse;
+import io.leopard.test4j.mock.MockRequest;
+import io.leopard.test4j.mock.MockResponse;
 
 import java.io.IOException;
 

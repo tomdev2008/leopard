@@ -1,7 +1,7 @@
 package io.leopard.web.userinfo;
 
-import io.leopard.mock4j.MockRequest;
-import io.leopard.mock4j.MockResponse;
+import io.leopard.test4j.mock.MockRequest;
+import io.leopard.test4j.mock.MockResponse;
 
 import org.junit.Assert;
 import org.junit.Test;

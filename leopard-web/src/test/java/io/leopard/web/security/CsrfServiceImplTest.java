@@ -1,8 +1,8 @@
 package io.leopard.web.security;
 
-import io.leopard.mock4j.MockRequest;
-import io.leopard.mock4j.MockResponse;
 import io.leopard.test4j.mock.LeopardMockito;
+import io.leopard.test4j.mock.MockRequest;
+import io.leopard.test4j.mock.MockResponse;
 import io.leopard.util.MonitorContext;
 import io.leopard.web.userinfo.service.ConfigHandler;
 

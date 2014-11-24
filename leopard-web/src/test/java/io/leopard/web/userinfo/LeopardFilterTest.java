@@ -1,9 +1,9 @@
 package io.leopard.web.userinfo;
 
 import io.leopard.ext.connectionlimit.ConnectionLimitDao;
-import io.leopard.mock4j.MockRequest;
-import io.leopard.mock4j.MockResponse;
 import io.leopard.test4j.mock.LeopardMockito;
+import io.leopard.test4j.mock.MockRequest;
+import io.leopard.test4j.mock.MockResponse;
 import io.leopard.topnb.LeopardWebTimeLog;
 import io.leopard.web.userinfo.service.ConfigHandler;
 import io.leopard.web.userinfo.service.UserinfoService;
