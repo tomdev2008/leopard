@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<import resource="classpath:/leopard/applicationContext.xml" />
+
+	<bean class="io.leopard.web.LeopardBeanPostProcessor" />
+	<bean class="io.leopard.web.LeopardEnvironment" />
+
+
+	<context:component-scan base-package="io.leopard.web.mvc.controller" />
+
+	<context:component-scan base-package="io.leopard.web4j.parameter" />
+	<context:component-scan base-package="io.leopard.web4j.validator" />
+
+	<context:component-scan base-package="io.leopard.web.userinfo.service" />
+	
+	<context:component-scan base-package="io.leopard.web4j.passport" />
+
+	<!-- 异常处理 -->
+	<bean class="io.leopard.web4j.trynb.LeopardMappingHandlerExceptionResolver" />
+	<bean class="io.leopard.web4j.trynb.ErrorPageHandlerImpl" />
+
+	<!-- app.properties加载 -->
+	<bean class="io.leopard.data.env.LeopardPropertyPlaceholderConfigurer" lazy-init="false" />
+
+	<!-- 用户信息封装 -->
+	<bean id="leopardFilter" class="io.leopard.web.userinfo.LeopardFilter" />
+
+
+	<!-- 拦截器 -->
+	<bean id="leopardHandlerInterceptor" class="io.leopard.web.interceptor.LeopardHandlerInterceptor" />
+
+	<context:component-scan base-package="io.leopard.web.interceptor" />
+
+	<bean id="csrfService" class="io.leopard.web.security.CsrfServiceImpl" />
+
+	<import resource="freemarker.xml" />
+
+	<bean class="io.leopard.web.mvc.LeopardHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="leopardHandlerInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<!-- 自定义数据类型 -->
+		<property name="converters">
+			<list>
+				<bean class="io.leopard.web.editor.converter.OnlyDateConverter" />
+				<bean class="io.leopard.web.editor.converter.MonthConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="leopardWebBindingInitializer" class="io.leopard.web.editor.LeopardWebBindingInitializer">
+		<property name="conversionService" ref="conversionService" />
+	</bean>
+
+	<bean class="io.leopard.web.mvc.method.LeopardRequestMappingHandlerAdapter">
+		<property name="webBindingInitializer" ref="leopardWebBindingInitializer" />
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<import resource="classpath*:/monitor.xml" />
+	<import resource="classpath*:/errorpage.xml" />
+
+	<import resource="classpath:/applicationContext.xml" />
+	<import resource="resources.xml" />
+
+</beans>
