@@ -25,6 +25,9 @@
 			<artifactId>leopard-data</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.leopard</groupId>
+			<artifactId>test4j-mock</artifactId>
+		</dependency>
 	</dependencies>
 </project>
