@@ -1,6 +1,6 @@
 package io.leopard.util;
 
-import io.leopard.mock4j.MockRequest;
+import io.leopard.test4j.mock.MockRequest;
 
 import org.junit.Assert;
 import org.junit.Test;
