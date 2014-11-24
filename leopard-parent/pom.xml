@@ -21,8 +21,12 @@
 				<artifactId>leopard-data</artifactId>
 				<version>${leopard.version}</version>
 			</dependency>
-			
-			
+			<dependency>
+				<groupId>io.leopard</groupId>
+				<artifactId>leopard-util</artifactId>
+				<version>${leopard.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>io.leopard</groupId>
 				<artifactId>leopard-test</artifactId>
