@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:leopard="http://www.leopard.io/schema/leopard"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.leopard.io/schema/leopard http://www.leopard.io/schema/leopard.xsd">
+	
+	<!-- dao模块测试入口文件 -->
+	<import resource="classpath:/leopard/applicationContext.xml" />
+	<import resource="classpath:/applicationContext-dao.xml" />
+	
+</beans>
