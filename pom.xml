@@ -11,33 +11,16 @@
 	<inceptionYear>2014</inceptionYear>
 
 	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>9</version>
+		<groupId>io.leopard.depend</groupId>
+		<artifactId>depend-oss</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
-	<licenses>
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-
 
 	<scm>
 		<url>https://github.com/tanhaichao/leopard</url>
 		<connection>scm:svn:https://github.com/tanhaichao/leopard/trunk</connection>
 		<developerConnection>scm:svn:https://github.com/tanhaichao/leopard/trunk</developerConnection>
 	</scm>
-
-	<developers>
-		<developer>
-			<id>tanhaichao</id>
-			<name>Tan Haichao</name>
-			<email>tanhaichao@gmail.com</email>
-		</developer>
-	</developers>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
