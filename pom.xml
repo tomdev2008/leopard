@@ -28,9 +28,6 @@
 	</issueManagement>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<leopard.version>0.0.1-SNAPSHOT</leopard.version>
 		<burrow.version>0.0.4-SNAPSHOT</burrow.version>
 		<test4j.version>0.0.4-SNAPSHOT</test4j.version>
