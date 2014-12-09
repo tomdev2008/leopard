@@ -19,21 +19,21 @@ public class MonitorContext {
 		return requestContext.get();
 	}
 
-	public static String getProxyIp() {
-		HttpServletRequest request = getRequest();
-		if (request == null) {
-			return null;
-		}
-		return RequestUtil.getProxyIp(request);
-	}
-
-	public static String getRequestUri() {
-		HttpServletRequest request = getRequest();
-		if (request == null) {
-			return null;
-		}
-		String uri = RequestUtil.getRequestContextUri(request);
-		return uri;
-	}
+	// public static String getProxyIp() {
+	// HttpServletRequest request = getRequest();
+	// if (request == null) {
+	// return null;
+	// }
+	// return RequestUtil.getProxyIp(request);
+	// }
+	//
+	// public static String getRequestUri() {
+	// HttpServletRequest request = getRequest();
+	// if (request == null) {
+	// return null;
+	// }
+	// String uri = RequestUtil.getRequestContextUri(request);
+	// return uri;
+	// }
 
 }

@@ -1,7 +1,6 @@
 package io.leopard.data;
 
 import io.leopard.log.Log4jFactory;
-import io.leopard.util.MonitorContext;
 
 import org.apache.commons.logging.Log;
 
@@ -13,22 +12,22 @@ public class ExternalAccessLog {
 
 	protected static Log externalAccessLogger = Log4jFactory.getExternalAccessLogger(ExternalAccessLog.class);
 
-	/**
-	 * 外部接口访问耗时日志.
-	 * 
-	 * @param millis
-	 *            毫秒数
-	 * @param interfaceName
-	 *            接口名称,如:UDB
-	 */
-	public static void debug(long millis, String interfaceName) {
-		String uri = MonitorContext.getRequestUri();
-		String proxyIp = MonitorContext.getProxyIp();
-		// if (StringUtils.isEmpty(uri)) {
-		//
-		// }
-		debug(proxyIp, millis, interfaceName, uri);
-	}
+	// /**
+	// * 外部接口访问耗时日志.
+	// *
+	// * @param millis
+	// * 毫秒数
+	// * @param interfaceName
+	// * 接口名称,如:UDB
+	// */
+	// public static void debug(long millis, String interfaceName) {
+	// String uri = MonitorContext.getRequestUri();
+	// String proxyIp = MonitorContext.getProxyIp();
+	// // if (StringUtils.isEmpty(uri)) {
+	// //
+	// // }
+	// debug(proxyIp, millis, interfaceName, uri);
+	// }
 
 	/**
 	 * 外部接口访问耗时日志.

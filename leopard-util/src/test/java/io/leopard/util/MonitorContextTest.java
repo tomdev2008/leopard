@@ -19,28 +19,28 @@ public class MonitorContextTest {
 		Assert.assertNotNull(MonitorContext.getRequest());
 	}
 
-	@Test
-	public void getProxyIp() {
-		MockRequest request = new MockRequest();
-		request.addHeader("X-Real-IP", "127.0.0.2");
-
-		MonitorContext.setRequest(request);
-		Assert.assertEquals("127.0.0.2", MonitorContext.getProxyIp());
-
-		MonitorContext.setRequest(null);
-		Assert.assertNull(MonitorContext.getProxyIp());
-	}
-
-	@Test
-	public void getRequestUri() {
-		MockRequest request = new MockRequest();
-		request.setRequestURI("/index.do");
-
-		MonitorContext.setRequest(request);
-		Assert.assertEquals("/index.do", MonitorContext.getRequestUri());
-
-		MonitorContext.setRequest(null);
-		Assert.assertNull(MonitorContext.getRequestUri());
-	}
+	// @Test
+	// public void getProxyIp() {
+	// MockRequest request = new MockRequest();
+	// request.addHeader("X-Real-IP", "127.0.0.2");
+	//
+	// MonitorContext.setRequest(request);
+	// Assert.assertEquals("127.0.0.2", MonitorContext.getProxyIp());
+	//
+	// MonitorContext.setRequest(null);
+	// Assert.assertNull(MonitorContext.getProxyIp());
+	// }
+	//
+	// @Test
+	// public void getRequestUri() {
+	// MockRequest request = new MockRequest();
+	// request.setRequestURI("/index.do");
+	//
+	// MonitorContext.setRequest(request);
+	// Assert.assertEquals("/index.do", MonitorContext.getRequestUri());
+	//
+	// MonitorContext.setRequest(null);
+	// Assert.assertNull(MonitorContext.getRequestUri());
+	// }
 
 }

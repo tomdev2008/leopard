@@ -1,8 +1,8 @@
 package io.leopard.web.userinfo.service;
 
 import io.leopard.commons.utility.ListUtil;
+import io.leopard.web.mvc.util.RequestUtil;
 import io.leopard.web.userinfo.UriListChecker;
-import io.leopard.web.userinfo.util.RequestUtil;
 import io.leopard.web4j.passport.LoginBox;
 import io.leopard.web4j.passport.PassportUser;
 import io.leopard.web4j.passport.PassportValidateDao;

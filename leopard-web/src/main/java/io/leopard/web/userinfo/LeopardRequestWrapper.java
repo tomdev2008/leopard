@@ -1,7 +1,7 @@
 package io.leopard.web.userinfo;
 
 import io.leopard.burrow.lang.Json;
-import io.leopard.util.RequestUtil;
+import io.leopard.web.mvc.util.RequestUtil;
 import io.leopard.web.security.xss.XssAttributeCheckUtil;
 import io.leopard.web.security.xss.XssAttributeData;
 import io.leopard.web.security.xss.XssException;

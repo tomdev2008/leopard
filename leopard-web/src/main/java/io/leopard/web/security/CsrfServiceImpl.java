@@ -2,9 +2,9 @@ package io.leopard.web.security;
 
 import io.leopard.commons.utility.EncryptUtil;
 import io.leopard.core.context.ContextImpl;
-import io.leopard.util.RequestUtil;
 import io.leopard.web.annotation.Csrf;
 import io.leopard.web.annotation.NoReferer;
+import io.leopard.web.mvc.util.RequestUtil;
 import io.leopard.web.userinfo.service.ConfigHandler;
 import io.leopard.web4j.admin.dao.AdminLoginServiceImpl;
 import io.leopard.web4j.passport.SessionUtil;
