@@ -15,7 +15,7 @@ public class LeopardNamespaceHandler extends NamespaceHandlerSupport {
 		registerBeanDefinitionParser("memcache", new MemcacheBeanDefinitionParser());
 
 		registerBeanDefinitionParser("component-scan", new ComponentScanBeanDefinitionParser());
-		registerBeanDefinitionParser("timer-scan", new TimerScanBeanDefinitionParser());
+		// registerBeanDefinitionParser("timer-scan", new TimerScanBeanDefinitionParser());
 		// registerBeanDefinitionParser("connection-limit", new ConnectionLimitBeanDefinitionParser());
 		registerBeanDefinitionParser("mysql-dsn", new MysqlDsnBeanDefinitionParser());
 		registerBeanDefinitionParser("redis-dsn", new RedisDsnBeanDefinitionParser());
@@ -29,6 +29,8 @@ public class LeopardNamespaceHandler extends NamespaceHandlerSupport {
 		// registerBeanDefinitionParser("env", new EnvBeanDefinitionParser());
 
 		registerBeanDefinitionParser("tx", new TxBeanDefinitionParser());
+
+		registerParser("timer-scan", "io.leopard.schema.TimerScanBeanDefinitionParser");
 
 		registerParser("connection-limit", "io.leopard.schema.ConnectionLimitBeanDefinitionParser");
 		registerParser("config", "io.leopard.schema.ConfigBeanDefinitionParser");
