@@ -1,8 +1,8 @@
 package io.leopard.monitor.forecast;
 
-import io.leopard.context.LeopardBeanFactoryAware;
 import io.leopard.data4j.memcache.MemcacheRedisImpl;
 import io.leopard.data4j.redis.Redis;
+import io.leopard.data4j.schema.LeopardBeanFactoryAware;
 
 import org.springframework.beans.factory.BeanFactory;
 

@@ -1,5 +1,7 @@
 package io.leopard.context;
 
+import io.leopard.data4j.context.LeopardDefaultListableBeanFactory;
+
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.web.context.support.XmlWebApplicationContext;

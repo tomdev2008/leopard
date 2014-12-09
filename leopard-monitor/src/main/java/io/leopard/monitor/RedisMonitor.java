@@ -2,9 +2,9 @@ package io.leopard.monitor;
 
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.commons.utility.ListUtil;
-import io.leopard.context.LeopardBeanFactoryAware;
 import io.leopard.data4j.redis.Redis;
 import io.leopard.data4j.redis.RedisImpl;
+import io.leopard.data4j.schema.LeopardBeanFactoryAware;
 import io.leopard.monitor.alarm.AlarmModule;
 import io.leopard.monitor.alarm.AlarmService;
 import io.leopard.schema.model.MonitorConfig;

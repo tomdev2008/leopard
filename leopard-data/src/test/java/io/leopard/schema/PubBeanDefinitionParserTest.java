@@ -1,6 +1,7 @@
 package io.leopard.schema;
 
 import io.leopard.data.pub.PubSubRsyncImpl;
+import io.leopard.data4j.schema.ElementImpl;
 
 import org.junit.Assert;
 import org.junit.Test;

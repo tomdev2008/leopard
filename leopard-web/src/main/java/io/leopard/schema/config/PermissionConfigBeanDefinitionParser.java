@@ -1,6 +1,6 @@
 package io.leopard.schema.config;
 
-import io.leopard.schema.BeanDefinitionParserUtil;
+import io.leopard.data4j.schema.BeanDefinitionParserUtil;
 import io.leopard.web4j.permission.PermissionDaoCacheImpl;
 import io.leopard.web4j.permission.PermissionDaoMemoryImpl;
 import io.leopard.web4j.permission.PermissionDaoMysqlImpl;

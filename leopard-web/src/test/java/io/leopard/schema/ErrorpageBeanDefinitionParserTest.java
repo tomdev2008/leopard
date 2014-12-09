@@ -1,5 +1,6 @@
 package io.leopard.schema;
 
+import io.leopard.data4j.schema.ElementImpl;
 import io.leopard.web4j.trynb.ErrorConfig;
 import io.leopard.web4j.trynb.ExceptionConfig;
 

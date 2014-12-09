@@ -1,6 +1,6 @@
 package io.leopard.web;
 
-import io.leopard.schema.BeanDefinitionParserUtil;
+import io.leopard.data4j.schema.BeanDefinitionParserUtil;
 import io.leopard.test4j.mock.LeopardMockRunner;
 import io.leopard.web.userinfo.service.ConfigHandler;
 

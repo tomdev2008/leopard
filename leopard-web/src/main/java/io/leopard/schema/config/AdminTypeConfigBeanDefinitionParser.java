@@ -1,7 +1,7 @@
 package io.leopard.schema.config;
 
-import io.leopard.schema.BeanDefinitionParserUtil;
-import io.leopard.schema.BeanDefinitionParserUtil.DoParser;
+import io.leopard.data4j.schema.BeanDefinitionParserUtil;
+import io.leopard.data4j.schema.BeanDefinitionParserUtil.DoParser;
 import io.leopard.web4j.admin.dao.AdminLoginDaoMysqlImpl;
 import io.leopard.web4j.admin.dao.AdminLoginServiceImpl;
 import io.leopard.web4j.admin.dao.SystemAdminServiceImpl;

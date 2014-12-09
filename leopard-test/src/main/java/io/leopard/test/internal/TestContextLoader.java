@@ -1,7 +1,7 @@
 package io.leopard.test.internal;
 
 import io.leopard.commons.utility.ArrayUtil;
-import io.leopard.context.LeopardClassPathXmlApplicationContext;
+import io.leopard.data4j.context.LeopardClassPathXmlApplicationContext;
 import io.leopard.test.di.DaoApplicationContext;
 import io.leopard.test.hosts.DnsConfig;
 
