@@ -38,20 +38,20 @@ public class ParameterControllerTest extends MockTests {
 	// Assert.assertEquals("IE", map.get("userAgent"));
 	// }
 
-	@Test
-	public void json() {
-		JsonView jsonView = parameterController.json("uri", "IE", 1, false);
-		@SuppressWarnings("unchecked")
-		Map<String, Object> map = (Map<String, Object>) jsonView.getData();
-		Assert.assertEquals("IE", map.get("userAgent"));
-		try {
-			parameterController.json("uri", "IE", 1, true);
-			Assert.fail("怎没没有抛异常?");
-		}
-		catch (StatusCodeException e) {
-
-		}
-	}
+	// @Test
+	// public void json() {
+	// JsonView jsonView = parameterController.json("uri", "IE", 1, false);
+	// @SuppressWarnings("unchecked")
+	// Map<String, Object> map = (Map<String, Object>) jsonView.getData();
+	// Assert.assertEquals("IE", map.get("userAgent"));
+	// try {
+	// parameterController.json("uri", "IE", 1, true);
+	// Assert.fail("怎没没有抛异常?");
+	// }
+	// catch (StatusCodeException e) {
+	//
+	// }
+	// }
 
 	@Test
 	public void pagingJson() {

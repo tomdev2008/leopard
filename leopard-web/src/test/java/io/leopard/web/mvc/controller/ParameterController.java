@@ -3,18 +3,12 @@ package io.leopard.web.mvc.controller;
 import io.leopard.burrow.lang.datatype.Month;
 import io.leopard.burrow.lang.datatype.OnlyDate;
 import io.leopard.commons.utility.Resin;
-import io.leopard.core.exception.StatusCodeException;
-import io.leopard.core.exception.invalid.UsernameInvalidException;
-import io.leopard.core.exception.notfound.UserNotFoundException;
-import io.leopard.web.mvc.method.Catch;
 import io.leopard.web4j.captcha.CaptchaView;
 import io.leopard.web4j.passport.SessionUtil;
 import io.leopard.web4j.servlet.CookieUtil;
-import io.leopard.web4j.view.JsonView;
 import io.leopard.web4j.view.PagingJsonView;
 import io.leopard.web4j.view.TextView;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,21 +49,21 @@ public class ParameterController {
 	// return new JsonpView(map);
 	// }
 
-	@RequestMapping(value = "/test/json.do")
-	@Catch(code598 = UsernameInvalidException.class, code404 = UserNotFoundException.class)
-	public JsonView json(String requestUri, String userAgent, int pageId, Boolean exception) {
-		if (exception) {
-			throw new StatusCodeException("-100", "异常测试.", "异常测试.");
-		}
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("requestUri", requestUri);
-		map.put("userAgent", userAgent);
-		map.put("pageId", pageId);
-		map.put("time", new Date());
-		// map.put("username", "hctan");
-		// map.put("nickname", "ahai");
-		return new JsonView(map);
-	}
+	// @RequestMapping(value = "/test/json.do")
+	// @Catch(code598 = UsernameInvalidException.class, code404 = UserNotFoundException.class)
+	// public JsonView json(String requestUri, String userAgent, int pageId, Boolean exception) {
+	// if (exception) {
+	// throw new StatusCodeException("-100", "异常测试.", "异常测试.");
+	// }
+	// Map<String, Object> map = new HashMap<String, Object>();
+	// map.put("requestUri", requestUri);
+	// map.put("userAgent", userAgent);
+	// map.put("pageId", pageId);
+	// map.put("time", new Date());
+	// // map.put("username", "hctan");
+	// // map.put("nickname", "ahai");
+	// return new JsonView(map);
+	// }
 
 	@RequestMapping(value = "/test/pagingJson.do")
 	public PagingJsonView pagingJson(String requestUri, String userAgent, int pageId) {
