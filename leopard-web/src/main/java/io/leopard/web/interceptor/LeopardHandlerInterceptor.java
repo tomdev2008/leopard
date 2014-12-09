@@ -25,7 +25,7 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
+		System.err.println("pageDelayInterceptor:" + pageDelayInterceptor);
 		if (pageDelayInterceptor != null) {
 			pageDelayInterceptor.preHandle(request, response, handler);
 		}
