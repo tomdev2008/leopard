@@ -226,7 +226,7 @@
 				<version>${top4j.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>io.leopard</groupId>
+				<groupId>io.leopard.data4j</groupId>
 				<artifactId>data4j-all</artifactId>
 				<version>${data4j.version}</version>
 			</dependency>

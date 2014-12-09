@@ -1,7 +1,7 @@
 package io.leopard.schema.config;
 
 import io.leopard.schema.BeanDefinitionParserUtil;
-import io.leopard.web.editor.LeopardWebBindingInitializer;
+import io.leopard.web4j.editor.LeopardWebBindingInitializer;
 
 import org.springframework.beans.factory.xml.ParserContext;
 

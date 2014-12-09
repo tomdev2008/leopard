@@ -12,6 +12,7 @@ import org.springframework.beans.factory.xml.ParserContext;
 import org.w3c.dom.Element;
 
 public class BeanDefinitionParserUtil {
+	
 
 	public static BeanDefinition createBean(ParserContext parserContext, final String beanId, final Class<?> beanClass) {
 		final boolean enabledInitMethod = true;

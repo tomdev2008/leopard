@@ -122,9 +122,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.leopard</groupId>
+			<groupId>io.leopard.data4j</groupId>
 			<artifactId>data4j-all</artifactId>
 		</dependency>
-		
+
 	</dependencies>
 </project>

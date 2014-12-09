@@ -6,6 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class LeopardClassPathXmlApplicationContext extends ClassPathXmlApplicationContext {
 
+	
+	
 	public LeopardClassPathXmlApplicationContext(String... configLocations) throws BeansException {
 		super(configLocations);
 	}
