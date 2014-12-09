@@ -1,7 +1,7 @@
 package io.leopard.schema;
 
 import io.leopard.data4j.schema.LeopardAnnotationBeanNameGenerator;
-import io.leopard.timer.TimerServiceImpl;
+import io.leopard.web.timer.TimerServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
