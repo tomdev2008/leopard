@@ -1,4 +1,4 @@
-package io.leopard.schema.model;
+package io.leopard.schema.config;
 
 public class ConfigSchema {
 

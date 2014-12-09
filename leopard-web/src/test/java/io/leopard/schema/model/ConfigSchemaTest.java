@@ -1,5 +1,6 @@
 package io.leopard.schema.model;
 
+import io.leopard.schema.config.ConfigSchema;
 import io.leopard.test4j.mock.BeanAssert;
 
 import org.junit.Test;

@@ -2,9 +2,9 @@ package io.leopard.schema;
 
 import io.leopard.commons.utility.ClassUtil;
 import io.leopard.commons.utility.StringUtil;
+import io.leopard.schema.config.ConfigSchema;
 import io.leopard.schema.config.IConfigBeanDefinitionParser;
 import io.leopard.schema.config.PermissionConfigBeanDefinitionParser;
-import io.leopard.schema.model.ConfigSchema;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
