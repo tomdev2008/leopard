@@ -15,33 +15,33 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 	private PageDelayInterceptor pageDelayInterceptor;
 
 	@Autowired(required = false)
-	private IInterceptor csrfInterceptor;
+	private CsrfInterceptor csrfInterceptor;
 	@Autowired(required = false)
-	private IInterceptor monitorPermissionInterceptor;
+	private MonitorPermissionInterceptor monitorPermissionInterceptor;
 
 	@Autowired(required = false)
-	private IInterceptor webservicePermissionInterceptor;
+	private WebservicePermissionInterceptor webservicePermissionInterceptor;
 	@Autowired(required = false)
-	private IInterceptor connectionLimitInterceptor;
+	private ConnectionLimitInterceptor connectionLimitInterceptor;
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		String requestUri = RequestUtil.getRequestContextUri(request);
 
 		if (pageDelayInterceptor != null) {
-			pageDelayInterceptor.preHandle(requestUri, request, response, handler);
+			pageDelayInterceptor.preHandle(request, response, handler);
 		}
 		if (connectionLimitInterceptor != null) {
-			connectionLimitInterceptor.preHandle(requestUri, request, response, handler);
+			connectionLimitInterceptor.preHandle(request, response, handler);
 		}
 		if (csrfInterceptor != null) {
-			csrfInterceptor.preHandle(requestUri, request, response, handler);
+			csrfInterceptor.preHandle(request, response, handler);
 		}
 		if (monitorPermissionInterceptor != null) {
-			monitorPermissionInterceptor.preHandle(requestUri, request, response, handler);
+			monitorPermissionInterceptor.preHandle(request, response, handler);
 		}
 		if (webservicePermissionInterceptor != null) {
-			webservicePermissionInterceptor.preHandle(requestUri, request, response, handler);
+			webservicePermissionInterceptor.preHandle(request, response, handler);
 		}
 		return true;
 	}

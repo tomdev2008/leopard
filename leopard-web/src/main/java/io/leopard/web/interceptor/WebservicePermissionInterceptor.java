@@ -13,9 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
 
 @Component
-public class WebservicePermissionInterceptor implements IInterceptor {
+public class WebservicePermissionInterceptor implements HandlerInterceptor {
 
 	@Autowired(required = false)
 	private PermissionService permissionService;
@@ -29,18 +31,17 @@ public class WebservicePermissionInterceptor implements IInterceptor {
 	}
 
 	@Override
-	public void preHandle(String requestUri, HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		// String requestUri = RequestUtil.getRequestContextUri(request);
-		// System.err.println("preHandle:" + requestUri);
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+		String requestUri = RequestUtil.getRequestContextUri(request);
 		if (!requestUri.startsWith("/webservice/")) {
-			return;
+			return true;
 		}
 		// TODO ahai 这里要判断类型？
 		HandlerMethod handlerMethod = (HandlerMethod) handler;
 		boolean hasPermission = this.hasPermission(handlerMethod);
 		if (!hasPermission) {
 			// 不检查权限.
-			return;
+			return true;
 		}
 
 		// proxyIp = "192.168.1.1";
@@ -48,6 +49,7 @@ public class WebservicePermissionInterceptor implements IInterceptor {
 			String proxyIp = RequestUtil.getProxyIp(request);
 			permissionService.checkPermission(requestUri, proxyIp);
 		}
+		return true;
 	}
 
 	protected boolean hasPermission(HandlerMethod handlerMethod) {
@@ -58,6 +60,18 @@ public class WebservicePermissionInterceptor implements IInterceptor {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+		// TODO Auto-generated method stub
+
 	}
 
 }

@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
 
 @Component
-public class MonitorPermissionInterceptor implements IInterceptor {
+public class MonitorPermissionInterceptor implements HandlerInterceptor {
 
 	@Autowired(required = false)
 	private PermissionService permissionService;
@@ -27,19 +29,32 @@ public class MonitorPermissionInterceptor implements IInterceptor {
 	}
 
 	@Override
-	public void preHandle(String requestUri, HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		// String requestUri = RequestUtil.getRequestContextUri(request);
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+		String requestUri = RequestUtil.getRequestContextUri(request);
 		if (!requestUri.startsWith("/monitor/")) {
-			return;
+			return true;
 		}
 		if (MONITOR_IGNORE_SET.contains(requestUri)) {
-			return;
+			return true;
 		}
 		// proxyIp = "127.0.0.2";
 		if (permissionService != null) {
 			String proxyIp = RequestUtil.getProxyIp(request);
 			permissionService.checkMonitorServer(proxyIp);
 		}
+		return true;
+	}
+
+	@Override
+	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+		// TODO Auto-generated method stub
+
 	}
 
 }
