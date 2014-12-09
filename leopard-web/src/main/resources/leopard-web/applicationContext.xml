@@ -29,11 +29,8 @@
 
 	<!-- 拦截器 -->
 	<bean id="leopardHandlerInterceptor" class="io.leopard.web.interceptor.LeopardHandlerInterceptor" />
-
 	<context:component-scan base-package="io.leopard.web.interceptor" />
-
 	<bean id="csrfService" class="io.leopard.web.security.CsrfServiceImpl" />
-
 	<import resource="freemarker.xml" />
 
 	<bean class="io.leopard.web.mvc.LeopardHandlerMapping">
