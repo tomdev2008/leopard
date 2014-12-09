@@ -34,7 +34,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextClass</param-name>
-		<param-value>io.leopard.context.LeopardXmlWebApplicationContext</param-value>
+		<param-value>io.leopard.web.LeopardXmlWebApplicationContext</param-value>
 	</context-param>
 
 
