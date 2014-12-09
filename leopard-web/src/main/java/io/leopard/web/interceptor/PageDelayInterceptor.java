@@ -43,20 +43,20 @@ public class PageDelayInterceptor implements HandlerInterceptor {
 		return false;
 	}
 
-	private static IInterceptor customInterceptor = null;
-
-	public static void setCustomInterceptor(IInterceptor customInterceptor) {
-		PageDelayInterceptor.customInterceptor = customInterceptor;
-	}
+	// private static IInterceptor customInterceptor = null;
+	//
+	// public static void setCustomInterceptor(IInterceptor customInterceptor) {
+	// PageDelayInterceptor.customInterceptor = customInterceptor;
+	// }
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		String requestUri = RequestUtil.getRequestContextUri(request);
-		if (customInterceptor != null) {
-			customInterceptor.preHandle(requestUri, request, response, handler);
-			return true;
-		}
-		else if (!delayOn) {
+		// if (customInterceptor != null) {
+		// customInterceptor.preHandle(requestUri, request, response, handler);
+		// return true;
+		// }
+		if (!delayOn) {
 			return true;
 		}
 		if (isIgnoreUri(requestUri)) {

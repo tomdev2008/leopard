@@ -1,7 +1,5 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.web4j.view.RequestUtil;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,6 +14,7 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 
 	@Autowired(required = false)
 	private CsrfInterceptor csrfInterceptor;
+
 	@Autowired(required = false)
 	private MonitorPermissionInterceptor monitorPermissionInterceptor;
 
@@ -26,7 +25,6 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		String requestUri = RequestUtil.getRequestContextUri(request);
 
 		if (pageDelayInterceptor != null) {
 			pageDelayInterceptor.preHandle(request, response, handler);
