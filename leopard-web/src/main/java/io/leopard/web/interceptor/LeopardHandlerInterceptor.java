@@ -1,6 +1,6 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.web.mvc.util.RequestUtil;
+import io.leopard.web4j.view.RequestUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

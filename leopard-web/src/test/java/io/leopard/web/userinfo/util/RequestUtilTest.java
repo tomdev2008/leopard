@@ -1,7 +1,7 @@
 package io.leopard.web.userinfo.util;
 
 import io.leopard.test.mock.MockTests;
-import io.leopard.web.mvc.util.RequestUtil;
+import io.leopard.web4j.view.RequestUtil;
 
 import javax.servlet.http.Cookie;
 

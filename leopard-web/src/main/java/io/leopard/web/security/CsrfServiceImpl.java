@@ -4,7 +4,6 @@ import io.leopard.commons.utility.EncryptUtil;
 import io.leopard.core.context.ContextImpl;
 import io.leopard.web.annotation.Csrf;
 import io.leopard.web.annotation.NoReferer;
-import io.leopard.web.mvc.util.RequestUtil;
 import io.leopard.web.userinfo.service.ConfigHandler;
 import io.leopard.web4j.admin.dao.AdminLoginServiceImpl;
 import io.leopard.web4j.passport.SessionUtil;
@@ -12,6 +11,7 @@ import io.leopard.web4j.servlet.CookieUtil;
 import io.leopard.web4j.trynb.ErrorUtil;
 import io.leopard.web4j.view.JsonView;
 import io.leopard.web4j.view.LocationView;
+import io.leopard.web4j.view.RequestUtil;
 import io.leopard.web4j.view.UpdatedRedirectView;
 
 import java.lang.reflect.Method;

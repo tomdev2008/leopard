@@ -5,7 +5,6 @@ import io.leopard.util.Clocker;
 import io.leopard.util.MonitorContext;
 import io.leopard.util.avgtime.AvgTime;
 import io.leopard.web.interceptor.ConnectionLimitInterceptor;
-import io.leopard.web.mvc.util.RequestUtil;
 import io.leopard.web.security.CsrfUtil;
 import io.leopard.web.userinfo.service.ConfigHandler;
 import io.leopard.web.userinfo.service.SkipFilterService;
@@ -14,6 +13,7 @@ import io.leopard.web4j.admin.dao.AdminLoginService;
 import io.leopard.web4j.admin.dao.AdminLoginServiceImpl;
 import io.leopard.web4j.proxy.ResinProxy;
 import io.leopard.web4j.session.SessionService;
+import io.leopard.web4j.view.RequestUtil;
 
 import java.io.IOException;
 
