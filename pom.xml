@@ -202,6 +202,7 @@
 				<artifactId>burrow-lang</artifactId>
 				<version>${burrow.version}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>io.leopard</groupId>
 				<artifactId>test4j-jetty</artifactId>
@@ -216,57 +217,7 @@
 			</dependency>
 			<dependency>
 				<groupId>io.leopard</groupId>
-				<artifactId>web4j-view</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>web4j-trynb</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>web4j-session</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>web4j-passport</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>web4j-parameter</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>web4j-validator</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>web4j-proxy</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>web4j-admin</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>web4j-permission</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
 				<artifactId>web4j-all</artifactId>
-				<version>${web4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>web4j-taglib</artifactId>
 				<version>${web4j.version}</version>
 			</dependency>
 			<dependency>
@@ -276,32 +227,7 @@
 			</dependency>
 			<dependency>
 				<groupId>io.leopard</groupId>
-				<artifactId>data4j-jdbc</artifactId>
-				<version>${data4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>data4j-memcache</artifactId>
-				<version>${data4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>data4j-redis</artifactId>
-				<version>${data4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>data4j-memdb</artifactId>
-				<version>${data4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>data4j-cache</artifactId>
-				<version>${data4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>data4j-schema</artifactId>
+				<artifactId>data4j-all</artifactId>
 				<version>${data4j.version}</version>
 			</dependency>
 			<!-- leopard end -->

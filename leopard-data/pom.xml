@@ -123,27 +123,8 @@
 
 		<dependency>
 			<groupId>io.leopard</groupId>
-			<artifactId>data4j-jdbc</artifactId>
+			<artifactId>data4j-all</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>data4j-memcache</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>data4j-redis</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>data4j-memdb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>data4j-cache</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>data4j-schema</artifactId>
-		</dependency>
+		
 	</dependencies>
 </project>
