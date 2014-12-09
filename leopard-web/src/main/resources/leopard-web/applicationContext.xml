@@ -51,7 +51,7 @@
 		</property>
 	</bean>
 
-	<bean id="leopardWebBindingInitializer" class="io.leopard.web.editor.LeopardWebBindingInitializer">
+	<bean id="leopardWebBindingInitializer" class="io.leopard.web4j.editor.LeopardWebBindingInitializer">
 		<property name="conversionService" ref="conversionService" />
 	</bean>
 
