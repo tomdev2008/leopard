@@ -9,8 +9,6 @@ import io.leopard.web.security.CsrfUtil;
 import io.leopard.web.userinfo.service.ConfigHandler;
 import io.leopard.web.userinfo.service.SkipFilterService;
 import io.leopard.web.userinfo.service.UserinfoService;
-import io.leopard.web4j.admin.dao.AdminLoginService;
-import io.leopard.web4j.admin.dao.AdminLoginServiceImpl;
 import io.leopard.web4j.proxy.ResinProxy;
 import io.leopard.web4j.session.SessionService;
 import io.leopard.web4j.view.RequestUtil;
@@ -21,7 +19,6 @@ import javax.annotation.Resource;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -39,8 +36,8 @@ public class LeopardFilter implements Filter {
 	@Resource
 	private ConfigHandler loginHandler;
 
-	@Autowired(required = false)
-	protected AdminLoginService adminLoginService;
+	// @Autowired(required = false)
+	// protected AdminService adminService;
 
 	@Autowired(required = false)
 	protected SessionService sessionService;
@@ -114,12 +111,12 @@ public class LeopardFilter implements Filter {
 			return;
 		}
 		// System.err.println("adminLoginService2:" + adminLoginService);
-		if (adminLoginService != null) {
-			boolean success = adminLoginService.doFilter(httpRequestWraper, response);
-			if (!success) {
-				return;
-			}
-		}
+		// if (adminService != null) {
+		// boolean success = adminService.doFilter(httpRequestWraper, response);
+		// if (!success) {
+		// return;
+		// }
+		// }
 		LeopardWebTimeLog.stop();
 		chain.doFilter(httpRequestWraper, response);
 	}
@@ -141,36 +138,6 @@ public class LeopardFilter implements Filter {
 
 		ConnectionLimitInterceptor.setAccount(request, account);
 
-		return true;
-	}
-
-	/**
-	 * 登录中页面.
-	 * 
-	 * @param request
-	 * @param response
-	 * @return
-	 */
-	protected boolean loging(HttpServletRequest request, HttpServletResponse response) {
-		// String uri = request.getRequestURI();
-		if (adminLoginService != null) {
-			if (AdminLoginServiceImpl.isAdminFolder(request)) {
-				return false;
-			}
-		}
-		String uri = RequestUtil.getRequestContextUri(request);
-
-		if (uri.startsWith("/system/")) {
-			return false;
-		}
-
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/loging.do");
-		try {
-			requestDispatcher.forward(request, response);
-		}
-		catch (Exception e) {
-			throw new RuntimeException(e.getMessage(), e);
-		}
 		return true;
 	}
 

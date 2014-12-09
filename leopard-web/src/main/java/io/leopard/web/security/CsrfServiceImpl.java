@@ -5,7 +5,7 @@ import io.leopard.core.context.ContextImpl;
 import io.leopard.web.annotation.Csrf;
 import io.leopard.web.annotation.NoReferer;
 import io.leopard.web.userinfo.service.ConfigHandler;
-import io.leopard.web4j.admin.dao.AdminLoginServiceImpl;
+import io.leopard.web4j.admin.AdminHandlerInterceptor;
 import io.leopard.web4j.passport.SessionUtil;
 import io.leopard.web4j.servlet.CookieUtil;
 import io.leopard.web4j.trynb.ErrorUtil;
@@ -87,7 +87,7 @@ public class CsrfServiceImpl extends ContextImpl implements CsrfService {
 
 	@Override
 	public void check(HandlerMethod handlerMethod, HttpServletRequest request, HttpServletResponse response) {
-		boolean isAdminFolder = AdminLoginServiceImpl.isAdminFolder(request);
+		boolean isAdminFolder = AdminHandlerInterceptor.isAdminFolder(request);
 		if (isAdminFolder) {
 			checkAdminFolderReferer(handlerMethod, request);
 			return;
