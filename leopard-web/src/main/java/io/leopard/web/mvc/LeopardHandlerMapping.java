@@ -1,15 +1,28 @@
 package io.leopard.web.mvc;
 
+import io.leopard.commons.utility.ListUtil;
 import io.leopard.monitor.url.UrlInfoService;
 import io.leopard.topnb.PerformanceStackTraceService;
 import io.leopard.web.annotation.NoXss;
 import io.leopard.web.annotation.SkipFilter;
+import io.leopard.web.interceptor.CheckLoginInterceptor;
+import io.leopard.web.interceptor.ConnectionLimitInterceptor;
+import io.leopard.web.interceptor.CsrfInterceptor;
+import io.leopard.web.interceptor.MonitorPermissionInterceptor;
+import io.leopard.web.interceptor.PageDelayInterceptor;
+import io.leopard.web.interceptor.ProxyInterceptor;
+import io.leopard.web.interceptor.SkipFilterInterceptor;
+import io.leopard.web.interceptor.TimeLogInterceptor;
+import io.leopard.web.interceptor.WebservicePermissionInterceptor;
 import io.leopard.web.security.xss.XssAttributeData;
 import io.leopard.web.userinfo.service.SkipFilterService;
 import io.leopard.web4j.captcha.CaptchaGroup;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +32,7 @@ import org.springframework.core.ParameterNameDiscoverer;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.mvc.condition.ConsumesRequestCondition;
 import org.springframework.web.servlet.mvc.condition.HeadersRequestCondition;
 import org.springframework.web.servlet.mvc.condition.ParamsRequestCondition;
@@ -30,6 +44,53 @@ import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
+
+	@Autowired(required = false)
+	private ProxyInterceptor proxyInterceptor;
+
+	@Autowired(required = false)
+	private SkipFilterInterceptor skipFilterInterceptor;
+
+	@Autowired(required = false)
+	private TimeLogInterceptor timeLogInterceptor;
+
+	@Autowired(required = false)
+	private CheckLoginInterceptor checkLoginInterceptor;
+
+	@Autowired(required = false)
+	private PageDelayInterceptor pageDelayInterceptor;
+
+	@Autowired(required = false)
+	private CsrfInterceptor csrfInterceptor;
+
+	@Autowired(required = false)
+	private MonitorPermissionInterceptor monitorPermissionInterceptor;
+
+	@Autowired(required = false)
+	private WebservicePermissionInterceptor webservicePermissionInterceptor;
+	@Autowired(required = false)
+	private ConnectionLimitInterceptor connectionLimitInterceptor;
+
+	@PostConstruct
+	public void init() {
+		// 要注意顺序
+		List<HandlerInterceptor> list = new ArrayList<HandlerInterceptor>();
+		list.add(this.proxyInterceptor);
+		list.add(this.skipFilterInterceptor);
+		list.add(this.timeLogInterceptor);
+		list.add(this.checkLoginInterceptor);
+		list.add(this.pageDelayInterceptor);
+		list.add(this.csrfInterceptor);
+		list.add(this.monitorPermissionInterceptor);
+		list.add(this.webservicePermissionInterceptor);
+		list.add(this.connectionLimitInterceptor);
+
+		ListUtil.noNull(list);
+		Object[] interceptors = new Object[list.size()];
+		list.toArray(interceptors);
+		this.setInterceptors(interceptors);
+	}
+
 	@Autowired
 	private SkipFilterService skipFilterService;
 
@@ -90,16 +151,19 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 
 	// protected void checkRequestMapping(String uri, Method method) {
 	// Class<?> clazz = method.getDeclaringClass();
-	// RequestMapping requestMapping = clazz.getAnnotation(RequestMapping.class);
+	// RequestMapping requestMapping =
+	// clazz.getAnnotation(RequestMapping.class);
 	// if (requestMapping != null) {
 	// String[] values = requestMapping.value();
 	// String value = values[0];
 	// if (value.endsWith("/")) {
-	// throw new IllegalArgumentException(clazz.getName() + " 的@RequestMapping.value不能以/结尾.");
+	// throw new IllegalArgumentException(clazz.getName() +
+	// " 的@RequestMapping.value不能以/结尾.");
 	// }
 	// }
 	// // String message = clazz.getName() + "." + method.getName();
-	// throw new IllegalArgumentException("uri不符合规则[" + uri + "]clazz:" + clazz.getName());
+	// throw new IllegalArgumentException("uri不符合规则[" + uri + "]clazz:" +
+	// clazz.getName());
 	// }
 
 	@Override
@@ -130,7 +194,8 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 		if (className.startsWith("io.leopard")) {
 			return false;
 		}
-		// String uri = info.getPatternsCondition().getPatterns().iterator().next();
+		// String uri =
+		// info.getPatternsCondition().getPatterns().iterator().next();
 		if (uri.startsWith("/admin/")) {
 			return false;
 		}

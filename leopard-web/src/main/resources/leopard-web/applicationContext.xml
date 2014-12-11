@@ -33,13 +33,7 @@
 	<bean id="csrfService" class="io.leopard.web.security.CsrfServiceImpl" />
 	<import resource="freemarker.xml" />
 
-	<bean class="io.leopard.web.mvc.LeopardHandlerMapping">
-		<property name="interceptors">
-			<list>
-				<ref bean="leopardHandlerInterceptor" />
-			</list>
-		</property>
-	</bean>
+	<bean class="io.leopard.web.mvc.LeopardHandlerMapping" />
 
 	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<!-- 自定义数据类型 -->

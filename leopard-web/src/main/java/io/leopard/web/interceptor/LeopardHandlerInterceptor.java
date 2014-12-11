@@ -3,6 +3,10 @@ package io.leopard.web.interceptor;
 import io.leopard.topnb.TopnbBeanFactory;
 import io.leopard.topnb.service.PerformanceService;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -42,11 +46,33 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 	@Autowired(required = false)
 	private ConnectionLimitInterceptor connectionLimitInterceptor;
 
+	private List<HandlerInterceptor> list = new ArrayList<HandlerInterceptor>();
+
+	@PostConstruct
+	public void init() {
+		// 要注意顺序
+		list.add(this.proxyInterceptor);
+		list.add(this.skipFilterInterceptor);
+		list.add(this.timeLogInterceptor);
+		list.add(this.checkLoginInterceptor);
+		list.add(this.pageDelayInterceptor);
+		list.add(this.csrfInterceptor);
+		list.add(this.monitorPermissionInterceptor);
+		list.add(this.webservicePermissionInterceptor);
+		list.add(this.connectionLimitInterceptor);
+	}
+
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		long time = System.nanoTime();
 		TIME.set(time);
 
+		for (HandlerInterceptor interceptor : list) {
+			boolean result = pageDelayInterceptor.preHandle(request, response, handler);
+			if (!result) {
+				break;
+			}
+		}
 		// System.err.println("pageDelayInterceptor:" + pageDelayInterceptor);
 		if (pageDelayInterceptor != null) {
 			pageDelayInterceptor.preHandle(request, response, handler);
