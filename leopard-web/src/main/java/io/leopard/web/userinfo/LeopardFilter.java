@@ -1,6 +1,5 @@
 package io.leopard.web.userinfo;
 
-import io.leopard.util.MonitorContext;
 import io.leopard.web.userinfo.service.ConfigHandler;
 import io.leopard.web.userinfo.service.SkipFilterService;
 import io.leopard.web.userinfo.service.UserinfoService;
@@ -42,36 +41,11 @@ public class LeopardFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
-		MonitorContext.setRequest(request);// 按入口进行性能监控
-		// String uri = RequestUtil.getRequestContextUri(request);//
-		// request.getRequestURI();
 
 		HttpServletResponse response = (HttpServletResponse) res;
 		LeopardRequestWrapper httpRequestWraper = new LeopardRequestWrapper(request, response, sessionService);
 		chain.doFilter(httpRequestWraper, response);
 	}
-
-	//
-	// protected boolean checkLogin(HttpServletRequest request,
-	// HttpServletResponse response) {
-	// boolean isExcludeUri = userinfoService.isExcludeUri(request);
-	// CsrfUtil.setExcludeUri(request, isExcludeUri);
-	// // System.err.println("uri:" + RequestUtil.getRequestContextUri(request)
-	// // + " isExcludeUri:" + isExcludeUri);
-	// if (isExcludeUri) {
-	// return true;
-	// }
-	// Object account = userinfoService.login(request, response);
-	// if (account == null) {
-	// this.userinfoService.showLoginBox(request, response);
-	// // System.err.println("forwardLoginUrl:");
-	// return false;
-	// }
-	//
-	// ConnectionLimitInterceptor.setAccount(request, account);
-	//
-	// return true;
-	// }
 
 	@Override
 	public void destroy() {

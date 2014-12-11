@@ -3,7 +3,6 @@ package io.leopard.web.security;
 import io.leopard.test4j.mock.LeopardMockito;
 import io.leopard.test4j.mock.MockRequest;
 import io.leopard.test4j.mock.MockResponse;
-import io.leopard.util.MonitorContext;
 import io.leopard.web.userinfo.service.ConfigHandler;
 
 import javax.servlet.http.HttpServletRequest;
@@ -42,8 +41,10 @@ public class CsrfServiceImplTest {
 	//
 	// csrfService.checkToken(request, response);
 	//
-	// Mockito.doNothing().when(csrfService).checkTokenByYyuid(request, response, "token");
-	// Mockito.doNothing().when(csrfService).checkTokenByUsername(request, response, "token");
+	// Mockito.doNothing().when(csrfService).checkTokenByYyuid(request,
+	// response, "token");
+	// Mockito.doNothing().when(csrfService).checkTokenByUsername(request,
+	// response, "token");
 	// csrfService.checkToken(request, response, "token");
 	//
 	// Mockito.doReturn(true).when(loginHandler).isUseYyuid();
@@ -74,7 +75,6 @@ public class CsrfServiceImplTest {
 			LeopardMockito.setProperty(csrfService, loginHandler);
 
 			MockRequest request = new MockRequest();
-			MonitorContext.setRequest(request);
 			request.addParameter("csrf-token", "token");
 			csrfService.checkToken(request, response);
 
@@ -107,7 +107,8 @@ public class CsrfServiceImplTest {
 	// CsrfDao csrfDaoUsernameImpl = Mockito.mock(CsrfDao.class);
 	//
 	// CsrfServiceImpl csrfService = Mockito.spy(new CsrfServiceImpl());
-	// LeopardMockito.setProperty(csrfService, csrfDaoUsernameImpl, "csrfDaoUsernameImpl");
+	// LeopardMockito.setProperty(csrfService, csrfDaoUsernameImpl,
+	// "csrfDaoUsernameImpl");
 	// csrfService.checkTokenByUsername(request, response, "token");
 	//
 	// request.getSession().setAttribute("sessUsername", "hctan");
@@ -122,7 +123,8 @@ public class CsrfServiceImplTest {
 	// CsrfDao csrfDaoYyuidImpl = Mockito.mock(CsrfDao.class);
 	//
 	// CsrfServiceImpl csrfService = Mockito.spy(new CsrfServiceImpl());
-	// LeopardMockito.setProperty(csrfService, csrfDaoYyuidImpl, "csrfDaoYyuidImpl");
+	// LeopardMockito.setProperty(csrfService, csrfDaoYyuidImpl,
+	// "csrfDaoYyuidImpl");
 	// csrfService.checkTokenByYyuid(request, response, "token");
 	//
 	// request.getSession().setAttribute("sessYyuid", "1234");
