@@ -12,6 +12,7 @@ import io.leopard.web.interceptor.MonitorPermissionInterceptor;
 import io.leopard.web.interceptor.PageDelayInterceptor;
 import io.leopard.web.interceptor.ProxyInterceptor;
 import io.leopard.web.interceptor.SkipFilterInterceptor;
+import io.leopard.web.interceptor.TimeInterceptor;
 import io.leopard.web.interceptor.TimeLogInterceptor;
 import io.leopard.web.interceptor.WebservicePermissionInterceptor;
 import io.leopard.web.security.xss.XssAttributeData;
@@ -52,6 +53,9 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 	private SkipFilterInterceptor skipFilterInterceptor;
 
 	@Autowired(required = false)
+	private TimeInterceptor timeInterceptor;
+
+	@Autowired(required = false)
 	private TimeLogInterceptor timeLogInterceptor;
 
 	@Autowired(required = false)
@@ -77,6 +81,7 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 		List<HandlerInterceptor> list = new ArrayList<HandlerInterceptor>();
 		list.add(this.proxyInterceptor);
 		list.add(this.skipFilterInterceptor);
+		list.add(this.timeInterceptor);
 		list.add(this.timeLogInterceptor);
 		list.add(this.checkLoginInterceptor);
 		list.add(this.pageDelayInterceptor);
