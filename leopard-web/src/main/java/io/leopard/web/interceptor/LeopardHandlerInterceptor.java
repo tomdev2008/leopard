@@ -17,6 +17,18 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 	private static final ThreadLocal<Long> TIME = new ThreadLocal<Long>();
 
 	@Autowired(required = false)
+	private ProxyInterceptor proxyInterceptor;
+
+	@Autowired(required = false)
+	private SkipFilterInterceptor skipFilterInterceptor;
+
+	@Autowired(required = false)
+	private TimeLogInterceptor timeLogInterceptor;
+
+	@Autowired(required = false)
+	private CheckLoginInterceptor checkLoginInterceptor;
+
+	@Autowired(required = false)
 	private PageDelayInterceptor pageDelayInterceptor;
 
 	@Autowired(required = false)
