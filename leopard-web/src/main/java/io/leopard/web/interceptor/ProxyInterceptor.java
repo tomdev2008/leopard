@@ -27,7 +27,7 @@ public class ProxyInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		String requestUri = RequestUtil.getRequestContextUri(request);
-		System.err.println("ProxyInterceptor preHandle:" + requestUri);
+		// System.err.println("ProxyInterceptor preHandle:" + requestUri);
 		boolean proxy = ResinProxy.proxy(requestUri, request, response);
 		if (proxy) {
 			return false;

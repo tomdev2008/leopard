@@ -2,7 +2,6 @@ package io.leopard.web.interceptor;
 
 import io.leopard.web.security.CsrfUtil;
 import io.leopard.web.userinfo.service.UserinfoService;
-import io.leopard.web4j.view.RequestUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,8 +26,8 @@ public class CheckLoginInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-		String requestUri = RequestUtil.getRequestContextUri(request);
-		System.err.println("CheckLoginInterceptor preHandle:" + requestUri);
+		// String requestUri = RequestUtil.getRequestContextUri(request);
+		// System.err.println("CheckLoginInterceptor preHandle:" + requestUri);
 		boolean isExcludeUri = userinfoService.isExcludeUri(request);
 		CsrfUtil.setExcludeUri(request, isExcludeUri);
 		if (isExcludeUri) {
