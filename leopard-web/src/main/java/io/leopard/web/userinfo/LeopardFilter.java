@@ -54,69 +54,23 @@ public class LeopardFilter implements Filter {
 		String uri = RequestUtil.getRequestContextUri(request);// request.getRequestURI();
 
 		// 页面代理，实现访问指定resin机器.
-
 		{
 			boolean proxy = ResinProxy.proxy(uri, request, res);
 			if (proxy) {
 				return;
 			}
 		}
-
 		LeopardWebTimeLog.start();
-
-		// System.err.println("dotFilter:" + uri);
-
-		// logger.info("dotFilter:" + uri);
-
-		if (loginHandler.isEnableTimeLog()) {// 是否开启页面耗时日志,日志写在time.log
-			String queryString = request.getQueryString();
-			String url;
-			if (StringUtils.isNotEmpty(queryString)) {
-				url = uri + "?" + queryString;
-			}
-			else {
-				url = uri;
-			}
-			Clocker clocker = Clocker.start();
-			AvgTime avgTime = AvgTime.start(uri);// 平均耗时统计
-			this.doFilter2(req, res, chain);
-			avgTime.end();
-			clocker.log(url);
-		}
-		else {
-			this.doFilter2(req, res, chain);
-		}
-
-		// if (config) {
-		// RequestThreadInfo.removeEntryName();
-		// }
-
-	}
-
-	protected void doFilter2(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
-
-		String uri = RequestUtil.getRequestContextUri(request);
 
 		if (skipFilterService.isSkipFilter(uri)) {
 			chain.doFilter(req, res);
 			return;
 		}
-
-		// UserinfoUtil.checkXSS(request);
 		LeopardRequestWrapper httpRequestWraper = new LeopardRequestWrapper(request, response, sessionService);
-		// System.err.println("adminLoginService1:" + adminLoginService);
 		if (!this.checkLogin(httpRequestWraper, response)) {
 			return;
 		}
-		// System.err.println("adminLoginService2:" + adminLoginService);
-		// if (adminService != null) {
-		// boolean success = adminService.doFilter(httpRequestWraper, response);
-		// if (!success) {
-		// return;
-		// }
-		// }
 		LeopardWebTimeLog.stop();
 		chain.doFilter(httpRequestWraper, response);
 	}
