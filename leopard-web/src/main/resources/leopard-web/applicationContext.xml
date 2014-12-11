@@ -32,6 +32,7 @@
 	<bean class="io.leopard.web.mvc.LeopardHandlerMapping" />
 
 
+
 	<bean id="csrfService" class="io.leopard.web.security.CsrfServiceImpl" />
 	<import resource="freemarker.xml" />
 

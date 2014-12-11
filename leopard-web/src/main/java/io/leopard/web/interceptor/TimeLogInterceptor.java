@@ -27,6 +27,9 @@ public class TimeLogInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		String requestUri = RequestUtil.getRequestContextUri(request);
+
+		System.err.println("TimeLogInterceptor preHandle:" + requestUri);
+
 		if (!loginHandler.isEnableTimeLog()) {// 是否开启页面耗时日志,日志写在time.log
 			return true;
 		}

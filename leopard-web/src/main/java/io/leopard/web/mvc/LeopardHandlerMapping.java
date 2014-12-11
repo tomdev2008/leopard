@@ -21,9 +21,9 @@ import io.leopard.web4j.captcha.CaptchaGroup;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,8 +75,9 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 	@Autowired(required = false)
 	private ConnectionLimitInterceptor connectionLimitInterceptor;
 
-	@PostConstruct
-	public void init() {
+	@Override
+	protected void initApplicationContext() {
+		// System.err.println("LeopardHandlerMapping initApplicationContext.");
 		// 要注意顺序
 		List<HandlerInterceptor> list = new ArrayList<HandlerInterceptor>();
 		list.add(this.proxyInterceptor);
@@ -93,7 +94,11 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 		ListUtil.noNull(list);
 		Object[] interceptors = new Object[list.size()];
 		list.toArray(interceptors);
+
+		System.err.println("checkLoginInterceptor:" + Arrays.asList(interceptors));
 		this.setInterceptors(interceptors);
+
+		super.initApplicationContext();
 	}
 
 	@Autowired
