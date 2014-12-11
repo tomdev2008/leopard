@@ -59,7 +59,7 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 		long startTime = TIME.get();
 		long endTime = System.nanoTime();
 		long time = (endTime - startTime) / 1000L; // time 单位:微妙
-		String methodName = "io.leopard.web.userinfo.UserinfoFilter.doLeopardFilter";
+		String methodName = "io.leopard.web.interceptor.LeopardHandlerInterceptor.doHandle";
 		performanceService.add(methodName, time);
 	}
 
