@@ -1,6 +1,7 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.topnb.LeopardWebTimeLog;
+import io.leopard.topnb.TopnbBeanFactory;
+import io.leopard.topnb.service.PerformanceService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,10 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 public class LeopardHandlerInterceptor implements HandlerInterceptor {
+
+	private static final PerformanceService performanceService = TopnbBeanFactory.getPerformanceService();
+
+	private static final ThreadLocal<Long> TIME = new ThreadLocal<Long>();
 
 	@Autowired(required = false)
 	private PageDelayInterceptor pageDelayInterceptor;
@@ -27,7 +32,8 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		// LeopardWebTimeLog.start();
+		long time = System.nanoTime();
+		TIME.set(time);
 
 		// System.err.println("pageDelayInterceptor:" + pageDelayInterceptor);
 		if (pageDelayInterceptor != null) {
@@ -50,9 +56,11 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-		// System.err.println("postHandle:" + request.getRequestURI());
-
-		// LeopardWebTimeLog.stop();
+		long startTime = TIME.get();
+		long endTime = System.nanoTime();
+		long time = (endTime - startTime) / 1000L; // time 单位:微妙
+		String methodName = "io.leopard.web.userinfo.UserinfoFilter.doLeopardFilter";
+		performanceService.add(methodName, time);
 	}
 
 	@Override

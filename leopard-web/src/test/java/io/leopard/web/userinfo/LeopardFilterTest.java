@@ -88,35 +88,36 @@ public class LeopardFilterTest {
 	// filter.forwardLoginUrl(request, response);
 	// }
 
-	@Test
-	public void checkLogin() {
-		UserinfoService userinfoService = Mockito.mock(UserinfoService.class);
-
-		LeopardFilter filter = new LeopardFilter();
-		LeopardMockito.setProperty(filter, userinfoService);
-
-		MockRequest request = new MockRequest();
-		MockResponse response = new MockResponse();
-		Mockito.doReturn(true).when(userinfoService).isExcludeUri(request);
-		filter.checkLogin(request, response);
-
-		Mockito.doReturn(false).when(userinfoService).isExcludeUri(request);
-		filter.checkLogin(request, response);
-
-		filter.checkLogin(request, response);
-
-		Mockito.doReturn(null).when(userinfoService).login(request, response);
-		Assert.assertFalse(filter.checkLogin(request, response));
-
-		Mockito.doReturn("hctan").when(userinfoService).login(request, response);
-		Assert.assertTrue(filter.checkLogin(request, response));
-
-		ConnectionLimitDao connectionLimitDao = Mockito.mock(ConnectionLimitDao.class);
-		LeopardMockito.setProperty(filter, connectionLimitDao);
-
-		Assert.assertTrue(filter.checkLogin(request, response));
-
-	}
+	// @Test
+	// public void checkLogin() {
+	// UserinfoService userinfoService = Mockito.mock(UserinfoService.class);
+	//
+	// LeopardFilter filter = new LeopardFilter();
+	// LeopardMockito.setProperty(filter, userinfoService);
+	//
+	// MockRequest request = new MockRequest();
+	// MockResponse response = new MockResponse();
+	// Mockito.doReturn(true).when(userinfoService).isExcludeUri(request);
+	// filter.checkLogin(request, response);
+	//
+	// Mockito.doReturn(false).when(userinfoService).isExcludeUri(request);
+	// filter.checkLogin(request, response);
+	//
+	// filter.checkLogin(request, response);
+	//
+	// Mockito.doReturn(null).when(userinfoService).login(request, response);
+	// Assert.assertFalse(filter.checkLogin(request, response));
+	//
+	// Mockito.doReturn("hctan").when(userinfoService).login(request, response);
+	// Assert.assertTrue(filter.checkLogin(request, response));
+	//
+	// ConnectionLimitDao connectionLimitDao =
+	// Mockito.mock(ConnectionLimitDao.class);
+	// LeopardMockito.setProperty(filter, connectionLimitDao);
+	//
+	// Assert.assertTrue(filter.checkLogin(request, response));
+	//
+	// }
 
 	// @Test
 	// public void doFilter2() throws IOException, ServletException {
