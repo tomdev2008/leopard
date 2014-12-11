@@ -5,7 +5,6 @@ import io.leopard.web.security.xss.XssAttributeCheckUtil;
 import io.leopard.web.security.xss.XssAttributeData;
 import io.leopard.web.security.xss.XssException;
 import io.leopard.web.security.xss.XssUtil;
-import io.leopard.web4j.parameter.PageParameterUtil;
 import io.leopard.web4j.session.SessionService;
 import io.leopard.web4j.validator.ParameterValidator;
 import io.leopard.web4j.validator.ParameterValidatorUtil;
@@ -80,17 +79,9 @@ public class LeopardRequestWrapper extends HttpServletRequestWrapper {
 
 	@Override
 	public String[] getParameterValues(String name) {
-		String[] values;
-		if (PageParameterUtil.isSpecialName(name)) {
-			String value = PageParameterUtil.getParameterValues(request, response, name);
-			values = new String[] { value };
-		}
-		else {
-			// 当前不少特殊的参数名称，直接返回
-			values = super.getParameterValues(name);
-			if (values != null) {
-				this.checkXxxParameter(name, values);
-			}
+		String[] values = super.getParameterValues(name);
+		if (values != null) {
+			this.checkXxxParameter(name, values);
 		}
 
 		// if (values != null) {

@@ -3,7 +3,7 @@ package io.leopard.web;
 import io.leopard.commons.utility.SystemUtil;
 import io.leopard.core.StartService;
 import io.leopard.web4j.parameter.PageParameter;
-import io.leopard.web4j.parameter.PageParameterUtil;
+import io.leopard.web4j.resolver.SpeicalParameterHandlerMethodArgumentResolver;
 import io.leopard.web4j.validator.ParameterValidator;
 import io.leopard.web4j.validator.ParameterValidatorUtil;
 
@@ -31,7 +31,7 @@ public class LeopardBeanPostProcessor implements BeanPostProcessor {
 		}
 
 		if (bean instanceof PageParameter) {
-			PageParameterUtil.registerPageParameter((PageParameter) bean);
+			SpeicalParameterHandlerMethodArgumentResolver.registerPageParameter((PageParameter) bean);
 		}
 		if (bean instanceof ParameterValidator) {
 			ParameterValidatorUtil.registerParameterValidator((ParameterValidator) bean);

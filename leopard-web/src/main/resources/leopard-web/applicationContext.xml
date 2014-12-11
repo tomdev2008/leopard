@@ -50,11 +50,17 @@
 		<property name="conversionService" ref="conversionService" />
 	</bean>
 
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+	<bean class="io.leopard.web.mvc.LeopardRequestMappingHandlerAdapter">
 		<property name="webBindingInitializer" ref="leopardWebBindingInitializer" />
 		<property name="messageConverters">
 			<list>
 				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+
+		<property name="customArgumentResolvers">
+			<list>
+				<bean class="io.leopard.web4j.resolver.SpeicalParameterHandlerMethodArgumentResolver" />
 			</list>
 		</property>
 	</bean>
