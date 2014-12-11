@@ -1,5 +1,7 @@
 package io.leopard.web.interceptor;
 
+import io.leopard.topnb.LeopardWebTimeLog;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,6 +27,8 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+		// LeopardWebTimeLog.start();
+
 		// System.err.println("pageDelayInterceptor:" + pageDelayInterceptor);
 		if (pageDelayInterceptor != null) {
 			pageDelayInterceptor.preHandle(request, response, handler);
@@ -47,6 +51,8 @@ public class LeopardHandlerInterceptor implements HandlerInterceptor {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 		// System.err.println("postHandle:" + request.getRequestURI());
+
+		// LeopardWebTimeLog.stop();
 	}
 
 	@Override
