@@ -1,7 +1,7 @@
 package io.leopard.schema.config;
 
 import io.leopard.data4j.schema.BeanDefinitionParserUtil;
-import io.leopard.web.security.CsrfServiceImpl;
+import io.leopard.web4j.nobug.csrf.CsrfServiceImpl;
 
 import org.springframework.beans.factory.xml.ParserContext;
 

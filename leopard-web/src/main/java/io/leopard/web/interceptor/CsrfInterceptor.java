@@ -1,10 +1,10 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.web.security.CsrfService;
 import io.leopard.web.security.DomainWhiteListConfig;
 import io.leopard.web.security.RefererSecurityValidator;
 import io.leopard.web.security.xss.XssUtil;
 import io.leopard.web.userinfo.service.ConfigHandler;
+import io.leopard.web4j.nobug.csrf.CsrfService;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;

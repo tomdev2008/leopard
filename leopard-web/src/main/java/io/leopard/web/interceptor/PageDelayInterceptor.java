@@ -2,7 +2,7 @@ package io.leopard.web.interceptor;
 
 import io.leopard.commons.utility.NumberUtil;
 import io.leopard.commons.utility.SystemUtil;
-import io.leopard.web4j.view.RequestUtil;
+import io.leopard.web4j.servlet.RequestUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

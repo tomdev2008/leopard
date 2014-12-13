@@ -2,7 +2,7 @@ package io.leopard.web.interceptor;
 
 import io.leopard.web4j.permission.PermissionService;
 import io.leopard.web4j.permission.config.Permission;
-import io.leopard.web4j.view.RequestUtil;
+import io.leopard.web4j.servlet.RequestUtil;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,7 +1,7 @@
 package io.leopard.web.interceptor;
 
 import io.leopard.web.userinfo.service.SkipFilterService;
-import io.leopard.web4j.view.RequestUtil;
+import io.leopard.web4j.servlet.RequestUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -2,7 +2,7 @@ package io.leopard.schema.config;
 
 import io.leopard.data4j.schema.BeanDefinitionParserUtil;
 import io.leopard.data4j.schema.BeanDefinitionParserUtil.DoParser;
-import io.leopard.web.security.DomainWhiteListConfigImpl;
+import io.leopard.web4j.nobug.csrf.DomainWhiteListConfigImpl;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;

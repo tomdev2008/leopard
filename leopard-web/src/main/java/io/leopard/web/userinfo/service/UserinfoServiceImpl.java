@@ -6,7 +6,7 @@ import io.leopard.web4j.passport.LoginBox;
 import io.leopard.web4j.passport.PassportUser;
 import io.leopard.web4j.passport.PassportValidateDao;
 import io.leopard.web4j.passport.SessionUtil;
-import io.leopard.web4j.view.RequestUtil;
+import io.leopard.web4j.servlet.RequestUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
