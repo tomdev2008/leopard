@@ -33,7 +33,7 @@
 
 
 
-	<bean id="csrfService" class="io.leopard.web.security.CsrfServiceImpl" />
+	<bean id="csrfService" class="io.leopard.web4j.nobug.csrf.CsrfServiceImpl" />
 	<import resource="freemarker.xml" />
 
 
