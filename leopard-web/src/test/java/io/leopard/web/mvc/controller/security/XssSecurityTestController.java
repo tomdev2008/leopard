@@ -2,7 +2,7 @@ package io.leopard.web.mvc.controller.security;
 
 import io.leopard.burrow.lang.Json;
 import io.leopard.commons.utility.StringUtil;
-import io.leopard.web.annotation.NoXss;
+import io.leopard.web4j.nobug.annotation.NoXss;
 import io.leopard.web4j.view.HtmlView;
 
 import org.apache.commons.lang.StringUtils;

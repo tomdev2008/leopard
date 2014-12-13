@@ -1,10 +1,10 @@
 package io.leopard.web.userinfo;
 
 import io.leopard.burrow.lang.Json;
-import io.leopard.web.security.xss.XssAttributeCheckUtil;
-import io.leopard.web.security.xss.XssAttributeData;
-import io.leopard.web.security.xss.XssException;
-import io.leopard.web.security.xss.XssUtil;
+import io.leopard.web4j.nobug.xss.XssAttributeCheckUtil;
+import io.leopard.web4j.nobug.xss.XssAttributeData;
+import io.leopard.web4j.nobug.xss.XssException;
+import io.leopard.web4j.nobug.xss.XssUtil;
 import io.leopard.web4j.servlet.RequestUtil;
 import io.leopard.web4j.session.SessionService;
 import io.leopard.web4j.validator.ParameterValidator;

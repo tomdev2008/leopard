@@ -1,7 +1,7 @@
 package io.leopard.schema.config;
 
 import io.leopard.data4j.schema.BeanDefinitionParserUtil;
-import io.leopard.web.security.xss.XssUtil;
+import io.leopard.web4j.nobug.xss.XssUtil;
 
 import org.springframework.beans.factory.xml.ParserContext;
 
