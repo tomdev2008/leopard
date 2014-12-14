@@ -49,7 +49,7 @@ public class UserinfoServiceImplTest {
 		UserinfoServiceImpl userinfoService = new UserinfoServiceImpl();
 		UriListChecker excludeLoginUriListChecker = Mockito.mock(UriListChecker.class);
 
-		userinfoService.setExcludeLoginUriListChecker(excludeLoginUriListChecker);
+		userinfoService.excludeLoginUriListChecker = excludeLoginUriListChecker;
 
 		MockHttpServletRequest request = new MockHttpServletRequest();
 

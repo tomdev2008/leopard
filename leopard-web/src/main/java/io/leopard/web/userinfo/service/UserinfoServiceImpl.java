@@ -52,23 +52,15 @@ public class UserinfoServiceImpl implements UserinfoService {
 	@Resource
 	private LoginBox loginBox;
 
-	private UriListChecker excludeLoginUriListChecker;// 忽略登录的URL列表
-
-	protected void setExcludeLoginUriListChecker(UriListChecker excludeLoginUriListChecker) {
-		this.excludeLoginUriListChecker = excludeLoginUriListChecker;
-	}
+	protected UriListChecker excludeLoginUriListChecker;// 忽略登录的URL列表
 
 	@PostConstruct
 	public void init() {
-		excludeLoginUriListChecker = new UriListChecker(this.getExcludeUris(loginHandler));
-	}
-
-	protected List<String> getExcludeUris(ConfigHandler loginHandler) {
 		List<String> excludeUris = loginHandler.getExcludeUris();
 		excludeUris = ListUtil.defaultList(excludeUris);
 
 		excludeUris.addAll(EXCLUDE_URI_LIST);
-		return excludeUris;
+		excludeLoginUriListChecker = new UriListChecker(excludeUris);
 	}
 
 	@Override
@@ -101,7 +93,11 @@ public class UserinfoServiceImpl implements UserinfoService {
 		PassportUser user = SessionUtil.getUserinfo(request.getSession());
 		if (user == null) {
 			if (passportValidateDao != null) {
-				user = this.validateAndCache(request, response);
+				// user = this.validateAndCache(request, response);
+				user = passportValidateDao.validate(request, response);
+				if (user != null) {
+					SessionUtil.setUserinfo(request, user);
+				}
 			}
 			if (user == null) {
 				return null;
@@ -110,12 +106,12 @@ public class UserinfoServiceImpl implements UserinfoService {
 		return user.getUid();
 	}
 
-	protected PassportUser validateAndCache(HttpServletRequest request, HttpServletResponse response) {
-		PassportUser user = passportValidateDao.validate(request, response);
-		if (user == null) {
-			return null;
-		}
-		SessionUtil.setUserinfo(request, user);
-		return user;
-	}
+	// protected PassportUser validateAndCache(HttpServletRequest request, HttpServletResponse response) {
+	// PassportUser user = passportValidateDao.validate(request, response);
+	// if (user == null) {
+	// return null;
+	// }
+	// SessionUtil.setUserinfo(request, user);
+	// return user;
+	// }
 }
