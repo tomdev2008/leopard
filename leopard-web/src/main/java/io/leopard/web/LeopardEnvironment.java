@@ -4,7 +4,7 @@ import io.leopard.data4j.schema.BeanDefinitionParserUtil;
 import io.leopard.monitor.forecast.ForecastDaoRedisImpl;
 import io.leopard.monitor.forecast.ForecastServiceImpl;
 import io.leopard.monitor.forecast.ForecastUtil;
-import io.leopard.web.userinfo.service.ConfigHandler;
+import io.leopard.web.userinfo.ConfigHandler;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;

@@ -1,4 +1,4 @@
-package io.leopard.web.userinfo.service;
+package io.leopard.web.userinfo;
 
 public interface SkipFilterService {
 

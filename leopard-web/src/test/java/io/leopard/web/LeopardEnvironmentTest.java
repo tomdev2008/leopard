@@ -2,7 +2,7 @@ package io.leopard.web;
 
 import io.leopard.data4j.schema.BeanDefinitionParserUtil;
 import io.leopard.test4j.mock.LeopardMockRunner;
-import io.leopard.web.userinfo.service.ConfigHandler;
+import io.leopard.web.userinfo.ConfigHandler;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

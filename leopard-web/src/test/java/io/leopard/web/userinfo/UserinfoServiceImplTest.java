@@ -5,9 +5,11 @@
  * Created : 04/16/2013
  */
 
-package io.leopard.web.userinfo.service;
+package io.leopard.web.userinfo;
 
+import io.leopard.web.userinfo.ConfigHandler;
 import io.leopard.web.userinfo.UriListChecker;
+import io.leopard.web.userinfo.UserinfoServiceImpl;
 
 import org.junit.Assert;
 import org.junit.Test;

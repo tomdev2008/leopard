@@ -1,6 +1,6 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.web.userinfo.service.UserinfoService;
+import io.leopard.web.userinfo.UserinfoService;
 import io.leopard.web4j.nobug.csrf.CsrfUtil;
 
 import javax.servlet.http.HttpServletRequest;

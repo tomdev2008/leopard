@@ -4,8 +4,6 @@ import io.leopard.ext.connectionlimit.ConnectionLimitDao;
 import io.leopard.test4j.mock.LeopardMockito;
 import io.leopard.test4j.mock.MockRequest;
 import io.leopard.test4j.mock.MockResponse;
-import io.leopard.web.userinfo.service.ConfigHandler;
-import io.leopard.web.userinfo.service.UserinfoService;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package io.leopard.web.userinfo.service;
+package io.leopard.web.userinfo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

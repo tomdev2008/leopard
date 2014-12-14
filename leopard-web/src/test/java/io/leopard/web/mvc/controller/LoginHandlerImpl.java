@@ -1,6 +1,6 @@
 package io.leopard.web.mvc.controller;
 
-import io.leopard.web.userinfo.service.ConfigHandler;
+import io.leopard.web.userinfo.ConfigHandler;
 
 import java.util.ArrayList;
 import java.util.List;

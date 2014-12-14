@@ -13,7 +13,7 @@ import io.leopard.web.interceptor.SkipFilterInterceptor;
 import io.leopard.web.interceptor.TimeInterceptor;
 import io.leopard.web.interceptor.TimeLogInterceptor;
 import io.leopard.web.interceptor.WebservicePermissionInterceptor;
-import io.leopard.web.userinfo.service.SkipFilterService;
+import io.leopard.web.userinfo.SkipFilterService;
 import io.leopard.web4j.captcha.CaptchaGroup;
 import io.leopard.web4j.nobug.annotation.NoXss;
 import io.leopard.web4j.nobug.annotation.SkipFilter;

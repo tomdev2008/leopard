@@ -2,8 +2,8 @@ package io.leopard.web.interceptor;
 
 import io.leopard.commons.utility.ListUtil;
 import io.leopard.ext.connectionlimit.ConnectionLimitDao;
+import io.leopard.web.userinfo.ConfigHandler;
 import io.leopard.web.userinfo.UriListChecker;
-import io.leopard.web.userinfo.service.ConfigHandler;
 import io.leopard.web4j.servlet.RequestUtil;
 
 import java.util.List;

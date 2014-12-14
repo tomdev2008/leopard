@@ -1,6 +1,7 @@
-package io.leopard.web.userinfo.service;
+package io.leopard.web.userinfo;
 
 import io.leopard.test.mock.MockTests;
+import io.leopard.web.userinfo.ConfigHandler;
 
 import org.junit.Assert;
 import org.junit.Test;

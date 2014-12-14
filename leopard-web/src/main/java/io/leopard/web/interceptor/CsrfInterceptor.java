@@ -1,6 +1,6 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.web.userinfo.service.ConfigHandler;
+import io.leopard.web.userinfo.ConfigHandler;
 import io.leopard.web4j.nobug.DomainWhiteListConfig;
 import io.leopard.web4j.nobug.RefererSecurityValidator;
 import io.leopard.web4j.nobug.csrf.CsrfService;
