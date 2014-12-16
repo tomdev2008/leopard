@@ -1,7 +1,6 @@
 package io.leopard.test.mock.template;
 
 import io.leopard.data4j.cache.api.IGet;
-import io.leopard.reflect.CtClassUtil;
 import io.leopard.test.mock.reflect.Tson;
 
 import java.lang.reflect.Method;

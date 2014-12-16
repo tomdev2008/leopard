@@ -3,7 +3,6 @@ package io.leopard.test.mock.template;
 import io.leopard.commons.utility.ObjectUtil;
 import io.leopard.data4j.cache.api.IDelete;
 import io.leopard.data4j.cache.api.IGet;
-import io.leopard.reflect.CtClassUtil;
 import io.leopard.test.CustomBeanUtil;
 import io.leopard.test.mock.Mock;
 import io.leopard.test.mock.reflect.MethodUtil;

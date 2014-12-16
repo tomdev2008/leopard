@@ -1,6 +1,5 @@
 package io.leopard.test.mock.template;
 
-import io.leopard.reflect.CtClassUtil;
 import io.leopard.test.mock.Mock;
 import io.leopard.test.mock.reflect.Tson;
 
