@@ -1,4 +1,4 @@
-package io.leopard.core;
+package io.leopard.web;
 
 /**
  * 系统启动时做的初始化操作.

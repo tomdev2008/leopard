@@ -1,7 +1,6 @@
 package io.leopard.web;
 
 import io.leopard.commons.utility.SystemUtil;
-import io.leopard.core.StartService;
 import io.leopard.web4j.parameter.PageParameter;
 import io.leopard.web4j.resolver.SpeicalParameterHandlerMethodArgumentResolver;
 import io.leopard.web4j.validator.ParameterValidator;
@@ -22,6 +21,7 @@ public class LeopardBeanPostProcessor implements BeanPostProcessor {
 
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+
 		if (bean instanceof StartService) {
 			if (SystemUtil.isNotWindows()) {
 				logger.info("StartService 开始执行.");
