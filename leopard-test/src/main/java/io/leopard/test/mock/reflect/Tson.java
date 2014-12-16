@@ -8,8 +8,8 @@ import io.leopard.burrow.refect.FieldUtil;
 import io.leopard.commons.utility.BeanUtil;
 import io.leopard.commons.utility.DateTime;
 import io.leopard.commons.utility.DateUtil;
+import io.leopard.test.CustomBeanUtil;
 import io.leopard.util.ClassTypeUtil;
-import io.leopard.util.CustomBeanUtil;
 
 import java.lang.reflect.Field;
 import java.util.AbstractMap.SimpleEntry;

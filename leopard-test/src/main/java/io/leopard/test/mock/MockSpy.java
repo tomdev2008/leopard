@@ -2,9 +2,9 @@ package io.leopard.test.mock;
 
 import io.leopard.burrow.refect.FieldUtil;
 import io.leopard.core.exception.NoSuchFieldRuntimeException;
+import io.leopard.test.CustomBeanUtil;
 import io.leopard.test.mock.internal.Mocker;
 import io.leopard.test.mock.reflect.InstanceUtil;
-import io.leopard.util.CustomBeanUtil;
 
 import java.lang.reflect.Field;
 import java.util.Date;

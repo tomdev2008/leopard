@@ -1,4 +1,4 @@
-package io.leopard.util;
+package io.leopard.test;
 
 public class CustomBeanUtil {
 

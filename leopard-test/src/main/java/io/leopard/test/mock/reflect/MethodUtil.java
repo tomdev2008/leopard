@@ -4,8 +4,8 @@ import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.refect.FieldUtil;
 import io.leopard.commons.utility.ArrayUtil;
 import io.leopard.core.inum.Inum;
+import io.leopard.test.CustomBeanUtil;
 import io.leopard.util.ClassTypeUtil;
-import io.leopard.util.CustomBeanUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

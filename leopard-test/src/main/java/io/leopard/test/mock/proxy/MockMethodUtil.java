@@ -1,7 +1,7 @@
 package io.leopard.test.mock.proxy;
 
+import io.leopard.test.CustomBeanUtil;
 import io.leopard.util.ClassTypeUtil;
-import io.leopard.util.CustomBeanUtil;
 
 import java.lang.reflect.Method;
 import java.util.Date;

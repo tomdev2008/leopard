@@ -4,12 +4,12 @@ import io.leopard.commons.utility.ObjectUtil;
 import io.leopard.data4j.cache.api.IDelete;
 import io.leopard.data4j.cache.api.IGet;
 import io.leopard.reflect.CtClassUtil;
+import io.leopard.test.CustomBeanUtil;
 import io.leopard.test.mock.Mock;
 import io.leopard.test.mock.reflect.MethodUtil;
 import io.leopard.test.mock.reflect.ModelInstanceUtil;
 import io.leopard.test.mock.reflect.Tson;
 import io.leopard.util.ClassTypeUtil;
-import io.leopard.util.CustomBeanUtil;
 
 import java.lang.reflect.Method;
 import java.util.Date;

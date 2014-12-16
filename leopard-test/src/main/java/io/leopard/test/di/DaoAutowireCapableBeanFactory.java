@@ -6,7 +6,7 @@ import io.leopard.commons.utility.ClassUtil;
 import io.leopard.commons.utility.StringUtil;
 import io.leopard.data4j.jdbc.Jdbc;
 import io.leopard.data4j.redis.Redis;
-import io.leopard.util.CustomBeanUtil;
+import io.leopard.test.CustomBeanUtil;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
