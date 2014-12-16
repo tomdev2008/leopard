@@ -6,12 +6,11 @@ import javax.annotation.PreDestroy;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class ContextImpl implements Context {
+public class ContextImpl {
 	protected Log logger = LogFactory.getLog(this.getClass());
 	private Log beanLogger = LogFactory.getLog("BEANLOG." + this.getClass().getName());
 
 	@PostConstruct
-	@Override
 	public void init() {
 		beanLogger.info("init");
 		// try {
@@ -26,7 +25,6 @@ public class ContextImpl implements Context {
 	}
 
 	@PreDestroy
-	@Override
 	public void destroy() {
 		beanLogger.info("destroy");
 	}

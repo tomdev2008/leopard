@@ -1,12 +1,11 @@
 package io.leopard.data.pub;
 
-import io.leopard.core.context.Context;
 import io.leopard.data4j.memdb.MemdbRsyncQueue;
 import io.leopard.data4j.memdb.MemdbRsyncService;
 import io.leopard.data4j.memdb.MemdbRsyncServiceRedisImpl;
 import io.leopard.data4j.redis.Redis;
 
-public abstract class PubSubRsyncImpl implements IPubSub, MemdbRsyncQueue, Context {
+public abstract class PubSubRsyncImpl implements IPubSub, MemdbRsyncQueue {
 
 	protected MemdbRsyncService memdbRsyncService;
 
@@ -18,13 +17,11 @@ public abstract class PubSubRsyncImpl implements IPubSub, MemdbRsyncQueue, Conte
 		this.channel = channel;
 	}
 
-	@Override
 	public void init() {
 		memdbRsyncService = new MemdbRsyncServiceRedisImpl(redis, channel, this);
 		memdbRsyncService.init();
 	}
 
-	@Override
 	public void destroy() {
 		memdbRsyncService.destroy();
 	}
