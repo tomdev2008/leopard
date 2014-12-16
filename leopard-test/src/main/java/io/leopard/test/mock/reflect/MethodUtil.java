@@ -1,9 +1,9 @@
 package io.leopard.test.mock.reflect;
 
 import io.leopard.burrow.lang.AssertUtil;
+import io.leopard.burrow.lang.inum.Inum;
 import io.leopard.burrow.refect.FieldUtil;
 import io.leopard.commons.utility.ArrayUtil;
-import io.leopard.core.inum.Inum;
 import io.leopard.test.CustomBeanUtil;
 import io.leopard.util.ClassTypeUtil;
 

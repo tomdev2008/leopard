@@ -1,6 +1,6 @@
 package io.leopard.util.avgtime;
 
-import io.leopard.core.inum.Inum;
+import io.leopard.burrow.lang.inum.Inum;
 
 public enum Type implements Inum {
 	TEN(1, "1分钟"),

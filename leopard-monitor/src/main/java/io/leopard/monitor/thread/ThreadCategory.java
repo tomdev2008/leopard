@@ -1,6 +1,6 @@
 package io.leopard.monitor.thread;
 
-import io.leopard.core.inum.Inum;
+import io.leopard.burrow.lang.inum.Inum;
 
 public enum ThreadCategory implements Inum {
 	CONNECTION(90, "网络连接"), DAO(80, "Dao"), SERVICE(70, "Service"), TIMER(60, "定时器"), UNKNOWN(50, "未知");

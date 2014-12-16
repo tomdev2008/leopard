@@ -1,6 +1,6 @@
 package io.leopard.test.mock.reflect;
 
-import io.leopard.core.inum.Inum;
+import io.leopard.burrow.lang.inum.Inum;
 import io.leopard.test4j.mock.LeopardMockRunner;
 
 import java.lang.reflect.Method;

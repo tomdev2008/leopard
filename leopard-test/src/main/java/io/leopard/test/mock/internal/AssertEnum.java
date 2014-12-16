@@ -1,6 +1,6 @@
 package io.leopard.test.mock.internal;
 
-import io.leopard.core.inum.Onum;
+import io.leopard.burrow.lang.inum.Onum;
 import io.leopard.test.mock.reflect.MethodUtil;
 
 import java.lang.reflect.Method;
