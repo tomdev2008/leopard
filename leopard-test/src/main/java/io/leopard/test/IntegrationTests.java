@@ -2,7 +2,7 @@ package io.leopard.test;
 
 import io.leopard.data.env.EnvUtil;
 import io.leopard.test.internal.TestContextLoader;
-import io.leopard.test.mock.DefaultParameter;
+import io.leopard.test4j.mock.DefaultParameter;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

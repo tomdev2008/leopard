@@ -1,5 +1,6 @@
 package io.leopard.test.mock;
 
+import io.leopard.test4j.mock.DefaultParameter;
 import io.leopard.test4j.mock.LeopardMockRunner;
 
 import org.junit.runner.RunWith;
