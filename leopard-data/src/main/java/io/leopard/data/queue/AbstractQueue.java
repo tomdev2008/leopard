@@ -1,6 +1,7 @@
 package io.leopard.data.queue;
 
-import io.leopard.core.context.ContextImpl;
+import io.leopard.burrow.lang.ContextImpl;
+
 
 public abstract class AbstractQueue extends ContextImpl implements Queue {
 	protected String server;

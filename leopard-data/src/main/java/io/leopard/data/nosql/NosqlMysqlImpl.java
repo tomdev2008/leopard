@@ -1,6 +1,6 @@
 package io.leopard.data.nosql;
 
-import io.leopard.core.context.ContextImpl;
+import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.data4j.jdbc.Jdbc;
 import io.leopard.data4j.jdbc.StatementParameter;
 

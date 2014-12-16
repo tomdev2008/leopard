@@ -6,8 +6,6 @@ import io.leopard.burrow.lang.Json.JsonException;
 import io.leopard.commons.utility.AssertData;
 import io.leopard.commons.utility.ClassUtil;
 import io.leopard.commons.utility.DateTime;
-//import io.leopard.commons.utility.HttpUtils;
-//import io.leopard.commons.utility.HttpsUtils;
 import io.leopard.core.exception.StatusCodeException;
 
 import java.lang.reflect.Field;
@@ -19,6 +17,8 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+//import io.leopard.commons.utility.HttpUtils;
+//import io.leopard.commons.utility.HttpsUtils;
 
 public class RpcClient {
 	private static Log logger = LogFactory.getLog(RpcClient.class);

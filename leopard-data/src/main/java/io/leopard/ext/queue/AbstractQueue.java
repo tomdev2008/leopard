@@ -1,9 +1,9 @@
 package io.leopard.ext.queue;
 
+import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.burrow.lang.Json;
 import io.leopard.commons.utility.GenericUtil;
 import io.leopard.commons.utility.NumberUtil;
-import io.leopard.core.context.ContextImpl;
 
 import org.apache.commons.lang.StringUtils;
 

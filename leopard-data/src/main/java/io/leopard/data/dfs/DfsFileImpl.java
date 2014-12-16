@@ -1,6 +1,6 @@
 package io.leopard.data.dfs;
 
-import io.leopard.core.context.ContextImpl;
+import io.leopard.burrow.lang.ContextImpl;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,7 +1,7 @@
 package io.leopard.data.mongo;
 
+import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.burrow.refect.FieldUtil;
-import io.leopard.core.context.ContextImpl;
 
 import java.lang.reflect.Field;
 import java.net.UnknownHostException;
