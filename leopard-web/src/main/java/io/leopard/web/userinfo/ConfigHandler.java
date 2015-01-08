@@ -87,40 +87,10 @@ public class ConfigHandler {
 
 	public ConfigHandler() {
 		{
+			// FIXME ahai IP写死了
 			List<String> list = new ArrayList<String>();
 
 			list.add("127.0.0.1");
-			list.add("113.106.251.82");
-			list.add("113.108.232.34");
-			list.add("183.60.177.226");
-			list.add("58.248.138.4");
-			list.add("58.248.138.5");
-			list.add("58.248.138.6");
-
-			// 50
-			list.add("113.108.232.33");
-			list.add("113.108.232.34");
-			list.add("113.108.232.35");
-			list.add("113.108.232.36");
-			list.add("113.108.232.37");
-			list.add("113.108.232.38");
-			list.add("113.108.232.39");
-			list.add("113.108.232.40");
-			list.add("113.108.232.41");
-			list.add("113.108.232.42");
-			list.add("113.108.232.43");
-			list.add("113.108.232.44");
-			list.add("113.108.232.45");
-			list.add("113.108.232.46");
-
-			// VPN
-			list.add("113.108.232.34");
-			list.add("183.60.177.226");
-			list.add("183.60.177.227");
-			list.add("183.60.177.228");
-			list.add("183.60.177.229");
-			list.add("183.60.177.234");
-			list.add("58.248.138.4");
 
 			// IP段
 			list.add("172.17");
@@ -132,21 +102,8 @@ public class ConfigHandler {
 				this.monitorAllowIp.addIp(ip);
 			}
 
-			this.monitorAllowIp.addIp("113.108.228.153");
-			this.monitorAllowIp.addIp("58.248.181.25");
-			this.monitorAllowIp.addIp("125.90.88.108");
-			this.monitorAllowIp.addIp("221.5.47.108");
-
-			this.monitorAllowIp.addIp("113.106.251.82");
-			this.monitorAllowIp.addIp("113.108.232.34");
 			this.monitorAllowIp.addIp("127.0.0.1");
 
-			this.monitorAllowIp.addIp("121.14.39.243");
-			this.monitorAllowIp.addIp("58.249.113.115");
-			this.monitorAllowIp.addIp("58.215.138.28");
-			this.monitorAllowIp.addIp("122.97.250.28");
-
-			// 121.14.39.243
 		}
 
 	}
