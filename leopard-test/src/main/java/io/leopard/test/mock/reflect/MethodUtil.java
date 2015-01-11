@@ -1,7 +1,6 @@
 package io.leopard.test.mock.reflect;
 
 import io.leopard.burrow.lang.AssertUtil;
-import io.leopard.burrow.lang.inum.Inum;
 import io.leopard.burrow.refect.FieldUtil;
 import io.leopard.commons.utility.ArrayUtil;
 import io.leopard.test.CustomBeanUtil;
@@ -367,9 +366,9 @@ public class MethodUtil {
 		if (interfaces.length == 0) {
 			throw new RuntimeException("枚举[" + clazz.getName() + "]没有实现Onum?");
 		}
-		if (interfaces[0].equals(Inum.class)) {
-			return Integer.class.getName();
-		}
+		// if (interfaces[0].equals(Inum.class)) {
+		// return Integer.class.getName();
+		// }
 		throw new RuntimeException("未知枚举类型[" + interfaces[0].getName() + "].");
 	}
 
