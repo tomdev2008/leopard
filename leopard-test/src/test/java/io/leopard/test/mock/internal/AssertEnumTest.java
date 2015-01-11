@@ -1,12 +1,10 @@
 package io.leopard.test.mock.internal;
 
-import io.leopard.burrow.lang.inum.Inum;
-
 import org.junit.Test;
 
 public class AssertEnumTest {
 
-	public static enum Type implements Inum {
+	public static enum Type {
 		ALL(0, "all");
 		private int key;
 		private String desc;
@@ -16,12 +14,12 @@ public class AssertEnumTest {
 			this.desc = desc;
 		}
 
-		@Override
+		// @Override
 		public Integer getKey() {
 			return key;
 		}
 
-		@Override
+		// @Override
 		public String getDesc() {
 			return desc;
 		}

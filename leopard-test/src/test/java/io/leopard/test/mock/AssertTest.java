@@ -1,6 +1,5 @@
 package io.leopard.test.mock;
 
-import io.leopard.burrow.lang.inum.Inum;
 import io.leopard.commons.utility.DateUtil;
 import io.leopard.commons.utility.ListUtil;
 import io.leopard.data4j.cache.api.IGet;
@@ -237,7 +236,7 @@ public class AssertTest {
 		// Mock.verifyStatic(AssertAllModel.class, "assertAllModels");
 	}
 
-	public static enum Type implements Inum {
+	public static enum Type {
 		ALL(0, "desc");
 		private int key;
 		private String desc;
@@ -247,12 +246,12 @@ public class AssertTest {
 			this.desc = desc;
 		}
 
-		@Override
+		// @Override
 		public Integer getKey() {
 			return key;
 		}
 
-		@Override
+		// @Override
 		public String getDesc() {
 			return desc;
 		}

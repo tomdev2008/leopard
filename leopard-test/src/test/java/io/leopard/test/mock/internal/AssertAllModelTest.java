@@ -1,6 +1,5 @@
 package io.leopard.test.mock.internal;
 
-import io.leopard.burrow.lang.inum.Inum;
 import io.leopard.test.mock.reflect.PackageUtil;
 import io.leopard.test4j.mock.LeopardMockRunner;
 
@@ -80,7 +79,7 @@ public class AssertAllModelTest {
 		}
 	}
 
-	public static enum Type implements Inum {
+	public static enum Type {
 		ALL(0, "all");
 
 		private int key;
@@ -91,12 +90,12 @@ public class AssertAllModelTest {
 			this.desc = desc;
 		}
 
-		@Override
+		// @Override
 		public Integer getKey() {
 			return key;
 		}
 
-		@Override
+		// @Override
 		public String getDesc() {
 			return desc;
 		}

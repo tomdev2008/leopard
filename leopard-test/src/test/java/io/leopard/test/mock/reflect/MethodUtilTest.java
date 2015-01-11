@@ -1,6 +1,5 @@
 package io.leopard.test.mock.reflect;
 
-import io.leopard.burrow.lang.inum.Inum;
 import io.leopard.test4j.mock.LeopardMockRunner;
 
 import java.lang.reflect.Method;
@@ -193,16 +192,15 @@ public class MethodUtilTest {
 
 	}
 
-	public static enum TestEnum implements Inum {
+	public static enum TestEnum {
 		;
-
-		@Override
+		// @Override
 		public Integer getKey() {
 
 			return null;
 		}
 
-		@Override
+		// @Override
 		public String getDesc() {
 
 			return null;
