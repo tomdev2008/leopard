@@ -1,8 +1,6 @@
 package io.leopard.util.avgtime;
 
-import io.leopard.burrow.lang.inum.Inum;
-
-public enum Type implements Inum {
+public enum Type {
 	TEN(1, "1分钟"),
 	/** */
 	TWENTY(10, "10分钟"),
@@ -23,12 +21,12 @@ public enum Type implements Inum {
 		this.desc = desc;
 	}
 
-	@Override
+	// @Override
 	public String getDesc() {
 		return this.desc;
 	}
 
-	@Override
+	// @Override
 	public Integer getKey() {
 		return this.key;
 	}

@@ -198,7 +198,7 @@
 
 			<!-- leopard start -->
 			<dependency>
-				<groupId>io.leopard</groupId>
+				<groupId>io.leopard.burrow</groupId>
 				<artifactId>burrow-lang</artifactId>
 				<version>${burrow.version}</version>
 			</dependency>
