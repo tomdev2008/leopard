@@ -1,8 +1,6 @@
 package io.leopard.monitor.thread;
 
-import io.leopard.burrow.lang.inum.Inum;
-
-public enum ThreadCategory implements Inum {
+public enum ThreadCategory {
 	CONNECTION(90, "网络连接"), DAO(80, "Dao"), SERVICE(70, "Service"), TIMER(60, "定时器"), UNKNOWN(50, "未知");
 	private int key;
 	private String desc;
@@ -12,12 +10,12 @@ public enum ThreadCategory implements Inum {
 		this.desc = desc;
 	}
 
-	@Override
+	// @Override
 	public Integer getKey() {
 		return key;
 	}
 
-	@Override
+	// @Override
 	public String getDesc() {
 		return desc;
 	}
