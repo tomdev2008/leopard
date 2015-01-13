@@ -26,9 +26,10 @@ public class SkipFilterInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		String requestUri = RequestUtil.getRequestContextUri(request);
-		if (skipFilterService.isSkipFilter(requestUri)) {
-			return false;
-		}
+		// if (skipFilterService.isSkipFilter(requestUri)) {
+		// FIXME ahai 未实现
+		// return false;
+		// }
 		return true;
 	}
 
