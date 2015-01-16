@@ -1,6 +1,6 @@
 package io.leopard.test.hosts;
 
-import io.leopard.data.env.EnvDaoImpl;
+import io.leopard.data4j.env.EnvLeiImpl;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class DnsConfig {
 	}
 
 	public static Resource getDnsPropertiesResource() throws IOException {
-		String rootDir = EnvDaoImpl.getInstance().getRootDir();
+		String rootDir = EnvLeiImpl.getInstance().getRootDir();
 		String hostPropertiesFilename = rootDir + "/config/dev/dns.properties";
 
 		File file = new File(hostPropertiesFilename);

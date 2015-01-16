@@ -1,6 +1,6 @@
 package io.leopard.web.mvc.controller;
 
-import io.leopard.data.env.EnvUtil;
+import io.leopard.data4j.env.EnvUtil;
 import io.leopard.web.interceptor.PageDelayInterceptor;
 import io.leopard.web4j.view.FtlView;
 import io.leopard.web4j.view.RedirectView;

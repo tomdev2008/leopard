@@ -1,6 +1,6 @@
 package io.leopard.web.mvc.controller;
 
-import io.leopard.data.env.EnvUtil;
+import io.leopard.data4j.env.EnvUtil;
 import io.leopard.test4j.mock.LeopardMockRunner;
 
 import org.junit.Assert;

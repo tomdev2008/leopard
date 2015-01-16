@@ -1,5 +1,7 @@
 package io.leopard.data.env;
 
+import io.leopard.data4j.env.EnvLeiImpl;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -62,7 +64,7 @@ public class AppProperties {
 	 * @return
 	 */
 	public static boolean isDevEnv() {
-		return EnvDaoImpl.getInstance().isDevEnv();
+		return EnvLeiImpl.getInstance().isDevEnv();
 	}
 
 	public static String getProjectName() {
@@ -91,7 +93,7 @@ public class AppProperties {
 				return resource;
 			}
 		}
-		String rootDir = EnvDaoImpl.getInstance().getRootDir();
+		String rootDir = EnvLeiImpl.getInstance().getRootDir();
 		String configDir = rootDir + "/config/" + getEnv();
 		String appPropertiesFilename = configDir + "/" + filename;
 		// System.err.println("env configDir:" + appPropertiesFilename);
@@ -104,7 +106,7 @@ public class AppProperties {
 	}
 
 	public static String getEnv() {
-		String env = EnvDaoImpl.getInstance().getEnv();
+		String env = EnvLeiImpl.getInstance().getEnv();
 		if (StringUtils.isEmpty(env)) {
 			throw new RuntimeException("获取不到当前环境(DWENV).");
 		}
@@ -112,7 +114,7 @@ public class AppProperties {
 	}
 
 	public static String getRootDir() {
-		String rootDir = EnvDaoImpl.getInstance().getRootDir();
+		String rootDir = EnvLeiImpl.getInstance().getRootDir();
 		return rootDir;
 	}
 }

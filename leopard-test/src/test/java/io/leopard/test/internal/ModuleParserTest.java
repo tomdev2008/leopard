@@ -1,6 +1,6 @@
 package io.leopard.test.internal;
 
-import io.leopard.data.env.ClassLoaderUtil;
+import io.leopard.data4j.env.ClassLoaderUtil;
 import io.leopard.test4j.mock.LeopardMockRunner;
 
 import org.junit.Assert;

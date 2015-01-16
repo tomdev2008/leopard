@@ -1,7 +1,7 @@
 package io.leopard.test.internal;
 
-import io.leopard.data.env.ClassLoaderUtil;
-import io.leopard.data.env.EnvUtil;
+import io.leopard.data4j.env.ClassLoaderUtil;
+import io.leopard.data4j.env.EnvUtil;
 
 public class ModuleParser {
 
