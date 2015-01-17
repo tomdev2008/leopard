@@ -28,7 +28,7 @@ public class TestContextLoader implements ContextLoader {
 		DnsConfig.initHosts();
 		String[] files = getFiles(locations);
 		files = ArrayUtil.insertFirst(files, "/leopard-test/annotation-config.xml");
-		return new LeopardClassPathXmlApplicationContext(locations);
+		return new LeopardClassPathXmlApplicationContext(files);
 	}
 
 	protected String[] getFiles(String... locations) {
