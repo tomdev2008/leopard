@@ -7,6 +7,7 @@
 
 	<import resource="classpath:/leopard/applicationContext.xml" />
 
+
 	<bean class="io.leopard.web.LeopardBeanPostProcessor" />
 	<bean class="io.leopard.web.LeopardEnvironment" />
 
@@ -21,7 +22,9 @@
 	<bean class="io.leopard.web4j.trynb.ErrorPageHandlerImpl" />
 
 	<!-- app.properties加载 -->
+	<!-- 
 	<bean class="io.leopard.data.env.LeopardPropertyPlaceholderConfigurer" lazy-init="false" />
+	 -->
 
 	<!-- 用户信息封装 -->
 	<bean id="leopardFilter" class="io.leopard.web.userinfo.LeopardFilter" />
