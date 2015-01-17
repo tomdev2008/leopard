@@ -33,7 +33,7 @@
 
 
 		<dependency>
-			<groupId>io.leopard</groupId>
+			<groupId>io.leopard.web4j</groupId>
 			<artifactId>web4j-all</artifactId>
 		</dependency>
 		
