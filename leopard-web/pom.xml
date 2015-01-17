@@ -44,7 +44,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.leopard</groupId>
+			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-jetty</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -77,7 +77,7 @@
 
 
 		<dependency>
-			<groupId>io.leopard</groupId>
+			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
 		</dependency>
 

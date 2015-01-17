@@ -117,7 +117,7 @@
 			<artifactId>xml-apis</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>io.leopard</groupId>
+			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
 		</dependency>
 

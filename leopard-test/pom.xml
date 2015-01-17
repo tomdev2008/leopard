@@ -97,7 +97,7 @@
 		<!-- <dependency> <groupId>cglib</groupId> <artifactId>cglib</artifactId> </dependency> -->
 
 		<dependency>
-			<groupId>io.leopard</groupId>
+			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
 			<scope>compile</scope>
 		</dependency>
