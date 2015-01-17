@@ -2,13 +2,13 @@ package io.leopard.test.internal;
 
 import io.leopard.commons.utility.ArrayUtil;
 import io.leopard.data4j.context.LeopardClassPathXmlApplicationContext;
+import io.leopard.data4j.env.ModuleParserLei;
+import io.leopard.data4j.env.ModuleParserLeiImpl;
 import io.leopard.test.hosts.DnsConfig;
-
-import java.util.HashSet;
-import java.util.Set;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.test.context.ContextLoader;
 
 /**
@@ -45,30 +45,24 @@ public class TestContextLoader implements ContextLoader {
 			filename = ENTRY_FIRST;
 		}
 		else {
-			filename = this.getModuleConfig();
+			filename = this.getModuleApplicationContextPath();
 			System.err.println("filename:" + filename);
 		}
 		return new String[] { filename };
 	}
 
-	private static Set<String> MODULE_SET = new HashSet<String>();
-	static {
-		MODULE_SET.add("dao");
-		MODULE_SET.add("service");
-		MODULE_SET.add("web");
-	}
-
-	protected String getModuleConfig() {
-		ModuleParser moduleParser = new ModuleParser();
-		if (!moduleParser.isModule()) {
-			// 单模块项目
-			return "/leopard-test/applicationContext-default.xml";
+	protected String getModuleApplicationContextPath() {
+		ModuleParserLei moduleParserLei = new ModuleParserLeiImpl();
+		String moduleName = moduleParserLei.getModuleName();
+		if (moduleName == null) {
+			return "/leopard-test/applicationContext-web.xml";
 		}
-		String moduleName = moduleParser.getModuleName();
-		// System.out.println("moduleName:" + moduleName);
-		if (!MODULE_SET.contains(moduleName)) {
-			throw new RuntimeException("未知模块名称[" + moduleName + "]，请配置src/test/resources/integrationTest.xml");
+		
+		String path = "/leopard-test/applicationContext-" + moduleName + ".xml";
+		Resource resource = new ClassPathResource(path);
+		if (resource.exists()) {
+			return path;
 		}
-		return "/leopard-test/applicationContext-" + moduleName + ".xml";
+		return "/leopard-test/applicationContext-default.xml";
 	}
 }
