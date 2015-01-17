@@ -2,8 +2,6 @@ package io.leopard.test.internal;
 
 import io.leopard.commons.utility.ArrayUtil;
 import io.leopard.data4j.context.LeopardClassPathXmlApplicationContext;
-import io.leopard.data4j.env.ModuleParserLei;
-import io.leopard.data4j.env.ModuleParserLeiImpl;
 import io.leopard.test.hosts.DnsConfig;
 
 import org.springframework.context.ApplicationContext;
@@ -53,11 +51,10 @@ public class TestContextLoader implements ContextLoader {
 
 	protected String getModuleApplicationContextPath() {
 		ModuleParserLei moduleParserLei = new ModuleParserLeiImpl();
-		String moduleName = moduleParserLei.getModuleName();
-		if (moduleName == null) {
+		if (moduleParserLei.isSingleModule()) {
 			return "/leopard-test/applicationContext-web.xml";
 		}
-		
+		String moduleName = moduleParserLei.getModuleName();
 		String path = "/leopard-test/applicationContext-" + moduleName + ".xml";
 		Resource resource = new ClassPathResource(path);
 		if (resource.exists()) {
