@@ -1,6 +1,5 @@
 package io.leopard.schema;
 
-import io.leopard.data.env.YtestUtil;
 import io.leopard.data.nosql.NosqlMysqlImpl;
 import io.leopard.data4j.jdbc.JdbcDataSource;
 import io.leopard.data4j.jdbc.JdbcMysqlImpl;
@@ -16,7 +15,7 @@ import redis.clients.jedis.JedisPoolConfig;
 public class DataSourceClassUtil {
 
 	public static Class<?> findClass(Class<?> clazz) {
-		return YtestUtil.findClass(clazz);
+		return clazz;
 	}
 
 	public static Class<?> getJdbcMysqlImpl() {

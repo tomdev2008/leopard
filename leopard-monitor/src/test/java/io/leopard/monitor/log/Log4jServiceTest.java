@@ -1,6 +1,6 @@
 package io.leopard.monitor.log;
 
-import io.leopard.data.env.Log4jConfigurator;
+import io.leopard.data4j.env.LogConfigLeiImpl;
 import io.leopard.test4j.mock.LeopardMockRunner;
 
 import org.junit.Assert;
@@ -8,10 +8,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
 
 @RunWith(LeopardMockRunner.class)
-@PrepareForTest({ Log4jConfigurator.class })
+// @PrepareForTest({ LogConfigLeiImpl.class })
 public class Log4jServiceTest {
 
 	@Test
@@ -21,7 +20,7 @@ public class Log4jServiceTest {
 
 	@Test
 	public void getLevel() {
-		PowerMockito.when(Log4jConfigurator.getContent()).thenReturn("log4j.appender.A1.Threshold=INFO");
+		PowerMockito.when(LogConfigLeiImpl.getContent()).thenReturn("log4j.appender.A1.Threshold=INFO");
 
 		Assert.assertEquals("INFO", Log4jService.getLevel("A1"));
 	}
@@ -34,8 +33,8 @@ public class Log4jServiceTest {
 
 	@Test
 	public void update() {
-		PowerMockito.when(Log4jConfigurator.getContent()).thenReturn("log4j.appender.A1.Threshold=INFO");
-		PowerMockito.when(Log4jConfigurator.configure(Mockito.anyString())).thenReturn(true);
+		PowerMockito.when(LogConfigLeiImpl.getContent()).thenReturn("log4j.appender.A1.Threshold=INFO");
+		PowerMockito.when(LogConfigLeiImpl.configure(Mockito.anyString())).thenReturn(true);
 
 		String str = Log4jService.update("WARN", "WARN", "WARN", "ERROR");
 

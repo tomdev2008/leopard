@@ -1,6 +1,6 @@
 package io.leopard.monitor.log;
 
-import io.leopard.data.env.Log4jConfigurator;
+import io.leopard.data4j.env.LogConfigLeiImpl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class Log4jService {
 
 	public static String getLevel(String name) {
-		String content = Log4jConfigurator.getContent();
+		String content = LogConfigLeiImpl.getContent();
 		return getLevel(name, content);
 	}
 
@@ -35,7 +35,7 @@ public class Log4jService {
 	}
 
 	public static String update(String jvmLog, String allLog, String warnLog, String errorLog) {
-		String content = Log4jConfigurator.getContent();
+		String content = LogConfigLeiImpl.getContent();
 		return update(jvmLog, allLog, warnLog, errorLog, content);
 	}
 
@@ -45,7 +45,7 @@ public class Log4jService {
 		content = updateLevel("W1", warnLog, content);
 		content = updateLevel("E1", errorLog, content);
 
-		Log4jConfigurator.configure(content);
+		LogConfigLeiImpl.configure(content);
 		return content;
 	}
 

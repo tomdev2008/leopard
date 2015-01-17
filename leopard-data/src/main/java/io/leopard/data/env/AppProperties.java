@@ -1,6 +1,7 @@
 package io.leopard.data.env;
 
 import io.leopard.data4j.env.EnvLeiImpl;
+import io.leopard.data4j.env.EnvUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -58,14 +59,14 @@ public class AppProperties {
 		AppProperties.currentConfigFile = currentConfigFile;
 	}
 
-	/**
-	 * 是否开发环境.
-	 * 
-	 * @return
-	 */
-	public static boolean isDevEnv() {
-		return EnvLeiImpl.getInstance().isDevEnv();
-	}
+	// /**
+	// * 是否开发环境.
+	// *
+	// * @return
+	// */
+	// public static boolean isDevEnv() {
+	// return EnvLeiImpl.getInstance().isDevEnv();
+	// }
 
 	public static String getProjectName() {
 		Properties config;
@@ -87,14 +88,15 @@ public class AppProperties {
 	}
 
 	public static Resource getResource(String filename) throws IOException {
+		String env = EnvUtil.getEnv();
 		{
-			ClassPathResource resource = new ClassPathResource("/" + getEnv() + "/" + filename);
+			ClassPathResource resource = new ClassPathResource("/" + env + "/" + filename);
 			if (resource.exists()) {
 				return resource;
 			}
 		}
 		String rootDir = EnvLeiImpl.getInstance().getRootDir();
-		String configDir = rootDir + "/config/" + getEnv();
+		String configDir = rootDir + "/config/" + env;
 		String appPropertiesFilename = configDir + "/" + filename;
 		// System.err.println("env configDir:" + appPropertiesFilename);
 		// System.out.println("env configDir2:" + appPropertiesFilename);
@@ -105,13 +107,13 @@ public class AppProperties {
 		return new InputStreamResource(FileUtils.openInputStream(file));
 	}
 
-	public static String getEnv() {
-		String env = EnvLeiImpl.getInstance().getEnv();
-		if (StringUtils.isEmpty(env)) {
-			throw new RuntimeException("获取不到当前环境(DWENV).");
-		}
-		return env;
-	}
+	// public static String getEnv() {
+	// String env = EnvLeiImpl.getInstance().getEnv();
+	// if (StringUtils.isEmpty(env)) {
+	// throw new RuntimeException("获取不到当前环境(DWENV).");
+	// }
+	// return env;
+	// }
 
 	public static String getRootDir() {
 		String rootDir = EnvLeiImpl.getInstance().getRootDir();
