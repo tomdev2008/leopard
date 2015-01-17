@@ -4,7 +4,9 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- 
 	<bean class="io.leopard.data.env.LeopardPropertyPlaceholderConfigurer" lazy-init="false" />
+	 -->
 	
 	<bean class="io.leopard.data.pub.PubSubBeanPostProcessor" />
 	<bean class="io.leopard.data.alldb.AlldbBeanPostProcessor" />

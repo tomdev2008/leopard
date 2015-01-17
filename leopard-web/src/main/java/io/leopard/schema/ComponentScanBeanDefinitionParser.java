@@ -38,8 +38,11 @@ public class ComponentScanBeanDefinitionParser extends org.springframework.conte
 		super.registerComponents(readerContext, beanDefinitions, element);
 		for (BeanDefinitionHolder beanDefHolder : beanDefinitions) {
 			String beanName = beanDefHolder.getBeanName();
-			System.err.println("timer source:" + beanDefHolder.getSource());
-			timerList.add(beanName);
+			// TODO ahai 未规范实现
+			if (beanName.endsWith("Timer")) {
+				// System.err.println("timer source:" + beanName);
+				timerList.add(beanName);
+			}
 		}
 	}
 
