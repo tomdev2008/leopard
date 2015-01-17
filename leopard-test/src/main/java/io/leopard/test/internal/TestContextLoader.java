@@ -2,7 +2,6 @@ package io.leopard.test.internal;
 
 import io.leopard.commons.utility.ArrayUtil;
 import io.leopard.data4j.context.LeopardClassPathXmlApplicationContext;
-import io.leopard.test.di.DaoApplicationContext;
 import io.leopard.test.hosts.DnsConfig;
 
 import java.util.HashSet;
@@ -21,25 +20,6 @@ public class TestContextLoader implements ContextLoader {
 	/** 第一个入口 */
 	private static final String ENTRY_FIRST = "/integrationTest.xml";
 
-	private static ThreadLocal<Boolean> fastBean = new ThreadLocal<Boolean>();
-
-	public static void setFastBean(boolean fastBean) {
-		TestContextLoader.fastBean.set(fastBean);
-	}
-
-	public static boolean isFastBean() {
-		if (true) {
-			return false;
-		}
-		Boolean flag = TestContextLoader.fastBean.get();
-		if (flag == null || flag == true) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
 	@Override
 	public String[] processLocations(Class<?> clazz, String... locations) {
 		return locations;
@@ -50,23 +30,6 @@ public class TestContextLoader implements ContextLoader {
 		DnsConfig.initHosts();
 		String[] files = getFiles(locations);
 		files = ArrayUtil.insertFirst(files, "/leopard-test/annotation-config.xml");
-		return createApplicationContext(files);
-	}
-
-	protected ApplicationContext createApplicationContext(String[] locations) {
-		// System.err.println("createApplicationContext locations:" +
-		// StringUtils.join(locations, ","));
-
-		// new Exception().printStackTrace();
-
-		ModuleParser moduleParser = new ModuleParser();
-		String moduleName = moduleParser.getModuleName();
-		if (isFastBean()) {
-			if ("dao".equalsIgnoreCase(moduleName) || "service".equalsIgnoreCase(moduleName)) {
-				return new DaoApplicationContext();
-			}
-		}
-		// System.err.println("moduleName:" + moduleName);
 		return new LeopardClassPathXmlApplicationContext(locations);
 	}
 

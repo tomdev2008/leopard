@@ -6,9 +6,9 @@ import org.springframework.context.ApplicationContext;
 
 public class BenchmarkTestContextLoader extends TestContextLoader {
 	@Override
-	protected ApplicationContext createApplicationContext(String[] locations) {
+	public ApplicationContext loadContext(String... locations) throws Exception {
 		System.err.println("createApplicationContext:" + locations);
 		String[] files = ArrayUtil.insertFirst(locations, "/leopard-test/benchmark-test.xml");
-		return super.createApplicationContext(files);
+		return super.loadContext(files);
 	}
 }
