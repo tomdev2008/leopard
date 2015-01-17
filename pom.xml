@@ -204,24 +204,24 @@
 			</dependency>
 			
 			<dependency>
-				<groupId>io.leopard</groupId>
+				<groupId>io.leopard.test4j</groupId>
 				<artifactId>test4j-jetty</artifactId>
 				<version>${test4j.version}</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
-				<groupId>io.leopard</groupId>
+				<groupId>io.leopard.test4j</groupId>
 				<artifactId>test4j-mock</artifactId>
 				<version>${test4j.version}</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
-				<groupId>io.leopard</groupId>
+				<groupId>io.leopard.web4j</groupId>
 				<artifactId>web4j-all</artifactId>
 				<version>${web4j.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>io.leopard</groupId>
+				<groupId>io.leopard.top4j</groupId>
 				<artifactId>top4j-method</artifactId>
 				<version>${top4j.version}</version>
 			</dependency>
