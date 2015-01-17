@@ -7,29 +7,30 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 public class DnsConfig {
 	public static boolean initHosts() {
+		Resource resource = new ClassPathResource("/dev/dns.properties");
+		if (!resource.exists()) {
+			String message = "host文件[classpath:/dev/dns.properties]不存在.";
+			System.out.println(message);
+			return false;
+		}
 		try {
-			Resource resource = getDnsPropertiesResource();
-			if (resource == null) {
-				return false;
-			}
-
 			Properties config = PropertiesLoaderUtils.loadProperties(resource);
 			HostsUtil.initHosts(config);
 		}
 		catch (IOException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
-
 		return true;
 	}
 
-	public static Resource getDnsPropertiesResource() throws IOException {
+	private static Resource getDnsPropertiesResource() throws IOException {
 		String rootDir = EnvLeiImpl.getInstance().getRootDir();
 		String hostPropertiesFilename = rootDir + "/config/dev/dns.properties";
 

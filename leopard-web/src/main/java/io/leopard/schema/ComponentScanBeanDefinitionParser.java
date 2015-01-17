@@ -21,16 +21,23 @@ public class ComponentScanBeanDefinitionParser extends org.springframework.conte
 	protected List<String> timerList = new ArrayList<String>();
 
 	// name-generator="io.leopard.core.beans.LeopardAnnotationBeanNameGenerator"
+
+	private ParserContext parserContext;
+
 	@Override
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
 		// BeanDefinitionParserUtil.printParserContext(ComponentScanBeanDefinitionParser.class, parserContext);
+		this.parserContext = parserContext;
 
 		element.setAttribute("name-generator", LeopardAnnotationBeanNameGenerator.class.getName());
 
-		this.createTimerService(parserContext);
-
 		// TODO ahai 排除定时器?
-		return super.parse(element, parserContext);
+		BeanDefinition beanDefinition = super.parse(element, parserContext);
+
+		if (!timerList.isEmpty()) {
+			this.createTimerService();
+		}
+		return beanDefinition;
 	}
 
 	@Override
@@ -46,7 +53,7 @@ public class ComponentScanBeanDefinitionParser extends org.springframework.conte
 		}
 	}
 
-	protected BeanDefinition createTimerService(ParserContext parserContext) {
+	protected BeanDefinition createTimerService() {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(TimerServiceImpl.class);
 
 		ManagedList<RuntimeBeanReference> timerBeanList = new ManagedList<RuntimeBeanReference>();
