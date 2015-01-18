@@ -2,7 +2,7 @@
 <faqs id="FAQ" title="常见问题">
     <part id="General">
         <faq id="transaction">
-            <question>Redis、Memcache、MemoryDB接口，测试时的事务回滚是如何实现的？</question>
+            <question>Redis、Memcache、MemDB接口，测试时的事务回滚是如何实现的？</question>
             <answer>
                 <p>......</p>
             </answer>
