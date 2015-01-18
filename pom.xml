@@ -279,8 +279,6 @@
 	</developers>
 
 	<build>
-		
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -289,8 +287,6 @@
 					<encoding>utf8</encoding>
 				</configuration>
 			</plugin>
-
-
 		</plugins>
 	</build>
 
