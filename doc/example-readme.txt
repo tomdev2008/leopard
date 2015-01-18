@@ -10,7 +10,8 @@ root@db163:/home/tanmr/workspace/lexample/target/generated-sources/archetype# cd
 
 
 mvn archetype:generate -DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots/ -DarchetypeGroupId=io.leopard.archetype -DarchetypeArtifactId=lexample-archetype -DarchetypeVersion=0.0.1-SNAPSHOT -DgroupId=com.baidu.example -DartifactId=example -Dversion=0.0.1-SNAPSHOT
-mvn archetype:generate -DarchetypeRepository=http://leopard.io:8089/nexus/content/groups/public-snapshots/ -DarchetypeGroupId=io.leopard.archetype -DarchetypeArtifactId=lexample-archetype -DarchetypeVersion=0.0.1-SNAPSHOT -DgroupId=com.baidu.example -DartifactId=example -Dversion=0.0.1-SNAPSHOT
+
+mvn archetype:generate -DarchetypeRepository=http://leopard.io/nexus/content/groups/public-snapshots/ -DarchetypeGroupId=io.leopard.archetype -DarchetypeArtifactId=lexample-archetype -DarchetypeVersion=0.0.1-SNAPSHOT -DgroupId=com.baidu.example -DartifactId=example -Dversion=0.0.1-SNAPSHOT
 
 
 #################################
