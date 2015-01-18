@@ -36,7 +36,7 @@
 			<groupId>io.leopard.web4j</groupId>
 			<artifactId>web4j-all</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.leopard</groupId>
 			<artifactId>leopard-test</artifactId>
@@ -61,6 +61,7 @@
 		<dependency>
 			<groupId>net.sf.pinyin4j</groupId>
 			<artifactId>pinyin4j</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.freemarker</groupId>
