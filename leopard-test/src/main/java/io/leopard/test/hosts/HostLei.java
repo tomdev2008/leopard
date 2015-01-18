@@ -10,6 +10,11 @@ import org.springframework.core.io.Resource;
  */
 public interface HostLei {
 
+	/**
+	 * 获取hosts配置文件.
+	 * 
+	 * @return
+	 */
 	Resource getResource();
 
 }
