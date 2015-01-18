@@ -220,7 +220,7 @@ before()——方法说明：如果测试类继承了MockTests.java,则每个测
   （1）验证是否是H2数据库
   （2）将项目中doc/initdata/alter.sql和doc/initdata/项目名称.sql 数据库语句合并判断是否有修改过，如果修改过，则重新创建表"h2tableinfo"
   （3）创建缓存表memcache
-3、设置错误日志路径为：/data2/log/resin/mock.err.log
+3、设置错误日志路径为：/log/resin/mock.err.log
 +---+
 
 ** setDataSource(@Qualifier("masterDataSource") DataSource dataSource)

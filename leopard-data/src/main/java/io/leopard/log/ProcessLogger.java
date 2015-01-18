@@ -1,5 +1,7 @@
 package io.leopard.log;
 
+import io.leopard.data4j.env.LogDirLeiImpl;
+
 import java.text.DecimalFormat;
 
 import org.apache.commons.logging.Log;
@@ -9,7 +11,7 @@ public class ProcessLogger implements Log {
 
 	public ProcessLogger(Class<?> clazz) {
 		// processLogger = LogFactory.getLog("PROCESSLOG." + clazz.getName());
-		processLogger = Log4jUtil.getLogger("PROCESSLOG." + clazz.getName(), Level.DEBUG, "/log/resin/process.log", false);
+		processLogger = Log4jUtil.getLogger("PROCESSLOG." + clazz.getName(), Level.DEBUG, LogDirLeiImpl.getLogDir() + "/process.log", false);
 	}
 
 	public static ProcessLogger newInstance(Class<?> clazz) {

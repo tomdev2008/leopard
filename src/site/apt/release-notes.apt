@@ -177,7 +177,7 @@ New Features:
 Build 0.19
 
 New Features:
-* [ID-0] - 增加/data2/log/resin/external.access.log，记录外部接口耗时。
+* [ID-0] - 增加/log/resin/external.access.log，记录外部接口耗时。
 
 +---+
 
@@ -200,7 +200,7 @@ Build 0.16
 
 New Features:
 * [ID-0] - 页面随机延迟功能，可以用来测试客户端、前端，在遇到糟糕的网络情况下的用户体验。
-* [ID-0] - 增加/data2/log/resin/datasource.log，Redis、Jdbc等数据源获取连接耗时太久(>=10ms)，会在这个文件输出日志。
+* [ID-0] - 增加/log/resin/datasource.log，Redis、Jdbc等数据源获取连接耗时太久(>=10ms)，会在这个文件输出日志。
 * [ID-0] - 方法耗时监控增加编码、数据源两个分类，包括Json、Base64、Base16、EncryptUtil、RedisImpl.getResource()的接口耗时统计。
 
 +---+

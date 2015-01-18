@@ -3,9 +3,6 @@ package io.leopard.util;
 //import org.apache.log4j.Level;
 
 public class Clocker {
-	// protected static Log timeLogger = Log4jUtil.getLogger(Clocker.class,
-	// Level.DEBUG, "/log/resin/time.log");
-
 	private long start;
 	private long time;
 
