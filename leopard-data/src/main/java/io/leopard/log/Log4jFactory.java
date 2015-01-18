@@ -1,10 +1,12 @@
 package io.leopard.log;
 
+import io.leopard.data4j.env.LogDirLeiImpl;
+
 import org.apache.commons.logging.Log;
 
 public class Log4jFactory {
 	public static Log getTimeAvgLogger(Class<?> clazz) {
-		return Log4jUtil.getLogger("TIMEAVG." + clazz.getName(), Level.DEBUG, "/log/resin/time.avg.log", false);
+		return Log4jUtil.getLogger("TIMEAVG." + clazz.getName(), Level.DEBUG, LogDirLeiImpl.getLogDir() + "/time.avg.log", false);
 	}
 
 	// public static Log getErrorLogger(Class<?> clazz) {
@@ -34,28 +36,27 @@ public class Log4jFactory {
 	// }
 
 	public static Log getTimerLogger(Class<?> clazz) {
-		return Log4jUtil.getLogger("TIMERLOG." + clazz.getName(), Level.DEBUG, "/log/resin/timer.log", false);
+		return Log4jUtil.getLogger("TIMERLOG." + clazz.getName(), Level.DEBUG, LogDirLeiImpl.getLogDir() + "/timer.log", false);
 	}
 
 	public static Log getAlarmLogger(Class<?> clazz) {
-		return Log4jUtil.getLogger("ALARMLOG." + clazz.getName(), Level.DEBUG, "/log/resin/alarm.log", false);
+		return Log4jUtil.getLogger("ALARMLOG." + clazz.getName(), Level.DEBUG, LogDirLeiImpl.getLogDir() + "/alarm.log", false);
 	}
 
 	public static Log getExternalAccessLogger(Class<?> clazz) {
-		return Log4jUtil.getLogger("EXTERNALACCESSLOG." + clazz.getName(), Level.DEBUG, "/log/resin/external.access.log", false);
+		return Log4jUtil.getLogger("EXTERNALACCESSLOG." + clazz.getName(), Level.DEBUG, LogDirLeiImpl.getLogDir() + "/external.access.log", false);
 	}
 
 	public static Log getDataSourceLogger(Class<?> clazz) {
-		return Log4jUtil.getLogger("DATASOURCELOG." + clazz.getName(), Level.DEBUG, "/log/resin/datasource.log", false);
+		return Log4jUtil.getLogger("DATASOURCELOG." + clazz.getName(), Level.DEBUG, LogDirLeiImpl.getLogDir() + "/datasource.log", false);
 	}
 
 	public static Log getSlowLogger(Class<?> clazz) {
-		return Log4jUtil.getLogger("SLOWLOG." + clazz.getName(), Level.DEBUG, "/log/resin/slow.log", false);
+		return Log4jUtil.getLogger("SLOWLOG." + clazz.getName(), Level.DEBUG, LogDirLeiImpl.getLogDir() + "/slow.log", false);
 	}
 
 	public static Log getWebserviceLogger(Class<?> clazz) {
-		return Log4jUtil.getLogger("WEBSERVICELOG." + clazz.getName(), Level.DEBUG, "/log/resin/webservice.log");
+		return Log4jUtil.getLogger("WEBSERVICELOG." + clazz.getName(), Level.DEBUG, LogDirLeiImpl.getLogDir() + "/webservice.log");
 	}
-
 
 }
