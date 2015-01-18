@@ -44,8 +44,6 @@ import org.springframework.web.servlet.mvc.condition.RequestMethodsRequestCondit
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
-
-
 public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 
 	@Autowired(required = false)
@@ -97,7 +95,7 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 		Object[] interceptors = new Object[list.size()];
 		list.toArray(interceptors);
 
-		System.err.println("checkLoginInterceptor:" + Arrays.asList(interceptors));
+		// System.err.println("checkLoginInterceptor:" + Arrays.asList(interceptors));
 		this.setInterceptors(interceptors);
 
 		super.initApplicationContext();
