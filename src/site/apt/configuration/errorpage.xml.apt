@@ -1,0 +1,40 @@
+ ------
+ 错误页面配置(errorpage.xml)
+ ------
+ 谭海潮
+ ------
+ 2013-04-22
+ ------
+ 
+errorpage.xml例子：
+  	
+  	文件存放目录xxx-web/src/main/resources/errorpage.xml
+  	
++---+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<category>
+		<error url="/webservice/deleteMessage.do" page="WEBSERVICE" parent="webserviceBase">
+			<exception type="MessageNotFoundException" statusCode="-404" log="false" />
+		</error>
+
+		<error url="/webservice/getToolName.do" page="WEBSERVICE" parent="webserviceBase">
+			<exception type="ToolNotFoundException" statusCode="-404" log="false" />
+		</error>
+
+		<error id="webserviceBase" url="/webservice/" page="WEBSERVICE">
+			<exception type="ForbiddenException" statusCode="-403" log="false" />
+
+			<exception type="java.lang.IllegalArgumentException" statusCode="-410" />
+			<exception type="java.lang.RuntimeException" statusCode="-598" />
+			<exception type="java.lang.Exception" statusCode="-599" />
+		</error>
+	</category>
+
+	<error url="/" page="/error" />
+
+</root>
+
++---+
+

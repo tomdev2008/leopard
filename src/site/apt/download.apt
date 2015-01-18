@@ -1,0 +1,28 @@
+ ------
+ Download
+ ------
+ 谭海潮
+ ------
+ 2013-12-12
+ ------
+
+下载
+
++---+
+在主pom.xml中，配置如下信息：
+<project>
+  [...]  
+  <parent>
+	<groupId>com.duowan.depend</groupId>
+	<artifactId>depend-webapp</artifactId>
+	<version>0.23</version>
+  </parent>
+  <properties>
+	<leopard.version>1.0.2</leopard.version>
+  </properties>
+		  
+  [...]
+</project>
+
+
++---+

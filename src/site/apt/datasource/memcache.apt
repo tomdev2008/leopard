@@ -1,0 +1,33 @@
+
+ ------
+ datasource
+ ------
+卢轩华
+ ------
+ 2013-04-26
+ ------
+ 
+memcache主题：
+
++---+
+
+memcache有二种实现，一种是基于memcache的，一种是基于redis的实现！
+
++---+
+
+示例
+
++---+
+
+1、引入
+
+<leopard:memcache id="memcache" server="${session.feedback.game.yy.com}:6311" type="redis" />
+
+
+基于memache的实现
+<leopard:memcache id="memcache" server="${session.feedback.game.yy.com}:11211" type="memached" />
+
+
++---+
+
+

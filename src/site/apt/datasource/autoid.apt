@@ -1,0 +1,48 @@
+ ------
+ datasource
+ ------
+  卢轩华
+ ------
+ 2013-04-26
+ ------
+ 
+自动生唯一主键主题：
+
+
+
++---+
+
+1、引入com.duowan.leopard.data.autoid.AutoService
+2、调用接口：
+	int autoidService.getAutoId(table);
+	int getAutoId(String table, Object bean, String keyName);
+
+	说明:引功能需要对就原表，用来存储id分配情况，表名形式如：article_id_block 
+           创建表的语句：
+    
+    CREATE TABLE `article_id_block` (
+	  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+	  `start` int(10) unsigned NOT NULL,
+	  `end` int(10) unsigned NOT NULL,
+	  `ip` varchar(23) NOT NULL DEFAULT '',
+	  `threadid` varchar(50) NOT NULL DEFAULT '',
+	  `posttime` datetime NOT NULL DEFAULT '1970-00-01 00:00:01',
+	  `timestamp` bigint(13) unsigned NOT NULL DEFAULT '0',
+	  PRIMARY KEY (`id`)
+    ) ENGINE=MyISAM AUTO_INCREMENT=1400 DEFAULT CHARSET=utf8;
+
+
++---+
+
+示例：
+
++---+
+
+int articleId = autoidService.getAutoId(Config.ARTICLE_ID_BLOCK_TABLE, article, "articleId");
+
+Config.ARTICLE_ID_BLOCK_TABLE:article_id_block
+
+
++---+
+
+

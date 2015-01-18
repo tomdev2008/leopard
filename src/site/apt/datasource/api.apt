@@ -1,0 +1,41 @@
+ ------
+ datasource
+ ------
+卢轩华
+ ------
+ 2013-04-26
+ ------
+
+
+Api主题：
+
++---+
+
+1、简单清晰的接口定义，按需使用。
+2、与leopard-test结合，简化测试代码编写。
+3、代码简洁，利于阅读。
+4、详尽的api及例文件。
+
++---+
+
+规范
+
++---+
+
+1、不同类型的数据由不同的DAO操作，不要搞大而全的类。（Plan）
+2、Memcache、Redis等操作不能使用静态方法，要用接口。
+3、DAO接口定义尽量归纳为api包已定义好的接口(add, get, delete, list, map等)
+4、SQL语句不要使用联合查询
+5、主键ID字段命名规则，使用xxxxId，如articleId,commentId等，yyuid、userid等常用的使用小写的即可。
+6、XxxDaoCacheImpl可以注入其他实现，XxxDaoMysqlImpl、XxxDaoRedisImpl等不能注入其他实现。
+7、一个DAO类只能注入一个数据源(Redis、Jdbc、Memcache等)，不能注入Redis[]等多个Redis对象。
+8、一个DAO类只负责一类数据，简单理解就是只能有一个add方法，不能有多个add或addXxx方法。
+9、HttpUtils视为数据，只能在调DAO或client用，Service、Handler、Timer、Controller不能使用。
+10、外部接口一律视为数据，只能有DAO来调用。如Gameinfo、发送邮件、发送短信等。
+
+	
++---+
+
+
+
+

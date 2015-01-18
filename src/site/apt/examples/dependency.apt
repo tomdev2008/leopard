@@ -1,0 +1,80 @@
+ ------
+ Basic Configuration
+ ------
+ 阿海
+ ------
+ 2012-10-31
+ ------
+
+依懒配置
+
+* Configure Maven Minify Plugin
+
+  	可以使用以下配置加入您的pom.xml!!!!
+
++---+
+在主pom.xml中，配置如下信息：
+<project>
+  [...]  
+  <parent>
+	<groupId>com.duowan.depend</groupId>
+	<artifactId>depend-webapp</artifactId>
+	<version>0.0.11</version>
+  </parent>
+  [...]
+</project>
+
+
+各模块pom.xml中根据需要可以引入以下依赖：
+
+<project>
+  [...]  
+ <dependency>	
+	<groupId>com.duowan.leopard</groupId>
+	<artifactId>leopard-core</artifactId>	
+ </dependency>
+
+ <dependency>	
+	<groupId>com.duowan.leopard</groupId>
+	<artifactId>leopard-data</artifactId>	
+ </dependency>
+
+ <dependency>	
+	<groupId>com.duowan.leopard</groupId>
+	<artifactId>leopard-json</artifactId>	
+ </dependency>
+
+ <dependency>	
+	<groupId>com.duowan.leopard</groupId>
+	<artifactId>leopard-labs</artifactId>	
+ </dependency>
+
+ <dependency>	
+	<groupId>com.duowan.leopard</groupId>
+	<artifactId>leopard-monitor</artifactId>	
+ </dependency>
+
+ <dependency>	
+	<groupId>com.duowan.leopard</groupId>
+	<artifactId>leopard-semis</artifactId>	
+ </dependency>
+
+ <dependency>	
+	<groupId>com.duowan.leopard</groupId>
+	<artifactId>leopard-test</artifactId>	
+ </dependency>
+
+ <dependency>	
+	<groupId>com.duowan.leopard</groupId>
+	<artifactId>leopard-util</artifactId>	
+ </dependency>
+
+ <dependency>	
+	<groupId>com.duowan.leopard</groupId>
+	<artifactId>leopard-web</artifactId>	
+ </dependency>
+
+  [...]
+</project>
++---+
+

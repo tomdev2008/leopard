@@ -1,0 +1,119 @@
+ ------
+ datasource
+ ------
+卢轩华
+ ------
+ 2013-04-26
+ ------
+
+
+Redis主题：
+  	
++---+
+基于jedis封装的redis操作
+
+1、命令与Redis操作命令完全一致。      
+2、可以开启自动备份，每天晚上4点1分进行自动备份。
+3、详细的日志记录。
+4、支持自动Hash分布存储。
+      实现：String,long hash规则。可自定义其他Hash规则。
+5、支持一条命令到执行到所有库。
+
++---+
+
+RedisLog4jImpl实现，用于将数据写入指定的redis
+
++---+
+
+<bean id="indexRedisLog4jImplNew" class="com.duowan.leopard.data.redis.RedisLog4jImpl" init-method="init"
+	 destroy-method="destroy" lazy-init="true">
+	<property name="server" value="${index.redis.youliao.game.yy.com}:6369" />
+	<property name="maxActive" value="1024" />
+</bean>
+	
+
++---+
+
+RedisHashImpl实现，用于Hash分数据
+
++---+
+
+<bean id="indexRedisHashImpl" class="com.duowan.leopard.data.redis.RedisHashImpl" init-method="init" 
+	destroy-method="destroy" lazy-init="true">
+	<property name="hashType" value="string" />
+	<property name="serverList">
+		<list>
+			<value>${index1.redis.youliao.game.yy.com}:6380</value>			
+			<value>${index2.redis.youliao.game.yy.com}:6381</value>		
+			<value>${index3.redis.youliao.game.yy.com}:6382</value>			
+			<value>${index4.redis.youliao.game.yy.com}:6383</value>
+		</list>
+	</property>
+</bean>
+
++---+
+
+
+RedisAllImpl实现，用于将数据写入各Redis
+
++---+
+
+<bean id="indexAllRedisAllImpl" class="com.duowan.leopard.data.redis.RedisAllImpl" init-method="init" 
+	destroy-method="destroy" lazy-init="true">
+	<property name="serverList">
+		<list>
+			<value>${index.redis.youliao.game.yy.com}:6379</value>
+			<value>${index1.redis.youliao.game.yy.com}:6380</value>		
+			<value>${index2.redis.youliao.game.yy.com}:6381</value>			
+			<value>${index3.redis.youliao.game.yy.com}:6382</value>			
+			<value>${index4.redis.youliao.game.yy.com}:6383</value>
+		</list>
+	</property>
+</bean>
+
++---+
+
+各种实现引用
+
++---+
+
+<bean id="indexDaoRedisImpl" class="com.duowan.youliao.dao.redis.IndexAllDaoRedisImpl" init-method="init" 
+	destroy-method="destroy" lazy-init="true">
+	<property name="redis" ref="indexAllRedisAllImpl" />
+</bean>
+
+<bean id="indexUserHashDaoRedisImpl" class="com.duowan.youliao.dao.redis.IndexUserHashDaoRedisImpl" 
+	nit-method="init" destroy-method="destroy" lazy-init="true">
+	<property name="redis" ref="indexRedisHashImpl" />
+</bean>
+
+<bean id="indexDaoRedisImpl" class="com.duowan.youliao.dao.redis.IndexDaoRedisImpl" init-method="init" 
+	destroy-method="destroy" lazy-init="true">
+	<property name="redis" ref="indexRedisLog4jImpl" />
+</bean>
+
++---+
+
+Dao层引用
+
++---+
+
+public class BillDaoRedisImpl extends ContextImpl implements BillDao {
+	
+	//注入
+	@Resource(name = "indexRedisLog4jImpl")	
+	private Redis redis;
+
+
+
+	@Override
+	public Bill get(Integer billId) {
+		//调用
+		String json = this.redis.hget(RedisKey.getBill(), billId);
+		return Json.toObject(json, Bill.class);
+	}
+
+
+}
+
++---+

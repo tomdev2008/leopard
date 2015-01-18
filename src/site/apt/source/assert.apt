@@ -1,0 +1,275 @@
+ ------
+ 源码学习
+ ------
+ 张凯伟
+ ------
+ 2013-05-14
+ ------
+ 
+源码学习：Assert
+           
++---+         
+Assert涉及到的类主要有以下：
+com.duowan.leopard.test.mock.Assert.java
+com.duowan.leopard.test.mock.template.MethodHandlerAddImpl.java
+com.duowan.leopard.test.mock.reflect.Tson.java
+com.duowan.leopard.test.mock.template.Invoke.java
+com.duowan.leopard.test.mock.reflect.ModelInstanceUtil.java
+com.duowan.leopard.test.mock.template.Reflect.java
++---+
+
+* Assert.java 
+
+** 说明：该类主要为assert提供一些常用的方法，如noimpl、dao、when、verify、equals等方法
+
+** noimpl(final T mock)——方法说明：用于对未实现的方法的测试
+
++---+
+参数说明：XXX.class
+内部类new MethodHandler()用于动态代理传入对象
+（1）setAccessible(true)设置允许访问一个private field
+（2）invoke(mock, args) 动态代理方法
+（3）Assert.fail("怎么没有抛出NotImplementedException异常?") 如果能执行这句则说明在方法实现里面没有抛异常
+（4）接下来是异常的捕获处理：首先会e.getCause()获取这个异常，如果异常为null或不属于NotImplementedException
+  则调用Assert.fail("怎么没有抛出NotImplementedException异常?")处理，否则返回该方法类型的默认值
++---+
+
+** dao(T mock, String textJson)——方法说明：返回动态代理对象
+
++---+
+返回动态代理对象，其中MethodHandlerAddImpl中存在一些常用方法的测试的处理，细节请查看下面的MethodHandlerAddImpl解析
+MethodHandler methodHandler = new MethodHandlerAddImpl<T>(mock, textJson);
+Proxy.newProxyInstance(mock, methodHandler);
++---+
+
+** assertModel(Class\<?\> clazz)——方法说明：对普通model进行测试
+
++---+
+参数说明：普通model对象
+1、clazz.newInstance()获取实例
+2、clazz.getMethods()获取实例的所有方法，并遍历所有方法，对每个方法做如下处理
+3、获取方法名称并判断是否是get、set、is开头或toString方法，如果是则忽略并进入下一次循环获取下一个方法，如果不是则往下执行
+4、MethodUtil.getDefaultValue(method.getParameterTypes())根据方法的参数类型获取默认值并存入args
+5、然后使用method.invoke(bean, args)调用该方法
++---+
+
+** verify(T mock, int times)——方法说明：对原生的verify进行了封装，支持int类型的times参数
+
++---+
+参数：测试类对象,后面的测试方法被调用次数
+Mock.verify(mock, Mock.times(times))实际上Mock类并没有实现verify，调用的是Mockito原生的verify
+其中Mock.times(times)是调用了Mockito中的VerificationModeFactory.times(wantedNumberOfInvocations)返回一个VerificationMode对象
+这里把数字类型的times参数转成了原生的verify需要的参数类型
++---+
+
+** when(T serviceMock, String daoAndMethodName)——方法说明：对service方法和对应dao方法进行自动mock和assert 
+
++---+
+参数：service类，service中的dao字段名+dao中的某方法
+Proxy.newProxyInstance(serviceMock, new MethodHandlerAssertMethodNameImpl(serviceMock, daoAndMethodName))，其中：
+1、new MethodHandlerAssertMethodNameImpl(serviceMock, daoAndMethodName)执行了以下动作：
+  （1）如果存在"."，则用"."作为分隔符，把daoAndMethodName拆分成dao和methodName。否则把daoAndMethodName当成methodName
+2、如果执行测试方法，则会调用MethodHandlerAssertMethodNameImpl类中的invoke(Object self, Method method, Method proceed, Object[] args)方法，做以下动作：
+  （1）获取dao中参数类型为args的methodName方法：MethodUtil.getMethod(dao, methodName, args)
+  （2）判断上面的返回值是否为空，为空则抛出异常
+  （3）根据Dao中的methodName返回类型得到默认的返回值：MethodUtil.getDefaultValue(daoMethod.getReturnType());
+  （4）调用Dao中的该方法Mock.when(daoMethod.invoke(dao, args)).thenReturn(daoValue)
+  （5）调用service层的被测试方法，并得到返回值
+  （6）判断service层该方法的返回值和调用的dao层的方法的返回值是否相等
++---+
+
+** when(T serviceMock, DAO daoMock)——方法说明：daoMock为null时，自动查找serviceMock第一个类型名称以Dao结尾的属性。非null时，可以传入任意mock对象
+
++---+
+参数：可以是(articleService,articleDaoMysqlImpl)或(articleService,null)
+1、该方法主要执行了Proxy.newProxyInstance(serviceMock, new MethodHandlerAssertWhenImpl(serviceMock, daoMock))
+2、其中new MethodHandlerAssertWhenImpl(serviceMock, daoMock)执行了以下动作：
+  （1）如果传入的daoMock为null，则会调用MethodUtil.getDaoValue(service)获取serviceMock中第一个类型名称以Dao结尾的属性值
+  （2）如果上面步骤（1）获取不到则会抛异常
+3、如果调用测试方法，例如调用了when(T serviceMock, DAO daoMock).Xxx(),则会分别调用serviceMock中的该方法和daoMock中的该方法，并判断返回结果是否一致
++---+
+
+** equals(int expected, int actual)——方法说明：判断实际值与期望值是否相等
+
++---+
+参数：期望值,实际值
+实际调用了Junit中的Assert.assertEquals(expected, actual)
++---+
+
+
+* MethodHandlerAddImpl.java 
+
+** 说明：主要是掉用Assert.dao(Xxx)来测试时，对一些常用的方法的处理，主要包括delete、incr、decr、update、list等
+
+** invoke(Object self, Method thisMethod, Method proceed, Object[] args)
+——方法说明：重写了MethodHandler类的方法，对常用方法进行判断并调用相应的方法进行处理
+
++---+
+该方法里面都是对方法名字的判断，然后调用对应的方法处理，如下形式
+if (thisMethod.getName().equals("delete")) {
+return this.delete(thisMethod, args);
+}
+...
+注意点：list方法的调用判断比较复杂
+如果是list(List<T> list)，则调用MethodHandlerAddImpl类的list(thisMethod, args)
+其他的list开头的调用MethodHandlerAddImpl类的listXxx(thisMethod,args)方法处理
++---+
+
+** count(Method method, Object[] args)——方法说明：
+
++---+
+1、ClassUtil.getParameterNames(method)获取被测试方法的参数名称列表
+2、Tson.toTextJson(textJson, names, args)根据参数名称和对应的传入的参数值，转成Json数据格式
+3、调用Invoke.addXxx(mock, textJson2)并判断是否返回true，其中addXxx方法见下面Invoke类的解析
+4、method.invoke(mock, args)调用count方法
+5、Assert.assertEquals("count怎么不是1？", count, count)判断返回值相等，如果上面执行顺利的话，这里结果一定是相等的
++---+
+
+** listXxx(Method method, Object[] args)——方法说明：
+
++---+
+1、ClassUtil.getParameterNames(method)获取被测试方法的参数名称列表
+2、创建ignoreNameSet，并加入start、size、startTime、endTime，这个set用于Tson.toTextJson(textJson, names, args, ignoreNameSet)转成Json数据的时候忽略这些参数
+3、调用Invoke.addXxx(mock, textJson2)并判断是否返回true，其中addXxx方法见下面Invoke类的解析
+4、method.invoke(mock, args)调用listXxx方法并返回list，并判断list是否为null
+5、最后判断list.size()是否为1
++---+
+
+** list(Method method, Object[] args)——方法说明：测试list(List\<T\> list)方法，按主键列表顺序返回对象列表，返回值的记录条数和keyList的条数一致
+
++---+
+1、keyList = (List<Object>) args[0] 获取测试该方法时传入的第一个参数
+2、keyList.get(0).getClass()获取list中的对象类型
+3、method.getDeclaringClass().getMethod("get", parameterType) 获取该类中的get方法
+4、 调用Reflect.makeBean方法，该方法的详细解析见下面Reflect类的解析
+5、调用dao.add(bean)并判断是否返回true
+6、正式调用dao.list(keyList)并把返回值赋给list
+7、判断keyList和list里面元素的个数是否相等
++---+
+
+** map(Method method, Object[] args)——方法说明：测试map(Set<KEYTYPE> keySet)方法，按键列表顺序返回对象列表，返回值的记录条数和keySet的条数一致
+
++---+
+该方法的思路和上面的list(Method method, Object[] args)方法的思路一样，主要的2点不同：
+1、map获取map中key对应的value对象的类型用keySet.iterator().next().getClass()
+2、这里创建了ignoreNameSet对象，把start、size、startTime属性放入忽略的Set中，用于在 Tson.toTextJson里面处理的时候忽略这些参数
++---+
+
+** update(Method method, Object[] args)
+——方法说明：会把args根据方法参数转成Json字符串数据，并调用addXxx方法
+
++---+
+1、ClassUtil.getParameterNames(method)得到方法所有参数
+2、Tson.toTextJson(textJson, names, args)根据方法参数转成Json字符串
+3、调用Invoke.addXxx(mock, textJson2)
+4、MethodUtil.invoke(mock, method, args)动态代理的方式调用update方法，返回success
+5、判断返回的success是否为true
++---+
+
+** incr(Method method, Object[] args)——方法说明：
+
++---+
+1、判断是否实现了IIncr接口
+2、判断是否实现了IGet接口，如果是则
+  （1）调用Reflect.makeBean(dao, method, args2, textJson)创建指定的bean
+  （2）调用dao.add(bean)添加，并判断是否返回true
+3、dao.incr(key, defCount)给key增加1000，然后调用dao.decr(key, count)减少5，然后判断结果是否是defCount - count
++---+
+
+** delete(Method method, Object[] args)——方法说明：判断是否实现标准接口IDelete，并分别依次add、get、delete、delete、get方法对返回值判断是否正确
+
++---+
+1、判断是否实现com.duowan.leopard.data.api.yyuid.IDelete，是则调用deleteYyuid1(method, args)处理；否则往下执行
+2、判断是否实现标准IDelete，没有则抛异常，有实现则往下执行
+3、Reflect.makeBean(dao, method, args, textJson)创建bean对象
+4、依次调用add、get、delete、delete、get方法对返回值判断是否正确，例如Assert.assertTrue("add方法怎么不返回true?", dao.add(bean))...
++---+
+
+* Tson.java 
+
+** 说明：主要是把方法参数名称和对应的值，解析成键值对
+
+**  parseMap(String content, String[] names, Object[] values, Set<String> ignoreNameSet)
+——方法说明：重写了MethodHandler类的方法，对常用方法进行判断并调用相应的方法进行处理
+
++---+
+参数说明：例如Assert.dao(Xxx.class,content).get(values)，其中传入的content，values分别对应参数列表中的content和values， 而names是get方法的参数，ignoreNameSet默认是null
+1、map = parseMap(content)会把格式为{a:b,c:d}解析为map，以","为分隔符，":"的前面是key，后面是value
+2、遍历传入的参数名，如果是包含在ignoreNameSet中，则忽略掉。否则往下执行
+3、判断是否主键对象XxxKey，如果否则执行4
+ String modelName = values[i].getClass().getName();
+ if (modelName.startsWith("com.duowan") && modelName.endsWith("Key"))
+ （1）如果是主键对象，则获取该主键对象所有字段，并遍历所有字段
+ （2）fieldName.equals("$jacocoData") 如果该字段名字等于"$jacocoData"，则跳到下次循环遍历。否则执行（3）
+ （3）toValue(field.get(values[i])) 根据字段获取对应类型
+ （4）map.put(fieldName, value) 放进map中
+4、map.put(names[i], toValue(values[i]))把字段的值转成相应类型后对应放入map中
++---+
+
+* Invoke.java 
+
+** 说明：
+
+**  addXxx(Object dao, String textJson)——方法说明：检验是否有add方法，判断add方法第一个参数是否是普通model并调用add方法
+
++---+
+参数说明：被测试的dao类,{a:1,b:2}
+1、MethodUtil.getMethod(clazz, "add") 利用反射获取add方法，如果不存在抛异常
+2、addMethod.getParameterTypes()[0]获取add方法的第一个参数
+3、if (!returnType.getName().startsWith("com.duowan")) 判断add方法第一个参数是不是普通的model
+4、Tson.parseMap(textJson)  把传入的textJson转成map
+5、遍历add方法的参数名称，如果参数名称跟map的某个key相等
+6、根据参数的类型进行对他们的值进行解析并对应存进args中，参数类型只能是int、long和String，否则抛异常
+7、用动态代理对象调用add，并传入各个参数的值args
++---+
+
+* ModelInstanceUtil.java 
+
+** 说明：主要根据字段类型对其默认值的设置
+
+**  setFieldValue(Object bean, Field[] fields)——方法说明：设置实例字段的值默认值
+
++---+
+参数说明：Xxx.class,字段数组
+1、if (propertyName.indexOf("$") != -1) 判断是否是代理方法，如果是则忽略
+2、忽略logger对象（是特殊实现）
+3、field.getModifiers()获取字段的可见性，如果是private或protected则忽略
+4、如果字段是int类型，则做int类型默认值判断，如果有默认值，则忽略，如果没有则往下执行
+5、getDefaultValueByFieldName(field.getName())这里会设置一些特殊字段的值，例如：yyuid、userName、gameId、serverId等
+6、如果不是特殊字段，获取不到值，则getDefaultValue(field.getType())，根据类型获取该类型默认值
++---+
+
+* Reflect.java 
+
+**  类说明：主要用于获取dao操作的model类型和创建bean
+
+** getReturnType(Object dao, KEYTYPE key)——方法说明：通过Dao和主键获取该Dao所操作的model类型，例如通过GameDao和key=1获取到了model是Game
+
++---+
+参数说明：XxxDaoXxxImpl,dao操作的类的主键
+1、getRealClass(dao)获取类对象
+2、clazz.getDeclaredMethod("get", key.getClass())得到该类的
+3、getMethod.getReturnType()得到get方法的返回类型
+
++---+
+
+** makeBean(Object dao, Method method, Object[] args, String textJson)——方法说明：获取dao操作的model类型，并调用创建bean方法
+
++---+
+参数说明：例如（GameDaoMysqlImpl,delete,{1,"zkw",new Date()},null)
+1、Reflect.getReturnType(dao, args[0])通过get方法得到返回类型，上面有对该方法详细解析
+2、Reflect.makeBean(dao, method, args, textJson, modelType)调用本类的另一个方法创建bean，下面有对该方法进行详细解析
+
++---+
+
+** makeBean(Object dao, Method method, Object[] args, String textJson, Class<?> modelType)——方法说明：创建bean
+
++---+
+1、ClassUtil.getParameterNames(method)获取方法的参数名称数组,例如delete(int key,String userName,Date modifyDate);得到的names为{key,userName,modifyDate}
+2、Tson.toTextJson(textJson, names, args)将方法参数的名称和对应的值，拼接成Json数据格式
+3、 Mock.newInstance(textJson2, modelType)真正创建实例，解析Json中属性和对应值，并设置属性
++---+
+
+
+
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+http://maven.apache.org/doxia/doxia-sitetools/doxia-decoration-model/decoration.html 
+-->
+<project name="Leopard">
+	<bannerLeft>
+		<name>Leopard - 擅长处理重复性工作</name>
+		<href>index.html</href>
+	</bannerLeft>
+	<body>
+		<breadcrumbs>
+			<item name="向上" href="../index.html" />
+		</breadcrumbs>
+		<menu name="Main">
+			<item name="Introduction" href="/index.html" />
+			<item name="Leopard Demo" href="/demo.html" />
+			<item name="培训PPT(相关文档)" href="/ppt/" target="_blank" />
+			<item name="Users" href="/users.html" />
+		</menu>
+		
+		<menu name="Get Leopard">
+			<item name="Download" href="/download.html" />
+			<item name="YEclipse" href="http://yeclipse.game.yy.com/update/" target="_blank"/>
+
+			<item name="Release Notes" href="/release-notes.html"/>
+		</menu>
+
+		<menu name="Documentation">
+			<item name="使用手册" href="/doc/" target="_blank"/>
+			<item name="Leopard论坛" href="http://bbs.leopard.yy.com/"/>
+			<item name="源码学习" href="/study/" target="_blank"/>
+		</menu>
+
+		<menu name="Leopard资源">
+			<item name="Demo" href="http://demo.leopard.yy.com/" target="_blank"/>
+			<item name="论坛" href="http://bbs.leopard.yy.com/" target="_blank"/>
+			<item name="博客" href="http://blog.leopard.yy.com/" target="_blank"/>
+			<item name="Wiki" href="http://wiki.leopard.yy.com/" target="_blank"/>
+			<item name="邮件列表" href="http://leopard.yy.com/mailman/" target="_blank"/>
+			<item name="问题反馈" href="http://bbs.leopard.yy.com/forum.php?mod=forumdisplay&amp;fid=39" target="_blank"/>
+			
+			<item name="孵化项目" href="/labs.html"/>
+			
+			<item name="社区组件" href="/commons.html"/>
+		
+		</menu>
+		
+		<menu name="项目信息">
+			<item name="项目团队" href="/team-list.html"/>			
+			<item name="源代码库" href="/source-repository.html"/>
+		</menu>
+		
+		<menu name="友情链接">
+			<item name="圈复杂度统计数据" href="/sonar/" target="_blank" />
+			<item name="日志分析系统(游戏)" href="http://las.game.yy.com/laswebapp/" target="_blank" />
+			<item name="日志分析系统(快快)" href="http://las.game.yy.com/las4kk/" target="_blank" />
+			<item name="日志分析系统(广州)" href="http://las.game.yy.com/las4yy/" target="_blank" />
+			<item name="烂代码检测系统" href="http://robot.dev.game.yy.com/project/index.do" target="_blank" />
+		</menu>
+		
+		<!-- 
+		${reports}
+		 -->
+	</body>
+</project>

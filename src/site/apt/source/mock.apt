@@ -1,0 +1,279 @@
+ ------
+ 源码学习
+ ------
+ 张凯伟
+ ------
+ 2013-05-14
+ ------
+ 
+源码学习：Mock
+
+* 对Mock的理解：去代替那些被测试代码所依赖的，但不可信赖东西。如class BlogDao, 它不可信赖是因为它访问数据库，class ConfigReader, 它不可信赖是因为它访问配置文件。
+             class MyStringParser， 它不可信赖是因为它有很多逻辑，也还没有对它进行足够的测试。并且这些依赖对象创建的成本高，往往意味着它用到了外部资源，
+             而用到外部资源也就意味着它不可信赖，也就是它必须被隔离
+           
++---+ 	           
+Mock涉及到的类主要有以下：
+com.duowan.leopard.test.mock.Mock.java
+com.duowan.leopard.test.mock.MockSpy.java
+com.duowan.leopard.test.mock.MockTests.java
+com.duowan.leopard.test.mock.Any.java
+com.duowan.leopard.test.mock.MockTransactionalTests.java
+com.duowan.leopard.test.mock.reflect.MockAnswer.java
+com.duowan.leopard.test.mock.proxy.MockMethodUtil.java
++---+
+
+
+* Mock.java (该类继承了org.mockito.Mockito)
+
+** 说明：该类主要为mock提供一些常用的方法，如spy、dao、doReturn等方法
+
+**  newList(String content, Class\<T\> valueType) ——方法说明：构造List\<T\>
+
++---+
+content参数格式 [{gameId:1,serverId:s1};{gameId:2}],XXX.class
+主要有Tson.toListObject(content, valueType)会实现以下功能：
+1、去掉"["和"]"并用";"作为分隔符，把content变成两个字符串数组，例如数组第二个为{gameId:1,serverId:s1}
+2、去掉"{"和"}"并用","作为分隔符，得到两个字符串数组 gameId:1 和 serverId:s1
+3、分别对每个字符串用":"作为分隔符，存入Map，key为属性名，value为值
+4、设置T的参数值，并存入List
+	
++---+
+	
+**  newInstance(String content, Class\<T\> clazz)——方法说明：构造出对象
+
++---+
+参数格式：{gameId:1,serverId:s1},XXX.class
+1、ModelInstanceUtil.getNewInstance(clazz) 先构造出一个新的对象
+2、Tson.parseMap(content)
+   把content参数先去掉"{"和"}"并用","作为分隔符，把content变成两个字符串数组
+   分别对每个字符串用":"作为分隔符，存入Map，key为属性名，value为值
+3、遍历map，设置对象属性值
+	
++---+
+	
+** spy(Object testObject, Class\<T\> clazz)——方法说明：构造对象并Mock测试方法的字段
+
++---+
+参数格式：this，XXX.class
+1、内部类new Mocker()用于以设置访问一个private field 和 mock掉传入的字段
+2、调用了Mock.spy(testObject, clazz, mocker)主要包括以下动作
+ MockSpy.spy(testObject, clazz, mocker) Mock字段和Log对象
+ Mock.spy(bean) 真正调用Mockito的spy去Mock一个真实的对象
+ CURRENT_MOCK.set(spy)   把这个模拟的对象设置到线程的局部变量中
++---+
+	  
+** doReturn()——方法说明：自动设置被mock方法的返回值
+
++---+
+该方法主要有 Mockito.doAnswer(MockAnswer.getDefaultAnswer());会实现以下功能：
+1、调用原生Mockito.doAnswer方法，传入MockAnswer.getDefaultAnswer()
+2、其中MockAnswer.getDefaultAnswer()里面会根据被mock的方法的返回值去返回，
+   如果返回值是int、String或List类型，则对应返回相同类型，否则会返回null
++---+
+
+** doReturn(Object toBeReturned)——方法说明：根据被mock方法的返回值类型和传入的参数，返回值
+
++---+
+content参数格式 [{gameId:1,serverId:s1};{gameId:2}]
+1、去掉"["和"]"并用";"作为分隔符，把content变成两个字符串数组，例如数组第二个为{gameId:1,serverId:s1}
+2、去掉"{"和"}"并用","作为分隔符，得到两个字符串数组 gameId:1 和 serverId:s1
+3、分别对每个字符串用":"作为分隔符，存入Map，key为属性名，value为值
+4、设置T的参数值，并存入List 
++---+
+	
+** dao(Object testObject, final Class\<T\> clazz)——方法说明：mock对象并返回到当前测试类
+
++---+
+参数：测试类对象(this),XXX.class
+1、检查当前测试类是否继承MockTransactionalTests
+2、StringUtil.firstCharToLowerCase(clazz.getName())，把传入的XXX类名第一个字母转成小写
+3、DaoInstanceUtil.newInstance(beanName, clazz)创建一个实例对象,并mock所有字段，这里的重点是会处理不同数据库的实现
+  根据clazz的名字的后缀，判断其实现数据库，然后调用不同的InstanceDao实现类。例如DaoRedisImpl结尾的会执行以下动作
+  （1）会调用InstanceDaoRedisImpl
+  （2）FieldUtils.getField(clazz, "redis", true)获取redis字段
+  （3）MockTransactionModule.getInstance(Redis2TransactionImpl.class)获取redis实现并设置redis字段的值
+4、Mockito.spy(mock)调用Mockito的spy方法
+5、MockSpy.copyToTestObject(testObject, clazz, mock);将mock属性复制到测试类
++---+
+	
+** verify(T mock, int times)——方法说明：对原生的verify进行了封装，支持int类型的times参数
+
++---+
+参数：测试类对象,后面的测试方法被调用次数
+Mock.verify(mock, Mock.times(times))实际上Mock类并没有实现verify，调用的是Mockito原生的verify
+其中Mock.times(times)是调用了Mockito中的VerificationModeFactory.times(wantedNumberOfInvocations)返回一个VerificationMode对象
+这里把数字类型的times参数转成了原生的verify需要的参数类型
++---+
+	
+** verifyStatic(Class<?> clazz, String methodName)——方法说明：验证静态方法的调用次数，默认是1次
+
++---+
+参数：静态测试类对象,被测试的方法
+该方法执行了：把默认的次数设置成1，并调用了verifyStatic(Class<?> clazz, String methodName, int times)（下面会解析该方法）
++---+
+	
+** verifyStatic(Class<?> clazz, String methodName, int times)——方法说明：验证静态方法的调用次数
+
++---+
+参数：静态测试类对象,被测试的方法,执行次数
+1、传入执行次数，调用原生的PowerMockito.verifyStatic(Mock.times(times))
+2、BeanUtils.findMethodWithMinimalParameters(clazz, methodName)这里是寻找该类中包含参数最少（最好是一个都没有）的方法
+3、得到该方法的所有参数 Class<?>[] params = method.getParameterTypes()
+4、遍历参数，根据参数类型调用Matchers获取对应类型的默认值：MethodUtil.getAny(params[i]);
+5、利用动态代理的方式执行该方法：method.invoke(null, args)
++---+
+	
+** goback(T mock, String methodName)——方法说明：根据方法名mock返回默认值(doReturn方法的封装，参数使用any)
+
++---+
+参数：测试类对象,被测试方法
+1、Mock.doReturn()自动设置被mock方法的返回值
+2、调用执行mock中与methodName同名的方法：MockMethodUtil.invokeMethod(stubber, mock, methodName)，下面MockMethodUtil类中有对该方法详细解析
++---+
+
+* MockSpy.java
+
+** 说明：该类主要用于从本类向父类递归，mock类中的字段和Log对象，并把本类中mock属性值复制到测试类中
+
+** spy(Object testObject, Class<T> clazz, Mocker mocker)——方法说明：mock传入的clazz以及它的父类的字段
+
++---+
+参数格式： 测试类对象,XXX.class,Mocker对象
+1、InstanceUtil.instantiateClass(clazz)实例化XXX.class
+2、Field[] fields = currentClazz.getDeclaredFields()得到当前类声明的所有字段
+3、除了以"com.duowan"开头和已经被mock过的字段，都mock该字段的值
+4、循环获取XXX.class的父类，执行1-4，直到父类不存在
+5、Mock.mockLogs(bean);mock 所有Log对象
+6、MockSpy.copyToTestObject(testObject, clazz, mock);将mock属性复制到测试类
++---+
+
+
+* MockTests.java
+
+** 说明：MockTests类主要处理静态类的mock，并且还继承了DefaultParameter.java(设置了测试使用的默认参数，例如默认username:username)
+
+** @Before
+before()——方法说明：如果测试类继承了MockTests.java,则每个测试方法执行之前都要执行一次该方法，主要是对静态类的处理
+
++---+
+主要有Tson.toListObject(content, valueType)会实现以下功能：
+1、this.getClass().getAnnotation(PrepareForTest.class) 获得PrepareForTest注解
+2、如果PrepareForTest注解 不存在则返回，否则执行3
+3、得到所有有PrepareForTest注解的静态方法的类，并循环取出，对每个都执行以下4-6动作
+4、mapping.put(clazz.getSimpleName(), clazz.getName()) 把静态类信息放入map中
+5、PowerMockito.mockStatic(clazz) 把该静态类mock掉
+6、Json.print(mapping, "mapping") 将mock掉的静态类名转成Json并打印出来
+7、STATIC_CLASS_MAPPING.set(mapping) 将Mock掉的静态类信息Map放入线程局部变量中
++---+
+
+
+* Any.java
+
+** 说明：该类主要用于返回int、boolean、List的默认值，方法调用的都是Mock的方法，但是Mock方法没有实现，继承的父类中实现了该方法，所以实际调用的都是父类Matchers的方法    
+
+** i()——方法说明：返回0
+
++---+
+调用Mock.anyInt()主要是执行了Matchers的reportMatcher(Any.ANY).returnZero()
++---+
+	
+** b()——方法说明：返回false
+
++---+
+调用Mock.anyBoolean()主要是执行了reportMatcher(Any.ANY).returnFalse()
++---+
+	
+** slist()——方法说明：返回new LinkedList()
+
++---+
+调用Mock.anyListOf(String.class)主要是执行了Matchers的reportMatcher(Any.ANY).returnList()
++---+
+	
+** ilist()——方法说明：返回new LinkedList()
+
++---+
+调用Mock.anyListOf(Integer.class)主要是执行了Matchers的reportMatcher(Any.ANY).returnList()
++---+
+
+
+* MockTransactionalTests.java
+
+** 说明：该类主要是注入h2数据源配置、环境变量设置和错误日志输出配置等，并为memcache和redis这些本身不带事务的也提供事务支持，方便测试
+
+** 注解
+
++---+
+@RunWith(StandardApiRunner.class)  
+  StandardApiRunner继承SpringJUnit4ClassRunner表示该测试用例是运用junit4进行测试
+@ContextConfiguration(locations = "/mock/applicationContext-tx.xml", inheritLocations = false)
+   加载了配置文件（其中有一个masterDataSource的bean）并且inheritLocations为false,表示子类不可以继承该设置
+@ActiveProfiles(value = EnvUtil.ENV_DEV, inheritProfiles = false)
+   设置环境为dev
++---+
+
+** 静态块
+
++---+
+1、MockTransactionalTests.autoSetEnvByProperties()把该项目的环境变量设置为dev
+2、MockTransactionModule.getInstance(H2ServiceImpl.class).importDatabase() 这里会有以下几个动作：
+  （1）验证是否是H2数据库
+  （2）将项目中doc/initdata/alter.sql和doc/initdata/项目名称.sql 数据库语句合并判断是否有修改过，如果修改过，则重新创建表"h2tableinfo"
+  （3）创建缓存表memcache
+3、设置错误日志路径为：/data2/log/resin/mock.err.log
++---+
+
+** setDataSource(@Qualifier("masterDataSource") DataSource dataSource)
+
++---+
+1、注入bean为masterDataSource的数据源，在配置文件中的/mock/applicationContext-tx.xml中的声明了对应是DataSourceTransactionManager类
+2、设置了H2数据库的数据源的一些属性，具体设置内容可看类com.duowan.leopard.test.mock.transaction.h2.DataSourceProvider类
++---+
+
+
+* MockAnswer.java
+
+** 说明：该类主要用于传入字符串，根据方法返回类型解析得到返回值
+
+** getListAnswer(final String content)——方法说明：得到一个List\<T\>的返回值
+
++---+
+content参数格式 [gameId:ddt;gameId:sxd,userCount:1] 或者 [a,b,c]
+里面主要有new Answer<Object>()内部类，会实现以下功能：
+1、获取mock的方法
+2、调用MockAnswer.parseReturnValue(method, content)解析返回值，具体实现细节看下面该方法的解析
++---+
+	
+** parseReturnValue(Method method, String content)——方法说明：根据返回值类型解析返回值
+
++---+
+content参数格式[gameId:ddt;gameId:sxd,userCount:1]或[a,b,c]
+1、获取mock方法返回类型的参数类型
+ ParameterizedType parameterizedType = (ParameterizedType) method.getGenericReturnType();
+ Type[] types = parameterizedType.getActualTypeArguments();
+   判断是否为泛型参数类型，如果是则执行下面，否则执行2
+ if (types[0] instanceof ParameterizedType)
+   如果是参数类型则调用MockAnswer.parseSubType(types[0], content)，这个方法里面做了：
+    （1）判断如果是Map.Entry<K,V>，则content去掉"["和"]"并解析成map并返回
+    （2）如果不是Map.Entry<K,V>则抛异常
+2、如果mock的方法返回是非泛型参数的Map，则调用Tson.toMapObject解析并返回map；否则执行3
+3、判断content是否包含":",如果不包含则调用addQuotes(content, clazz)增加引号，变成json格式字符串，
+  最后调用Json.toListObject(content, clazz)解析并返回List。否则执行4
+4、调用Tson.toListObject(param, clazz),用";"作为分隔符，返回List<T>
++---+
+
+
+* MockMethodUtil.java
+
+** 说明：主要用于执行mock中与传入的methodName同名的方法的相关操作
+
+** invokeMethod(Stubber stubber, T mock, String methodName)——方法说明：调用执行mock中与methodName同名的方法
+
++---+
+1、Method[] methods = mock.getClass().getMethods()获取mock类中所有的方法
+2、遍历这些方法，并执行以下动作：
+3、如果方法名称跟传入的methodName相等，则调用stubber.when(mock)
+4、调用toAnyArgs(method.getParameterTypes())根据各个参数的类型获取默认值
+5、调用method.invoke(proxy, args)执行该方法
++---+
+

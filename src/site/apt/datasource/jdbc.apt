@@ -1,0 +1,50 @@
+ ------
+ datasource
+ ------
+卢轩华
+ ------
+ 2013-04-26
+ ------
+ 
+
+Jdbc主题：
+
++---+
+jdbc插入数据
+[Spring]
+public Game get(Integer gameId) {               
+	String sql = "select * from game where gameId = ? ";
+	return jdbcTemplate.queryForObject(sql, new RowMapper<Game>() {
+	public Game mapRow(ResultSet rs, int rowNum) throws SQLException {
+		Game game = new Game();
+		game.setGameId(rs.getInt("game_id"));
+		game.setGameName(rs.getString("game_name"));
+		game.setServerId(rs.getString("server_id"));
+		game.setRemark(rs.getString("remark"));
+		return game;
+		}
+	}, gameId);
+}
+
+[leopard]
+public Game get(Integer gameId) {
+	String sql = "select * from game where game_id = ? ";
+	return this.jdbc.query(sql, Game.class, gameId);
+}
+
+
+@Override
+public boolean add(Caster caster) {
+	InsertBuilder builder = new InsertBuilder("caster", true);
+	builder.setInt("caster_id", caster.getCasterId());
+	builder.setString("caster_name", caster.getCasterName());
+	builder.setString("remark", caster.getRemark());
+	builder.setInt("orders", caster.getOrders());
+	builder.setString("pic_path", caster.getPicPath());
+	builder.setString("game_id", caster.getGameId());
+	builder.setString("server_id", caster.getServerId());
+	return jdbc.insertForBoolean(builder);
+}
+
++---+
+
