@@ -26,8 +26,7 @@ http://maven.apache.org/doxia/doxia-sitetools/doxia-decoration-model/decoration.
 
 		<menu name="Documentation">
 			<item name="使用手册" href="/doc/" target="_blank"/>
-			<item name="Leopard论坛" href="http://bbs.leopard.yy.com/"/>
-			<item name="论坛" href="http://bbs.leopard.io/" target="_blank"/>
+			<item name="Leopard论坛" href="http://bbs.leopard.io/" target="_blank"/>
 		</menu>
 		
 		<menu name="项目信息">
