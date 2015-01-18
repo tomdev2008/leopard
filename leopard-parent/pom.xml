@@ -82,12 +82,12 @@
 		<repository>
 			<id>releases</id>
 			<name>Leopard Releases</name>
-			<url>http://leopard.io:8089/nexus/content/repositories/releases/</url>
+			<url>http://leopard.io/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>Leopard snapshots</name>
-			<url>http://leopard.io:8089/nexus/content/repositories/snapshots/</url>
+			<url>http://leopard.io/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
