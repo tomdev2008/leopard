@@ -202,7 +202,7 @@
 				<artifactId>burrow-lang</artifactId>
 				<version>${burrow.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>io.leopard.test4j</groupId>
 				<artifactId>test4j-jetty</artifactId>
@@ -246,8 +246,8 @@
 		<module>leopard-netty</module>
 		<module>leopard-parent</module>
 	</modules>
-	
-	
+
+
 	<developers>
 		<developer>
 			<name>谭海潮</name>
@@ -278,18 +278,23 @@
 		</developer>
 	</developers>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<configuration>
-					<encoding>utf8</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 
+	<profiles>
+		<profile>
+			<id>site</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-site-plugin</artifactId>
+						<configuration>
+							<encoding>utf8</encoding>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<reporting>
 		<plugins>
