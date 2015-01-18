@@ -25,9 +25,6 @@ public class CheckLoginInterceptor implements HandlerInterceptor {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
-		// String requestUri = RequestUtil.getRequestContextUri(request);
-		// System.err.println("CheckLoginInterceptor preHandle:" + requestUri);
 		boolean isExcludeUri = userinfoService.isExcludeUri(request);
 		CsrfUtil.setExcludeUri(request, isExcludeUri);
 		if (isExcludeUri) {
