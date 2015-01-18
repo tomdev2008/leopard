@@ -3,7 +3,7 @@
  ------
  谭海潮
  ------
- 2013-12-12
+ 2015-01-18
  ------
 
 下载
@@ -13,13 +13,10 @@
 <project>
   [...]  
   <parent>
-	<groupId>com.duowan.depend</groupId>
-	<artifactId>depend-webapp</artifactId>
-	<version>0.23</version>
+	<groupId>io.leopard</groupId>
+	<artifactId>leopard-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
   </parent>
-  <properties>
-	<leopard.version>1.0.2</leopard.version>
-  </properties>
 		  
   [...]
 </project>
