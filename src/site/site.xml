@@ -14,8 +14,6 @@ http://maven.apache.org/doxia/doxia-sitetools/doxia-decoration-model/decoration.
 		<menu name="Main">
 			<item name="Introduction" href="/index.html" />
 			<item name="Leopard Demo" href="/demo.html" />
-			<item name="培训PPT(相关文档)" href="/ppt/" target="_blank" />
-			<item name="Users" href="/users.html" />
 		</menu>
 		
 		<menu name="Get Leopard">
