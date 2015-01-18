@@ -2,7 +2,7 @@ package io.leopard.test.internal;
 
 import io.leopard.commons.utility.ArrayUtil;
 import io.leopard.data4j.context.LeopardClassPathXmlApplicationContext;
-import io.leopard.test.hosts.HostsUtil;
+import io.leopard.test.hosts.HostLeiImpl;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.ClassPathResource;
@@ -25,7 +25,9 @@ public class TestContextLoader implements ContextLoader {
 
 	@Override
 	public ApplicationContext loadContext(String... locations) throws Exception {
-		HostsUtil.initHosts();
+		// HostsUtil.initHosts();
+		new HostLeiImpl();
+
 		String[] files = getFiles(locations);
 		files = ArrayUtil.insertFirst(files, "/leopard-test/annotation-config.xml");
 		return new LeopardClassPathXmlApplicationContext(files);
