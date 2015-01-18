@@ -32,11 +32,19 @@ Leopard测试：
 
 * Leopard Maven Archetype
 
-	通过Maven Archetype生成基于Leopard的默认项目
+	通过Maven Archetype生成基于Leopard单模块项目
   	
 +---+
 
 mvn archetype:generate -DarchetypeRepository=http://leopard.io/nexus/content/groups/public-snapshots/ -DarchetypeGroupId=io.leopard.archetype -DarchetypeArtifactId=lexample-archetype -DarchetypeVersion=0.0.1-SNAPSHOT -DgroupId=com.baidu.example -DartifactId=example -Dversion=0.0.1-SNAPSHOT
+
++---+
+
+	通过Maven Archetype生成基于Leopard多模块项目
+  	
++---+
+
+mvn archetype:generate -DarchetypeRepository=http://leopard.io/nexus/content/groups/public-snapshots/ -DarchetypeGroupId=io.leopard.archetype -DarchetypeArtifactId=sexample-archetype -DarchetypeVersion=0.0.1-SNAPSHOT -DgroupId=com.baidu.example -DartifactId=example -Dversion=0.0.1-SNAPSHOT
 
 +---+
 
