@@ -1,6 +1,6 @@
 package io.leopard;
 
-import io.leopard.jetty.JettyServer;
+import io.leopard.test4j.jetty.JettyServer;
 
 import org.junit.Ignore;
 

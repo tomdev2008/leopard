@@ -12,17 +12,16 @@ JettyTest例子：
   	
 +---+
 
-package com.duowan.news;
+package io.leopard.blog;
 
 import org.junit.Ignore;
-
-import com.duowan.leopard.test.jetty.JettyServer;
+import io.leopard.test4j.jetty.JettyServer;
 
 @Ignore
 public class JettyTest {
 
 	public static void main(String[] args) throws Exception {
-		JettyServer.start("news");
+		JettyServer.start();
 	}
 
 }
