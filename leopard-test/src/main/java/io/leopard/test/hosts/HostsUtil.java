@@ -1,10 +1,15 @@
 package io.leopard.test.hosts;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 //http://zhwj184.iteye.com/blog/1202322
 public class HostsUtil {
@@ -32,10 +37,22 @@ public class HostsUtil {
 		return LocalHost.isLocalHost(host);
 	}
 
-	// public static void initHosts(Resource resource) throws IOException {
-	// Properties config = PropertiesLoaderUtils.loadProperties(resource);
-	// DnsUtil.initHosts(config);
-	// }
+	public static boolean initHosts() {
+		Resource resource = new ClassPathResource("/dev/dns.properties");
+		if (!resource.exists()) {
+			String message = "host文件[classpath:/dev/dns.properties]不存在.";
+			System.out.println(message);
+			return false;
+		}
+		try {
+			Properties config = PropertiesLoaderUtils.loadProperties(resource);
+			initHosts(config);
+		}
+		catch (IOException e) {
+			throw new RuntimeException(e.getMessage(), e);
+		}
+		return true;
+	}
 
 	public static void initHosts(Properties prop) {
 		Iterator<Entry<Object, Object>> iterator = prop.entrySet().iterator();
@@ -50,7 +67,8 @@ public class HostsUtil {
 				// TODO ahai 需要设置Property吗？
 				if (isLocalHost) {
 					System.setProperty(host, host);
-				} else {
+				}
+				else {
 					InetAddressUtil.putCache(host, ip);
 					System.setProperty(host, ip);
 				}
