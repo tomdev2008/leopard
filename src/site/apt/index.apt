@@ -28,6 +28,19 @@ Leopard测试：
 	{{http://leopard.io/doc/}}
 
 
+
+
+* Leopard Maven Archetype
+
+	通过Maven Archetype生成基于Leopard的默认项目
+  	
++---+
+
+mvn archetype:generate -DarchetypeRepository=http://leopard.io/nexus/content/groups/public-snapshots/ -DarchetypeGroupId=io.leopard.archetype -DarchetypeArtifactId=lexample-archetype -DarchetypeVersion=0.0.1-SNAPSHOT -DgroupId=com.baidu.example -DartifactId=example -Dversion=0.0.1-SNAPSHOT
+
++---+
+
+
 * Usage
 
 	可以使用以下配置加入您的pom.xml!!!!
@@ -72,13 +85,4 @@ Leopard测试：
 
 
 
-* Leopard Maven Archetype
-
-	通过Maven Archetype生成基于Leopard的默认项目
-  	
-+---+
-
-mvn archetype:generate -DarchetypeRepository=http://leopard.io/nexus/content/groups/public-snapshots/ -DarchetypeGroupId=io.leopard.archetype -DarchetypeArtifactId=lexample-archetype -DarchetypeVersion=0.0.1-SNAPSHOT -DgroupId=com.baidu.example -DartifactId=example -Dversion=0.0.1-SNAPSHOT
-
-+---+
 
