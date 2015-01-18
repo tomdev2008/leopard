@@ -13,7 +13,6 @@ http://maven.apache.org/doxia/doxia-sitetools/doxia-decoration-model/decoration.
 		</breadcrumbs>
 		<menu name="Main">
 			<item name="Introduction" href="/index.html" />
-			<item name="Leopard Demo" href="/demo.html" />
 		</menu>
 		
 		<menu name="Get Leopard">
