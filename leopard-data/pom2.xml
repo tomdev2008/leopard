@@ -17,10 +17,6 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>io.leopard.data4j</groupId>
-			<artifactId>data4j-all</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
 		</dependency>
