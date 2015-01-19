@@ -1,2 +1,2 @@
-cd /data/src/leopard
+cd /home/workspace/github/leopard
 
