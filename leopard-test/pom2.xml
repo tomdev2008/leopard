@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>leopard</artifactId>
+		<groupId>io.leopard</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>leopard-test</artifactId>
+	<name>测试包</name>
+
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>io.leopard</groupId>
+			<artifactId>leopard-data</artifactId>
+			<version>0.0.1-SNAPSHOT</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
+
+
+		<dependency>
+			<groupId>io.leopard.test4j</groupId>
+			<artifactId>test4j-mock</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+
+
+
+	<build>
+		<plugins>
+			<!-- http://mojo.codehaus.org/build-helper-maven-plugin/usage.html -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.9.1</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo>add sources</echo>
+							</tasks>
+							<sources>
+								<source>/home/workspace/github/test4j/test4j-mock/src/main/java</source>
+							</sources>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>add-resource</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>add-resource</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo>add resources</echo>
+							</tasks>
+							<resources>
+								<resource>
+									<directory>/home/workspace/github/test4j/test4j-mock/src/main/resources</directory>
+									<excludes>
+										<exclude>test.txt</exclude>
+									</excludes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
