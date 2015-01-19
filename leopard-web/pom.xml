@@ -44,8 +44,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.leopard.test4j</groupId>
-			<artifactId>test4j-jetty</artifactId>
+			<groupId>io.leopard</groupId>
+			<artifactId>leopard-jetty</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
