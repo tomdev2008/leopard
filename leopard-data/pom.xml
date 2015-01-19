@@ -48,26 +48,8 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.31</version>
-		</dependency>
-
-		<!-- <dependency> <groupId>org.mariadb.jdbc</groupId> <artifactId>mariadb-java-client</artifactId> <version>1.1.7</version> </dependency> -->
-
-		<!-- <dependency> <groupId>io.leopard.commons</groupId> <artifactId>memcached-java-client</artifactId> <version>2.6.4-SNAPSHOT</version> <exclusions> <exclusion> <artifactId>slf4j-api</artifactId> <groupId>org.slf4j</groupId> 
-			</exclusion> <exclusion> <artifactId>slf4j-log4j12</artifactId> <groupId>org.slf4j</groupId> </exclusion> <exclusion> <artifactId>yanf4j</artifactId> <groupId>google</groupId> </exclusion> <exclusion> 
-			<artifactId>commons-pool</artifactId> <groupId>commons-pool</groupId> </exclusion> </exclusions> </dependency> -->
-		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
-			<!-- <version>2.1.0</version> -->
 		</dependency>
 		<dependency>
 			<groupId>org.mongodb</groupId>
@@ -116,14 +98,14 @@
 			<groupId>xml-apis</groupId>
 			<artifactId>xml-apis</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.leopard.test4j</groupId>
-			<artifactId>test4j-mock</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>io.leopard.data4j</groupId>
 			<artifactId>data4j-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.leopard.test4j</groupId>
+			<artifactId>test4j-mock</artifactId>
 		</dependency>
 
 	</dependencies>
