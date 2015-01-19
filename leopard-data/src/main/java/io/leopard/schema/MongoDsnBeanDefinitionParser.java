@@ -1,6 +1,6 @@
 package io.leopard.schema;
 
-import io.leopard.data.mongo.MongoImpl;
+import io.leopard.data4j.mongo.MongoImpl;
 
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;

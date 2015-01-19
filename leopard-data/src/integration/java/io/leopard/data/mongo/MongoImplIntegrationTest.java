@@ -1,6 +1,8 @@
 package io.leopard.data.mongo;
 
 import io.leopard.burrow.lang.Json;
+import io.leopard.data4j.mongo.Mongo;
+import io.leopard.data4j.mongo.MongoImpl;
 
 import java.util.Date;
 import java.util.List;
