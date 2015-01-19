@@ -62,15 +62,15 @@
 							<tasks>
 								<echo>add resources</echo>
 							</tasks>
-							<sources>
-								<source>/home/workspace/github/data4j/data4j-cache/src/main/resources</source>
-								<source>/home/workspace/github/data4j/data4j-jdbc/src/main/resources</source>
-								<source>/home/workspace/github/data4j/data4j-memcache/src/main/resources</source>
-								<source>/home/workspace/github/data4j/data4j-memdb/src/main/resources</source>
-								<source>/home/workspace/github/data4j/data4j-mongo/src/main/resources</source>
-								<source>/home/workspace/github/data4j/data4j-redis/src/main/resources</source>
-								<source>/home/workspace/github/data4j/data4j-schema/src/main/resources</source>
-							</sources>
+							<resources>
+								<resource>/home/workspace/github/data4j/data4j-cache/src/main/resources</resource>
+								<resource>/home/workspace/github/data4j/data4j-jdbc/src/main/resources</resource>
+								<resource>/home/workspace/github/data4j/data4j-memcache/src/main/resources</resource>
+								<resource>/home/workspace/github/data4j/data4j-memdb/src/main/resources</resource>
+								<resource>/home/workspace/github/data4j/data4j-mongo/src/main/resources</resource>
+								<resource>/home/workspace/github/data4j/data4j-redis/src/main/resources</resource>
+								<resource>/home/workspace/github/data4j/data4j-schema/src/main/resources</resource>
+							</resources>
 						</configuration>
 					</execution>
 
