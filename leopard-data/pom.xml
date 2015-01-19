@@ -85,9 +85,7 @@
 								<echo>add sources</echo>
 							</tasks>
 							<sources>
-								<source>src/integration/java</source>
-								<source>src/testnb/java</source>
-								<source>src/benchmark/java</source>
+								<source>/home/workspace/github/data4j/data4j-jdbc/src/main/java</source>
 							</sources>
 						</configuration>
 					</execution>
