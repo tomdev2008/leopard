@@ -25,6 +25,7 @@
 
 	<build>
 		<plugins>
+			<!-- http://mojo.codehaus.org/build-helper-maven-plugin/usage.html -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
