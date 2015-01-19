@@ -29,7 +29,7 @@
 
 	<properties>
 		<burrow.version>0.0.4</burrow.version>
-		<top4j.version>0.0.2-SNAPSHOT</top4j.version>
+		<top4j.version>0.0.2</top4j.version>
 		
 		
 		<test4j.version>0.0.4-SNAPSHOT</test4j.version>
