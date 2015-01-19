@@ -55,6 +55,28 @@
 							</sources>
 						</configuration>
 					</execution>
+					
+					<execution>
+						<id>add-resource</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>add-resource</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo>add resources</echo>
+							</tasks>
+							<sources>
+								<source>/home/workspace/github/data4j/data4j-cache/src/main/resources</source>
+								<source>/home/workspace/github/data4j/data4j-jdbc/src/main/resources</source>
+								<source>/home/workspace/github/data4j/data4j-memcache/src/main/resources</source>
+								<source>/home/workspace/github/data4j/data4j-memdb/src/main/resources</source>
+								<source>/home/workspace/github/data4j/data4j-mongo/src/main/resources</source>
+								<source>/home/workspace/github/data4j/data4j-redis/src/main/resources</source>
+								<source>/home/workspace/github/data4j/data4j-schema/src/main/resources</source>
+							</sources>
+						</configuration>
+					</execution>
 
 				</executions>
 			</plugin>
