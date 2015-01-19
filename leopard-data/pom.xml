@@ -16,10 +16,6 @@
 			<artifactId>leopard-util</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-	
-
-
-
 		<dependency>
 			<groupId>io.leopard.data4j</groupId>
 			<artifactId>data4j-all</artifactId>
@@ -31,31 +27,4 @@
 	</dependencies>
 
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.9.1</version>
-				<executions>
-					<execution>
-						<id>add-source</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<tasks>
-								<echo>add sources</echo>
-							</tasks>
-							<sources>
-								<source>/home/workspace/github/data4j/data4j-jdbc/src/main/java</source>
-							</sources>
-						</configuration>
-					</execution>
-
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
 </project>
