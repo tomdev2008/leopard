@@ -12,8 +12,8 @@
 
 	<parent>
 		<groupId>io.leopard.depend</groupId>
-		<artifactId>depend-oss</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<artifactId>depend</artifactId>
+		<version>0.0.8</version>
 	</parent>
 
 	<scm>
@@ -28,12 +28,13 @@
 	</issueManagement>
 
 	<properties>
-		<leopard.version>0.0.1-SNAPSHOT</leopard.version>
-		<burrow.version>0.0.4-SNAPSHOT</burrow.version>
+		<burrow.version>0.0.4</burrow.version>
+		<top4j.version>0.0.2-SNAPSHOT</top4j.version>
+		
+		
 		<test4j.version>0.0.4-SNAPSHOT</test4j.version>
 		<web4j.version>0.0.2-SNAPSHOT</web4j.version>
 		<data4j.version>0.0.1-SNAPSHOT</data4j.version>
-		<top4j.version>0.0.2-SNAPSHOT</top4j.version>
 	</properties>
 
 
