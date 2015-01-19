@@ -19,7 +19,11 @@
 			<version>0.0.1-SNAPSHOT</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 
-
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
