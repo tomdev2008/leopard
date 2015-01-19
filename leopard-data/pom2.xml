@@ -21,75 +21,12 @@
 			<artifactId>test4j-mock</artifactId>
 		</dependency>
 
-		<!-- redis -->
 		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-			<version>2.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-redis</artifactId>
-			<version>1.1.0.M1</version>
+			<groupId>io.leopard.data4j</groupId>
+			<artifactId>data4j-all</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<!-- redis -->
-		<!-- schema -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard.burrow</groupId>
-			<artifactId>burrow-lang</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- schema -->
 
-		<!-- jdbc -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.31</version>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard.burrow</groupId>
-			<artifactId>burrow-lang</artifactId>
-		</dependency>
-		<!-- jdbc -->
-
-
-		<!-- mongo -->
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongo-java-driver</artifactId>
-			<version>2.12.3</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- mongo -->
-
-		<!-- memcache -->
-		<dependency>
-			<groupId>com.whalin</groupId>
-			<artifactId>Memcached-Java-Client</artifactId>
-			<version>3.0.2</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- memcache -->
 
 
 	</dependencies>
