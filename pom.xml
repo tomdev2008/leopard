@@ -204,12 +204,7 @@
 				<version>${burrow.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>io.leopard.test4j</groupId>
-				<artifactId>test4j-jetty</artifactId>
-				<version>${test4j.version}</version>
-				<scope>test</scope>
-			</dependency>
+			
 			<dependency>
 				<groupId>io.leopard.test4j</groupId>
 				<artifactId>test4j-mock</artifactId>
