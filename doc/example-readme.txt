@@ -23,4 +23,5 @@ mvn leopard:generate -DgroupId=com.baidu.example -DartifactId=example -Dversion=
 
 mvn io.leopard.archetype:leopard:0.1:sexample -DgroupId=com.baidu.example
 
+mvn io.leopard.maven.plugins:leopard-maven-plugin:0.1-SNAPSHOT:sexample -DgroupId=com.baidu.example
 
