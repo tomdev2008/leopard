@@ -116,7 +116,7 @@
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
   <servlet>
     <servlet-name>default</servlet-name>
-    <servlet-class>io.leopard.test4j.jetty.LeopardDefaultServlet</servlet-class>
+    <servlet-class>io.leopard.jetty.LeopardDefaultServlet</servlet-class>
     <init-param>
       <param-name>aliases</param-name>
       <param-value>false</param-value>
