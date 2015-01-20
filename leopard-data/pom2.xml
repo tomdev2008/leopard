@@ -41,6 +41,10 @@
 		<!-- memcache -->
 		<!-- redis -->
 		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-redis</artifactId>
 			<version>1.1.0.M1</version>
