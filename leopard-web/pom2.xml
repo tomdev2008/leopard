@@ -77,10 +77,17 @@
 			<artifactId>test4j-mock</artifactId>
 		</dependency>
 
-
+		<!-- captcha -->
+		<dependency>
+			<groupId>io.leopard.commons</groupId>
+			<artifactId>jcaptcha-core</artifactId>
+			<version>2.0.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- captcha -->
 	</dependencies>
-	
-	
+
+
 
 	<build>
 		<plugins>
@@ -145,5 +152,5 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>	
+	</build>
 </project>
