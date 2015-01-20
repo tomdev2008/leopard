@@ -101,13 +101,22 @@
 								<echo>add sources</echo>
 							</tasks>
 							<sources>
-								<source>/home/workspace/github/data4j/data4j-cache/src/main/java</source>
-								<source>/home/workspace/github/data4j/data4j-jdbc/src/main/java</source>
-								<source>/home/workspace/github/data4j/data4j-memcache/src/main/java</source>
-								<source>/home/workspace/github/data4j/data4j-memdb/src/main/java</source>
-								<source>/home/workspace/github/data4j/data4j-mongo/src/main/java</source>
-								<source>/home/workspace/github/data4j/data4j-redis/src/main/java</source>
-								<source>/home/workspace/github/data4j/data4j-schema/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-admin/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-captcha/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-commond/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-editor/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-mvc/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-nobug/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-parameter/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-passport/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-permission/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-proxy/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-servlet/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-session/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-taglib/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-trynb/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-validator/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-view/src/main/java</source>
 							</sources>
 						</configuration>
 					</execution>
@@ -124,13 +133,7 @@
 							</tasks>
 							<resources>
 								<resource>
-									<directory>/home/workspace/github/data4j/data4j-cache/src/main/resources</directory>
-									<excludes>
-										<exclude>test.txt</exclude>
-									</excludes>
-								</resource>
-								<resource>
-									<directory>/home/workspace/github/data4j/data4j-schema/src/main/resources</directory>
+									<directory>/home/workspace/github/web4j/web4j-taglib/src/main/resources</directory>
 									<excludes>
 										<exclude>test.txt</exclude>
 									</excludes>
