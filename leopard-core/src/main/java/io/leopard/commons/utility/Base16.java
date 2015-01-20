@@ -3,7 +3,7 @@ package io.leopard.commons.utility;
 /**
  * 字符串16进制转换
  * 
- * @author Administrator
+ * @author 阿海
  * 
  */
 public class Base16 {
