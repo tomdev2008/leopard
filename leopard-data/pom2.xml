@@ -51,6 +51,11 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- redis -->
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
 
 	</dependencies>
 
