@@ -115,6 +115,12 @@
 										<exclude>test.txt</exclude>
 									</excludes>
 								</resource>
+								<resource>
+									<directory>/home/workspace/github/data4j/data4j-schema/src/main/resources</directory>
+									<excludes>
+										<exclude>test.txt</exclude>
+									</excludes>
+								</resource>
 							</resources>
 						</configuration>
 					</execution>
