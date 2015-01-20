@@ -38,6 +38,12 @@
 			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
 			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>cglib-nodep</artifactId>
+					<groupId>cglib</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 
