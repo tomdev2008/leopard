@@ -19,5 +19,5 @@ svn up;mvn clean archetype:create-from-project
 cd target/generated-sources/archetype;mvn deploy -U
 
 
-mvn leopard:generate -DgroupId=com.baidu.example -DartifactId=example -Dversion=0.1-SNAPSHOT
+mvn io.leopard.archetype:leopard:0.1:sexample -DgroupId=com.baidu.example
 
