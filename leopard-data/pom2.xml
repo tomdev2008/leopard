@@ -103,6 +103,8 @@
 								<echo>add sources</echo>
 							</tasks>
 							<sources>
+								<source>/home/workspace/github/burrow/burrow-lang/src/main/java</source>
+								
 								<source>/home/workspace/github/data4j/data4j-cache/src/main/java</source>
 								<source>/home/workspace/github/data4j/data4j-jdbc/src/main/java</source>
 								<source>/home/workspace/github/data4j/data4j-memcache/src/main/java</source>
