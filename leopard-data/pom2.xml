@@ -88,6 +88,12 @@
 			<version>1.6.1</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.belerweb</groupId>
+			<artifactId>pinyin4j</artifactId>
+			<version>2.5.0</version>
+			<scope>provided</scope>
+		</dependency>
 		<!-- burrow-lang -->
 
 	</dependencies>
