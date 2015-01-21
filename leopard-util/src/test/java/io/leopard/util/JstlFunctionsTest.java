@@ -1,9 +1,8 @@
 package io.leopard.util;
 
-import io.leopard.commons.utility.StringUtil;
-import io.leopard.util.JstlFunctions;
-import org.junit.Assert;
+import io.leopard.burrow.util.StringUtil;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class JstlFunctionsTest {

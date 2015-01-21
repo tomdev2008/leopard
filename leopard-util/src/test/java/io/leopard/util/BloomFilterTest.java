@@ -1,6 +1,5 @@
 package io.leopard.util;
 
-import io.leopard.util.BloomFilter;
 import io.leopard.util.BloomFilter.HashFunctions;
 
 import org.junit.Assert;

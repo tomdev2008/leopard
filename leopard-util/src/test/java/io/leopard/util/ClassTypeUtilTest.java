@@ -1,7 +1,5 @@
 package io.leopard.util;
 
-import io.leopard.util.ClassTypeUtil;
-
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,7 +1,6 @@
 package io.leopard.util;
 
 import io.leopard.core.exception.TimeoutRuntimeException;
-import io.leopard.util.FailFast;
 
 import org.junit.Test;
 

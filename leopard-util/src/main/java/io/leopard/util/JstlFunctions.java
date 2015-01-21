@@ -1,6 +1,6 @@
 package io.leopard.util;
 
-import io.leopard.commons.utility.StringUtil;
+import io.leopard.burrow.util.StringUtil;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

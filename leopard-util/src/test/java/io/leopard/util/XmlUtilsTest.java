@@ -1,9 +1,7 @@
 package io.leopard.util;
 
-import io.leopard.util.XmlUtils;
-import org.junit.Assert;
-
 import org.dom4j.Element;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class XmlUtilsTest {

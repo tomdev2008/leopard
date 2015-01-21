@@ -1,6 +1,6 @@
 package io.leopard.util;
 
-import io.leopard.commons.utility.NumberUtil;
+import io.leopard.burrow.util.NumberUtil;
 
 public class MultiThreadCaller extends Caller {
 
