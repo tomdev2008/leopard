@@ -127,6 +127,8 @@
 								<source>/home/workspace/github/data4j/data4j-mongo/src/main/java</source>
 								<source>/home/workspace/github/data4j/data4j-redis/src/main/java</source>
 								<source>/home/workspace/github/data4j/data4j-schema/src/main/java</source>
+								<source>/home/workspace/github/data4j/data4j-log/src/main/java</source>
+								<source>/home/workspace/github/data4j/data4j-env/src/main/java</source>
 							</sources>
 						</configuration>
 					</execution>
