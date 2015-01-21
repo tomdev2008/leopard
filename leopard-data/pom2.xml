@@ -81,6 +81,15 @@
 		</dependency>
 		<!-- mongo -->
 
+		<!-- burrow-lang -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- burrow-lang -->
+
 	</dependencies>
 
 
@@ -104,7 +113,7 @@
 							</tasks>
 							<sources>
 								<source>/home/workspace/github/burrow/burrow-lang/src/main/java</source>
-								
+
 								<source>/home/workspace/github/data4j/data4j-cache/src/main/java</source>
 								<source>/home/workspace/github/data4j/data4j-jdbc/src/main/java</source>
 								<source>/home/workspace/github/data4j/data4j-memcache/src/main/java</source>
