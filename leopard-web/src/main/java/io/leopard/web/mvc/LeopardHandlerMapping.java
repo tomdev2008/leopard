@@ -21,7 +21,6 @@ import io.leopard.web4j.nobug.xss.XssAttributeData;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
