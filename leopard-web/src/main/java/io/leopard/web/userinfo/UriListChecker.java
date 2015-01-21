@@ -1,6 +1,6 @@
 package io.leopard.web.userinfo;
 
-import io.leopard.commons.utility.ListUtil;
+import io.leopard.burrow.util.ListUtil;
 
 import java.util.ArrayList;
 import java.util.HashSet;

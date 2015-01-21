@@ -1,7 +1,7 @@
 package io.leopard.schema;
 
+import io.leopard.burrow.util.StringUtil;
 import io.leopard.commons.utility.ClassUtil;
-import io.leopard.commons.utility.StringUtil;
 import io.leopard.schema.config.ConfigSchema;
 import io.leopard.schema.config.IConfigBeanDefinitionParser;
 import io.leopard.schema.config.PermissionConfigBeanDefinitionParser;
@@ -39,7 +39,8 @@ public class ConfigBeanDefinitionParser implements BeanDefinitionParser {
 			// System.err.println("config name:" + name + " value:" + value);
 			try {
 				this.parse(parserContext, name, value);
-			} catch (Exception e) {
+			}
+			catch (Exception e) {
 				System.err.println("error:" + e.getMessage());
 				e.printStackTrace();
 			}

@@ -1,6 +1,6 @@
 package io.leopard.web.mvc;
 
-import io.leopard.commons.utility.ListUtil;
+import io.leopard.burrow.util.ListUtil;
 import io.leopard.monitor.url.UrlInfoService;
 import io.leopard.topnb.PerformanceStackTraceService;
 import io.leopard.web.interceptor.CheckLoginInterceptor;

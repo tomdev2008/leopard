@@ -1,6 +1,6 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.commons.utility.NumberUtil;
+import io.leopard.burrow.util.NumberUtil;
 import io.leopard.commons.utility.SystemUtil;
 import io.leopard.web4j.servlet.RequestUtil;
 

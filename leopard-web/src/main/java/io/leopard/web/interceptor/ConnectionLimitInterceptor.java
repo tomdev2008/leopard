@@ -1,6 +1,6 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.commons.utility.ListUtil;
+import io.leopard.burrow.util.ListUtil;
 import io.leopard.ext.connectionlimit.ConnectionLimitDao;
 import io.leopard.web.userinfo.ConfigHandler;
 import io.leopard.web.userinfo.UriListChecker;
