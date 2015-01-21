@@ -1,8 +1,5 @@
 package io.leopard.util;
 
-import io.leopard.core.Invoker;
-import io.leopard.util.MultiThreadCaller;
-
 import org.junit.Test;
 
 public class MultiThreadCallerTest {

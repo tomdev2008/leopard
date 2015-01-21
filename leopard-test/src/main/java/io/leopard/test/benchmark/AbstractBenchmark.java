@@ -2,8 +2,8 @@ package io.leopard.test.benchmark;
 
 import io.leopard.commons.utility.Clock;
 import io.leopard.commons.utility.NumberUtil;
-import io.leopard.core.Invoker;
 import io.leopard.util.Caller;
+import io.leopard.util.Invoker;
 
 public abstract class AbstractBenchmark {
 

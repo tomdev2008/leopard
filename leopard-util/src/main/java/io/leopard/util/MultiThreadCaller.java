@@ -1,7 +1,6 @@
 package io.leopard.util;
 
 import io.leopard.commons.utility.NumberUtil;
-import io.leopard.core.Invoker;
 
 public class MultiThreadCaller extends Caller {
 

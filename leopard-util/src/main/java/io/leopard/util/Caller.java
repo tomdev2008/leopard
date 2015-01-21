@@ -1,7 +1,5 @@
 package io.leopard.util;
 
-import io.leopard.core.Invoker;
-
 import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
 

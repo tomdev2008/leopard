@@ -3,7 +3,6 @@ package io.leopard.data.rpc;
 import io.leopard.burrow.httpnb.Httpnb;
 import io.leopard.burrow.lang.Json;
 import io.leopard.burrow.lang.Json.JsonException;
-import io.leopard.commons.utility.AssertData;
 import io.leopard.commons.utility.ClassUtil;
 import io.leopard.commons.utility.DateTime;
 import io.leopard.core.exception.StatusCodeException;
@@ -15,6 +14,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 //import io.leopard.commons.utility.HttpUtils;
@@ -62,11 +62,9 @@ public class RpcClient {
 
 	protected static Map<String, Object> doPostForMap(String url, Map<String, Object> params, long timeout) {
 		String json = Httpnb.doPost(url, timeout, params);
-
-		// if (StringUtils.isEmpty(json)) {
-		// throw new RuntimeException("调用远程接口出错，没有返回json.");
-		// }
-		AssertData.notEmpty(json, "调用远程接口出错，没有返回json.");
+		if (StringUtils.isEmpty(json)) {
+			throw new RuntimeException("调用远程接口出错，没有返回json.");
+		}
 		// System.out.println("json:" + json);
 		Map<String, Object> map;
 		try {

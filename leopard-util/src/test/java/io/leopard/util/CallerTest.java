@@ -1,8 +1,5 @@
 package io.leopard.util;
 
-import io.leopard.core.Invoker;
-import io.leopard.util.Caller;
-
 import org.junit.Test;
 
 public class CallerTest {
