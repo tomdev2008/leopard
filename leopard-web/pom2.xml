@@ -125,7 +125,7 @@
 							<sources>
 								<source>/home/workspace/github/web4j/web4j-admin/src/main/java</source>
 								<source>/home/workspace/github/web4j/web4j-captcha/src/main/java</source>
-								<source>/home/workspace/github/web4j/web4j-commond/src/main/java</source>
+								<source>/home/workspace/github/web4j/web4j-command/src/main/java</source>
 								<source>/home/workspace/github/web4j/web4j-editor/src/main/java</source>
 								<source>/home/workspace/github/web4j/web4j-mvc/src/main/java</source>
 								<source>/home/workspace/github/web4j/web4j-nobug/src/main/java</source>
