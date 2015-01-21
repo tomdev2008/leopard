@@ -1,6 +1,6 @@
 package io.leopard.monitor;
 
-import io.leopard.commons.utility.ListUtil;
+import io.leopard.burrow.util.ListUtil;
 
 import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;

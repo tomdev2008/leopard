@@ -1,8 +1,7 @@
 package io.leopard.data.version;
 
 import io.leopard.burrow.lang.Json;
-import io.leopard.commons.utility.ListUtil;
-import io.leopard.commons.utility.NumberUtil;
+import io.leopard.burrow.util.NumberUtil;
 import io.leopard.data4j.redis.Redis;
 
 import java.util.List;
@@ -73,7 +72,7 @@ public abstract class AbstractVersion<BEAN, KEYTYPE> {
 	 * @param beanList
 	 */
 	protected void filterList(List<BEAN> beanList) {
-		if (ListUtil.isEmpty(beanList)) {
+		if (beanList == null || beanList.isEmpty()) {
 			return;
 		}
 		if (isVersion()) {

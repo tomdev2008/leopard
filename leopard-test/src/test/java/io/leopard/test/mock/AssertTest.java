@@ -1,7 +1,7 @@
 package io.leopard.test.mock;
 
-import io.leopard.commons.utility.DateUtil;
-import io.leopard.commons.utility.ListUtil;
+import io.leopard.burrow.util.DateUtil;
+import io.leopard.burrow.util.ListUtil;
 import io.leopard.data4j.cache.api.IGet;
 import io.leopard.test4j.mock.LeopardMockito;
 

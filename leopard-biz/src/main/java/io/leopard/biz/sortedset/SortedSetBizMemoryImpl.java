@@ -1,7 +1,7 @@
 package io.leopard.biz.sortedset;
 
-import io.leopard.commons.utility.ObjectUtil;
-import io.leopard.commons.utility.SetUtil;
+import io.leopard.burrow.util.ObjectUtil;
+import io.leopard.burrow.util.SetUtil;
 
 import java.util.HashSet;
 import java.util.Map;

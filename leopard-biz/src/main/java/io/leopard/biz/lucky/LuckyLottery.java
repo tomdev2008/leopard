@@ -1,6 +1,6 @@
 package io.leopard.biz.lucky;
 
-import io.leopard.commons.utility.NumberUtil;
+import io.leopard.burrow.util.NumberUtil;
 
 import java.util.ArrayList;
 import java.util.List;

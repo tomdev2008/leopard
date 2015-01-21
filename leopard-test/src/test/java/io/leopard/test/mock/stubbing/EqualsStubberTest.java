@@ -1,7 +1,7 @@
 package io.leopard.test.mock.stubbing;
 
 import io.leopard.burrow.refect.FieldUtil;
-import io.leopard.commons.utility.ListUtil;
+import io.leopard.burrow.util.ListUtil;
 import io.leopard.test.mock.Mock;
 import io.leopard.test.mock.reflect.MethodInfo;
 import io.leopard.test.mock.reflect.MethodUtil;

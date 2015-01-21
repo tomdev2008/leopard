@@ -3,7 +3,7 @@ package io.leopard.monitor.alarm;
 import io.leopard.burrow.httpnb.Httpnb;
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.ContextImpl;
-import io.leopard.commons.utility.ListUtil;
+import io.leopard.burrow.util.ListUtil;
 import io.leopard.commons.utility.ServerUtil;
 import io.leopard.data4j.env.EnvUtil;
 import io.leopard.log.Log4jFactory;

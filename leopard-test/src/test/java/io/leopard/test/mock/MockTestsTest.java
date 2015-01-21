@@ -1,6 +1,6 @@
 package io.leopard.test.mock;
 
-import io.leopard.commons.utility.StringUtil;
+import io.leopard.burrow.util.StringUtil;
 
 import org.junit.Test;
 import org.powermock.core.classloader.annotations.PrepareForTest;

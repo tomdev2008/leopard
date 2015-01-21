@@ -2,7 +2,7 @@ package io.leopard.ext.queue;
 
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.Json;
-import io.leopard.commons.utility.NumberUtil;
+import io.leopard.burrow.util.NumberUtil;
 import io.leopard.data4j.redis.RedisBase;
 
 public class QueueDaoRedisImpl extends RedisBase implements QueueDao {

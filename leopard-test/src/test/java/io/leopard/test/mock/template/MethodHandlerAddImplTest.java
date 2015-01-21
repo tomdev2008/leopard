@@ -1,8 +1,8 @@
 package io.leopard.test.mock.template;
 
 import io.leopard.burrow.lang.Json;
-import io.leopard.commons.utility.NumberUtil;
-import io.leopard.commons.utility.ObjectUtil;
+import io.leopard.burrow.util.NumberUtil;
+import io.leopard.burrow.util.ObjectUtil;
 import io.leopard.data4j.cache.api.IDecr;
 import io.leopard.data4j.cache.api.IDelete;
 import io.leopard.data4j.cache.api.IGet;

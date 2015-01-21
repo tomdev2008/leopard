@@ -1,6 +1,6 @@
 package io.leopard.biz.lucky;
 
-import io.leopard.commons.utility.NumberUtil;
+import io.leopard.burrow.util.NumberUtil;
 import io.leopard.data4j.redis.Redis;
 
 /**

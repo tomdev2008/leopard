@@ -1,7 +1,7 @@
 package io.leopard.monitor;
 
 import io.leopard.burrow.lang.AssertUtil;
-import io.leopard.commons.utility.ListUtil;
+import io.leopard.burrow.util.ListUtil;
 import io.leopard.data4j.redis.Redis;
 import io.leopard.data4j.redis.RedisImpl;
 import io.leopard.data4j.schema.LeopardBeanFactoryAware;

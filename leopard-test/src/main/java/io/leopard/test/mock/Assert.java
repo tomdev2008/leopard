@@ -1,7 +1,7 @@
 package io.leopard.test.mock;
 
-import io.leopard.commons.utility.DateUtil;
-import io.leopard.commons.utility.StringUtil;
+import io.leopard.burrow.util.DateUtil;
+import io.leopard.burrow.util.StringUtil;
 import io.leopard.test.mock.internal.AssertAllModel;
 import io.leopard.test.mock.internal.AssertEnum;
 import io.leopard.test.mock.internal.AssertKeyModel;

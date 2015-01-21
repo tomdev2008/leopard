@@ -1,6 +1,6 @@
 package io.leopard.util.avgtime;
 
-import io.leopard.commons.utility.ObjectUtil;
+import io.leopard.burrow.util.ObjectUtil;
 
 import java.util.ArrayList;
 import java.util.Date;

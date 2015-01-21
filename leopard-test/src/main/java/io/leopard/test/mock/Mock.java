@@ -1,8 +1,8 @@
 package io.leopard.test.mock;
 
 import io.leopard.burrow.refect.FieldUtil;
-import io.leopard.commons.utility.ListUtil;
-import io.leopard.commons.utility.SetUtil;
+import io.leopard.burrow.util.ListUtil;
+import io.leopard.burrow.util.SetUtil;
 import io.leopard.test.mock.internal.Mocker;
 import io.leopard.test.mock.proxy.MockMethodUtil;
 import io.leopard.test.mock.reflect.MethodUtil;

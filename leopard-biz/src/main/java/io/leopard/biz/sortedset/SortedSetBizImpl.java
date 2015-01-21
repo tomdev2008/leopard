@@ -1,6 +1,6 @@
 package io.leopard.biz.sortedset;
 
-import io.leopard.commons.utility.SetUtil;
+import io.leopard.burrow.util.SetUtil;
 import io.leopard.data.pub.IPubSub;
 import io.leopard.data.pub.Publisher;
 import io.leopard.data4j.redis.Redis;

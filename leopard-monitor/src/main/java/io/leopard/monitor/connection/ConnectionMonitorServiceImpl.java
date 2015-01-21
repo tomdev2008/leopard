@@ -1,6 +1,6 @@
 package io.leopard.monitor.connection;
 
-import io.leopard.commons.utility.ListUtil;
+import io.leopard.burrow.util.ListUtil;
 import io.leopard.data4j.jdbc.JdbcConnectionListener;
 import io.leopard.data4j.redis.RedisConnectionListener;
 

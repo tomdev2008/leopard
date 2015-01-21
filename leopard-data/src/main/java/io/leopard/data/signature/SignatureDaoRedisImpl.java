@@ -1,8 +1,8 @@
 package io.leopard.data.signature;
 
 import io.leopard.burrow.lang.AssertUtil;
-import io.leopard.commons.utility.NumberUtil;
-import io.leopard.commons.utility.ObjectUtil;
+import io.leopard.burrow.util.NumberUtil;
+import io.leopard.burrow.util.ObjectUtil;
 import io.leopard.data4j.redis.Redis;
 
 public class SignatureDaoRedisImpl implements SignatureDao {

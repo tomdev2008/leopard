@@ -1,6 +1,6 @@
 package io.leopard.test.mock.template;
 
-import io.leopard.commons.utility.ObjectUtil;
+import io.leopard.burrow.util.ObjectUtil;
 import io.leopard.data4j.cache.api.IDelete;
 import io.leopard.data4j.cache.api.IGet;
 import io.leopard.test.CustomBeanUtil;

@@ -1,6 +1,6 @@
 package io.leopard.test.mock.stubbing;
 
-import io.leopard.commons.utility.StringUtil;
+import io.leopard.burrow.util.StringUtil;
 import io.leopard.test4j.mock.LeopardMockRunner;
 
 import java.util.List;
