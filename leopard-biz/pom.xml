@@ -11,6 +11,10 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>io.leopard</groupId>
 			<artifactId>leopard-data</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
