@@ -234,7 +234,6 @@
 	<modules>
 		<module>leopard-data</module>
 		<module>leopard-util</module>
-		<module>leopard-core</module>
 		<module>leopard-test</module>
 		<module>leopard-monitor</module>
 		<module>leopard-web</module>
