@@ -2,7 +2,7 @@ package io.leopard.test.mock.reflect;
 
 import io.leopard.burrow.lang.datatype.Month;
 import io.leopard.burrow.lang.datatype.OnlyDate;
-import io.leopard.util.ClassTypeUtil;
+import io.leopard.burrow.refect.ClassTypeUtil;
 
 import java.lang.reflect.Field;
 import java.sql.Timestamp;

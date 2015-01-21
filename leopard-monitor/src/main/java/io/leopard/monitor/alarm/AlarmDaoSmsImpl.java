@@ -6,7 +6,7 @@ import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.burrow.util.ListUtil;
 import io.leopard.commons.utility.ServerUtil;
 import io.leopard.data4j.env.EnvUtil;
-import io.leopard.log.Log4jFactory;
+import io.leopard.data4j.log.Log4jFactory;
 import io.leopard.monitor.MonitorServiceImpl;
 import io.leopard.schema.model.Notifier;
 

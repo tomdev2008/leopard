@@ -1,7 +1,7 @@
 package io.leopard.test.kit;
 
-import io.leopard.util.Caller;
-import io.leopard.util.Invoker;
+import io.leopard.burrow.lang.Invoker;
+import io.leopard.burrow.util.Caller;
 
 public class MultiThreadedCaller {
 

@@ -4,7 +4,8 @@ import org.apache.log4j.Level;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.ThrowableInformation;
 
-public class DailyAutoRollingFileAppender extends io.leopard.log.DailyAutoRollingFileAppender {
+//FIXME ahai 改成扩展接口实现
+public class DailyAutoRollingFileAppender extends io.leopard.data4j.log.DailyAutoRollingFileAppender {
 
 	private final RobotService robotService = AlarmModule.getRobotService();
 

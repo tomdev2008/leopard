@@ -1,6 +1,6 @@
 package io.leopard.test.kit;
 
-import io.leopard.util.Invoker;
+import io.leopard.burrow.lang.Invoker;
 
 import org.junit.Test;
 

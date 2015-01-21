@@ -4,12 +4,12 @@ import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.Json;
 import io.leopard.burrow.lang.datatype.Month;
 import io.leopard.burrow.lang.datatype.OnlyDate;
+import io.leopard.burrow.refect.ClassTypeUtil;
 import io.leopard.burrow.refect.FieldUtil;
 import io.leopard.burrow.util.DateTime;
 import io.leopard.burrow.util.DateUtil;
 import io.leopard.commons.utility.BeanUtil;
 import io.leopard.test.CustomBeanUtil;
-import io.leopard.util.ClassTypeUtil;
 
 import java.lang.reflect.Field;
 import java.util.AbstractMap.SimpleEntry;

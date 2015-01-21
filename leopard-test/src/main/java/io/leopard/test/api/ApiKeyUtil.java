@@ -1,6 +1,6 @@
 package io.leopard.test.api;
 
-import io.leopard.util.ClassTypeUtil;
+import io.leopard.burrow.refect.ClassTypeUtil;
 
 import java.lang.reflect.Constructor;
 

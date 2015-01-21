@@ -1,5 +1,6 @@
 package io.leopard.test.mock.template;
 
+import io.leopard.burrow.refect.ClassTypeUtil;
 import io.leopard.burrow.util.ObjectUtil;
 import io.leopard.data4j.cache.api.IDelete;
 import io.leopard.data4j.cache.api.IGet;
@@ -8,7 +9,6 @@ import io.leopard.test.mock.Mock;
 import io.leopard.test.mock.reflect.MethodUtil;
 import io.leopard.test.mock.reflect.ModelInstanceUtil;
 import io.leopard.test.mock.reflect.Tson;
-import io.leopard.util.ClassTypeUtil;
 
 import java.lang.reflect.Method;
 import java.util.Date;

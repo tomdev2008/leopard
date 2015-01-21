@@ -1,12 +1,12 @@
 package io.leopard.test.mock.proxy;
 
 import io.leopard.burrow.lang.AssertUtil;
+import io.leopard.burrow.refect.ClassTypeUtil;
 import io.leopard.test.CustomBeanUtil;
 import io.leopard.test.mock.Assert;
 import io.leopard.test.mock.Mock;
 import io.leopard.test.mock.reflect.MethodUtil;
 import io.leopard.test.mock.reflect.Tson;
-import io.leopard.util.ClassTypeUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
