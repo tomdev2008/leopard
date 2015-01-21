@@ -18,13 +18,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>leopard-core</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
 		<dependency>
 			<groupId>io.leopard.burrow</groupId>
 			<artifactId>burrow-lang</artifactId>
