@@ -42,7 +42,7 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 	@Resource
 	private HandlerInterceptor skipFilterInterceptor;
 
-	@Resource
+	@Resource(name = "timeInterceptor")
 	private HandlerInterceptor timeInterceptor;
 
 	@Resource
