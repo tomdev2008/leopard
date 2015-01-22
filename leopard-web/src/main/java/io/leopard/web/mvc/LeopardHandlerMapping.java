@@ -1,7 +1,5 @@
 package io.leopard.web.mvc;
 
-import io.leopard.burrow.util.ListUtil;
-import io.leopard.web.interceptor.TimeLogInterceptor;
 import io.leopard.web.userinfo.SkipFilterService;
 import io.leopard.web4j.captcha.CaptchaGroup;
 import io.leopard.web4j.method.HandlerMethodRegisterLei;
@@ -15,7 +13,10 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.ParameterNameDiscoverer;
@@ -36,54 +37,34 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 
 	@Autowired(required = false)
-	private HandlerInterceptor proxyInterceptor;
-
-	@Autowired(required = false)
-	private HandlerInterceptor skipFilterInterceptor;
-
-	@Autowired(required = false)
-	private HandlerInterceptor timeInterceptor;
-
-	@Autowired(required = false)
-	private TimeLogInterceptor timeLogInterceptor;
-
-	@Autowired(required = false)
-	private HandlerInterceptor checkLoginInterceptor;
-
-	@Autowired(required = false)
-	private HandlerInterceptor pageDelayInterceptor;
-
-	@Autowired(required = false)
-	private HandlerInterceptor csrfInterceptor;
-
-	@Autowired(required = false)
-	private HandlerInterceptor monitorPermissionInterceptor;
-
-	@Autowired(required = false)
-	private HandlerInterceptor webservicePermissionInterceptor;
-	@Autowired(required = false)
-	private HandlerInterceptor connectionLimitInterceptor;
-
-	@Autowired(required = false)
 	private HandlerMethodRegisterLei monitorHandlerMethodRegisterLei;
 
 	@Override
-	protected void initApplicationContext() {
-		System.err.println("LeopardHandlerMapping initApplicationContext timeLogInterceptor:" + timeLogInterceptor);
+	protected void initApplicationContext(ApplicationContext context) throws BeansException {
 		// 要注意顺序
-		List<HandlerInterceptor> list = new ArrayList<HandlerInterceptor>();
-		list.add(this.proxyInterceptor);
-		list.add(this.skipFilterInterceptor);
-		list.add(this.timeInterceptor);
-		list.add(this.timeLogInterceptor);
-		list.add(this.checkLoginInterceptor);
-		list.add(this.pageDelayInterceptor);
-		list.add(this.csrfInterceptor);
-		list.add(this.monitorPermissionInterceptor);
-		list.add(this.webservicePermissionInterceptor);
-		list.add(this.connectionLimitInterceptor);
+		List<String> names = new ArrayList<String>();
+		names.add("proxyInterceptor");
+		names.add("skipFilterInterceptor");
+		names.add("timeInterceptor");
+		names.add("timeLogInterceptor");
+		names.add("checkLoginInterceptor");
+		names.add("pageDelayInterceptor");
+		names.add("csrfInterceptor");
+		names.add("monitorPermissionInterceptor");
+		names.add("webservicePermissionInterceptor");
+		names.add("connectionLimitInterceptor");
 
-		ListUtil.noNull(list);
+		List<HandlerInterceptor> list = new ArrayList<HandlerInterceptor>();
+		for (String name : names) {
+			try {
+				HandlerInterceptor bean = context.getBean(name, HandlerInterceptor.class);
+				list.add(bean);
+			}
+			catch (NoSuchBeanDefinitionException e) {
+				System.err.println("NoSuchBeanDefinitionException:" + name);
+			}
+		}
+
 		Object[] interceptors = new Object[list.size()];
 		list.toArray(interceptors);
 
@@ -132,7 +113,9 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 			}
 		}
 
-		monitorHandlerMethodRegisterLei.registerHandlerMethod(handlerMethod, method, mapping, uri);
+		if (monitorHandlerMethodRegisterLei != null) {
+			monitorHandlerMethodRegisterLei.registerHandlerMethod(handlerMethod, method, mapping, uri);
+		}
 
 		MethodParameter[] params = handlerMethod.getMethodParameters();
 		for (MethodParameter param : params) {
