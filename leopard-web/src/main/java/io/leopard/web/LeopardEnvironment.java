@@ -1,9 +1,6 @@
 package io.leopard.web;
 
 import io.leopard.data4j.schema.BeanDefinitionParserUtil;
-import io.leopard.monitor.forecast.ForecastDaoRedisImpl;
-import io.leopard.monitor.forecast.ForecastServiceImpl;
-import io.leopard.monitor.forecast.ForecastUtil;
 import io.leopard.web.userinfo.ConfigHandler;
 
 import org.springframework.beans.BeansException;
@@ -15,31 +12,31 @@ public class LeopardEnvironment implements BeanFactoryAware {
 
 	@Override
 	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-		this.checkConfigHandler(beanFactory);
-		// this.checkLoginBox(beanFactory);
-		this.registerForecastBean(beanFactory);
-	}
-
-	protected void checkConfigHandler(BeanFactory beanFactory) {
 		try {
 			beanFactory.getBean(ConfigHandler.class);
-		} catch (NoSuchBeanDefinitionException e) {
+		}
+		catch (NoSuchBeanDefinitionException e) {
 			BeanDefinitionParserUtil.registerBeanDefinition(beanFactory, "configHandler", ConfigHandler.class, false);
 		}
+
+		this.call("io.leopard.monitor.MonitorBeanFactoryAware", beanFactory);
 	}
 
-	// protected void checkLoginBox(BeanFactory beanFactory) {
-	// try {
-	// beanFactory.getBean(LoginBox.class);
-	// } catch (NoSuchBeanDefinitionException e) {
-	// BeanDefinitionParserUtil.registerBeanDefinition(beanFactory, "loginBox", LoginBoxImpl.class, false);
-	// }
-	// }
-
-	protected void registerForecastBean(BeanFactory beanFactory) {
-		if (ForecastUtil.getForecast()) {
-			BeanDefinitionParserUtil.registerBeanDefinition(beanFactory, "forecastDao", ForecastDaoRedisImpl.class, false);
-			BeanDefinitionParserUtil.registerBeanDefinition(beanFactory, "forecastService", ForecastServiceImpl.class, false);
+	protected void call(String className, BeanFactory beanFactory) {
+		Class<?> clazz;
+		try {
+			clazz = Class.forName(className);
+		}
+		catch (ClassNotFoundException e) {
+			return;
+		}
+		try {
+			BeanFactoryAware beanFactoryAware = (BeanFactoryAware) clazz.newInstance();
+			beanFactoryAware.setBeanFactory(beanFactory);
+		}
+		catch (Exception e) {
+			throw new RuntimeException(e.getMessage(), e);
 		}
 	}
+
 }
