@@ -1,20 +1,10 @@
 package io.leopard.web.mvc;
 
 import io.leopard.burrow.util.ListUtil;
-import io.leopard.monitor.interceptor.TimeInterceptor;
-import io.leopard.monitor.url.UrlInfoService;
-import io.leopard.topnb.PerformanceStackTraceService;
-import io.leopard.web.interceptor.CheckLoginInterceptor;
-import io.leopard.web.interceptor.ConnectionLimitInterceptor;
-import io.leopard.web.interceptor.CsrfInterceptor;
-import io.leopard.web.interceptor.MonitorPermissionInterceptor;
-import io.leopard.web.interceptor.PageDelayInterceptor;
-import io.leopard.web.interceptor.ProxyInterceptor;
-import io.leopard.web.interceptor.SkipFilterInterceptor;
 import io.leopard.web.interceptor.TimeLogInterceptor;
-import io.leopard.web.interceptor.WebservicePermissionInterceptor;
 import io.leopard.web.userinfo.SkipFilterService;
 import io.leopard.web4j.captcha.CaptchaGroup;
+import io.leopard.web4j.method.HandlerMethodRegisterLei;
 import io.leopard.web4j.nobug.annotation.NoXss;
 import io.leopard.web4j.nobug.annotation.SkipFilter;
 import io.leopard.web4j.nobug.xss.XssAttributeData;
@@ -46,33 +36,36 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 
 	@Autowired(required = false)
-	private ProxyInterceptor proxyInterceptor;
+	private HandlerInterceptor proxyInterceptor;
 
 	@Autowired(required = false)
-	private SkipFilterInterceptor skipFilterInterceptor;
+	private HandlerInterceptor skipFilterInterceptor;
 
 	@Autowired(required = false)
-	private TimeInterceptor timeInterceptor;
+	private HandlerInterceptor timeInterceptor;
 
 	@Autowired(required = false)
 	private TimeLogInterceptor timeLogInterceptor;
 
 	@Autowired(required = false)
-	private CheckLoginInterceptor checkLoginInterceptor;
+	private HandlerInterceptor checkLoginInterceptor;
 
 	@Autowired(required = false)
-	private PageDelayInterceptor pageDelayInterceptor;
+	private HandlerInterceptor pageDelayInterceptor;
 
 	@Autowired(required = false)
-	private CsrfInterceptor csrfInterceptor;
+	private HandlerInterceptor csrfInterceptor;
 
 	@Autowired(required = false)
-	private MonitorPermissionInterceptor monitorPermissionInterceptor;
+	private HandlerInterceptor monitorPermissionInterceptor;
 
 	@Autowired(required = false)
-	private WebservicePermissionInterceptor webservicePermissionInterceptor;
+	private HandlerInterceptor webservicePermissionInterceptor;
 	@Autowired(required = false)
-	private ConnectionLimitInterceptor connectionLimitInterceptor;
+	private HandlerInterceptor connectionLimitInterceptor;
+
+	@Autowired(required = false)
+	private HandlerMethodRegisterLei monitorHandlerMethodRegisterLei;
 
 	@Override
 	protected void initApplicationContext() {
@@ -131,10 +124,6 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 		String uri = mapping.getPatternsCondition().getPatterns().iterator().next();
 		uri = uri.replaceAll("/+", "/");
 
-		if (this.hasMonitor(mapping, method, uri)) {
-			PerformanceStackTraceService.add(uri);
-		}
-
 		{
 			// @SkipFilter
 			SkipFilter skipFilter = handlerMethod.getMethodAnnotation(SkipFilter.class);
@@ -143,7 +132,7 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 			}
 		}
 
-		UrlInfoService.add(uri);
+		monitorHandlerMethodRegisterLei.registerHandlerMethod(handlerMethod, method, mapping, uri);
 
 		MethodParameter[] params = handlerMethod.getMethodParameters();
 		for (MethodParameter param : params) {
@@ -189,29 +178,6 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 			}
 		}
 		return info;
-	}
-
-	/**
-	 * 判断接口是否需要监控.
-	 * 
-	 * @param info
-	 * @param method
-	 * @return
-	 */
-	protected boolean hasMonitor(RequestMappingInfo info, Method method, String uri) {
-		String className = method.getDeclaringClass().getName();
-		if (className.startsWith("io.leopard")) {
-			return false;
-		}
-		// String uri =
-		// info.getPatternsCondition().getPatterns().iterator().next();
-		if (uri.startsWith("/admin/")) {
-			return false;
-		}
-		if (uri.startsWith("/monitor/")) {
-			return false;
-		}
-		return true;
 	}
 
 	/**
