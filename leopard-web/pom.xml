@@ -67,10 +67,7 @@
 			<artifactId>dom4j</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-		</dependency>
+		
 		<dependency>
 			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
