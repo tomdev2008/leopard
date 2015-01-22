@@ -69,7 +69,7 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 
 	@Override
 	protected void initApplicationContext() {
-		// System.err.println("LeopardHandlerMapping initApplicationContext.");
+		System.err.println("LeopardHandlerMapping initApplicationContext timeLogInterceptor:" + timeLogInterceptor);
 		// 要注意顺序
 		List<HandlerInterceptor> list = new ArrayList<HandlerInterceptor>();
 		list.add(this.proxyInterceptor);
