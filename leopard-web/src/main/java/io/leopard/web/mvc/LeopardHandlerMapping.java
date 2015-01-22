@@ -13,6 +13,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,36 +36,36 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 
-	@Autowired(required = false)
+	@Resource
 	private HandlerInterceptor proxyInterceptor;
 
-	@Autowired(required = false)
+	@Resource
 	private HandlerInterceptor skipFilterInterceptor;
 
-	@Autowired(required = false)
+	@Resource
 	private HandlerInterceptor timeInterceptor;
 
-	@Autowired(required = false)
+	@Resource
 	private TimeLogInterceptor timeLogInterceptor;
 
-	@Autowired(required = false)
+	@Resource
 	private HandlerInterceptor checkLoginInterceptor;
 
-	@Autowired(required = false)
+	@Resource
 	private HandlerInterceptor pageDelayInterceptor;
 
-	@Autowired(required = false)
+	@Resource
 	private HandlerInterceptor csrfInterceptor;
 
-	@Autowired(required = false)
+	@Resource
 	private HandlerInterceptor monitorPermissionInterceptor;
 
-	@Autowired(required = false)
+	@Resource
 	private HandlerInterceptor webservicePermissionInterceptor;
-	@Autowired(required = false)
+	@Resource
 	private HandlerInterceptor connectionLimitInterceptor;
 
-	@Autowired(required = false)
+	@Resource
 	private HandlerMethodRegisterLei monitorHandlerMethodRegisterLei;
 
 	@Override
