@@ -1,6 +1,7 @@
 package io.leopard.web.mvc;
 
 import io.leopard.burrow.util.ListUtil;
+import io.leopard.monitor.interceptor.TimeInterceptor;
 import io.leopard.monitor.url.UrlInfoService;
 import io.leopard.topnb.PerformanceStackTraceService;
 import io.leopard.web.interceptor.CheckLoginInterceptor;
@@ -10,7 +11,6 @@ import io.leopard.web.interceptor.MonitorPermissionInterceptor;
 import io.leopard.web.interceptor.PageDelayInterceptor;
 import io.leopard.web.interceptor.ProxyInterceptor;
 import io.leopard.web.interceptor.SkipFilterInterceptor;
-import io.leopard.web.interceptor.TimeInterceptor;
 import io.leopard.web.interceptor.TimeLogInterceptor;
 import io.leopard.web.interceptor.WebservicePermissionInterceptor;
 import io.leopard.web.userinfo.SkipFilterService;

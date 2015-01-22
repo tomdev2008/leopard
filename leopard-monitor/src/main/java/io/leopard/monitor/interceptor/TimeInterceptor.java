@@ -1,4 +1,4 @@
-package io.leopard.web.interceptor;
+package io.leopard.monitor.interceptor;
 
 import io.leopard.topnb.TopnbBeanFactory;
 import io.leopard.topnb.service.PerformanceService;
@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Component
 public class TimeInterceptor implements HandlerInterceptor {
+	
 
 	private static final PerformanceService performanceService = TopnbBeanFactory.getPerformanceService();
 
