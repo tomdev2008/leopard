@@ -36,36 +36,36 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 
-	@Resource
+	@Resource(name = "proxyInterceptor")
 	private HandlerInterceptor proxyInterceptor;
 
-	@Resource
+	@Resource(name = "skipFilterInterceptor")
 	private HandlerInterceptor skipFilterInterceptor;
 
 	@Resource(name = "timeInterceptor")
 	private HandlerInterceptor timeInterceptor;
 
-	@Resource
+	@Resource(name = "timeLogInterceptor")
 	private TimeLogInterceptor timeLogInterceptor;
 
-	@Resource
+	@Resource(name = "checkLoginInterceptor")
 	private HandlerInterceptor checkLoginInterceptor;
 
-	@Resource
+	@Resource(name = "pageDelayInterceptor")
 	private HandlerInterceptor pageDelayInterceptor;
 
-	@Resource
+	@Resource(name = "csrfInterceptor")
 	private HandlerInterceptor csrfInterceptor;
 
-	@Resource
+	@Resource(name = "monitorPermissionInterceptor")
 	private HandlerInterceptor monitorPermissionInterceptor;
 
-	@Resource
+	@Resource(name = "webservicePermissionInterceptor")
 	private HandlerInterceptor webservicePermissionInterceptor;
-	@Resource
+	@Resource(name = "connectionLimitInterceptor")
 	private HandlerInterceptor connectionLimitInterceptor;
 
-	@Resource
+	@Resource(name = "monitorHandlerMethodRegisterLei")
 	private HandlerMethodRegisterLei monitorHandlerMethodRegisterLei;
 
 	@Override
