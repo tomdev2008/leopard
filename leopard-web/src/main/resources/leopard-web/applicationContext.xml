@@ -3,7 +3,8 @@
 
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" >
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	default-autowire="byName">
 
 	<import resource="classpath:/leopard/applicationContext.xml" />
 
@@ -22,9 +23,7 @@
 	<bean class="io.leopard.web4j.trynb.ErrorPageHandlerImpl" />
 
 	<!-- app.properties加载 -->
-	<!-- 
-	<bean class="io.leopard.data.env.LeopardPropertyPlaceholderConfigurer" lazy-init="false" />
-	 -->
+	<!-- <bean class="io.leopard.data.env.LeopardPropertyPlaceholderConfigurer" lazy-init="false" /> -->
 
 	<!-- 用户信息封装 -->
 	<bean id="leopardFilter" class="io.leopard.web.userinfo.LeopardFilter" />
@@ -33,7 +32,7 @@
 	<!-- 拦截器 -->
 	<context:component-scan base-package="io.leopard.web.interceptor" />
 	<context:component-scan base-package="io.leopard.monitor.interceptor" />
-	
+
 	<bean class="io.leopard.web.mvc.LeopardHandlerMapping" />
 
 

@@ -13,7 +13,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,36 +35,36 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 
-	@Resource(name = "proxyInterceptor")
+	@Autowired(required = false)
 	private HandlerInterceptor proxyInterceptor;
 
-	@Resource(name = "skipFilterInterceptor")
+	@Autowired(required = false)
 	private HandlerInterceptor skipFilterInterceptor;
 
-	@Resource(name = "timeInterceptor")
+	@Autowired(required = false)
 	private HandlerInterceptor timeInterceptor;
 
-	@Resource(name = "timeLogInterceptor")
+	@Autowired(required = false)
 	private TimeLogInterceptor timeLogInterceptor;
 
-	@Resource(name = "checkLoginInterceptor")
+	@Autowired(required = false)
 	private HandlerInterceptor checkLoginInterceptor;
 
-	@Resource(name = "pageDelayInterceptor")
+	@Autowired(required = false)
 	private HandlerInterceptor pageDelayInterceptor;
 
-	@Resource(name = "csrfInterceptor")
+	@Autowired(required = false)
 	private HandlerInterceptor csrfInterceptor;
 
-	@Resource(name = "monitorPermissionInterceptor")
+	@Autowired(required = false)
 	private HandlerInterceptor monitorPermissionInterceptor;
 
-	@Resource(name = "webservicePermissionInterceptor")
+	@Autowired(required = false)
 	private HandlerInterceptor webservicePermissionInterceptor;
-	@Resource(name = "connectionLimitInterceptor")
+	@Autowired(required = false)
 	private HandlerInterceptor connectionLimitInterceptor;
 
-	@Resource(name = "monitorHandlerMethodRegisterLei")
+	@Autowired(required = false)
 	private HandlerMethodRegisterLei monitorHandlerMethodRegisterLei;
 
 	@Override
