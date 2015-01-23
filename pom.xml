@@ -229,7 +229,6 @@
 		<module>leopard-test</module>
 		<module>leopard-monitor</module>
 		<module>leopard-web</module>
-		<module>leopard-biz</module>
 		<module>leopard-netty</module>
 		<module>leopard-parent</module>
 		<module>leopard-jetty</module>
