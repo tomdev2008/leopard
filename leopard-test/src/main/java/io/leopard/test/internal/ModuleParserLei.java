@@ -1,12 +1,14 @@
 package io.leopard.test.internal;
 
+import io.leopard.burrow.LeopardLei;
+
 /**
  * 模块名称解析.
  * 
  * @author 阿海
  *
  */
-public interface ModuleParserLei {
+public interface ModuleParserLei extends LeopardLei {
 	/**
 	 * 判断是否单模块项目?
 	 * 
