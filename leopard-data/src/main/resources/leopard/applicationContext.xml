@@ -7,7 +7,8 @@
 	<bean class="io.leopard.data.env.LeopardPropertyPlaceholderConfigurer" lazy-init="false" />
 	 -->
 	
-	<bean class="io.leopard.data.pub.PubSubBeanPostProcessor" />
+	<bean class="io.leopard.data4j.pubsub.PubSubBeanPostProcessor" />
+	
 	<bean class="io.leopard.data.alldb.AlldbBeanPostProcessor" />
 
 	<bean class="io.leopard.data4j.schema.LeopardBeanFactoryAware" />

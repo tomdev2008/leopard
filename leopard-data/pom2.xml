@@ -142,6 +142,8 @@
 								<source>/home/workspace/github/data4j/data4j-schema/src/main/java</source>
 								<source>/home/workspace/github/data4j/data4j-log/src/main/java</source>
 								<source>/home/workspace/github/data4j/data4j-env/src/main/java</source>
+								<source>/home/workspace/github/data4j/data4j-biz/src/main/java</source>
+								<source>/home/workspace/github/data4j/data4j-pubsub/src/main/java</source>
 							</sources>
 						</configuration>
 					</execution>
