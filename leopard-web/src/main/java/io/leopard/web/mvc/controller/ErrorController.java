@@ -34,7 +34,7 @@ public class ErrorController {
 		logger.error(clientInfo, exception);
 
 		response.setContentType("text/html; charset=utf-8");
-		response.setStatus(200);
+		// response.setStatus(200);
 		Writer out = response.getWriter();
 		out.write("error msg:" + exception.getMessage());
 		return null;
