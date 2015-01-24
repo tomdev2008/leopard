@@ -13,11 +13,6 @@
 		<location>/error.do</location>
 	</error-page>
 
-	<error-page>
-		<error-code>404</error-code>
-		<location>/404.do</location>
-	</error-page>
-
 	<jsp-config>
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>
