@@ -67,6 +67,7 @@
 		<property name="customArgumentResolvers">
 			<list>
 				<bean class="io.leopard.web4j.resolver.SpeicalParameterHandlerMethodArgumentResolver" />
+				<bean class="io.leopard.web4j.resolver.PathRegexHandlerMethodArgumentResolver" />
 			</list>
 		</property>
 	</bean>
