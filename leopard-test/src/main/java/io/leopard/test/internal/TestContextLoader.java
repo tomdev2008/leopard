@@ -50,7 +50,7 @@ public class TestContextLoader implements ContextLoader {
 		return new String[] { filename };
 	}
 
-	private String[] defaultModules = { "dao", "service", "web" };
+	private String[] defaultModules = { "web", "service", "dao" };
 
 	protected String getModuleApplicationContextPath() {
 		ModuleParserLei moduleParserLei = new ModuleParserLeiImpl();
