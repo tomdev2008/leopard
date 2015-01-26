@@ -66,13 +66,28 @@ public class TestContextLoader implements ContextLoader {
 			}
 		}
 
-		for (String moduleName2 : defaultModules) {
-			Resource resource = new ClassPathResource("/applicationContext-" + moduleName2 + ".xml");
-			if (resource.exists()) {
-				return "/leopard-test/applicationContext-" + moduleName2 + ".xml";
-			}
+		String contextPath = this.getDefaultContextPath();
+		if (contextPath != null) {
+			return contextPath;
 		}
 
 		return "/leopard-test/applicationContext-default.xml";
+	}
+
+	protected String getDefaultContextPath() {
+		for (String moduleName : defaultModules) {
+			String contextPath;
+			if ("web".equals(moduleName)) {
+				contextPath = "/applicationContext.xml";
+			}
+			else {
+				contextPath = "/applicationContext-" + moduleName + ".xml";
+			}
+			Resource resource = new ClassPathResource(contextPath);
+			if (resource.exists()) {
+				return contextPath;
+			}
+		}
+		return null;
 	}
 }
