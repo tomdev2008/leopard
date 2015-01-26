@@ -50,17 +50,29 @@ public class TestContextLoader implements ContextLoader {
 		return new String[] { filename };
 	}
 
+	private String[] defaultModules = { "dao", "service", "web" };
+
 	protected String getModuleApplicationContextPath() {
 		ModuleParserLei moduleParserLei = new ModuleParserLeiImpl();
 		if (moduleParserLei.isSingleModule()) {
 			return "/leopard-test/applicationContext-web.xml";
 		}
-		String moduleName = moduleParserLei.getModuleName();
-		String path = "/leopard-test/applicationContext-" + moduleName + ".xml";
-		Resource resource = new ClassPathResource(path);
-		if (resource.exists()) {
-			return path;
+		{
+			String moduleName = moduleParserLei.getModuleName();
+			String path = "/leopard-test/applicationContext-" + moduleName + ".xml";
+			Resource resource = new ClassPathResource(path);
+			if (resource.exists()) {
+				return path;
+			}
 		}
+
+		for (String moduleName2 : defaultModules) {
+			Resource resource = new ClassPathResource("/applicationContext-" + moduleName2 + ".xml");
+			if (resource.exists()) {
+				return "/leopard-test/applicationContext-" + moduleName2 + ".xml";
+			}
+		}
+
 		return "/leopard-test/applicationContext-default.xml";
 	}
 }
