@@ -37,7 +37,6 @@ public class TestContextLoader implements ContextLoader {
 		if (locations.length > 0) {
 			return locations;
 		}
-
 		ClassPathResource resource = new ClassPathResource(ENTRY_FIRST);
 		System.err.println("resource.exists():" + resource.exists() + " ENTRY_FIRST:" + ENTRY_FIRST);
 		String filename;
