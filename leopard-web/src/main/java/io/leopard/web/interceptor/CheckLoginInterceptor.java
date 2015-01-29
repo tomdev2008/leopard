@@ -1,6 +1,7 @@
 package io.leopard.web.interceptor;
 
 import io.leopard.web.userinfo.UserinfoService;
+import io.leopard.web4j.frequency.FrequencyInterceptor;
 import io.leopard.web4j.nobug.csrf.CsrfUtil;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +36,7 @@ public class CheckLoginInterceptor implements HandlerInterceptor {
 			this.userinfoService.showLoginBox(request, response);
 			return false;
 		}
-		ConnectionLimitInterceptor.setAccount(request, account);
+		FrequencyInterceptor.setAccount(request, account);
 		return true;
 	}
 

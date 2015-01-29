@@ -1,6 +1,5 @@
 package io.leopard.web.userinfo;
 
-import io.leopard.ext.connectionlimit.ConnectionLimitDao;
 import io.leopard.test4j.mock.LeopardMockito;
 import io.leopard.test4j.mock.MockRequest;
 import io.leopard.test4j.mock.MockResponse;
@@ -10,7 +9,6 @@ import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 

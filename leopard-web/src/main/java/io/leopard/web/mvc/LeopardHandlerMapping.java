@@ -52,7 +52,7 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 		names.add("csrfInterceptor");
 		names.add("monitorPermissionInterceptor");
 		names.add("webservicePermissionInterceptor");
-		names.add("connectionLimitInterceptor");
+		names.add("frequencyInterceptor");
 
 		List<HandlerInterceptor> list = new ArrayList<HandlerInterceptor>();
 		for (String name : names) {
