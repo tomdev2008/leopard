@@ -163,6 +163,9 @@
 								<resource>
 									<directory>/home/workspace/github/web4j/web4j-passport/src/main/resources</directory>
 								</resource>
+								<resource>
+									<directory>/home/workspace/github/web4j/web4j-frequency/src/main/resources</directory>
+								</resource>
 							</resources>
 						</configuration>
 					</execution>
