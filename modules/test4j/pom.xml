@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.leopard.test4j</groupId>
+	<artifactId>test4j</artifactId>
+	<version>0.0.4-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Test4j</name>
+	<description>Test4j</description>
+	<url>https://github.com/tanhaichao/test4j</url>
+	<inceptionYear>2014</inceptionYear>
+
+	<parent>
+		<groupId>io.leopard.depend</groupId>
+		<artifactId>depend</artifactId>
+		<version>0.0.8</version>
+	</parent>
+
+
+	<scm>
+		<url>https://github.com/tanhaichao/test4j</url>
+		<connection>scm:svn:https://github.com/tanhaichao/test4j/trunk</connection>
+		<developerConnection>scm:svn:https://github.com/tanhaichao/test4j/trunk</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/tanhaichao/test4j/issues</url>
+	</issueManagement>
+
+	<properties>
+		<burrow.version>0.0.5-SNAPSHOT</burrow.version>
+		<data4j.version>0.0.1-SNAPSHOT</data4j.version>
+	</properties>
+
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>1.3.167</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>4.0.5.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard.burrow</groupId>
+				<artifactId>burrow-lang</artifactId>
+				<version>${burrow.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard.data4j</groupId>
+				<artifactId>data4j-jdbc</artifactId>
+				<version>${data4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard.data4j</groupId>
+				<artifactId>data4j-memcache</artifactId>
+				<version>${data4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard.data4j</groupId>
+				<artifactId>data4j-redis</artifactId>
+				<version>${data4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard.data4j</groupId>
+				<artifactId>data4j-memdb</artifactId>
+				<version>${data4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard.data4j</groupId>
+				<artifactId>data4j-schema</artifactId>
+				<version>${data4j.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<modules>
+		<module>test4j-mock</module>
+		<module>test4j-memcache</module>
+		<module>test4j-redis</module>
+		<module>test4j-jdbc</module>
+		<module>test4j-hosts</module>
+	</modules>
+</project>

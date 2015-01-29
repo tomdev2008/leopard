@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.leopard.data4j</groupId>
+	<artifactId>data4j</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>data4j</name>
+	<description>data4j</description>
+	<url>https://github.com/tanhaichao/data4j</url>
+	<inceptionYear>2014</inceptionYear>
+
+	<parent>
+		<groupId>io.leopard.depend</groupId>
+		<artifactId>depend</artifactId>
+		<version>0.0.8</version>
+	</parent>
+
+	<scm>
+		<url>https://github.com/tanhaichao/data4j</url>
+		<connection>scm:svn:https://github.com/tanhaichao/data4j/trunk</connection>
+		<developerConnection>scm:svn:https://github.com/tanhaichao/data4j/trunk</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/tanhaichao/data4j/issues</url>
+	</issueManagement>
+
+	<properties>
+		<burrow.version>0.0.5-SNAPSHOT</burrow.version>
+	</properties>
+
+	<modules>
+		<module>data4j-jdbc</module>
+		<module>data4j-memcache</module>
+		<module>data4j-redis</module>
+		<module>data4j-memdb</module>
+		<module>data4j-cache</module>
+		<module>data4j-schema</module>
+		<module>data4j-all</module>
+		<module>data4j-mongo</module>
+		<module>data4j-log</module>
+		<module>data4j-env</module>
+		<module>data4j-biz</module>
+		<module>data4j-pubsub</module>
+	</modules>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.leopard.burrow</groupId>
+				<artifactId>burrow-lang</artifactId>
+				<version>${burrow.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
