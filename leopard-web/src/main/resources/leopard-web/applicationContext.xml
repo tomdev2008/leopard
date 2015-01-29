@@ -33,6 +33,7 @@
 	<!-- 拦截器 -->
 	<context:component-scan base-package="io.leopard.web.interceptor" />
 	<context:component-scan base-package="io.leopard.monitor.interceptor" />
+	<bean class="io.leopard.web4j.frequency。FrequencyInterceptor" />
 	
 	<bean class="io.leopard.web.mvc.LeopardHandlerMapping" />
 
