@@ -25,5 +25,14 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.leopard.maven.plugins</groupId>
+				<artifactId>subproject-maven-plugin</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
