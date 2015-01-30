@@ -40,7 +40,9 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>data4j/data4j-jdbc</source>
+								<source>modules/data4j/data4j-jdbc</source>
+								<source>modules/data4j/data4j-memcache</source>
+								<source>modules/data4j/data4j-redis</source>
 							</sources>
 						</configuration>
 					</execution>
