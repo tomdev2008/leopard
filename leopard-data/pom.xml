@@ -47,6 +47,13 @@
 						</configuration>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<artifactId>maven-project</artifactId>
+						<groupId>org.apache.maven</groupId>
+						<version>2.2.1</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
