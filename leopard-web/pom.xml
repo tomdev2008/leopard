@@ -15,13 +15,7 @@
 			<artifactId>leopard-data</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<!-- 
-		<dependency>
-			<groupId>io.leopard</groupId>
-			<artifactId>leopard-monitor</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		 -->
+		<!-- <dependency> <groupId>io.leopard</groupId> <artifactId>leopard-monitor</artifactId> <version>0.0.1-SNAPSHOT</version> </dependency> -->
 
 
 		<dependency>
@@ -69,7 +63,7 @@
 			<artifactId>dom4j</artifactId>
 		</dependency>
 
-		
+
 		<dependency>
 			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
@@ -77,4 +71,46 @@
 
 
 	</dependencies>
+
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.leopard.maven.plugins</groupId>
+				<artifactId>subproject-maven-plugin</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<id>add-sources</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-sources</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>web4j/web4j-admin</source>
+								<source>web4j/web4j-captcha</source>
+								<source>web4j/web4j-command</source>
+								<source>web4j/web4j-editor</source>
+								<source>web4j/web4j-frequency</source>
+								<source>web4j/web4j-mvc</source>
+								<source>web4j/web4j-nobug</source>
+								<source>web4j/web4j-parameter</source>
+								<source>web4j/web4j-passport</source>
+								<source>web4j/web4j-permission</source>
+								<source>web4j/web4j-proxy</source>
+								<source>web4j/web4j-servlet</source>
+								<source>web4j/web4j-session</source>
+								<source>web4j/web4j-taglib</source>
+								<source>web4j/web4j-trynb</source>
+								<source>web4j/web4j-validator</source>
+								<source>web4j/web4j-view</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
