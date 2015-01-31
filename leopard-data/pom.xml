@@ -92,7 +92,7 @@
 								<dependency>
 									<groupId>io.leopard.data4j</groupId>
 									<artifactId>data4j-all</artifactId>
-									<scope>provided</scope>
+									<scope>test</scope>
 								</dependency>
 							</dependencies>
 						</configuration>
