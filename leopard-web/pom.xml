@@ -89,23 +89,23 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>web4j/web4j-admin</source>
-								<source>web4j/web4j-captcha</source>
-								<source>web4j/web4j-command</source>
-								<source>web4j/web4j-editor</source>
-								<source>web4j/web4j-frequency</source>
-								<source>web4j/web4j-mvc</source>
-								<source>web4j/web4j-nobug</source>
-								<source>web4j/web4j-parameter</source>
-								<source>web4j/web4j-passport</source>
-								<source>web4j/web4j-permission</source>
-								<source>web4j/web4j-proxy</source>
-								<source>web4j/web4j-servlet</source>
-								<source>web4j/web4j-session</source>
-								<source>web4j/web4j-taglib</source>
-								<source>web4j/web4j-trynb</source>
-								<source>web4j/web4j-validator</source>
-								<source>web4j/web4j-view</source>
+								<source>modules/web4j/web4j-admin</source>
+								<source>modules/web4j/web4j-captcha</source>
+								<source>modules/web4j/web4j-command</source>
+								<source>modules/web4j/web4j-editor</source>
+								<source>modules/web4j/web4j-frequency</source>
+								<source>modules/web4j/web4j-mvc</source>
+								<source>modules/web4j/web4j-nobug</source>
+								<source>modules/web4j/web4j-parameter</source>
+								<source>modules/web4j/web4j-passport</source>
+								<source>modules/web4j/web4j-permission</source>
+								<source>modules/web4j/web4j-proxy</source>
+								<source>modules/web4j/web4j-servlet</source>
+								<source>modules/web4j/web4j-session</source>
+								<source>modules/web4j/web4j-taglib</source>
+								<source>modules/web4j/web4j-trynb</source>
+								<source>modules/web4j/web4j-validator</source>
+								<source>modules/web4j/web4j-view</source>
 							</sources>
 						</configuration>
 					</execution>
