@@ -23,7 +23,10 @@
 			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>c3p0</groupId>
 			<artifactId>c3p0</artifactId>
