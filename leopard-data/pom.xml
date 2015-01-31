@@ -41,7 +41,6 @@
 						<configuration>
 							<sources>
 								<source>modules/burrow/burrow-lang</source>
-
 								<source>modules/data4j/data4j-cache</source>
 								<source>modules/data4j/data4j-jdbc</source>
 								<source>modules/data4j/data4j-memcache</source>
@@ -54,6 +53,13 @@
 								<source>modules/data4j/data4j-biz</source>
 								<source>modules/data4j/data4j-pubsub</source>
 							</sources>
+							<dependencies>
+								<dependency>
+									<groupId>io.leopard.data4j</groupId>
+									<artifactId>data4j-all</artifactId>
+									<scope>provided</scope>
+								</dependency>
+							</dependencies>
 						</configuration>
 					</execution>
 				</executions>

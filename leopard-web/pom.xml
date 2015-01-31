@@ -107,6 +107,13 @@
 								<source>modules/web4j/web4j-validator</source>
 								<source>modules/web4j/web4j-view</source>
 							</sources>
+							<dependencies>
+								<dependency>
+									<groupId>io.leopard.web4j</groupId>
+									<artifactId>web4j-all</artifactId>
+									<scope>provided</scope>
+								</dependency>
+							</dependencies>
 						</configuration>
 					</execution>
 				</executions>

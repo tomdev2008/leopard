@@ -59,7 +59,15 @@
 							<sources>
 								<source>modules/test4j/test4j-mock</source>
 							</sources>
+							<dependencies>
+								<dependency>
+									<groupId>io.leopard.test4j</groupId>
+									<artifactId>test4j-mock</artifactId>
+									<scope>provided</scope>
+								</dependency>
+							</dependencies>
 						</configuration>
+
 					</execution>
 				</executions>
 			</plugin>
