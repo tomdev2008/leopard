@@ -1,4 +1,4 @@
-package io.leopard.hosts4j;
+package io.leopard.test4j.hosts;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
