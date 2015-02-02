@@ -6,7 +6,7 @@ import io.leopard.data4j.jdbc.Jdbc;
 import io.leopard.data4j.jdbc.StatementParameter;
 import io.leopard.web4j.admin.Admin;
 import io.leopard.web4j.parameter.SessUsernamePageParameter;
-import io.leopard.web4j.passport.LoginBox;
+import io.leopard.web4j.passport.LoginBoxLei;
 
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ public class AdminDaoMysqlImpl extends ContextImpl implements AdminDao {
 
 	@Autowired(required = false)
 	// 兼容集成测试
-	private LoginBox loginBox;
+	private LoginBoxLei loginBox;
 
 	@Autowired(required = false)
 	private SessUsernamePageParameter sessUsernamePageParameter;

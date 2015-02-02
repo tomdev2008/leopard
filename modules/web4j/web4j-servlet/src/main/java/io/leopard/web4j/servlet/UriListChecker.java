@@ -8,10 +8,13 @@ import java.util.List;
 import java.util.Set;
 
 public class UriListChecker {
-	
 
-	private Set<String> uris;
-	private List<String> folders;
+	private Set<String> uris = new HashSet<String>();
+	private List<String> folders = new ArrayList<String>();
+
+	public UriListChecker() {
+
+	}
 
 	public UriListChecker(List<String> uriList) {
 		this.uris = this.getUris(uriList);

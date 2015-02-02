@@ -24,5 +24,10 @@
 			<version>0.0.2-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.leopard.data4j</groupId>
+			<artifactId>data4j-schema</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>

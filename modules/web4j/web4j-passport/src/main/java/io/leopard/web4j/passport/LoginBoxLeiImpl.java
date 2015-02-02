@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  * 
  */
 @Component
-public class LoginBoxImpl implements LoginBox {
+public class LoginBoxLeiImpl implements LoginBoxLei {
 
 	@Override
 	public void showLoginBox(HttpServletRequest request, HttpServletResponse response) {

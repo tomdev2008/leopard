@@ -1,5 +1,7 @@
 package io.leopard.web4j.passport;
 
+import io.leopard.burrow.LeopardLei;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author 阿海
  *
  */
-public interface PassportValidateDao {
+public interface PassportValidateLei extends LeopardLei {
 
 	/**
 	 * 获取当前登录的用户信息(Leopard会自动将返回值存入session作缓存).
