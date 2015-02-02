@@ -78,6 +78,8 @@
 	<import resource="classpath*:/errorpage.xml" />
 
 	<import resource="classpath:/applicationContext.xml" />
+	<!-- 
 	<import resource="resources.xml" />
+	 -->
 
 </beans>
