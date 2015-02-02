@@ -6,7 +6,7 @@ import org.apache.commons.lang.NotImplementedException;
 import org.springframework.stereotype.Service;
 
 /**
- * 获取cookie中的username(经过UDB登录验证)
+ * 获取cookie中的username(经过通行证登录验证)
  * 
  * @author 阿海
  * 
