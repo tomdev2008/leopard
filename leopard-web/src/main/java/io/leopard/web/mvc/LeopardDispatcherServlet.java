@@ -17,7 +17,7 @@ public class LeopardDispatcherServlet extends DispatcherServlet {
 		String uri = request.getRequestURI();
 		String mimeType = getServletContext().getMimeType(uri);
 
-		// System.err.println("request:" + uri + " mimeType:" + mimeType);
+		System.err.println("request:" + uri + " mimeType:" + mimeType);
 
 		InputStream input = request.getServletContext().getResourceAsStream(uri);
 		if (input == null) {
