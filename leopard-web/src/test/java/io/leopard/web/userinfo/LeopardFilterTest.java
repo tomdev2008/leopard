@@ -15,7 +15,6 @@ import org.mockito.Mockito;
 //@RunWith(LeopardMockRunner.class)
 //@PrepareForTest({ MonitorBeanFactory.class, LeopardWebTimeLog.class })
 public class LeopardFilterTest {
-	private UserinfoService userinfoService = Mockito.mock(UserinfoService.class);
 	private ConfigHandler loginHandler = Mockito.mock(ConfigHandler.class);
 
 	LeopardFilter filter = newInstance();
@@ -23,7 +22,6 @@ public class LeopardFilterTest {
 	protected LeopardFilter newInstance() {
 
 		LeopardFilter filter = new LeopardFilter();
-		LeopardMockito.setProperty(filter, userinfoService);
 		LeopardMockito.setProperty(filter, loginHandler);
 		return filter;
 	}
@@ -150,9 +148,7 @@ public class LeopardFilterTest {
 		MockResponse response = new MockResponse();
 		FilterChain chain = Mockito.mock(FilterChain.class);
 
-		UserinfoService userinfoService = Mockito.mock(UserinfoService.class);
 		LeopardFilter filter = Mockito.spy(new LeopardFilter());
-		LeopardMockito.setProperty(filter, userinfoService);
 
 		filter.doFilter(request, response, chain);
 		// Mockito.doReturn(true).when(userinfoService).isEnableTimeLog();

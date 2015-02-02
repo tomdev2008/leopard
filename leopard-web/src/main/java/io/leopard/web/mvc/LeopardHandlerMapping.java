@@ -47,7 +47,7 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 		names.add("skipFilterInterceptor");
 		names.add("timeInterceptor");
 		names.add("timeLogInterceptor");
-		names.add("checkLoginInterceptor");
+		names.add("passportInterceptor");
 		names.add("pageDelayInterceptor");
 		names.add("csrfInterceptor");
 		names.add("monitorPermissionInterceptor");
