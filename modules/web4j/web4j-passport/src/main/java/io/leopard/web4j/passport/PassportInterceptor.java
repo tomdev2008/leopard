@@ -83,7 +83,7 @@ public class PassportInterceptor implements HandlerInterceptor {
 	 * @return
 	 */
 	protected boolean isCheckLogin(HttpServletRequest request, Object handler) {
-		System.err.println("PassportInterceptor handler:" + handler);
+		// System.err.println("PassportInterceptor handler:" + handler);
 		if (handlerSet.contains(handler.toString())) {
 			return true;
 		}
