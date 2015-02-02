@@ -8,11 +8,8 @@
 package io.leopard.web.userinfo;
 
 import org.junit.Test;
-import org.mockito.Mockito;
 
 public class UserinfoServiceImplTest {
-
-	protected final ConfigHandler loginHandler = Mockito.spy(new ConfigHandler());
 
 	//
 	// @Test
@@ -42,17 +39,17 @@ public class UserinfoServiceImplTest {
 
 	@Test
 	public void isExcludeUri() {
-//		UserinfoServiceImpl userinfoService = new UserinfoServiceImpl();
-//		UriListChecker excludeLoginUriListChecker = Mockito.mock(UriListChecker.class);
-//
-//		userinfoService.excludeLoginUriListChecker = excludeLoginUriListChecker;
-//
-//		MockHttpServletRequest request = new MockHttpServletRequest();
-//
-//		request.setRequestURI("/index.do");
-//
-//		Mockito.doReturn(true).when(excludeLoginUriListChecker).exists("/index.do");
-//		Assert.assertTrue(userinfoService.isExcludeUri(request));
+		// UserinfoServiceImpl userinfoService = new UserinfoServiceImpl();
+		// UriListChecker excludeLoginUriListChecker = Mockito.mock(UriListChecker.class);
+		//
+		// userinfoService.excludeLoginUriListChecker = excludeLoginUriListChecker;
+		//
+		// MockHttpServletRequest request = new MockHttpServletRequest();
+		//
+		// request.setRequestURI("/index.do");
+		//
+		// Mockito.doReturn(true).when(excludeLoginUriListChecker).exists("/index.do");
+		// Assert.assertTrue(userinfoService.isExcludeUri(request));
 
 	}
 }

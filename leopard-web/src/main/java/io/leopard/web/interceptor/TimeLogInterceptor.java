@@ -1,9 +1,7 @@
 package io.leopard.web.interceptor;
 
-import io.leopard.web.userinfo.ConfigHandler;
 import io.leopard.web4j.servlet.RequestUtil;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,18 +19,15 @@ import org.springframework.web.servlet.ModelAndView;
 @Component
 public class TimeLogInterceptor implements HandlerInterceptor {
 
-	@Resource
-	private ConfigHandler loginHandler;
-
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		String requestUri = RequestUtil.getRequestContextUri(request);
 
 		// System.err.println("TimeLogInterceptor preHandle:" + requestUri);
-
-		if (!loginHandler.isEnableTimeLog()) {// 是否开启页面耗时日志,日志写在time.log
+		if (true) {
 			return true;
 		}
+
 		String queryString = request.getQueryString();
 		String url;
 		if (StringUtils.isNotEmpty(queryString)) {

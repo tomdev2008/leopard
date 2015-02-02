@@ -1,6 +1,5 @@
 package io.leopard.web.userinfo;
 
-import io.leopard.test4j.mock.LeopardMockito;
 import io.leopard.test4j.mock.MockRequest;
 import io.leopard.test4j.mock.MockResponse;
 
@@ -15,14 +14,12 @@ import org.mockito.Mockito;
 //@RunWith(LeopardMockRunner.class)
 //@PrepareForTest({ MonitorBeanFactory.class, LeopardWebTimeLog.class })
 public class LeopardFilterTest {
-	private ConfigHandler loginHandler = Mockito.mock(ConfigHandler.class);
 
 	LeopardFilter filter = newInstance();
 
 	protected LeopardFilter newInstance() {
 
 		LeopardFilter filter = new LeopardFilter();
-		LeopardMockito.setProperty(filter, loginHandler);
 		return filter;
 	}
 
