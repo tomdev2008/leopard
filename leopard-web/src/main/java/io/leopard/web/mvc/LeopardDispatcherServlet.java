@@ -1,13 +1,15 @@
 package io.leopard.web.mvc;
 
+import java.io.File;
 import java.io.InputStream;
+import java.net.URL;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
+import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class LeopardDispatcherServlet extends DispatcherServlet {
@@ -23,6 +25,16 @@ public class LeopardDispatcherServlet extends DispatcherServlet {
 			super.noHandlerFound(request, response);
 			return;
 		}
+
+		{
+			URL url = request.getServletContext().getResource(uri);
+			File file = new File(url.getFile());
+			if (new ServletWebRequest(request, response).checkNotModified(file.lastModified())) {
+				logger.debug("Resource not modified - returning 304");
+				return;
+			}
+		}
+
 		byte[] bytes = IOUtils.toByteArray(input);
 
 		response.setContentLength(bytes.length);
