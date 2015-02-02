@@ -1,8 +1,12 @@
 package io.leopard.web.mvc;
 
+import java.io.InputStream;
+
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.IOUtils;
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class LeopardDispatcherServlet extends DispatcherServlet {
@@ -13,14 +17,22 @@ public class LeopardDispatcherServlet extends DispatcherServlet {
 		String uri = request.getRequestURI();
 		String mimeType = getServletContext().getMimeType(uri);
 
-		System.err.println("request:" + uri + " mimeType:" + mimeType);
-		super.noHandlerFound(request, response);
-	}
+		// System.err.println("request:" + uri + " mimeType:" + mimeType);
 
-	// @Override
-	// public void init(ServletConfig config) throws ServletException {
-	// System.out.println("LeopardDispatcherServlet init:" + config);
-	// super.init(config);
-	// }
+		InputStream input = request.getServletContext().getResourceAsStream(uri);
+		if (input == null) {
+			super.noHandlerFound(request, response);
+			return;
+		}
+		byte[] bytes = IOUtils.toByteArray(input);
+
+		response.setContentLength(bytes.length);
+		if (mimeType != null) {
+			response.setContentType(mimeType);
+		}
+
+		ServletOutputStream out = response.getOutputStream();
+		out.write(bytes);
+	}
 
 }
