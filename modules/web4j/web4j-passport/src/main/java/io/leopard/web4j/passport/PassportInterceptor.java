@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,7 +40,7 @@ public class PassportInterceptor implements HandlerInterceptor {
 	@LeiResource
 	private PassportValidateLei passportValidateLei;
 
-	@LeiResource
+	@Resource
 	private LoginBoxLei loginBoxLei;
 
 	protected UriListChecker uriListChecker = new UriListChecker();// 需要做登录验证的URL列表
@@ -52,7 +53,7 @@ public class PassportInterceptor implements HandlerInterceptor {
 			for (MethodParameter parameter : parameters) {
 				String parameterName = parameter.getParameterName();
 				if (parameterNameSet.contains(parameterName)) {
-					System.err.println("PassportInterceptor registerHandlerMethod" + handlerMethod + " code:" + handlerMethod.hashCode());
+					// System.err.println("PassportInterceptor registerHandlerMethod" + handlerMethod + " code:" + handlerMethod.hashCode());
 					handlerSet.add(handlerMethod.toString());
 				}
 			}
@@ -83,7 +84,7 @@ public class PassportInterceptor implements HandlerInterceptor {
 	 */
 	protected boolean isCheckLogin(HttpServletRequest request, Object handler) {
 		HandlerMethod handlerMethod = (HandlerMethod) handler;
-		System.err.println("PassportInterceptor handler:" + handlerMethod + " code:" + handlerMethod.hashCode());
+		// System.err.println("PassportInterceptor handler:" + handlerMethod + " code:" + handlerMethod.hashCode());
 		if (handlerSet.contains(handler.toString())) {
 			return true;
 		}

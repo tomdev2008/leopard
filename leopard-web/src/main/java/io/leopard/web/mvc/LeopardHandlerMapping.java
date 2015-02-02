@@ -6,6 +6,7 @@ import io.leopard.web4j.method.HandlerMethodRegisterLei;
 import io.leopard.web4j.nobug.annotation.NoXss;
 import io.leopard.web4j.nobug.annotation.SkipFilter;
 import io.leopard.web4j.nobug.xss.XssAttributeData;
+import io.leopard.web4j.passport.PassportInterceptor;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -77,6 +78,9 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 	@Autowired
 	private SkipFilterService skipFilterService;
 
+	@Autowired(required = false)
+	private PassportInterceptor passportInterceptor;
+
 	/**
 	 * 验证码分组
 	 */
@@ -119,14 +123,18 @@ public class LeopardHandlerMapping extends RequestMappingHandlerMapping {
 
 		MethodParameter[] params = handlerMethod.getMethodParameters();
 		for (MethodParameter param : params) {
+			param.initParameterNameDiscovery(parameterNameDiscoverer);
+
 			NoXss noXss = param.getParameterAnnotation(NoXss.class);
 			if (noXss == null) {
 				continue;
 			}
-			param.initParameterNameDiscovery(parameterNameDiscoverer);
 			String paramName = param.getParameterName();
-
 			XssAttributeData.add(uri, paramName);
+		}
+
+		if (passportInterceptor != null) {
+			passportInterceptor.registerHandlerMethod(handlerMethod);
 		}
 	}
 
