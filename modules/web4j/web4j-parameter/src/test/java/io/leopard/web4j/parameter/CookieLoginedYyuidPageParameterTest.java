@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @RunWith(LeopardMockRunner.class)
 public class CookieLoginedYyuidPageParameterTest {
 
-	CookieLoginedYyuidPageParameter page = new CookieLoginedYyuidPageParameter();
+	CookieLoginedUidPageParameter page = new CookieLoginedUidPageParameter();
 
 	@Test
 	public void getKey() {

@@ -6,14 +6,14 @@ import org.apache.commons.lang.NotImplementedException;
 import org.springframework.stereotype.Service;
 
 /**
- * 获取cookie中的yyuid(经过UDB登录验证)
+ * 获取cookie中的uid(经过通行证登录验证)
  * 
  * @author 阿海
  * 
  */
 
 @Service
-public class CookieLoginedYyuidPageParameter implements PageParameter {
+public class CookieLoginedUidPageParameter implements PageParameter {
 
 	@Override
 	public String getValue(HttpServletRequest request) {
@@ -22,7 +22,7 @@ public class CookieLoginedYyuidPageParameter implements PageParameter {
 
 	@Override
 	public String getKey() {
-		return "cookieLoginedYyuid";
+		return "cookieLoginedUid";
 	}
 
 }
