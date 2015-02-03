@@ -27,8 +27,8 @@ public class JettyServer {
 			Class.forName(className).newInstance();
 		}
 		catch (Exception e) {
-			// System.err.println("init hosts error:" + e.getMessage());
-			e.printStackTrace();
+			System.err.println("init hosts error:" + e.toString());
+			// e.printStackTrace();
 		}
 
 		System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME, "jetty");
