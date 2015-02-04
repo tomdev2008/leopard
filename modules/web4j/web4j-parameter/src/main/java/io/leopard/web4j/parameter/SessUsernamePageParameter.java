@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
 /**
- * 存在session中的用户名.
+ * 获取存在session中的用户名.
  * 
  * @author 阿海
  * 
