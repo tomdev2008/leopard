@@ -24,21 +24,20 @@ public class ErrorPageDaoXmlImpl implements ErrorPageDao {
 
 	@Override
 	public List<ErrorConfig> list() {
+		Resource resource = new ClassPathResource("/trynb.xml");
 		try {
-			return this.parse();
+			InputStream input = resource.getInputStream();
+			return this.parse(input);
 		}
 		catch (Exception e) {
 			throw new RuntimeException("解析trynb.xml出错:" + e.getMessage(), e);
 		}
 	}
 
-	protected List<ErrorConfig> parse() throws IOException, ParserConfigurationException, SAXException {
-		Resource resource = new ClassPathResource("/trynb.xml");
-		InputStream input = resource.getInputStream();
+	protected List<ErrorConfig> parse(InputStream input) throws IOException, ParserConfigurationException, SAXException {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = dbf.newDocumentBuilder();
 		Document document = db.parse(input);
-
 		NodeList nodeList = document.getElementsByTagName("error");
 		System.out.println("nodeList:" + nodeList.getLength());
 		List<ErrorConfig> list = new ArrayList<ErrorConfig>();
