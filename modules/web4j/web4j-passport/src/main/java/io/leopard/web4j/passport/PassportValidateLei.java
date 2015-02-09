@@ -20,6 +20,12 @@ public interface PassportValidateLei extends LeopardLei {
 	 */
 	PassportUser validate(HttpServletRequest request, HttpServletResponse response);
 
+	/**
+	 * 显示登陆框.
+	 * 
+	 * @param request
+	 * @param response
+	 */
 	void showLoginBox(HttpServletRequest request, HttpServletResponse response);
 
 }
