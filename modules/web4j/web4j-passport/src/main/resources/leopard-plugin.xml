@@ -3,6 +3,4 @@
 
 	<bean id="passportInterceptor" class="io.leopard.web4j.passport.PassportInterceptor" />
 	
-	<bean id="loginBoxLei" class="io.leopard.web4j.passport.LoginBoxLeiImpl" />
-
 </beans>
