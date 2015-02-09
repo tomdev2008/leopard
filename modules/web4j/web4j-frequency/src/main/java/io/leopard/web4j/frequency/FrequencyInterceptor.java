@@ -1,6 +1,5 @@
 package io.leopard.web4j.frequency;
 
-import io.leopard.data4j.redis.Redis;
 import io.leopard.web4j.servlet.RequestUtil;
 
 import java.util.HashMap;
@@ -9,11 +8,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,22 +18,9 @@ import org.springframework.web.servlet.ModelAndView;
  * @author 阿海
  * 
  */
-public class FrequencyInterceptor implements HandlerInterceptor, BeanFactoryAware {
+public class FrequencyInterceptor implements HandlerInterceptor {
 	@Autowired
 	private FrequencyLei frequencyLei;
-
-	@Override
-	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-		DefaultListableBeanFactory context = (DefaultListableBeanFactory) beanFactory;
-		Map<String, Redis> map = context.getBeansOfType(Redis.class);
-		if (!map.isEmpty()) {
-			Redis redis = map.get("sessionRedis");
-			if (redis == null) {
-				redis = map.entrySet().iterator().next().getValue();// 获取第一个
-			}
-			((FrequencyLeiImpl) frequencyLei).setRedis(redis);
-		}
-	}
 
 	private Map<Integer, Integer> data = new HashMap<Integer, Integer>();
 
