@@ -31,7 +31,6 @@ public class FrequencyInterceptor implements HandlerInterceptor {
 		if (seconds == null) {
 			return true;
 		}
-		// TODO ahai 根据Controller方法中使用的session参数进行判断?
 		Object account = this.getAccount(request);
 		if (account == null) {
 			return true;
@@ -42,6 +41,7 @@ public class FrequencyInterceptor implements HandlerInterceptor {
 	}
 
 	protected Object getAccount(HttpServletRequest request) {
+		// TODO ahai 根据Controller方法中使用的session参数进行判断?
 		return request.getAttribute("account");
 	}
 
