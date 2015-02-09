@@ -531,54 +531,6 @@
 
 	<!-- -->
 
-	<xsd:element name="errorpage">
-		<xsd:annotation>
-			<xsd:documentation>错误页面配置</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:choice minOccurs="0" maxOccurs="unbounded">
-					<xsd:element name="error">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:choice minOccurs="0" maxOccurs="unbounded">
-									<xsd:element name="exception">
-										<xsd:complexType>
-											<xsd:attribute name="type" type="xsd:string" use="required" />
-											<xsd:attribute name="message" type="xsd:string" />
-											<xsd:attribute name="statusCode" type="xsd:string" />
-
-											<xsd:attribute name="log" default="error">
-												<xsd:annotation>
-													<xsd:documentation><![CDATA[
-								
-															]]></xsd:documentation>
-												</xsd:annotation>
-												<xsd:simpleType>
-													<xsd:restriction base="xsd:NMTOKEN">
-														<xsd:enumeration value="false" />
-														<xsd:enumeration value="true" />
-														<xsd:enumeration value="debug" />
-														<xsd:enumeration value="info" />
-														<xsd:enumeration value="warn" />
-														<xsd:enumeration value="error" />
-													</xsd:restriction>
-												</xsd:simpleType>
-											</xsd:attribute>
-										</xsd:complexType>
-									</xsd:element>
-								</xsd:choice>
-							</xsd:sequence>
-							<xsd:attribute name="url" type="xsd:string" use="required" />
-							<xsd:attribute name="page" type="xsd:string" />
-							<xsd:attribute name="comment" type="xsd:string" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
-
 	<xsd:element name="tx">
 		<xsd:annotation>
 			<xsd:documentation>事务</xsd:documentation>
