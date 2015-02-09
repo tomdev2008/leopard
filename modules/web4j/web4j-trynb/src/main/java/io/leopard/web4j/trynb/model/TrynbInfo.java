@@ -1,6 +1,6 @@
 package io.leopard.web4j.trynb.model;
 
-public class ErrorPage {
+public class TrynbInfo {
 
 	private String message;
 	private String statusCode;

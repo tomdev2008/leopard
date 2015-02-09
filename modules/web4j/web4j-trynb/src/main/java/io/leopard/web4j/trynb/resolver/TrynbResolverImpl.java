@@ -1,6 +1,6 @@
 package io.leopard.web4j.trynb.resolver;
 
-import io.leopard.web4j.trynb.model.ErrorPage;
+import io.leopard.web4j.trynb.model.TrynbInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +20,10 @@ public class TrynbResolverImpl implements TrynbResolver {
 	}
 
 	@Override
-	public ModelAndView resolveView(HttpServletRequest request, String uri, Exception exception, ErrorPage errorPage, Class<?> returnType) {
+	public ModelAndView resolveView(HttpServletRequest request, String uri, Exception exception, TrynbInfo trynbInfo, Class<?> returnType) {
 		ModelAndView view;
 		for (TrynbResolver resolver : list) {
-			view = resolver.resolveView(request, uri, exception, errorPage, returnType);
+			view = resolver.resolveView(request, uri, exception, trynbInfo, returnType);
 			if (view != null) {
 				return view;
 			}

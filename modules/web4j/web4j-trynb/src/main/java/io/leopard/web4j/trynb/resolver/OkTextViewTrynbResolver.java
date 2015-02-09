@@ -1,7 +1,7 @@
 package io.leopard.web4j.trynb.resolver;
 
 import io.leopard.core.exception.other.OutSideException;
-import io.leopard.web4j.trynb.model.ErrorPage;
+import io.leopard.web4j.trynb.model.TrynbInfo;
 import io.leopard.web4j.view.OkTextView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +15,7 @@ public class OkTextViewTrynbResolver implements TrynbResolver {
 	protected Log logger = LogFactory.getLog(this.getClass());
 
 	@Override
-	public ModelAndView resolveView(HttpServletRequest request, String uri, Exception exception, ErrorPage errorPage, Class<?> returnType) {
+	public ModelAndView resolveView(HttpServletRequest request, String uri, Exception exception, TrynbInfo trynbInfo, Class<?> returnType) {
 		if (!returnType.equals(OkTextView.class)) {
 			return null;
 		}

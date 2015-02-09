@@ -3,7 +3,7 @@ package io.leopard.web4j.trynb.resolver;
 import javax.servlet.http.HttpServletRequest;
 
 import io.leopard.core.exception.StatusCodeException;
-import io.leopard.web4j.trynb.model.ErrorPage;
+import io.leopard.web4j.trynb.model.TrynbInfo;
 import io.leopard.web4j.view.JsonView;
 
 import org.springframework.web.servlet.ModelAndView;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class JsonViewTrynbResolver implements TrynbResolver {
 
 	@Override
-	public ModelAndView resolveView(HttpServletRequest request, String uri, Exception exception, ErrorPage errorPage, Class<?> returnType) {
+	public ModelAndView resolveView(HttpServletRequest request, String uri, Exception exception, TrynbInfo trynbInfo, Class<?> returnType) {
 		if (!JsonView.class.isAssignableFrom(returnType)) {
 			return null;
 		}
@@ -23,8 +23,8 @@ public class JsonViewTrynbResolver implements TrynbResolver {
 			jsonView.setMessage(e.getMessage());
 		}
 		else {
-			jsonView.setStatus(errorPage.getStatusCode());
-			jsonView.setMessage(errorPage.getMessage());
+			jsonView.setStatus(trynbInfo.getStatusCode());
+			jsonView.setMessage(trynbInfo.getMessage());
 		}
 		return jsonView;
 	}

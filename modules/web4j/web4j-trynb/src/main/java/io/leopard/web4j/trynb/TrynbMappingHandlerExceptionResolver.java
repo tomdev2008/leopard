@@ -1,6 +1,6 @@
 package io.leopard.web4j.trynb;
 
-import io.leopard.web4j.trynb.model.ErrorPage;
+import io.leopard.web4j.trynb.model.TrynbInfo;
 import io.leopard.web4j.trynb.resolver.TrynbResolver;
 import io.leopard.web4j.trynb.resolver.TrynbResolverImpl;
 
@@ -28,8 +28,8 @@ public class TrynbMappingHandlerExceptionResolver implements HandlerExceptionRes
 		HandlerMethod handlerMethod = (HandlerMethod) handler;
 		Class<?> returnType = handlerMethod.getMethod().getReturnType();
 
-		ErrorPage errorPage = errorPageService.parseErrorPage(request, uri, exception);
-		return trynbResolver.resolveView(request, uri, exception, errorPage, returnType);
+		TrynbInfo trynbInfo = errorPageService.parseErrorPage(request, uri, exception);
+		return trynbResolver.resolveView(request, uri, exception, trynbInfo, returnType);
 	}
 
 }

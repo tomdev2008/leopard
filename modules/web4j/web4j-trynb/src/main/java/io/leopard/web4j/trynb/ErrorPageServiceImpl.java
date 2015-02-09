@@ -3,7 +3,7 @@ package io.leopard.web4j.trynb;
 import io.leopard.core.exception.ConnectionLimitException;
 import io.leopard.core.exception.other.NotLoginException;
 import io.leopard.web4j.trynb.model.ErrorConfig;
-import io.leopard.web4j.trynb.model.ErrorPage;
+import io.leopard.web4j.trynb.model.TrynbInfo;
 import io.leopard.web4j.trynb.model.ExceptionConfig;
 
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class ErrorPageServiceImpl implements ErrorPageService {
 	}
 
 	@Override
-	public ErrorPage parseErrorPage(HttpServletRequest request, String uri, Exception exception) {
+	public TrynbInfo parseErrorPage(HttpServletRequest request, String uri, Exception exception) {
 		ExceptionConfig exceptionConfig = this.parseExceptionConfig(uri, exception);
 
 		String message;
@@ -66,10 +66,10 @@ public class ErrorPageServiceImpl implements ErrorPageService {
 
 		String statusCode = this.parseStatusCode(exceptionConfig, request, uri, exception);
 
-		ErrorPage errorPage = new ErrorPage();
-		errorPage.setMessage(message);
-		errorPage.setStatusCode(statusCode);
-		return errorPage;
+		TrynbInfo trynbInfo = new TrynbInfo();
+		trynbInfo.setMessage(message);
+		trynbInfo.setStatusCode(statusCode);
+		return trynbInfo;
 	}
 
 	protected String parseStatusCode(ExceptionConfig exceptionConfig, HttpServletRequest request, String uri, Exception exception) {
