@@ -25,6 +25,9 @@ public class ErrorPageDaoXmlImpl implements ErrorPageDao {
 	@Override
 	public List<ErrorConfig> list() {
 		Resource resource = new ClassPathResource("/trynb.xml");
+		if (!resource.exists()) {
+			resource = new ClassPathResource("/trynb-default.xml");
+		}
 		try {
 			InputStream input = resource.getInputStream();
 			return this.parse(input);
