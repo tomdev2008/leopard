@@ -42,7 +42,7 @@ public class ErrorPageDaoXmlImpl implements ErrorPageDao {
 		DocumentBuilder db = dbf.newDocumentBuilder();
 		Document document = db.parse(input);
 		NodeList nodeList = document.getElementsByTagName("error");
-		System.out.println("nodeList:" + nodeList.getLength());
+		// System.out.println("nodeList:" + nodeList.getLength());
 		List<ErrorConfig> list = new ArrayList<ErrorConfig>();
 		int size = nodeList.getLength();
 		for (int i = 0; i < size; i++) {
