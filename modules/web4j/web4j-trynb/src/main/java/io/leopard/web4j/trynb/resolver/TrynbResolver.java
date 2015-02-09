@@ -1,0 +1,12 @@
+package io.leopard.web4j.trynb.resolver;
+
+import io.leopard.web4j.trynb.model.ErrorPage;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.servlet.ModelAndView;
+
+public interface TrynbResolver {
+
+	ModelAndView resolveView(HttpServletRequest request, String uri, Exception exception, ErrorPage errorPage, Class<?> returnType);
+}

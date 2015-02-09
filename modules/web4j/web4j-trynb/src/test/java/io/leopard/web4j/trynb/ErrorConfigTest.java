@@ -1,5 +1,7 @@
 package io.leopard.web4j.trynb;
 
+import io.leopard.web4j.trynb.model.ErrorConfig;
+
 import org.junit.Test;
 
 public class ErrorConfigTest {

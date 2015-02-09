@@ -1,10 +1,7 @@
 package io.leopard.web4j.trynb;
 
-import io.leopard.web4j.trynb.ErrorConfig;
-import io.leopard.web4j.trynb.ErrorPageHandlerImpl;
-import io.leopard.web4j.trynb.ErrorPageService;
-import io.leopard.web4j.trynb.ErrorPageServiceImpl;
-import io.leopard.web4j.trynb.ExceptionConfig;
+import io.leopard.web4j.trynb.model.ErrorConfig;
+import io.leopard.web4j.trynb.model.ExceptionConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +15,6 @@ import org.w3c.dom.NodeList;
 
 public class ErrorpageBeanDefinitionParser implements BeanDefinitionParser {
 
-	
 	@Override
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
 		ErrorPageService errorPageService = new ErrorPageServiceImpl();
@@ -28,10 +24,9 @@ public class ErrorpageBeanDefinitionParser implements BeanDefinitionParser {
 		for (int i = 0; i < size; i++) {
 			Node node = nodeList.item(i);
 			ErrorConfig errorConfig = this.parseErrorConfig((Element) node);
-			// Json.print(errorConfig, "errorConfig");
-			errorPageService.add(errorConfig);
+//			errorPageService.add(errorConfig);
 		}
-		ErrorPageHandlerImpl.setErrorPageService(errorPageService);
+		// ErrorPageHandlerImpl.setErrorPageService(errorPageService);
 		return null;
 	}
 

@@ -1,9 +1,11 @@
 package io.leopard.web4j.trynb;
 
+import io.leopard.web4j.trynb.model.ErrorConfig;
+import io.leopard.web4j.trynb.model.ErrorPage;
+
 import javax.servlet.http.HttpServletRequest;
 
 public interface ErrorPageService {
-	boolean add(ErrorConfig errorConfig);
 
 	ErrorConfig findErrorInfo(String url);
 

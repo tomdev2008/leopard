@@ -2,6 +2,9 @@ package io.leopard.web4j.trynb;
 
 import io.leopard.core.exception.ConnectionLimitException;
 import io.leopard.core.exception.other.NotLoginException;
+import io.leopard.web4j.trynb.model.ErrorConfig;
+import io.leopard.web4j.trynb.model.ErrorPage;
+import io.leopard.web4j.trynb.model.ExceptionConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,15 +41,17 @@ public class ErrorPageServiceImpl implements ErrorPageService {
 		defaultConfigList.add(config);
 	}
 
-	@Override
-	public boolean add(ErrorConfig errorConfig) {
-		// ConnectionLimitException
-		return errorPageDao.add(errorConfig);
-	}
+
 
 	@Override
 	public ErrorConfig findErrorInfo(String url) {
-		return errorPageDao.findErrorInfo(url);
+		for (ErrorConfig error : errorPageDao.list()) {
+			String prefix = error.getUrl();
+			if (url.startsWith(prefix)) {
+				return error;
+			}
+		}
+		return null;
 	}
 
 	@Override
@@ -108,13 +113,13 @@ public class ErrorPageServiceImpl implements ErrorPageService {
 		String exceptionClassName = exception.getClass().getName();
 
 		for (ExceptionConfig exceptionConfig : exceptionConfigList) {
-			boolean match = ErrorPageUtil.match(exceptionConfig.getType(), exceptionClassName);
+			boolean match = ErrorUtil.match(exceptionConfig.getType(), exceptionClassName);
 			if (match) {
 				return exceptionConfig;
 			}
 		}
 		for (ExceptionConfig exceptionConfig : defaultConfigList) {
-			boolean match = ErrorPageUtil.match(exceptionConfig.getType(), exceptionClassName);
+			boolean match = ErrorUtil.match(exceptionConfig.getType(), exceptionClassName);
 			if (match) {
 				return exceptionConfig;
 			}

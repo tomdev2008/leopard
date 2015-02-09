@@ -1,9 +1,10 @@
 package io.leopard.web4j.trynb;
 
+import java.util.List;
+
+import io.leopard.web4j.trynb.model.ErrorConfig;
+
 public interface ErrorPageDao {
 
-	boolean add(ErrorConfig errorConfig);
-
-	ErrorConfig findErrorInfo(String url);
-
+	List<ErrorConfig> list();
 }

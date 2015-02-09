@@ -119,6 +119,18 @@ public class ErrorUtil {
 		logger.error(clientInfo, t);
 	}
 
+	public static boolean match(String type, String exceptionClassName) {
+		if (type.indexOf(".") == -1) {
+			if (exceptionClassName.endsWith(type)) {
+				return true;
+			}
+		}
+		if (exceptionClassName.equals(type)) {
+			return true;
+		}
+		return false;
+	}
+
 	public static String getClientInfo(HttpServletRequest request, String uri, String message) {
 		String proxyIp = RequestUtil.getProxyIp(request);
 		String referer = request.getHeader("referer");

@@ -1,4 +1,4 @@
-package io.leopard.web4j.trynb;
+package io.leopard.web4j.trynb.model;
 
 public class ErrorInfo {
 	private String message;

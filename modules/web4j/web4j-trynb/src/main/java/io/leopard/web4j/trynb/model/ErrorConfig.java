@@ -1,4 +1,4 @@
-package io.leopard.web4j.trynb;
+package io.leopard.web4j.trynb.model;
 
 import java.util.List;
 

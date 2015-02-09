@@ -1,26 +1,21 @@
 package io.leopard.web4j.trynb;
 
-import java.util.ArrayList;
+import io.leopard.web4j.trynb.model.ErrorConfig;
+
 import java.util.List;
 
 public class ErrorPageDaoImpl implements ErrorPageDao {
 
-	private List<ErrorConfig> errorPageList = new ArrayList<ErrorConfig>();
+	private List<ErrorConfig> list = null;
+
+	private ErrorPageDao errorPageDao = new ErrorPageDaoFileImpl();
 
 	@Override
-	public boolean add(ErrorConfig errorConfig) {
-		this.errorPageList.add(errorConfig);
-		return true;
-	}
-
-	@Override
-	public ErrorConfig findErrorInfo(String url) {
-		for (ErrorConfig error : errorPageList) {
-			String prefix = error.getUrl();
-			if (url.startsWith(prefix)) {
-				return error;
-			}
+	public List<ErrorConfig> list() {
+		if (list != null) {
+			return list;
 		}
-		return null;
+		list = errorPageDao.list();
+		return list;
 	}
 }
