@@ -32,13 +32,17 @@ public class FrequencyInterceptor implements HandlerInterceptor {
 			return true;
 		}
 		// TODO ahai 根据Controller方法中使用的session参数进行判断?
-		Object account = request.getAttribute("account");
+		Object account = this.getAccount(request);
 		if (account == null) {
 			return true;
 		}
 		String requestUri = RequestUtil.getRequestContextUri(request);
 		frequencyLei.request(account.toString(), requestUri, seconds);
 		return true;
+	}
+
+	protected Object getAccount(HttpServletRequest request) {
+		return request.getAttribute("account");
 	}
 
 	@Override
