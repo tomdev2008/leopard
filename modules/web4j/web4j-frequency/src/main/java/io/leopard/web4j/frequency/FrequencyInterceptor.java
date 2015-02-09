@@ -41,10 +41,6 @@ public class FrequencyInterceptor implements HandlerInterceptor {
 		return true;
 	}
 
-	public static void setAccount(HttpServletRequest request, Object account) {
-		request.setAttribute("account", account);
-	}
-
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
