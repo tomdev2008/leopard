@@ -12,6 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.servlet.View;
 
+/**
+ * 通行证登陆验证抽象实现.
+ * 
+ * @author 阿海
+ *
+ */
 public abstract class AbstractPassportValidateLei implements PassportValidateLei {
 
 	@Override
