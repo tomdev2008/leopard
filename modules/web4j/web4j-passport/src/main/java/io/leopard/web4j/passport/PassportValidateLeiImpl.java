@@ -9,18 +9,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @DefaultBean
-public class PassportValidateLeiImpl implements PassportValidateLei {
+public class PassportValidateLeiImpl extends AbstractPassportValidate {
 
 	@Override
 	public PassportUser validate(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public void showLoginBox(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-
 	}
 
 }
