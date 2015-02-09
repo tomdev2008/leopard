@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 
-public abstract class AbstractPassportValidate implements PassportValidateLei {
+public abstract class AbstractPassportValidateLei implements PassportValidateLei {
 
 	@Override
 	public void showLoginBox(HttpServletRequest request, HttpServletResponse response) {

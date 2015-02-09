@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @DefaultBean
-public class PassportValidateLeiImpl extends AbstractPassportValidate {
+public class PassportValidateLeiImpl extends AbstractPassportValidateLei {
 
 	@Override
 	public PassportUser validate(HttpServletRequest request, HttpServletResponse response) {
