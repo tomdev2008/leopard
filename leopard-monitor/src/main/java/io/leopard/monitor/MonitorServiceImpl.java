@@ -17,14 +17,10 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 public class MonitorServiceImpl implements MonitorService, BeanFactoryAware {
 
-	private static MonitorConfig monitorConfig;
+	private static MonitorDao monitorDao = new MonitorDaoImpl();
 
 	public static MonitorConfig getMonitorConfig() {
-		return monitorConfig;
-	}
-
-	public static void setMonitorConfig(MonitorConfig monitorConfig) {
-		MonitorServiceImpl.monitorConfig = monitorConfig;
+		return monitorDao.getMonitorConfig();
 	}
 
 	private IMonitor[] monitors;
@@ -39,11 +35,8 @@ public class MonitorServiceImpl implements MonitorService, BeanFactoryAware {
 
 	@PostConstruct
 	public void init() {
-		// System.err.println("MonitorServiceImpl init monitorConfig:" + monitorConfig);
-		// new Exception("MonitorServiceImpl init monitorConfig:" + monitorConfig).printStackTrace();
-		if (monitorConfig == null) {
-			return;
-		}
+		MonitorConfig monitorConfig = monitorDao.getMonitorConfig();
+
 		boolean smsEnable = monitorConfig.getAlarmInfo().isSms();
 		if (SystemUtil.isWindows()) {
 			Boolean windows = monitorConfig.getAlarmInfo().getWindows();
