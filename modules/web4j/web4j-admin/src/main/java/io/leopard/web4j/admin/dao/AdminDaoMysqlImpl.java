@@ -1,12 +1,13 @@
 package io.leopard.web4j.admin.dao;
 
+import io.leopard.burrow.AutoResource;
 import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.core.exception.LeopardRuntimeException;
 import io.leopard.data4j.jdbc.Jdbc;
 import io.leopard.data4j.jdbc.StatementParameter;
 import io.leopard.web4j.admin.Admin;
 import io.leopard.web4j.parameter.SessUsernamePageParameter;
-import io.leopard.web4j.passport.LoginBoxLei;
+import io.leopard.web4j.passport.PassportValidateLei;
 
 import java.io.IOException;
 
@@ -19,9 +20,8 @@ public class AdminDaoMysqlImpl extends ContextImpl implements AdminDao {
 	@Autowired
 	private Jdbc jdbc;
 
-	@Autowired(required = false)
-	// 兼容集成测试
-	private LoginBoxLei loginBox;
+	@AutoResource
+	private PassportValidateLei passportValidateLei;
 
 	@Autowired(required = false)
 	private SessUsernamePageParameter sessUsernamePageParameter;
@@ -33,7 +33,7 @@ public class AdminDaoMysqlImpl extends ContextImpl implements AdminDao {
 
 	@Override
 	public void forwardLoginUrl(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		loginBox.showLoginBox(request, response);
+		passportValidateLei.showLoginBox(request, response);
 	}
 
 	@Override
