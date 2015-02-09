@@ -8,7 +8,7 @@ public class ErrorPageDaoImpl implements ErrorPageDao {
 
 	private List<ErrorConfig> list = null;
 
-	private ErrorPageDao errorPageDao = new ErrorPageDaoFileImpl();
+	private ErrorPageDao errorPageDao = new ErrorPageDaoXmlImpl();
 
 	@Override
 	public List<ErrorConfig> list() {

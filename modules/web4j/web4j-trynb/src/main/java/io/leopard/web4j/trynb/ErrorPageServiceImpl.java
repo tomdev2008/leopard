@@ -41,8 +41,6 @@ public class ErrorPageServiceImpl implements ErrorPageService {
 		defaultConfigList.add(config);
 	}
 
-
-
 	@Override
 	public ErrorConfig findErrorInfo(String url) {
 		for (ErrorConfig error : errorPageDao.list()) {
