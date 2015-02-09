@@ -3,6 +3,5 @@
 
 	<!-- 异常处理 -->
 	<bean class="io.leopard.web4j.trynb.TrynbMappingHandlerExceptionResolver" />
-	<bean class="io.leopard.web4j.trynb.ErrorPageHandlerImpl" />
 
 </beans>
