@@ -14,7 +14,7 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
-public class LeopardMappingHandlerExceptionResolver implements HandlerExceptionResolver {
+public class TrynbMappingHandlerExceptionResolver implements HandlerExceptionResolver {
 	protected Log logger = LogFactory.getLog(this.getClass());
 
 	@Autowired
