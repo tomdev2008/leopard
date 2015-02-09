@@ -21,6 +21,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoginBoxLeiImpl implements LoginBoxLei {
 
+	
+	
 	@Override
 	public void showLoginBox(HttpServletRequest request, HttpServletResponse response) {
 		FtlView view = new FtlView("/passport/ftl", "login");

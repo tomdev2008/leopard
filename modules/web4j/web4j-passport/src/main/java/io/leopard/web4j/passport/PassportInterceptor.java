@@ -1,5 +1,6 @@
 package io.leopard.web4j.passport;
 
+import io.leopard.burrow.AutoResource;
 import io.leopard.web4j.servlet.RequestUtil;
 import io.leopard.web4j.servlet.UriListChecker;
 
@@ -14,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
@@ -37,7 +37,8 @@ public class PassportInterceptor implements HandlerInterceptor {
 		parameterNameSet.add("sessUid");
 		parameterNameSet.add("sessUsername");
 	}
-	@Autowired(required = false)
+	// @Autowired(required = false)
+	@AutoResource(clazz = PassportValidateLeiImpl.class)
 	private PassportValidateLei passportValidateLei;
 
 	@Resource
