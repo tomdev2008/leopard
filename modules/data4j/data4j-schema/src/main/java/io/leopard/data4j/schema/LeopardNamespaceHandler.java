@@ -36,9 +36,7 @@ public class LeopardNamespaceHandler extends NamespaceHandlerSupport {
 		registerParser("connection-limit", "io.leopard.schema.ConnectionLimitBeanDefinitionParser");
 		registerParser("config", "io.leopard.schema.ConfigBeanDefinitionParser");
 		// registerParser("performance", "io.leopard.schema.PerformanceBeanDefinitionParser");
-		registerParser("monitor", "io.leopard.schema.MonitorBeanDefinitionParser");
 		// registerParser("server", "io.leopard.schema.ServerBeanDefinitionParser");
-		registerParser("errorpage", "io.leopard.schema.ErrorpageBeanDefinitionParser");
 	}
 
 	protected void registerParser(String elementName, String className) {
