@@ -8,7 +8,7 @@ import io.leopard.commons.utility.ServerUtil;
 import io.leopard.data4j.env.EnvUtil;
 import io.leopard.data4j.log.Log4jFactory;
 import io.leopard.monitor.MonitorServiceImpl;
-import io.leopard.schema.model.Notifier;
+import io.leopard.monitor.model.Notifier;
 
 import java.util.HashMap;
 import java.util.List;

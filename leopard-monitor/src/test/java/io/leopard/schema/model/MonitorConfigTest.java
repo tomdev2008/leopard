@@ -1,5 +1,11 @@
 package io.leopard.schema.model;
 
+import io.leopard.monitor.model.AlarmInfo;
+import io.leopard.monitor.model.BaseInfo;
+import io.leopard.monitor.model.MonitorConfig;
+import io.leopard.monitor.model.Notifier;
+import io.leopard.monitor.model.RedisInfo;
+
 import java.util.ArrayList;
 
 import org.junit.Assert;

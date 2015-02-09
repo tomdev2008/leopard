@@ -1,4 +1,4 @@
-package io.leopard.schema.model;
+package io.leopard.monitor.model;
 
 /**
  * 报警消息接收人.

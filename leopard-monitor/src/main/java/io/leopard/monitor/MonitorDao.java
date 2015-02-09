@@ -1,6 +1,6 @@
 package io.leopard.monitor;
 
-import io.leopard.schema.model.MonitorConfig;
+import io.leopard.monitor.model.MonitorConfig;
 
 public interface MonitorDao {
 

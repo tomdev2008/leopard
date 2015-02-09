@@ -1,8 +1,8 @@
 package io.leopard.monitor;
 
 import io.leopard.data4j.redis.Redis;
-import io.leopard.schema.model.MonitorConfig;
-import io.leopard.schema.model.RedisInfo;
+import io.leopard.monitor.model.MonitorConfig;
+import io.leopard.monitor.model.RedisInfo;
 import io.leopard.test.mock.Mock;
 import io.leopard.test4j.mock.LeopardMockito;
 

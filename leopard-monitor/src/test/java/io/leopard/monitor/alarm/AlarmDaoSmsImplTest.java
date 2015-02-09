@@ -2,8 +2,8 @@ package io.leopard.monitor.alarm;
 
 import io.leopard.burrow.httpnb.Httpnb;
 import io.leopard.monitor.MonitorServiceImpl;
-import io.leopard.schema.model.MonitorConfig;
-import io.leopard.schema.model.Notifier;
+import io.leopard.monitor.model.MonitorConfig;
+import io.leopard.monitor.model.Notifier;
 import io.leopard.test4j.mock.LeopardMockRunner;
 import io.leopard.test4j.mock.LeopardMockito;
 

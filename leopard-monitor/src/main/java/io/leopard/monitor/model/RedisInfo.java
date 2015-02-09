@@ -1,4 +1,4 @@
-package io.leopard.schema.model;
+package io.leopard.monitor.model;
 
 import io.leopard.monitor.CapacityUtil;
 

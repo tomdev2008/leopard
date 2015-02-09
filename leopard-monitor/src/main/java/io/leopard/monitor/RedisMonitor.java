@@ -7,8 +7,8 @@ import io.leopard.data4j.redis.RedisImpl;
 import io.leopard.data4j.schema.LeopardBeanFactoryAware;
 import io.leopard.monitor.alarm.AlarmModule;
 import io.leopard.monitor.alarm.AlarmService;
-import io.leopard.schema.model.MonitorConfig;
-import io.leopard.schema.model.RedisInfo;
+import io.leopard.monitor.model.MonitorConfig;
+import io.leopard.monitor.model.RedisInfo;
 
 import java.util.Collection;
 import java.util.List;

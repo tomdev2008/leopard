@@ -2,8 +2,8 @@ package io.leopard.monitor;
 
 import io.leopard.monitor.alarm.AlarmModule;
 import io.leopard.monitor.alarm.AlarmService;
-import io.leopard.schema.model.BaseInfo;
-import io.leopard.schema.model.MonitorConfig;
+import io.leopard.monitor.model.BaseInfo;
+import io.leopard.monitor.model.MonitorConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

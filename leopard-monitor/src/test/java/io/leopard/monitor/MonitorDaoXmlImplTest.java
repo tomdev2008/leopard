@@ -1,7 +1,7 @@
 package io.leopard.monitor;
 
 import io.leopard.burrow.lang.Json;
-import io.leopard.schema.model.MonitorConfig;
+import io.leopard.monitor.model.MonitorConfig;
 
 import java.io.IOException;
 import java.io.InputStream;

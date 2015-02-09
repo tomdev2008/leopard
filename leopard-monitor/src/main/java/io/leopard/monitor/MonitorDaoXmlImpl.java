@@ -1,10 +1,10 @@
 package io.leopard.monitor;
 
-import io.leopard.schema.BaseInfoBuilder;
-import io.leopard.schema.model.AlarmInfo;
-import io.leopard.schema.model.MonitorConfig;
-import io.leopard.schema.model.Notifier;
-import io.leopard.schema.model.RedisInfo;
+import io.leopard.monitor.model.AlarmInfo;
+import io.leopard.monitor.model.BaseInfoBuilder;
+import io.leopard.monitor.model.MonitorConfig;
+import io.leopard.monitor.model.Notifier;
+import io.leopard.monitor.model.RedisInfo;
 
 import java.io.IOException;
 import java.io.InputStream;

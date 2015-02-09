@@ -1,8 +1,8 @@
 package io.leopard.monitor;
 
 import io.leopard.monitor.alarm.AlarmService;
-import io.leopard.schema.model.BaseInfo;
-import io.leopard.schema.model.MonitorConfig;
+import io.leopard.monitor.model.BaseInfo;
+import io.leopard.monitor.model.MonitorConfig;
 import io.leopard.test.mock.Mock;
 import io.leopard.test4j.mock.LeopardMockito;
 

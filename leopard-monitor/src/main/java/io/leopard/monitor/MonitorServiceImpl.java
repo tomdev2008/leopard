@@ -4,7 +4,7 @@ import io.leopard.burrow.timer.SecondPeriod;
 import io.leopard.burrow.timer.SimpleTimer;
 import io.leopard.commons.utility.SystemUtil;
 import io.leopard.monitor.alarm.AlarmDaoSmsImpl;
-import io.leopard.schema.model.MonitorConfig;
+import io.leopard.monitor.model.MonitorConfig;
 
 import java.util.Collection;
 

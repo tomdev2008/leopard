@@ -1,7 +1,6 @@
-package io.leopard.schema;
+package io.leopard.monitor.model;
 
 import io.leopard.burrow.refect.ClassTypeUtil;
-import io.leopard.schema.model.BaseInfo;
 
 import java.lang.reflect.Field;
 import java.util.Map;
