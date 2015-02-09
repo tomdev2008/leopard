@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.springframework.web.servlet.View;
 
 public abstract class AbstractPassportValidateLei implements PassportValidateLei {
 
 	@Override
 	public void showLoginBox(HttpServletRequest request, HttpServletResponse response) {
-		FtlView view = new FtlView("/passport/ftl", "login");
-
+		View view = this.getView();
 		String url = RequestUtil.getRequestURL(request);
 		String queryString = request.getQueryString();
 		if (StringUtils.isNotEmpty(queryString)) {
@@ -31,6 +31,9 @@ public abstract class AbstractPassportValidateLei implements PassportValidateLei
 		catch (Exception e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
+	}
 
+	protected View getView() {
+		return new FtlView("/passport/ftl", "login");
 	}
 }
