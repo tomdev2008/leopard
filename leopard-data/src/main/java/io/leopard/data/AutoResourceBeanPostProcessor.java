@@ -43,7 +43,7 @@ public class AutoResourceBeanPostProcessor implements BeanPostProcessor, BeanFac
 			if (annotation == null) {
 				continue;
 			}
-			System.err.println("beanName:" + beanName + " annotation:" + annotation);
+			// System.err.println("beanName:" + beanName + " annotation:" + annotation);
 			field.setAccessible(true);
 			try {
 				Object value = field.get(bean);
@@ -64,7 +64,7 @@ public class AutoResourceBeanPostProcessor implements BeanPostProcessor, BeanFac
 	}
 
 	protected <T> T getBean(Class<T> type) throws BeansException {
-		System.err.println("getBean:" + type);
+		// System.err.println("getBean:" + type);
 		Map<String, T> map = beanFactory.getBeansOfType(type);
 		if (map.isEmpty()) {
 			return null;
