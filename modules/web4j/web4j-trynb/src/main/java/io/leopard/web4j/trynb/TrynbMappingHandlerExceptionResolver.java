@@ -25,11 +25,9 @@ public class TrynbMappingHandlerExceptionResolver implements HandlerExceptionRes
 			return null;
 		}
 		String uri = request.getRequestURI();
-		HandlerMethod handlerMethod = (HandlerMethod) handler;
-		Class<?> returnType = handlerMethod.getMethod().getReturnType();
 
 		TrynbInfo trynbInfo = errorPageService.parseErrorPage(request, uri, exception);
-		return trynbResolver.resolveView(request, uri, exception, trynbInfo, returnType);
+		return trynbResolver.resolveView(request, response, handler, exception, trynbInfo);
 	}
 
 }

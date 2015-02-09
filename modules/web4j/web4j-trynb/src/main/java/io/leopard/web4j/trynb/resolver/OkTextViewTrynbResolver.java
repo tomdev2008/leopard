@@ -5,6 +5,7 @@ import io.leopard.web4j.trynb.model.TrynbInfo;
 import io.leopard.web4j.view.OkTextView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -15,10 +16,8 @@ public class OkTextViewTrynbResolver implements TrynbResolver {
 	protected Log logger = LogFactory.getLog(this.getClass());
 
 	@Override
-	public ModelAndView resolveView(HttpServletRequest request, String uri, Exception exception, TrynbInfo trynbInfo, Class<?> returnType) {
-		if (!returnType.equals(OkTextView.class)) {
-			return null;
-		}
+	public ModelAndView resolveView(HttpServletRequest request, HttpServletResponse response, Object handler, Exception exception, TrynbInfo trynbInfo) {
+
 		String message;
 		if (exception instanceof OutSideException) {
 			// 外部接口出错
