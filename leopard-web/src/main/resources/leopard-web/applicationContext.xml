@@ -72,7 +72,6 @@
 	<import resource="classpath*:/leopard-plugin.xml" />
 	
 	<import resource="classpath*:/monitor.xml" />
-	<import resource="classpath*:/errorpage.xml" />
 
 	<import resource="classpath:/applicationContext.xml" />
 	<!-- 
