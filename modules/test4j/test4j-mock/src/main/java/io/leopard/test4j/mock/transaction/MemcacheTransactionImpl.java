@@ -2,7 +2,6 @@ package io.leopard.test4j.mock.transaction;
 
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.ContextImpl;
-import io.leopard.burrow.lang.Json;
 import io.leopard.burrow.util.NumberUtil;
 import io.leopard.data4j.memcache.Memcache;
 import io.leopard.data4j.redis.Redis;
@@ -74,11 +73,11 @@ public class MemcacheTransactionImpl extends ContextImpl implements Memcache {
 		return redis.get(key);
 	}
 
-	@Override
-	public <BEAN> BEAN get(String key, Class<BEAN> clazz) {
-		String json = this.get(key);
-		return Json.toObject(json, clazz);
-	}
+	// @Override
+	// public <BEAN> BEAN get(String key, Class<BEAN> clazz) {
+	// String json = this.get(key);
+	// return Json.toObject(json, clazz);
+	// }
 
 	@Override
 	public List<String> mget(String[] keys) {
