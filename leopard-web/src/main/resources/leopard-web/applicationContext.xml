@@ -34,45 +34,12 @@
 	<bean class="io.leopard.web.mvc.LeopardHandlerMapping" />
 
 
-
 	<bean id="csrfService" class="io.leopard.web4j.nobug.csrf.CsrfServiceImpl" />
 	<import resource="freemarker.xml" />
 
 
-	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-		<!-- 自定义数据类型 -->
-		<property name="converters">
-			<list>
-				<bean class="io.leopard.web4j.editor.converter.OnlyDateConverter" />
-				<bean class="io.leopard.web4j.editor.converter.MonthConverter" />
-			</list>
-		</property>
-	</bean>
-
-	<bean id="leopardWebBindingInitializer" class="io.leopard.web4j.editor.LeopardWebBindingInitializer">
-		<property name="conversionService" ref="conversionService" />
-	</bean>
-
-	<bean class="io.leopard.web.mvc.LeopardRequestMappingHandlerAdapter">
-		<property name="webBindingInitializer" ref="leopardWebBindingInitializer" />
-		<property name="messageConverters">
-			<list>
-				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
-			</list>
-		</property>
-
-		<property name="customArgumentResolvers">
-			<list>
-				<bean class="io.leopard.web4j.resolver.SpeicalParameterHandlerMethodArgumentResolver" />
-				<bean class="io.leopard.web4j.resolver.PathRegexHandlerMethodArgumentResolver" />
-			</list>
-		</property>
-	</bean>
-
 	<import resource="classpath*:/leopard-plugin.xml" />
-	
 	<import resource="classpath*:/monitor.xml" />
-
 	<import resource="classpath:/applicationContext.xml" />
 	<!-- 
 	<import resource="resources.xml" />
