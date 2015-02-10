@@ -162,14 +162,14 @@ public class JdbcMysqlImpl extends JdbcDaoSupport implements Jdbc {
 		return sql + " LIMIT " + start + "," + size + ";";
 	}
 
-	@Override
-	/**
-	 * @see io.leopard.data.jdbc.Jdbc#queryForList(String, Class<T>, int, int)
-	 */
-	public <T> List<T> queryForList(String sql, Class<T> elementType, int start, int size) {
-		sql = this.appendLimitSql(sql, start, size);
-		return this.queryForList(sql, elementType);
-	}
+	// @Override
+	// /**
+	// * @see io.leopard.data.jdbc.Jdbc#queryForList(String, Class<T>, int, int)
+	// */
+	// public <T> List<T> queryForList(String sql, Class<T> elementType, int start, int size) {
+	// sql = this.appendLimitSql(sql, start, size);
+	// return this.queryForList(sql, elementType);
+	// }
 
 	@Override
 	/**

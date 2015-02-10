@@ -166,20 +166,20 @@ public interface Jdbc {
 
 	<T> List<T> queryForList(String sql, Class<T> elementType);
 
-	/**
-	 * 根据sql查询数据.
-	 * 
-	 * @param sql
-	 *            查询数据的sql
-	 * @param elementType
-	 *            数据对应的model对象
-	 * @param start
-	 *            查询起点
-	 * @param size
-	 *            查询条数
-	 * @return 查询的数据
-	 */
-	<T> List<T> queryForList(String sql, Class<T> elementType, int start, int size);
+	// /**
+	// * 根据sql查询数据.
+	// *
+	// * @param sql
+	// * 查询数据的sql
+	// * @param elementType
+	// * 数据对应的model对象
+	// * @param start
+	// * 查询起点
+	// * @param size
+	// * 查询条数
+	// * @return 查询的数据
+	// */
+	// <T> List<T> queryForList(String sql, Class<T> elementType, int start, int size);
 
 	/**
 	 * 根据sql查询数据.
