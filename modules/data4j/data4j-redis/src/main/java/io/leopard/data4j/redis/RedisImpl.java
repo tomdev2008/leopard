@@ -13,6 +13,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.SystemUtils;
 
@@ -77,6 +80,7 @@ public class RedisImpl extends AbstractRedis implements Redis {
 		public Object execute(Jedis jedis);
 	}
 
+	@PostConstruct
 	@Override
 	public void init() {
 		// System.err.println("RedisImpl server:" + server);
@@ -3667,9 +3671,12 @@ public class RedisImpl extends AbstractRedis implements Redis {
 		throw new NotImplementedException();
 	}
 
+	@PreDestroy
 	@Override
 	public void destroy() {
-
+		if (pool != null) {
+			pool.destroy();
+		}
 	}
 
 }
