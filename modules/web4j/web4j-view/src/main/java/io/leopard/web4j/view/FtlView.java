@@ -16,7 +16,10 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
 
 public class FtlView extends FreeMarkerView {
 
-	private final String folder;
+	private String folder;
+
+	public FtlView() {
+	}
 
 	public FtlView(String viewName) {
 		this("/", viewName);
