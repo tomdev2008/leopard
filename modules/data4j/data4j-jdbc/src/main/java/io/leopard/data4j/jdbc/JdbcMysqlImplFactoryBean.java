@@ -63,7 +63,7 @@ public class JdbcMysqlImplFactoryBean extends JdbcMysqlImpl {
 
 	@PostConstruct
 	public void init() {
-		System.out.println("host:" + host + " database:" + this.database + " maxPoolSize:" + maxPoolSize);
+//		System.out.println("host:" + host + " database:" + this.database + " maxPoolSize:" + maxPoolSize);
 		{
 			DataSource dataSource = super.getDataSource();
 			if (dataSource != null) {
