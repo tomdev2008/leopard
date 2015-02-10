@@ -27,12 +27,14 @@
 
 	<bean class="io.leopard.web.mvc.LeopardHandlerMapping" />
 
+	<import resource="classpath*:/leopard-plugin.xml" />
+
+
 
 	<bean id="csrfService" class="io.leopard.web4j.nobug.csrf.CsrfServiceImpl" />
 	<import resource="freemarker.xml" />
 
 
-	<import resource="classpath*:/leopard-plugin.xml" />
 	<import resource="classpath*:/monitor.xml" />
 	<import resource="classpath:/applicationContext.xml" />
 	<!-- <import resource="resources.xml" /> -->
