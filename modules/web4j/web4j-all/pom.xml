@@ -76,11 +76,6 @@
 		</dependency>
 		<dependency>
 			<groupId>io.leopard.web4j</groupId>
-			<artifactId>web4j-editor</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard.web4j</groupId>
 			<artifactId>web4j-mvc</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
