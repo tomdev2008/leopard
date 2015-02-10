@@ -16,11 +16,13 @@
 			<groupId>io.leopard.burrow</groupId>
 			<artifactId>burrow-lang</artifactId>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
 			<version>1.6.1</version>
 		</dependency>
+		 -->
 		<dependency>
 			<groupId>io.leopard.data4j</groupId>
 			<artifactId>data4j-cache</artifactId>
