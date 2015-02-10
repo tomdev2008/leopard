@@ -15,7 +15,7 @@
 		<property name="conversionService" ref="conversionService" />
 	</bean>
 
-	<bean class="io.leopard.web.mvc.LeopardRequestMappingHandlerAdapter">
+	<bean class="io.leopard.web4j.mvc.LeopardRequestMappingHandlerAdapter">
 		<property name="webBindingInitializer" ref="leopardWebBindingInitializer" />
 		<property name="messageConverters">
 			<list>
