@@ -17,13 +17,8 @@
 	<context:component-scan base-package="io.leopard.web.userinfo" />
 	<context:component-scan base-package="io.leopard.web4j.passport" />
 
-
-	<!-- app.properties加载 -->
-	<!-- <bean class="io.leopard.data.env.LeopardPropertyPlaceholderConfigurer" lazy-init="false" /> -->
-
 	<!-- 用户信息封装 -->
 	<bean id="leopardFilter" class="io.leopard.web.userinfo.LeopardFilter" />
-
 
 	<!-- 拦截器 -->
 	<context:component-scan base-package="io.leopard.web.interceptor" />
