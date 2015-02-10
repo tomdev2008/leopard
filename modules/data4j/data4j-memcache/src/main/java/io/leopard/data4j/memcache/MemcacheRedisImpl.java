@@ -1,6 +1,5 @@
 package io.leopard.data4j.memcache;
 
-import io.leopard.burrow.util.NumberUtil;
 import io.leopard.data4j.redis.AbstractRedis;
 import io.leopard.data4j.redis.Redis;
 import io.leopard.data4j.redis.RedisImpl;
@@ -36,7 +35,6 @@ public class MemcacheRedisImpl extends AbstractRedis implements Memcache {
 		return redis;
 	}
 
-	@Override
 	public void init() {
 		// System.err.println("MemcacheRedisImpl init");
 		if (StringUtils.isEmpty(server)) {
@@ -47,7 +45,6 @@ public class MemcacheRedisImpl extends AbstractRedis implements Memcache {
 		// System.err.println("MemcacheRedisImpl.redis:" + this.redis);
 	}
 
-	@Override
 	public void destroy() {
 		if (redis != null) {
 			this.redis.destroy();
@@ -59,8 +56,14 @@ public class MemcacheRedisImpl extends AbstractRedis implements Memcache {
 	 * @see io.leopard.data.memcache.Memcache#remove(String)
 	 */
 	public boolean remove(String key) {
-		Long result = this.redis.del(key);
-		return NumberUtil.toBool(result);
+		Long num = this.redis.del(key);
+		// return NumberUtil.toBool(result);
+		if (num == null || num <= 0) {
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 
 	@Override

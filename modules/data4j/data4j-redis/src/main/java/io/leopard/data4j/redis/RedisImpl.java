@@ -3667,4 +3667,9 @@ public class RedisImpl extends AbstractRedis implements Redis {
 		throw new NotImplementedException();
 	}
 
+	@Override
+	public void destroy() {
+
+	}
+
 }

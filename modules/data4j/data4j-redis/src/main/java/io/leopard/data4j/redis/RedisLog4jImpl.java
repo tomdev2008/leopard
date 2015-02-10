@@ -60,8 +60,6 @@ public class RedisLog4jImpl extends AbstractRedis implements Redis {
 	@Override
 	public void init() {
 		// System.err.println("init server:" + server);
-
-		super.init();
 		if (StringUtils.isNotEmpty(server)) {
 			RedisImpl redisImpl = new RedisImpl(server, maxActive, initialPoolSize, enableBackup, backupTime, timeout);
 			redisImpl.init();
@@ -74,7 +72,6 @@ public class RedisLog4jImpl extends AbstractRedis implements Redis {
 		if (redis != null) {
 			this.redis.destroy();
 		}
-		super.destroy();
 	}
 
 	private String encode(String content) {

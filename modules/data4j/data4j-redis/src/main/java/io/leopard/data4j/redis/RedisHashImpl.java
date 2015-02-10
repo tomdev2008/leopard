@@ -93,7 +93,6 @@ public class RedisHashImpl extends AbstractRedis implements Redis {
 
 	@Override
 	public void init() {
-		super.init();
 		if (serverList != null) {
 			Redis[] redisList = new Redis[serverList.length];
 			for (int i = 0; i < serverList.length; i++) {
@@ -131,7 +130,6 @@ public class RedisHashImpl extends AbstractRedis implements Redis {
 				redis.destroy();
 			}
 		}
-		super.destroy();
 	}
 
 	protected int getIndex(String key) {

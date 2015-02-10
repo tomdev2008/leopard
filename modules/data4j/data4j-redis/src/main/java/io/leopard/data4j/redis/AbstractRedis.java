@@ -1,8 +1,11 @@
 package io.leopard.data4j.redis;
 
-import io.leopard.burrow.lang.ContextImpl;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-public class AbstractRedis extends ContextImpl {
+public class AbstractRedis {
+	protected Log logger = LogFactory.getLog(this.getClass());
+
 	protected int maxActive;
 	protected int timeout;
 	protected int initialPoolSize;// 默认初始化连接数量

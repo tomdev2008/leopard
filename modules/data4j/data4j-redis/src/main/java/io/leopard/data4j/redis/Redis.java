@@ -1,6 +1,5 @@
 package io.leopard.data4j.redis;
 
-import io.leopard.burrow.lang.Context;
 import io.leopard.data4j.redis.util.IJedisPool;
 
 import java.util.List;
@@ -17,7 +16,17 @@ import redis.clients.jedis.ZParams;
  * @author 阿海
  * 
  */
-public interface Redis extends Context, JedisCommands {
+public interface Redis extends JedisCommands {
+
+	/**
+	 * 容器初始化
+	 */
+	void init();
+
+	/**
+	 * 容器销毁
+	 */
+	void destroy();
 
 	/**
 	 * 返回redis连接池.
@@ -321,8 +330,7 @@ public interface Redis extends Context, JedisCommands {
 	Set<String> zunionStoreInJava(final String... sets);
 
 	/**
-	 * 返回给定的一个或多个有序集的并集 中，并集中的成员的 score 值介于 min 和 max 之间(包括等于 min 或 max )，有序集成员按
-	 * score 值递增(从小到大)次序排列.
+	 * 返回给定的一个或多个有序集的并集 中，并集中的成员的 score 值介于 min 和 max 之间(包括等于 min 或 max )，有序集成员按 score 值递增(从小到大)次序排列.
 	 * 
 	 * @param min
 	 * @param max
