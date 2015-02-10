@@ -33,6 +33,7 @@
 
 	<import resource="classpath:/web4j-mvc.xml" />
 	<import resource="classpath:/web4j-frequency.xml" />
+	<import resource="classpath:/web4j-trynb.xml" />
 
 
 	<import resource="classpath*:/leopard-plugin.xml" />
