@@ -4,22 +4,16 @@ import java.util.Properties;
 
 public class LeopardPropertyPlaceholderConfigurer extends org.springframework.beans.factory.config.PropertyPlaceholderConfigurer {
 
-	private ResolvePlaceholderLei resolvePlaceholderLei;
+	private ResolvePlaceholderLei resolvePlaceholderLei = new ResolvePlaceholderLeiImpl();
 
 	public LeopardPropertyPlaceholderConfigurer() {
 		super.setIgnoreResourceNotFound(true);
 		super.setOrder(999);
 		super.setIgnoreUnresolvablePlaceholders(true);
 		super.setSystemPropertiesMode(SYSTEM_PROPERTIES_MODE_FALLBACK);
-	}
 
-	public void setPropertyPlaceholderLei(PropertyPlaceholderLei propertyPlaceholderLei) {
 		String env = EnvUtil.getEnv();
-		super.setLocations(propertyPlaceholderLei.getResources(env));
-	}
-
-	public void setResolvePlaceholderLei(ResolvePlaceholderLei resolvePlaceholderLei) {
-		this.resolvePlaceholderLei = resolvePlaceholderLei;
+		super.setLocations(new PropertyPlaceholderLeiImpl().getResources(env));
 	}
 
 	@Override

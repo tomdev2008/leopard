@@ -16,7 +16,6 @@ public class LeopardNamespaceHandler extends NamespaceHandlerSupport {
 
 		registerBeanDefinitionParser("component-scan", new ComponentScanBeanDefinitionParser());
 
-		registerParser("property-placeholder", "io.leopard.schema.PropertyPlaceholderBeanDefinitionParser");
 		registerParser("redis", "io.leopard.schema.RedisBeanDefinitionParser");
 		registerParser("memdb", "io.leopard.schema.MemdbBeanDefinitionParser");
 		registerParser("pub", "io.leopard.schema.PubBeanDefinitionParser");

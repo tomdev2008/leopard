@@ -4,13 +4,6 @@
 
 	<xsd:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans.xsd" />
 
-
-	<xsd:element name="property-placeholder">
-		<xsd:complexType>
-			<xsd:attribute name="clazz" type="xsd:string" />
-		</xsd:complexType>
-	</xsd:element>
-
 	<xsd:element name="dataSource">
 		<xsd:annotation>
 			<xsd:documentation><![CDATA[
