@@ -28,6 +28,7 @@ public class JdbcBeanDefinitionParser implements BeanDefinitionParser {
 		return RegisterComponentUtil.registerComponent(parserContext, builder, jdbcId);
 	}
 
+	
 	// <bean id="masterDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 	// <property name="driverClass" value="${jdbc.driverClassName}" />
 	// <property name="jdbcUrl" value="jdbc:mysql://${jdbc.host}:3306/notice?useUnicode=true&amp;characterEncoding=UTF8" />
@@ -70,8 +71,8 @@ public class JdbcBeanDefinitionParser implements BeanDefinitionParser {
 
 		builder.setScope(BeanDefinition.SCOPE_SINGLETON);
 		builder.setLazyInit(true);
-		builder.setInitMethodName("init");
-		builder.setDestroyMethodName("destroy");
+		// builder.setInitMethodName("init");
+		// builder.setDestroyMethodName("destroy");
 
 		return RegisterComponentUtil.registerComponent(parserContext, builder, dataSourceId);
 	}
