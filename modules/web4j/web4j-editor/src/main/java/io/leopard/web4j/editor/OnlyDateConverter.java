@@ -1,4 +1,4 @@
-package io.leopard.web4j.editor.converter;
+package io.leopard.web4j.editor;
 
 import io.leopard.burrow.lang.datatype.OnlyDate;
 
