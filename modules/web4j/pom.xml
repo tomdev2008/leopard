@@ -74,5 +74,6 @@
 		<module>web4j-mvc</module>
 		<module>web4j-interceptor</module>
 		<module>web4j-frequency</module>
+		<module>web4j-allow</module>
 	</modules>
 </project>
