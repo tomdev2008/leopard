@@ -18,6 +18,12 @@
 		<dependency>
 			<groupId>io.leopard.data4j</groupId>
 			<artifactId>data4j-all</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>Memcached-Java-Client</artifactId>
+					<groupId>com.whalin</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>io.leopard.test4j</groupId>
