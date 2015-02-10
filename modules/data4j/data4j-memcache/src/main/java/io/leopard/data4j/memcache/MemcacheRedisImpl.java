@@ -6,6 +6,9 @@ import io.leopard.data4j.redis.RedisImpl;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
 
@@ -35,6 +38,7 @@ public class MemcacheRedisImpl extends AbstractRedis implements Memcache {
 		return redis;
 	}
 
+	@PostConstruct
 	public void init() {
 		// System.err.println("MemcacheRedisImpl init");
 		if (StringUtils.isEmpty(server)) {
@@ -45,6 +49,7 @@ public class MemcacheRedisImpl extends AbstractRedis implements Memcache {
 		// System.err.println("MemcacheRedisImpl.redis:" + this.redis);
 	}
 
+	@PreDestroy
 	public void destroy() {
 		if (redis != null) {
 			this.redis.destroy();
