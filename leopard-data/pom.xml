@@ -26,6 +26,12 @@
 			</exclusions>
 		</dependency>
 		<dependency>
+			<artifactId>Memcached-Java-Client</artifactId>
+			<groupId>com.whalin</groupId>
+			<version>3.0.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>io.leopard.test4j</groupId>
 			<artifactId>test4j-mock</artifactId>
 		</dependency>
