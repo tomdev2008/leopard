@@ -12,8 +12,11 @@ public class ResolvePlaceholderLeiImpl implements ResolvePlaceholderLei {
 		if (isDomain) {
 			value = placeholder;
 		}
-		else {
+		else if (placeholder.endsWith(".redis")) {
 			value = resolveRedisDsnPlaceholder(placeholder, props);
+		}
+		else {
+			value = props.getProperty(placeholder);
 		}
 		return value;
 	}
