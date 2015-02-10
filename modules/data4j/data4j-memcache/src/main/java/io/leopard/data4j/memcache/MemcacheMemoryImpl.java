@@ -1,8 +1,5 @@
 package io.leopard.data4j.memcache;
 
-import io.leopard.burrow.lang.AssertUtil;
-import io.leopard.burrow.lang.Json;
-
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,7 +18,10 @@ public class MemcacheMemoryImpl implements Memcache {
 
 	@Override
 	public boolean put(String key, String value) {
-		AssertUtil.assertNotNull(key, "key参数不能为null.");
+		// AssertUtil.assertNotNull(key, "key参数不能为null.");
+		if (key == null) {
+			throw new NullPointerException("key参数不能为null.");
+		}
 		cache.put(key, value);
 		return true;
 	}
@@ -47,11 +47,11 @@ public class MemcacheMemoryImpl implements Memcache {
 		return cache.get(key);
 	}
 
-	@Override
-	public <BEAN> BEAN get(String key, Class<BEAN> clazz) {
-		String json = this.get(key);
-		return Json.toObject(json, clazz);
-	}
+	// @Override
+	// public <BEAN> BEAN get(String key, Class<BEAN> clazz) {
+	// String json = this.get(key);
+	// return Json.toObject(json, clazz);
+	// }
 
 	@Override
 	public List<String> mget(String[] keys) {
@@ -85,7 +85,10 @@ public class MemcacheMemoryImpl implements Memcache {
 
 	@Override
 	public long incr(String key) {
-		AssertUtil.assertNotNull(key, "key参数不能为null.");
+		if (key == null) {
+			throw new NullPointerException("key参数不能为null.");
+		}
+		// AssertUtil.assertNotNull(key, "key参数不能为null.");
 		String value = this.get(key);
 		long num;
 		if (value == null) {

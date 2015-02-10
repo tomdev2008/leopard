@@ -66,14 +66,14 @@ public interface Memcache {
 	 */
 	String get(String key);
 
-	/**
-	 * 根据key获取缓存数据，返回指定类型的对象.
-	 * 
-	 * @param key
-	 * @param clazz
-	 * @return 返回存储的对象，若不存在则返回null
-	 */
-	<BEAN> BEAN get(String key, Class<BEAN> clazz);
+	// /**
+	// * 根据key获取缓存数据，返回指定类型的对象.
+	// *
+	// * @param key
+	// * @param clazz
+	// * @return 返回存储的对象，若不存在则返回null
+	// */
+	// <BEAN> BEAN get(String key, Class<BEAN> clazz);
 
 	/**
 	 * 返回多个key对应的数据.

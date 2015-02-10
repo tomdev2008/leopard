@@ -1,5 +1,6 @@
 package io.leopard.data.cacher;
 
+import io.leopard.burrow.lang.Json;
 import io.leopard.data4j.memcache.IMemcache;
 import io.leopard.data4j.memcache.Memcache;
 import io.leopard.data4j.memcache.MemcacheMemoryImpl;
@@ -31,8 +32,8 @@ public class CacheManagerTest {
 
 		@Override
 		public User get(String username) {
-			
-			return memcache.get(username, User.class);
+			String json = memcache.get(username);
+			return Json.toObject(json, User.class);
 		}
 
 		@Override

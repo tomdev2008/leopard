@@ -1,14 +1,10 @@
 package io.leopard.data4j.memcache;
 
-import io.leopard.burrow.lang.Json;
-
 import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import com.whalin.MemCached.MemCachedClient;
 import com.whalin.MemCached.SockIOPool;
@@ -20,7 +16,7 @@ import com.whalin.MemCached.SockIOPool;
  * 
  */
 public class MemcacheImpl implements Memcache {
-	protected Log logger = LogFactory.getLog(this.getClass());
+	// protected Log logger = LogFactory.getLog(this.getClass());
 	private MemCachedClient mcc;
 	private String server = null;// { "session.labour.duowan.com:11211" };
 	// private String serverList = null;
@@ -28,7 +24,7 @@ public class MemcacheImpl implements Memcache {
 	private boolean sanitizeKeys = true;// 默认对key进行url编码
 
 	public void setServer(String server) {
-		logger.info("server:" + server);
+		// logger.info("server:" + server);
 		this.server = server;
 	}
 
@@ -65,7 +61,7 @@ public class MemcacheImpl implements Memcache {
 	}
 
 	public void init() {
-		logger.info("init, server:" + server);
+		// logger.info("init, server:" + server);
 		// logger.info("init");
 	}
 
@@ -121,16 +117,16 @@ public class MemcacheImpl implements Memcache {
 		this.checkKey(key);
 		// logger.info("servers:" + StringUtils.join(servers));
 		// logger.info("put key:" + key + " value:" + value);
-		long time = System.currentTimeMillis();
+		// long time = System.currentTimeMillis();
 		boolean success = this.getMcc().set(key, value);
-		if (logger.isDebugEnabled()) {
-			String value2 = this.get(key);
-			logger.debug("put key:" + key + " time:" + time + " success:" + success + " value:" + value);
-			logger.debug("get key:" + key + " time:" + time + " success:" + success + " value:" + value2);
-		}
-		if (!success) {
-			logger.error("key:" + key + " success:" + success + " value:" + value);
-		}
+		// if (logger.isDebugEnabled()) {
+		// String value2 = this.get(key);
+		// // logger.debug("put key:" + key + " time:" + time + " success:" + success + " value:" + value);
+		// // logger.debug("get key:" + key + " time:" + time + " success:" + success + " value:" + value2);
+		// }
+		// if (!success) {
+		// logger.error("key:" + key + " success:" + success + " value:" + value);
+		// }
 		return success;
 	}
 
@@ -141,9 +137,9 @@ public class MemcacheImpl implements Memcache {
 	public boolean put(String key, int value) {
 		this.checkKey(key);
 		boolean success = this.getMcc().set(key, value);
-		if (!success) {
-			logger.error("key:" + key + " success:" + success + " value:" + value);
-		}
+		// if (!success) {
+		// logger.error("key:" + key + " success:" + success + " value:" + value);
+		// }
 		return success;
 	}
 
@@ -162,9 +158,9 @@ public class MemcacheImpl implements Memcache {
 		else {
 			success = this.getMcc().set(key, value);
 		}
-		if (!success) {
-			logger.error("put2 key:" + key + " success:" + success + " server:" + server + " value:" + value);
-		}
+		// if (!success) {
+		// logger.error("put2 key:" + key + " success:" + success + " server:" + server + " value:" + value);
+		// }
 		return success;
 	}
 
@@ -183,20 +179,20 @@ public class MemcacheImpl implements Memcache {
 		else {
 			success = this.getMcc().set(key, value);
 		}
-		if (!success) {
-			logger.error("put2 key:" + key + " success:" + success + " server:" + server + " value:" + value);
-		}
+		// if (!success) {
+		// logger.error("put2 key:" + key + " success:" + success + " server:" + server + " value:" + value);
+		// }
 		return success;
 	}
 
-	@Override
-	/**
-	 * @see io.leopard.data.memcache.Memcache#get(String, Class<BEAN>)
-	 */
-	public <BEAN> BEAN get(String key, Class<BEAN> clazz) {
-		String json = this.get(key);
-		return Json.toObject(json, clazz);
-	}
+	// @Override
+	// /**
+	// * @see io.leopard.data.memcache.Memcache#get(String, Class<BEAN>)
+	// */
+	// public <BEAN> BEAN get(String key, Class<BEAN> clazz) {
+	// String json = this.get(key);
+	// return Json.toObject(json, clazz);
+	// }
 
 	@Override
 	/**
@@ -205,9 +201,9 @@ public class MemcacheImpl implements Memcache {
 	public String get(String key) {
 		this.checkKey(key);
 		String value = (String) this.getMcc().get(key);
-		if (logger.isDebugEnabled()) {
-			logger.debug("get key:" + key + " value:" + value);
-		}
+		// if (logger.isDebugEnabled()) {
+		// logger.debug("get key:" + key + " value:" + value);
+		// }
 		return value;
 	}
 
@@ -233,9 +229,9 @@ public class MemcacheImpl implements Memcache {
 	public boolean remove(String key) {
 		this.checkKey(key);
 		boolean success = this.getMcc().delete(key);
-		if (logger.isDebugEnabled()) {
-			logger.debug("remove key:" + key + " success:" + success);
-		}
+		// if (logger.isDebugEnabled()) {
+		// logger.debug("remove key:" + key + " success:" + success);
+		// }
 		return success;
 	}
 
@@ -338,9 +334,9 @@ public class MemcacheImpl implements Memcache {
 	public boolean add(String key, String value) {
 		this.checkKey(key);
 		boolean success = this.getMcc().add(key, value);
-		if (!success) {
-			logger.error("key:" + key + " success:" + success + " value:" + value);
-		}
+		// if (!success) {
+		// logger.error("key:" + key + " success:" + success + " value:" + value);
+		// }
 		return success;
 	}
 
@@ -359,14 +355,14 @@ public class MemcacheImpl implements Memcache {
 		else {
 			success = this.getMcc().add(key, value);
 		}
-		if (!success) {
-			logger.error("put2 key:" + key + " success:" + success + " server:" + server + " value:" + value);
-		}
+		// if (!success) {
+		// logger.error("put2 key:" + key + " success:" + success + " server:" + server + " value:" + value);
+		// }
 		return success;
 	}
 
 	private MemCachedClient initMemCachedClient(String[] servers, int maxConn, boolean sanitizeKeys) {
-		logger.info("maxConn:" + maxConn + " sanitizeKeys:" + sanitizeKeys + " servers" + StringUtils.join(servers));
+		// logger.info("maxConn:" + maxConn + " sanitizeKeys:" + sanitizeKeys + " servers" + StringUtils.join(servers));
 		Integer[] weights = new Integer[servers.length];
 		for (int i = 0; i < weights.length; i++) {
 			weights[i] = 3;
@@ -376,7 +372,7 @@ public class MemcacheImpl implements Memcache {
 		String server = StringUtils.join(servers);
 		int hasCode = server.hashCode();
 		String poolName = "pool" + hasCode;
-		logger.info("init poolName:" + poolName + " server:" + server);
+		// logger.info("init poolName:" + poolName + " server:" + server);
 		SockIOPool pool = SockIOPool.getInstance(poolName);
 
 		MemCachedClient mcc = new MemCachedClient(poolName);
@@ -411,7 +407,7 @@ public class MemcacheImpl implements Memcache {
 		pool.initialize();
 
 		mcc.setSanitizeKeys(sanitizeKeys);// 不要对key进行url编码
-		logger.info("connected poolName:" + poolName + " server:" + server + " maxConn:" + maxConn);
+		// logger.info("connected poolName:" + poolName + " server:" + server + " maxConn:" + maxConn);
 		// lets set some compression on for the client
 		// compress anything larger than 64k
 		// mcc.setCompressEnable(true);

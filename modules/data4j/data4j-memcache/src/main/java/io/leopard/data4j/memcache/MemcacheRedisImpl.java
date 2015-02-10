@@ -1,6 +1,5 @@
 package io.leopard.data4j.memcache;
 
-import io.leopard.burrow.lang.Json;
 import io.leopard.burrow.util.NumberUtil;
 import io.leopard.data4j.redis.AbstractRedis;
 import io.leopard.data4j.redis.Redis;
@@ -107,14 +106,14 @@ public class MemcacheRedisImpl extends AbstractRedis implements Memcache {
 		return value;
 	}
 
-	@Override
-	/**
-	 * @see io.leopard.data.memcache.Memcache#get(String, Class<BEAN>)
-	 */
-	public <BEAN> BEAN get(String key, Class<BEAN> clazz) {
-		String json = this.get(key);
-		return Json.toObject(json, clazz);
-	}
+	// @Override
+	// /**
+	// * @see io.leopard.data.memcache.Memcache#get(String, Class<BEAN>)
+	// */
+	// public <BEAN> BEAN get(String key, Class<BEAN> clazz) {
+	// String json = this.get(key);
+	// return Json.toObject(json, clazz);
+	// }
 
 	// @Override
 	// /**

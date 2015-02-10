@@ -1,6 +1,5 @@
 package io.leopard.data4j.memcache;
 
-import io.leopard.burrow.lang.Json;
 import io.leopard.data4j.redis.RedisMemoryImpl;
 
 import java.util.List;
@@ -108,12 +107,12 @@ public class MemcacheRedisImplTest {
 		Assert.assertEquals("[value11, value22]", list.toString());
 	}
 
-	@Test
-	public void get() {
-		String json = Json.toJson("str");
-		memcache.put("key", json);
-		Assert.assertEquals("str", memcache.get("key", String.class));
-	}
+	// @Test
+	// public void get() {
+	// String json = Json.toJson("str");
+	// memcache.put("key", json);
+	// Assert.assertEquals("str", memcache.get("key", String.class));
+	// }
 
 	@Test
 	public void getInt() {
