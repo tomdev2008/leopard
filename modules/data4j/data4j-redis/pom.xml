@@ -41,6 +41,7 @@
 		<dependency>
 			<groupId>io.leopard.burrow</groupId>
 			<artifactId>burrow-lang</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
