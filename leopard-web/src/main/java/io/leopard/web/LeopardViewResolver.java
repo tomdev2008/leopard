@@ -35,6 +35,7 @@ public class LeopardViewResolver implements ViewResolver {
 
 	@PostConstruct
 	public void init() {
+		// System.out.println("LeopardViewResolver type:" + type);
 		if ("${leopard.view.type}".equals(type)) {
 			type = null;
 		}
