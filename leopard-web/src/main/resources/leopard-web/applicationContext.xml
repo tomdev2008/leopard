@@ -9,7 +9,6 @@
 
 
 	<bean class="io.leopard.web.LeopardBeanPostProcessor" />
-	<bean class="io.leopard.web.LeopardEnvironment" />
 
 	<context:component-scan base-package="io.leopard.web.mvc.controller" />
 	<context:component-scan base-package="io.leopard.web4j.parameter" />
