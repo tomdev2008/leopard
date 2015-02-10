@@ -11,9 +11,11 @@
 	<bean class="io.leopard.web.LeopardBeanPostProcessor" />
 
 	<context:component-scan base-package="io.leopard.web.mvc.controller" />
+	<context:component-scan base-package="io.leopard.web.userinfo" />
+
+
 	<context:component-scan base-package="io.leopard.web4j.parameter" />
 	<context:component-scan base-package="io.leopard.web4j.validator" />
-	<context:component-scan base-package="io.leopard.web.userinfo" />
 	<context:component-scan base-package="io.leopard.web4j.passport" />
 
 	<!-- 用户信息封装 -->
