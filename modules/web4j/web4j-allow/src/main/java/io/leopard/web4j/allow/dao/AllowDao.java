@@ -1,5 +1,10 @@
 package io.leopard.web4j.allow.dao;
 
-public class AllowDao {
+import java.io.IOException;
 
+public interface AllowDao {
+
+	void load();
+
+	Boolean exist(Allow allow);
 }

@@ -1,7 +1,5 @@
 package io.leopard.web4j.allow;
 
-import org.springframework.dao.PermissionDeniedDataAccessException;
-
 public interface AllowService {
 
 	/**
@@ -18,7 +16,7 @@ public interface AllowService {
 	 * 
 	 * @param requestUri
 	 * @param proxyIp
-	 * @throws PermissionDeniedDataAccessException
+	 * @throws DeniedException
 	 */
-	void checkAllow(String requestUri, String proxyIp) throws PermissionDeniedDataAccessException;
+	void checkAllow(String requestUri, String proxyIp) throws DeniedException;
 }
