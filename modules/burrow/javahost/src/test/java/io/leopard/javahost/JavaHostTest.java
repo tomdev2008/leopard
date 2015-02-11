@@ -37,6 +37,7 @@ public class JavaHostTest {
 		for (Host host : list) {
 			System.out.println(host);
 		}
+		Assert.assertEquals(2, list.size());
 	}
 
 }
