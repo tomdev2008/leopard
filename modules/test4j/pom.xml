@@ -86,6 +86,5 @@
 		<module>test4j-memcache</module>
 		<module>test4j-redis</module>
 		<module>test4j-jdbc</module>
-		<module>test4j-hosts</module>
 	</modules>
 </project>
