@@ -47,6 +47,11 @@
 			</exclusions>
 		</dependency>
 
+		<dependency>
+			<groupId>io.leopard</groupId>
+			<artifactId>javahost</artifactId>
+			<version>0.0.5-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -1,5 +1,7 @@
 package io.leopard.test.hosts;
 
+import io.leopard.javahost.JavaHost;
+
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -10,8 +12,6 @@ import java.util.regex.Pattern;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
-
-//http://zhwj184.iteye.com/blog/1202322
 
 public class HostLeiImpl implements HostLei {
 
@@ -38,15 +38,10 @@ public class HostLeiImpl implements HostLei {
 			String ip = (String) entry.getValue();
 			host = host.trim();
 			ip = ip.trim();
-			boolean isLocalHost = LocalHost.isLocalHost(host);
 			if (isValidIp(ip)) {
-				// TODO ahai 需要设置Property吗？
-				if (isLocalHost) {
-					System.setProperty(host, host);
-				}
-				else {
-					InetAddressUtil.putCache(host, ip);
-					System.setProperty(host, ip);
+				boolean isLocalHost = JavaHost.isLocalHost(host);
+				if (!isLocalHost) {
+					JavaHost.updateVirtualDns(host, ip);
 				}
 			}
 		}

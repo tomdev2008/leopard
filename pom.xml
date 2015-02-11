@@ -29,7 +29,7 @@
 
 	<properties>
 		<burrow.version>0.0.5-SNAPSHOT</burrow.version>
-	
+
 		<test4j.version>0.0.4-SNAPSHOT</test4j.version>
 		<web4j.version>0.0.2-SNAPSHOT</web4j.version>
 		<data4j.version>0.0.1-SNAPSHOT</data4j.version>
@@ -201,8 +201,13 @@
 				<artifactId>burrow-lang</artifactId>
 				<version>${burrow.version}</version>
 			</dependency>
-
 			
+			<dependency>
+				<groupId>io.leopard</groupId>
+				<artifactId>javahost</artifactId>
+				<version>${burrow.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>io.leopard.test4j</groupId>
 				<artifactId>test4j-mock</artifactId>
@@ -213,7 +218,7 @@
 				<groupId>io.leopard.web4j</groupId>
 				<artifactId>web4j-all</artifactId>
 				<version>${web4j.version}</version>
-			</dependency>			
+			</dependency>
 			<dependency>
 				<groupId>io.leopard.data4j</groupId>
 				<artifactId>data4j-all</artifactId>
