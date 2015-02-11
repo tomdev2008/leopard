@@ -1,5 +1,9 @@
 package io.leopard.javahost;
 
+import io.leopard.javahost.model.Host;
+
+import java.util.List;
+
 /**
  * 虚拟DNS.
  * 
@@ -33,5 +37,21 @@ public interface Dns {
 	 *            域名
 	 * @return IP
 	 */
-	String query(String host);
+	String queryForIp(String host);
+
+	/**
+	 * 解析域名.
+	 * 
+	 * @param host
+	 *            域名
+	 * @return Host对象
+	 */
+	Host query(String host);
+
+	/**
+	 * 获取所有虚拟DNS记录.
+	 * 
+	 * @return
+	 */
+	List<Host> list();
 }

@@ -6,6 +6,7 @@ import io.leopard.javahost.impl.HostsCacheImpl;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 
@@ -64,10 +65,29 @@ public class JavaHost {
 		int count = 0;
 		while (iterator.hasNext()) {
 			Entry<Object, Object> entry = iterator.next();
-			String host = (String) entry.getKey();
-			String ip = (String) entry.getValue();
-			host = host.trim();
-			ip = ip.trim();
+			if (!(entry.getKey() instanceof String) || !(entry.getValue() instanceof String)) {
+				continue;
+			}
+			String host = ((String) entry.getKey()).trim();
+			String ip = ((String) entry.getValue()).trim();
+			if (isValidIp(ip)) {
+				boolean isLocalHost = JavaHost.isLocalHost(host);
+				if (!isLocalHost) {
+					JavaHost.updateVirtualDns(host, ip);
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+
+	public static int updateVirtualDns(Map<String, String> map) {
+		Iterator<Entry<String, String>> iterator = map.entrySet().iterator();
+		int count = 0;
+		while (iterator.hasNext()) {
+			Entry<String, String> entry = iterator.next();
+			String host = entry.getKey().trim();
+			String ip = entry.getValue().trim();
 			if (isValidIp(ip)) {
 				boolean isLocalHost = JavaHost.isLocalHost(host);
 				if (!isLocalHost) {

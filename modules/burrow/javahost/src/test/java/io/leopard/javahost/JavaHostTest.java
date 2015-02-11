@@ -1,5 +1,11 @@
 package io.leopard.javahost;
 
+import io.leopard.javahost.model.Host;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,6 +22,21 @@ public class JavaHostTest {
 		// Assert.assertFalse(JavaHost.isValidIp("255.255.255.256"));
 		// Assert.assertFalse(JavaHost.isValidIp("255.255.255"));
 		Assert.assertFalse(JavaHost.isValidIp("255.255.255."));
+	}
+
+	@Test
+	public void updateVirtualDns() {
+		JavaHost.queryForIp("leopard.io");
+
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("javahost1.leopard.io", "127.0.0.1");
+		map.put("javahost2.leopard.io", "127.0.0.2");
+
+		JavaHost.updateVirtualDns(map);
+		List<Host> list = JavaHost.getDns().list();
+		for (Host host : list) {
+			System.out.println(host);
+		}
 	}
 
 }
