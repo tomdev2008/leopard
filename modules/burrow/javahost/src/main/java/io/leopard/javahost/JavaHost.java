@@ -89,10 +89,6 @@ public class JavaHost {
 		if (ip == null || ip.length() == 0) {
 			return false;
 		}
-		if (ip.length() < 7) {
-			return false;
-		}
-
 		String[] strs = ip.split("\\.");
 		if (strs.length != 4) {
 			return false;
