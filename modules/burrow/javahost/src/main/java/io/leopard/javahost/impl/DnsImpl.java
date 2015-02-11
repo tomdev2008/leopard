@@ -29,7 +29,7 @@ public class DnsImpl extends AbstractDns {
 	}
 
 	@Override
-	public String queryForIp(String host) {
+	public String queryIp(String host) {
 		Host bean = this.query(host);
 		if (bean == null) {
 			return null;

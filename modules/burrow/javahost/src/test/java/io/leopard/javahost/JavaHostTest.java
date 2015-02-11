@@ -13,7 +13,7 @@ public class JavaHostTest {
 
 	@Test
 	public void queryForIp() {
-		Assert.assertEquals("112.126.75.27", JavaHost.queryForIp("leopard2e.leopard.io"));
+		Assert.assertEquals("112.126.75.27", JavaHost.queryIp("leopard2e.leopard.io"));
 	}
 
 	@Test
@@ -26,7 +26,7 @@ public class JavaHostTest {
 
 	@Test
 	public void updateVirtualDns() {
-		JavaHost.queryForIp("leopard.io");
+		JavaHost.queryIp("leopard.io");
 
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("javahost1.leopard.io", "127.0.0.1");

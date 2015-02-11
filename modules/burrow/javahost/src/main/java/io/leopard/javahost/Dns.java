@@ -37,7 +37,7 @@ public interface Dns {
 	 *            域名
 	 * @return IP
 	 */
-	String queryForIp(String host);
+	String queryIp(String host);
 
 	/**
 	 * 解析域名.

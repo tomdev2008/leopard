@@ -123,7 +123,7 @@ public class JavaHost {
 	}
 
 	/**
-	 * 根据域名查询IP.
+	 * 根据域名查询IP(查询范围:包括hosts文件、DNS服务器、虚拟DNS).
 	 * 
 	 * @param host
 	 *            域名
@@ -138,6 +138,28 @@ public class JavaHost {
 			return null;
 		}
 		return inetAddress.getHostAddress();
+	}
+
+	/**
+	 * 从本地hosts文件解析域名.
+	 * 
+	 * @param host
+	 *            域名
+	 * @return IP
+	 */
+	public static String queryIpByLocalHosts(String host) {
+		return hosts.query(host);
+	}
+
+	/**
+	 * 从虚拟DNS解析域名.
+	 * 
+	 * @param host
+	 *            域名
+	 * @return IP
+	 */
+	public static String queryIpByVirtualDns(String host) {
+		return dns.queryIp(host);
 	}
 
 	/**
