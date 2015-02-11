@@ -129,7 +129,7 @@ public class JavaHost {
 	 *            域名
 	 * @return IP
 	 */
-	public static String queryForIp(String host) {
+	public static String queryIp(String host) {
 		InetAddress inetAddress;
 		try {
 			inetAddress = InetAddress.getByName(host);
