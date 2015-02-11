@@ -35,5 +35,6 @@
 	<modules>
 		<module>burrow-lang</module>
 		<module>burrow-ubb</module>
+		<module>javahost</module>
 	</modules>
 </project>
