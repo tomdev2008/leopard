@@ -70,7 +70,6 @@
 						<configuration>
 							<sources>
 								<source>modules/test4j/test4j-mock</source>
-								<source>modules/burrow/javahost</source>
 							</sources>
 							<dependencies>
 								<dependency>
