@@ -201,12 +201,6 @@
 				<artifactId>burrow-lang</artifactId>
 				<version>${burrow.version}</version>
 			</dependency>
-			
-			<dependency>
-				<groupId>io.leopard</groupId>
-				<artifactId>javahost</artifactId>
-				<version>${burrow.version}</version>
-			</dependency>
 
 			<dependency>
 				<groupId>io.leopard.test4j</groupId>
