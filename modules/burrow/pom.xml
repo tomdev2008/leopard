@@ -7,7 +7,7 @@
 
 	<name>Burrow</name>
 	<description>Burrow</description>
-	<url>https://leopard.io/</url>
+	<url>https://github.com/tanhaichao/burrow</url>
 	<inceptionYear>2014</inceptionYear>
 
 	<parent>
@@ -16,19 +16,16 @@
 		<version>0.0.8</version>
 	</parent>
 
-<!-- 
 	<scm>
 		<url>https://github.com/tanhaichao/burrow</url>
 		<connection>scm:svn:https://github.com/tanhaichao/burrow/trunk</connection>
 		<developerConnection>scm:svn:https://github.com/tanhaichao/burrow/trunk</developerConnection>
 	</scm>
-	 
 
 	<issueManagement>
 		<system>GitHub Issues</system>
 		<url>https://github.com/tanhaichao/burrow/issues</url>
 	</issueManagement>
-	-->
 
 	<dependencyManagement>
 		<dependencies>
