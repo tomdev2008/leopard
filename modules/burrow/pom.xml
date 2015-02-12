@@ -16,6 +16,7 @@
 		<version>0.0.8</version>
 	</parent>
 
+<!-- 
 	<scm>
 		<url>https://github.com/tanhaichao/burrow</url>
 		<connection>scm:svn:https://github.com/tanhaichao/burrow/trunk</connection>
@@ -26,6 +27,7 @@
 		<system>GitHub Issues</system>
 		<url>https://github.com/tanhaichao/burrow/issues</url>
 	</issueManagement>
+	 -->
 
 	<dependencyManagement>
 		<dependencies>
