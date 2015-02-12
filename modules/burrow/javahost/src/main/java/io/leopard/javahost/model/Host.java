@@ -31,7 +31,7 @@ public class Host {
 
 	@Override
 	public String toString() {
-		return "Host [host=" + host + ", ip=" + ip + "]";
+		return "JavaHost [host=" + host + ", ip=" + ip + "]";
 	}
 
 }

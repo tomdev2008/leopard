@@ -2,10 +2,12 @@ package io.leopard.javahost;
 
 import io.leopard.javahost.impl.DnsImpl;
 import io.leopard.javahost.impl.HostsCacheImpl;
+import io.leopard.javahost.model.Host;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
@@ -79,6 +81,16 @@ public class JavaHost {
 			}
 		}
 		return count;
+	}
+
+	/**
+	 * 打印所有虚拟DNS记录.
+	 */
+	public static void printAllVirtualDns() {
+		List<Host> list = dns.list();
+		for (Host host : list) {
+			System.out.println(host);
+		}
 	}
 
 	public static int updateVirtualDns(Map<String, String> map) {
