@@ -85,9 +85,11 @@
 			<groupId>io.leopard.burrow</groupId>
 			<artifactId>burrow-lang</artifactId>
 		</dependency>
+		
 		<dependency>
-			<groupId>io.leopard.data4j</groupId>
-			<artifactId>data4j-jdbc</artifactId>
+			<groupId>io.leopard</groupId>
+			<artifactId>leopard-jdbc</artifactId>
+			<version>0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.leopard.data4j</groupId>
@@ -101,11 +103,6 @@
 		<dependency>
 			<groupId>io.leopard.data4j</groupId>
 			<artifactId>data4j-memdb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard.test4j</groupId>
-			<artifactId>test4j-jdbc</artifactId>
-			<version>0.0.4-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
