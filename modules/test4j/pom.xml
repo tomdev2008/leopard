@@ -85,6 +85,5 @@
 		<module>test4j-mock</module>
 		<module>test4j-memcache</module>
 		<module>test4j-redis</module>
-		<module>test4j-jdbc</module>
 	</modules>
 </project>
