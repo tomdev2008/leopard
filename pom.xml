@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.leopard</groupId>
 	<artifactId>leopard</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Leopard</name>
@@ -230,7 +230,6 @@
 		<module>leopard-web</module>
 		<module>leopard-netty</module>
 		<module>leopard-parent</module>
-		<module>leopard-jetty</module>
 	</modules>
 
 
