@@ -11,6 +11,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class DataSourceProvider implements Provider<DataSource> {
 
+	
 	// private static boolean autoCommit = true;
 	//
 	// public static void setAutoCommit(boolean autoCommit) {

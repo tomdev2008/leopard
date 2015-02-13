@@ -19,6 +19,7 @@ public class DataSourceProxy implements DataSource {
 	public DataSourceProxy(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
+	
 
 	@Override
 	public synchronized Connection getConnection() throws SQLException {
