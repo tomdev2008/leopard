@@ -10,16 +10,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>io.leopard.data4j</groupId>
-			<artifactId>data4j-memcache</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard.data4j</groupId>
-			<artifactId>data4j-redis</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>io.leopard.data4j</groupId>
 			<artifactId>data4j-memdb</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

@@ -16,12 +16,7 @@
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.leopard.data4j</groupId>
-			<artifactId>data4j-redis</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
+	
 
 		<dependency>
 			<groupId>org.mockito</groupId>
