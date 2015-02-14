@@ -53,19 +53,19 @@
 				<version>${burrow.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>io.leopard.data4j</groupId>
-				<artifactId>data4j-jdbc</artifactId>
-				<version>${data4j.version}</version>
+				<groupId>io.leopard</groupId>
+				<artifactId>leopard-jdbc</artifactId>
+				<version>0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>io.leopard.data4j</groupId>
-				<artifactId>data4j-memcache</artifactId>
-				<version>${data4j.version}</version>
+				<groupId>io.leopard</groupId>
+				<artifactId>leopard-memcache</artifactId>
+				<version>0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>io.leopard.data4j</groupId>
-				<artifactId>data4j-redis</artifactId>
-				<version>${data4j.version}</version>
+				<groupId>io.leopard</groupId>
+				<artifactId>leopard-redis</artifactId>
+				<version>0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>io.leopard.data4j</groupId>
