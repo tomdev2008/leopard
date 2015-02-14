@@ -17,8 +17,8 @@
 			<artifactId>burrow-lang</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>io.leopard.data4j</groupId>
-			<artifactId>data4j-redis</artifactId>
+			<groupId>io.leopard</groupId>
+			<artifactId>leopard-redis</artifactId>
 		</dependency>
 	</dependencies>
 </project>
