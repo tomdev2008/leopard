@@ -8,14 +8,14 @@
 	<artifactId>data4j-biz</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>io.leopard.data4j</groupId>
-			<artifactId>data4j-redis</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>io.leopard</groupId>
+			<artifactId>leopard-redis</artifactId>
+			<version>0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>io.leopard.data4j</groupId>
-			<artifactId>data4j-memcache</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>io.leopard</groupId>
+			<artifactId>leopard-memcache</artifactId>
+			<version>0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.leopard.data4j</groupId>
