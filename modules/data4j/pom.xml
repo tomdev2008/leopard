@@ -32,7 +32,6 @@
 	</properties>
 
 	<modules>
-		<module>data4j-memcache</module>
 		<module>data4j-memdb</module>
 		<module>data4j-cache</module>
 		<module>data4j-schema</module>
