@@ -51,6 +51,7 @@
 			<artifactId>javahost</artifactId>
 			<version>0.1</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
