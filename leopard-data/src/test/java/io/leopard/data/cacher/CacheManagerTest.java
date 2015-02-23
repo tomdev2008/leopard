@@ -1,9 +1,9 @@
 package io.leopard.data.cacher;
 
 import io.leopard.burrow.lang.Json;
-import io.leopard.data4j.memcache.IMemcache;
-import io.leopard.data4j.memcache.Memcache;
-import io.leopard.data4j.memcache.MemcacheMemoryImpl;
+import io.leopard.memcache.IMemcache;
+import io.leopard.memcache.Memcache;
+import io.leopard.memcache.MemcacheMemoryImpl;
 
 import org.junit.Assert;
 import org.junit.Test;

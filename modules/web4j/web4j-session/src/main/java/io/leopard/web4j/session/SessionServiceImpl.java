@@ -4,7 +4,7 @@ import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.Json;
 import io.leopard.burrow.lang.MethodTime;
 import io.leopard.burrow.util.ObjectUtil;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import java.util.Map;
 

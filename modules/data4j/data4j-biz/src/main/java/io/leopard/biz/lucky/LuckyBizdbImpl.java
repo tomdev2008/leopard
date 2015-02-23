@@ -1,6 +1,6 @@
 package io.leopard.biz.lucky;
 
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 public class LuckyBizdbImpl implements LuckyBizdb {
 

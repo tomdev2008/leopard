@@ -1,7 +1,7 @@
 package io.leopard.test4j.mock.transaction.redis;
 
 import io.leopard.burrow.lang.Context;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import java.util.ArrayList;
 import java.util.List;

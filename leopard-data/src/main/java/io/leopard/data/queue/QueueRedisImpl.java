@@ -1,7 +1,7 @@
 package io.leopard.data.queue;
 
 import io.leopard.burrow.timer.SimpleTimer;
-import io.leopard.data4j.redis.RedisImpl;
+import io.leopard.redis.RedisImpl;
 
 public class QueueRedisImpl extends AbstractQueue implements Queue {
 

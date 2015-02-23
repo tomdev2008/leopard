@@ -1,7 +1,7 @@
 package io.leopard.test4j.mock.dao;
 
 import io.leopard.burrow.refect.FieldUtil;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 import io.leopard.test4j.mock.transaction.MockTransactionModule;
 import io.leopard.test4j.mock.transaction.Redis2TransactionImpl;
 

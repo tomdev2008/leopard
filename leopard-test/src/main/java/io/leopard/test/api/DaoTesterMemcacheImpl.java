@@ -1,6 +1,6 @@
 package io.leopard.test.api;
 
-import io.leopard.data4j.memcache.Memcache;
+import io.leopard.memcache.Memcache;
 import io.leopard.test4j.mock.LeopardMockito;
 
 import org.mockito.Mockito;

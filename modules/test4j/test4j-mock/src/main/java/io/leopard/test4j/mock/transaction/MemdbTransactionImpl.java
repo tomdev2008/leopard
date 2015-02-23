@@ -3,8 +3,8 @@ package io.leopard.test4j.mock.transaction;
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.burrow.lang.Json;
-import io.leopard.data4j.memcache.Memcache;
 import io.leopard.data4j.memdb.Memdb;
+import io.leopard.memcache.Memcache;
 
 import org.apache.commons.lang.NotImplementedException;
 

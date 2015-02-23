@@ -1,9 +1,9 @@
 package io.leopard.test4j.mock.transaction;
 
-import io.leopard.data4j.memcache.Memcache;
-import io.leopard.data4j.redis.Redis;
 import io.leopard.jdbc.Jdbc;
 import io.leopard.jdbc.test.JdbcH2Impl;
+import io.leopard.memcache.Memcache;
+import io.leopard.redis.Redis;
 import io.leopard.test4j.mock.transaction.h2.service.H2Dao;
 import io.leopard.test4j.mock.transaction.h2.service.H2DaoImpl;
 import io.leopard.test4j.mock.transaction.redis.JedisTestnbImpl;

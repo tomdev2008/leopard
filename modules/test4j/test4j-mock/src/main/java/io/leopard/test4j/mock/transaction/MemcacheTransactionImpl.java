@@ -3,8 +3,8 @@ package io.leopard.test4j.mock.transaction;
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.burrow.util.NumberUtil;
-import io.leopard.data4j.memcache.Memcache;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.memcache.Memcache;
+import io.leopard.redis.Redis;
 
 import java.util.ArrayList;
 import java.util.List;

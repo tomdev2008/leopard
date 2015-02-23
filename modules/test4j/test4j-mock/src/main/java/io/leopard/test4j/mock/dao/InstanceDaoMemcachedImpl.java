@@ -1,7 +1,7 @@
 package io.leopard.test4j.mock.dao;
 
 import io.leopard.burrow.refect.FieldUtil;
-import io.leopard.data4j.memcache.Memcache;
+import io.leopard.memcache.Memcache;
 import io.leopard.test4j.mock.transaction.MockTransactionModule;
 
 import java.lang.reflect.Field;

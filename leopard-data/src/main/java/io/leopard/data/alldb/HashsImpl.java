@@ -2,7 +2,7 @@ package io.leopard.data.alldb;
 
 import io.leopard.burrow.lang.Json;
 import io.leopard.burrow.util.NumberUtil;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 public class HashsImpl {
 

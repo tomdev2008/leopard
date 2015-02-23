@@ -1,6 +1,6 @@
 package io.leopard.schema;
 
-import io.leopard.data4j.redis.RedisImpl;
+import io.leopard.redis.RedisImpl;
 
 import org.junit.Assert;
 import org.junit.Test;

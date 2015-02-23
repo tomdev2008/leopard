@@ -1,6 +1,6 @@
 package io.leopard.data4j.pubsub;
 
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

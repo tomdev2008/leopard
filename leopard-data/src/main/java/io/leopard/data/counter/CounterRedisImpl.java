@@ -1,6 +1,6 @@
 package io.leopard.data.counter;
 
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

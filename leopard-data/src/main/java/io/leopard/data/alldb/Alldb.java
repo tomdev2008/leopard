@@ -1,7 +1,7 @@
 package io.leopard.data.alldb;
 
-import io.leopard.data4j.redis.Redis;
 import io.leopard.jdbc.Jdbc;
+import io.leopard.redis.Redis;
 
 import java.util.Date;
 

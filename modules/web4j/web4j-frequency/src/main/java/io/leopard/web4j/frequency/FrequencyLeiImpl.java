@@ -1,7 +1,7 @@
 package io.leopard.web4j.frequency;
 
 import io.leopard.core.exception.ConnectionLimitException;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import java.util.Map;
 

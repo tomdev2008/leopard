@@ -1,6 +1,6 @@
 package io.leopard.test4j.mock.transaction;
 
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 
 /**

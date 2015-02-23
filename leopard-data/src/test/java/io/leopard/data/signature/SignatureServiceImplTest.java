@@ -1,7 +1,7 @@
 package io.leopard.data.signature;
 
 import io.leopard.core.exception.invalid.SignatureInvalidException;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import org.junit.Assert;
 import org.junit.Test;

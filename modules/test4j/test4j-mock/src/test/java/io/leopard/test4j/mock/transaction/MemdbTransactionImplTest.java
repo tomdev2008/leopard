@@ -1,8 +1,8 @@
 package io.leopard.test4j.mock.transaction;
 
 import io.leopard.burrow.lang.Json;
-import io.leopard.data4j.memcache.Memcache;
-import io.leopard.data4j.memcache.MemcacheMemoryImpl;
+import io.leopard.memcache.Memcache;
+import io.leopard.memcache.MemcacheMemoryImpl;
 
 import org.apache.commons.lang.NotImplementedException;
 import org.junit.Assert;

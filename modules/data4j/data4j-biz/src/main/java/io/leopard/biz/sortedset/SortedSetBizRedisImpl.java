@@ -1,7 +1,7 @@
 package io.leopard.biz.sortedset;
 
 import io.leopard.burrow.util.NumberUtil;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import java.util.Set;
 

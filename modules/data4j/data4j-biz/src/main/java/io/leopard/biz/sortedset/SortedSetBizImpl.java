@@ -3,7 +3,7 @@ package io.leopard.biz.sortedset;
 import io.leopard.burrow.util.SetUtil;
 import io.leopard.data4j.pubsub.IPubSub;
 import io.leopard.data4j.pubsub.Publisher;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import java.util.Set;
 

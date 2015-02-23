@@ -1,8 +1,8 @@
 package io.leopard.test4j.mock.transaction;
 
 import io.leopard.burrow.util.ThreadUtil;
-import io.leopard.data4j.redis.Redis;
-import io.leopard.data4j.redis.RedisMemoryImpl;
+import io.leopard.redis.Redis;
+import io.leopard.redis.RedisMemoryImpl;
 
 import org.junit.Assert;
 import org.junit.Test;

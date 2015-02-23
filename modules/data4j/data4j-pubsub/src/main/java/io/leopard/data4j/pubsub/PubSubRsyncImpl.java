@@ -3,7 +3,7 @@ package io.leopard.data4j.pubsub;
 import io.leopard.data4j.memdb.MemdbRsyncQueue;
 import io.leopard.data4j.memdb.MemdbRsyncService;
 import io.leopard.data4j.memdb.MemdbRsyncServiceRedisImpl;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 public abstract class PubSubRsyncImpl implements IPubSub, MemdbRsyncQueue {
 

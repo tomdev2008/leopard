@@ -1,7 +1,7 @@
 package io.leopard.biz.lucky;
 
 import io.leopard.burrow.util.NumberUtil;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 /**
  * 子集合(按权重划分)

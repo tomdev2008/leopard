@@ -3,8 +3,8 @@ package io.leopard.data.signature;
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.core.exception.invalid.SignatureInvalidException;
-import io.leopard.data4j.redis.Redis;
-import io.leopard.data4j.redis.RedisImpl;
+import io.leopard.redis.Redis;
+import io.leopard.redis.RedisImpl;
 
 import java.util.Date;
 

@@ -1,9 +1,9 @@
 package io.leopard.data4j.pubsub;
 
 import io.leopard.burrow.lang.AssertUtil;
-import io.leopard.data4j.memcache.Memcache;
-import io.leopard.data4j.memcache.MemcacheRedisImpl;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.memcache.Memcache;
+import io.leopard.memcache.MemcacheRedisImpl;
+import io.leopard.redis.Redis;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;

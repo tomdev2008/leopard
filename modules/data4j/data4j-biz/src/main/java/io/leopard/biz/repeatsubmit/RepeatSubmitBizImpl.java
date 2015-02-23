@@ -2,7 +2,7 @@ package io.leopard.biz.repeatsubmit;
 
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.core.exception.other.RepeatSubmitException;
-import io.leopard.data4j.memcache.Memcache;
+import io.leopard.memcache.Memcache;
 
 import org.apache.commons.lang.StringUtils;
 

@@ -2,7 +2,7 @@ package io.leopard.data.version;
 
 import io.leopard.burrow.lang.Json;
 import io.leopard.burrow.util.NumberUtil;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import java.util.List;
 
