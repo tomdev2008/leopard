@@ -35,8 +35,6 @@ public class MockTransactionModule implements Module {
 
 	protected Jdbc createJdbcH2Impl() {
 		JdbcH2Impl jdbc = new JdbcH2Impl();
-		jdbc.setDatabase("leopard");
-		jdbc.init();
 		System.err.println("createJdbcH2Impl");
 		return jdbc;
 	}
