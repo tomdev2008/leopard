@@ -3,7 +3,7 @@ package io.leopard.web4j.trynb;
 import io.leopard.core.exception.LeopardException;
 import io.leopard.core.exception.LeopardRuntimeException;
 import io.leopard.core.exception.other.OutSideException;
-import io.leopard.data4j.jdbc.InvalidParamDataAccessException;
+import io.leopard.jdbc.InvalidParamDataAccessException;
 import io.leopard.test4j.mock.LeopardMockRunner;
 import io.leopard.test4j.mock.MockRequest;
 

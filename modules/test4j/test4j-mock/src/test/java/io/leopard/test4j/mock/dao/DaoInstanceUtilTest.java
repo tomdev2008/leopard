@@ -1,6 +1,6 @@
 package io.leopard.test4j.mock.dao;
 
-import io.leopard.data4j.jdbc.Jdbc;
+import io.leopard.jdbc.Jdbc;
 
 import org.junit.Assert;
 import org.junit.Test;

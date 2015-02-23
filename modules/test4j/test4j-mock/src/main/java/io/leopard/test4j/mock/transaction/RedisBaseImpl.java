@@ -3,8 +3,8 @@ package io.leopard.test4j.mock.transaction;
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.burrow.util.ListUtil;
-import io.leopard.data4j.jdbc.Jdbc;
-import io.leopard.data4j.jdbc.StatementParameter;
+import io.leopard.jdbc.Jdbc;
+import io.leopard.jdbc.StatementParameter;
 import io.leopard.test4j.mock.transaction.redis.RedisBean;
 
 import java.util.Date;

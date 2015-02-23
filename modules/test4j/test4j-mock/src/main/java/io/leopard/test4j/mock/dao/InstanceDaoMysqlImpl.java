@@ -1,7 +1,7 @@
 package io.leopard.test4j.mock.dao;
 
 import io.leopard.burrow.refect.FieldUtil;
-import io.leopard.data4j.jdbc.Jdbc;
+import io.leopard.jdbc.Jdbc;
 import io.leopard.test4j.mock.transaction.MockTransactionModule;
 
 import java.lang.reflect.Field;

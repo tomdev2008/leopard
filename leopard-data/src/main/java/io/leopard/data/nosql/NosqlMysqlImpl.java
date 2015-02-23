@@ -1,8 +1,8 @@
 package io.leopard.data.nosql;
 
 import io.leopard.burrow.lang.ContextImpl;
-import io.leopard.data4j.jdbc.Jdbc;
-import io.leopard.data4j.jdbc.StatementParameter;
+import io.leopard.jdbc.Jdbc;
+import io.leopard.jdbc.StatementParameter;
 
 import org.springframework.stereotype.Repository;
 

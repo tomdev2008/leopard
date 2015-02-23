@@ -1,6 +1,6 @@
 package io.leopard.test.api;
 
-import io.leopard.data4j.jdbc.Jdbc;
+import io.leopard.jdbc.Jdbc;
 import io.leopard.test4j.mock.LeopardMockito;
 
 import org.mockito.Mockito;

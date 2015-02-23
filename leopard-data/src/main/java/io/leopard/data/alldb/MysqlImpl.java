@@ -1,7 +1,7 @@
 package io.leopard.data.alldb;
 
-import io.leopard.data4j.jdbc.Jdbc;
-import io.leopard.data4j.jdbc.StatementParameter;
+import io.leopard.jdbc.Jdbc;
+import io.leopard.jdbc.StatementParameter;
 
 public class MysqlImpl {
 	private Jdbc jdbc;

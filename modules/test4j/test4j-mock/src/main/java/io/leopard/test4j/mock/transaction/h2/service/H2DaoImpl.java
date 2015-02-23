@@ -3,7 +3,7 @@ package io.leopard.test4j.mock.transaction.h2.service;
 import io.leopard.burrow.lang.AssertUtil;
 import io.leopard.burrow.lang.ContextImpl;
 import io.leopard.burrow.util.ListUtil;
-import io.leopard.data4j.jdbc.Jdbc;
+import io.leopard.jdbc.Jdbc;
 import io.leopard.test4j.mock.transaction.h2.TableInfoFile;
 import io.leopard.test4j.mock.transaction.h2.TableInfoFileImpl;
 

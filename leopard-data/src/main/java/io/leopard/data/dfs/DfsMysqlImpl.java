@@ -1,8 +1,8 @@
 package io.leopard.data.dfs;
 
 import io.leopard.burrow.lang.ContextImpl;
-import io.leopard.data4j.jdbc.Jdbc;
-import io.leopard.data4j.jdbc.builder.ReplaceBuilder;
+import io.leopard.jdbc.Jdbc;
+import io.leopard.jdbc.builder.ReplaceBuilder;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

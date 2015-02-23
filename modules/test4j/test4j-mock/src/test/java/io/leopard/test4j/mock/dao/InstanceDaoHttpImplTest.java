@@ -1,9 +1,9 @@
 package io.leopard.test4j.mock.dao;
 
-import io.leopard.data4j.jdbc.Jdbc;
 import io.leopard.data4j.memcache.Memcache;
 import io.leopard.data4j.memdb.Memdb;
 import io.leopard.data4j.redis.Redis;
+import io.leopard.jdbc.Jdbc;
 
 import org.junit.Test;
 import org.powermock.core.classloader.annotations.PrepareForTest;

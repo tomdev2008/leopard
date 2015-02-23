@@ -1,6 +1,6 @@
 package io.leopard.data.nosql;
 
-import io.leopard.data4j.jdbc.Jdbc;
+import io.leopard.jdbc.Jdbc;
 
 /**
  * 关系型数据库简化成key/value操作.

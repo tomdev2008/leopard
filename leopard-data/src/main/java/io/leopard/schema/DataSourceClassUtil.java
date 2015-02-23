@@ -1,14 +1,14 @@
 package io.leopard.schema;
 
 import io.leopard.data.nosql.NosqlMysqlImpl;
-import io.leopard.data4j.jdbc.JdbcDataSource;
-import io.leopard.data4j.jdbc.JdbcMysqlImpl;
-import io.leopard.data4j.jdbc.MysqlDsnDataSource;
 import io.leopard.data4j.memcache.MemcacheRedisImpl;
 import io.leopard.data4j.memdb.MemdbRsyncImpl;
 import io.leopard.data4j.redis.RedisHashImpl;
 import io.leopard.data4j.redis.RedisImpl;
 import io.leopard.data4j.redis.SpringJedisConnectionFactory;
+import io.leopard.jdbc.JdbcDataSource;
+import io.leopard.jdbc.JdbcMysqlImpl;
+import io.leopard.jdbc.MysqlDsnDataSource;
 import redis.clients.jedis.JedisPoolConfig;
 
 public class DataSourceClassUtil {
