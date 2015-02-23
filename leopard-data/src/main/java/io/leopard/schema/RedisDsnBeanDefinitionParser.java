@@ -132,7 +132,6 @@ public class RedisDsnBeanDefinitionParser implements BeanDefinitionParser {
 		String id = element.getAttribute("id");
 		String name = element.getAttribute("name");
 
-		String log = element.getAttribute("log");
 		String maxActive = element.getAttribute("maxActive");
 		String initialPoolSize = element.getAttribute("initialPoolSize");
 		String enableBackup = element.getAttribute("enableBackup");
@@ -140,13 +139,7 @@ public class RedisDsnBeanDefinitionParser implements BeanDefinitionParser {
 		String timeout = element.getAttribute("timeout");
 		String createConnectionFactory = element.getAttribute("createConnectionFactory");
 
-		BeanDefinitionBuilder builder;
-		if ("true".equalsIgnoreCase(log)) {
-			builder = BeanDefinitionBuilder.genericBeanDefinition(DataSourceClassUtil.getRedisLog4jImpl());
-		}
-		else {
-			builder = BeanDefinitionBuilder.genericBeanDefinition(DataSourceClassUtil.getRedisImpl());
-		}
+		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(DataSourceClassUtil.getRedisImpl());
 
 		if (StringUtils.isNotEmpty(maxActive)) {
 			builder.addPropertyValue("maxActive", Integer.valueOf(maxActive));

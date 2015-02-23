@@ -1,7 +1,6 @@
 package io.leopard.schema;
 
 import io.leopard.data4j.redis.RedisImpl;
-import io.leopard.data4j.redis.RedisLog4jImpl;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,9 +17,7 @@ public class RedisBeanDefinitionParserTest {
 
 	@Test
 	public void getBeanClass() {
-		// RedisLog4jImpl.class
-		Mockito.doReturn("true").when(element).getAttribute("log");
-		Assert.assertEquals(RedisLog4jImpl.class, definitionParser.getBeanClass(element));
+
 		Mockito.doReturn("false").when(element).getAttribute("log");
 		Assert.assertEquals(RedisImpl.class, definitionParser.getBeanClass(element));
 	}

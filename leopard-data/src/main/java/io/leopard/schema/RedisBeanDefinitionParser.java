@@ -8,13 +8,7 @@ import org.w3c.dom.Element;
 public class RedisBeanDefinitionParser extends AbstractSingleBeanDefinitionParser {
 
 	protected Class<?> getBeanClass(Element element) {
-		String log = element.getAttribute("log");
-		if ("true".equals(log)) {
-			return DataSourceClassUtil.getRedisLog4jImpl();
-		}
-		else {
-			return DataSourceClassUtil.getRedisImpl();
-		}
+		return DataSourceClassUtil.getRedisImpl();
 	}
 
 	protected void doParse(Element element, BeanDefinitionBuilder builder) {

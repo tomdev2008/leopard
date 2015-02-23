@@ -8,7 +8,6 @@ import io.leopard.data4j.memcache.MemcacheRedisImpl;
 import io.leopard.data4j.memdb.MemdbRsyncImpl;
 import io.leopard.data4j.redis.RedisHashImpl;
 import io.leopard.data4j.redis.RedisImpl;
-import io.leopard.data4j.redis.RedisLog4jImpl;
 import io.leopard.data4j.redis.SpringJedisConnectionFactory;
 import redis.clients.jedis.JedisPoolConfig;
 
@@ -46,9 +45,9 @@ public class DataSourceClassUtil {
 		return findClass(MemdbRsyncImpl.class);
 	}
 
-	public static Class<?> getRedisLog4jImpl() {
-		return findClass(RedisLog4jImpl.class);
-	}
+	// public static Class<?> getRedisLog4jImpl() {
+	// return findClass(RedisLog4jImpl.class);
+	// }
 
 	public static Class<?> getRedisImpl() {
 		return findClass(RedisImpl.class);
