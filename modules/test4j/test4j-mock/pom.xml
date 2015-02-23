@@ -41,7 +41,11 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 		</dependency>
-
+<dependency>
+			<groupId>io.leopard</groupId>
+			<artifactId>autounit</artifactId>
+			<version>0.1-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

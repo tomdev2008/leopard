@@ -1,9 +1,6 @@
 package io.leopard.test4j.mock;
 
-import io.leopard.burrow.util.StringUtil;
-import io.leopard.test4j.mock.dao.DaoInstanceUtil;
-import io.leopard.test4j.mock.transaction.MockTransactionModule;
-import io.leopard.test4j.mock.transaction.h2.service.H2ServiceImpl;
+import io.leopard.autounit.AutoUnit;
 
 import java.lang.reflect.Field;
 
@@ -31,7 +28,7 @@ public class MockTransactionalTests extends AbstractTransactionalJUnit4SpringCon
 	protected Log logger = LogFactory.getLog(this.getClass());
 
 	static {
-		MockTransactionModule.getInstance(H2ServiceImpl.class).importDatabase();
+		// MockTransactionModule.getInstance(H2ServiceImpl.class).importDatabase();
 	}
 
 	public MockTransactionalTests() {
@@ -59,9 +56,10 @@ public class MockTransactionalTests extends AbstractTransactionalJUnit4SpringCon
 	}
 
 	protected <T> T mock(Class<T> clazz) {
-		String beanName = StringUtil.firstCharToLowerCase(clazz.getName());
+		// String beanName = StringUtil.firstCharToLowerCase(clazz.getName());
 		// @SuppressWarnings("unchecked")
-		T mock = DaoInstanceUtil.newInstance(beanName, clazz);
+		// T mock = DaoInstanceUtil.newInstance(beanName, clazz);
+		T mock = AutoUnit.mock(clazz);
 		mock = Mockito.spy(mock);
 
 		// System.out.println("mock:" + mock);
