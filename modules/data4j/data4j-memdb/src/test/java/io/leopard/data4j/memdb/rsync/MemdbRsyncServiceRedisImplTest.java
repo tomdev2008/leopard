@@ -2,7 +2,7 @@ package io.leopard.data4j.memdb.rsync;
 
 import io.leopard.data4j.memdb.MemdbRsyncQueue;
 import io.leopard.data4j.memdb.MemdbRsyncServiceRedisImpl;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 import org.junit.Test;
 import org.mockito.Mockito;

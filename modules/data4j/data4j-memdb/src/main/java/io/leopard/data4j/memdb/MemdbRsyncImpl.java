@@ -1,6 +1,6 @@
 package io.leopard.data4j.memdb;
 
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 /**
  * 多机同步实现.

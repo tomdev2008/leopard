@@ -1,7 +1,7 @@
 package io.leopard.data4j.memdb;
 
 import io.leopard.burrow.lang.Json;
-import io.leopard.data4j.redis.Redis;
+import io.leopard.redis.Redis;
 
 public class MemdbRsyncServiceRedisImpl implements MemdbRsyncService {
 
