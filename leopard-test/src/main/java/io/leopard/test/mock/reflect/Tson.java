@@ -51,14 +51,14 @@ public class Tson {
 	 * 1、"gameId:ddt;gameId:sxd,userCount:1";
 	 * </pre>
 	 * 
-	 * @param content
+	 * @param tson
 	 * @param valueType
 	 * @return
 	 */
-	public static <T> List<T> toListObject(String content, Class<T> valueType) {
-		content = content.replace("[", "");
-		content = content.replace("]", "");
-		String[] strs = StringUtils.split(content, ";");
+	public static <T> List<T> toListObject(String tson, Class<T> valueType) {
+		tson = tson.replace("[", "");
+		tson = tson.replace("]", "");
+		String[] strs = StringUtils.split(tson, ";");
 		List<T> list = new ArrayList<T>();
 		for (String str : strs) {
 			list.add(toObject(str, valueType));
